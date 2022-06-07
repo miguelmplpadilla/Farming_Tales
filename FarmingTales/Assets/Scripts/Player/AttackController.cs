@@ -11,6 +11,9 @@ public class AttackController : MonoBehaviour
     private Animator animator;
     private GameObject player;
 
+    private GameObject loot = null;
+    private bool looting = false;
+
     public int golpe = 2;
     
     private void Awake()
@@ -34,6 +37,33 @@ public class AttackController : MonoBehaviour
             animator.SetTrigger("golpear");
             player.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
             playerController.isAttacking = true;
+
+            if (looting)
+            {
+                if (loot != null)
+                {
+                    Debug.Log(loot);
+                    loot.transform.parent.GetComponent<LootController>().life--;
+                }
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("looting"))
+        {
+            loot = other.gameObject;
+            looting = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("looting"))
+        {
+            loot = null;
+            looting = false;
         }
     }
 

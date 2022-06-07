@@ -6,6 +6,9 @@ TagManager:
   tags:
   - player
   - arma
+  - loot
+  - looting
+  - limiteGeneracion
   layers:
   - Default
   - TransparentFX
