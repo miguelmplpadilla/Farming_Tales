@@ -9,18 +9,11 @@ public class InventarioController : MonoBehaviour
 {
 
     public GameObject[] posiciones = new GameObject[4];
-    private void Awake()
-    {
-    }
+    public TextMeshProUGUI oro;
 
-    void Start()
+    private void Start()
     {
-        //anadirInventario("madera", spritePrueba, 130, null);
-    }
-    
-    void Update()
-    {
-        
+        oro = GameObject.Find("TextoOro").GetComponent<TextMeshProUGUI>();
     }
 
     public void anadirInventario(string tipo, Sprite sprite, int cantidad, GameObject other)
@@ -76,10 +69,12 @@ public class InventarioController : MonoBehaviour
                 }
             }
         }
+    }
 
-        /*if (cantidad <= 0 && other != null)
-        {
-            Destroy(other);
-        }*/
+    public void anadirDinero(int cantidad)
+    {
+        int cantidadOro = int.Parse(oro.text);
+
+        oro.text = (cantidadOro + cantidad).ToString();
     }
 }

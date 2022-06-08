@@ -48,7 +48,15 @@ public class AttackController : MonoBehaviour
                 if (loot != null)
                 {
                     LootController lootController = loot.GetComponent<LootController>();
-                    inventarioController.anadirInventario(lootController.tipo, lootController.spr, lootController.cant, loot);
+                    if (lootController.tipo != "oro")
+                    {
+                        inventarioController.anadirInventario(lootController.tipo, lootController.spr, lootController.cant, loot);
+                    }
+                    else
+                    {
+                        inventarioController.anadirDinero(lootController.cant);
+                    }
+                    
                     lootController.temblar();
                     lootController.life--;
                 }
