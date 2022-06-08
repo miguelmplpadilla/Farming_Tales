@@ -9,6 +9,9 @@ TagManager:
   - loot
   - looting
   - limiteGeneracion
+  - toolBar
+  - sueloBosque
+  - suelo
   layers:
   - Default
   - TransparentFX

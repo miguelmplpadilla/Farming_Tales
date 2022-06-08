@@ -98,9 +98,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c0156a3cf7c7e84293ba21eb49a05b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
   tipo: arbol
   cant: 5
+  sprite: {fileID: 0}
+  sprites:
+  - {fileID: 4337684191699249041, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
+  - {fileID: -488721925442295091, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
+  - {fileID: -7573354855677281409, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
+  - {fileID: 1801263428120863714, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
+  - {fileID: -5971942374765049077, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
+  - {fileID: 4639506938558671751, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
+  life: 3
 --- !u!61 &4437063774986833447
 BoxCollider2D:
   m_ObjectHideFlags: 0

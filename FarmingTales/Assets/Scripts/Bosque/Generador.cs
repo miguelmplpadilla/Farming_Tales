@@ -9,7 +9,7 @@ public class Generador : MonoBehaviour
 {
     
     public GameObject loot;
-    public GameObject suelo;
+    private GameObject suelo;
 
     public Sprite[] sprites;
 
@@ -19,6 +19,8 @@ public class Generador : MonoBehaviour
     
     void Start()
     {
+
+        suelo = GameObject.FindWithTag("sueloBosque");
 
         suelo.GetComponent<SpriteRenderer>().color = colorSuelo;
         

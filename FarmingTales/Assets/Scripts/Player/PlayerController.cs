@@ -36,9 +36,6 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // Is Grounded?
-        //_isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        
         if (Input.GetButtonDown("Jump") && isGrounded == true && isAttacking == false) {
             rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }

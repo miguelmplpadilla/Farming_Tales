@@ -44,15 +44,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loot: {fileID: 685085876645742490, guid: 38ae5d0f86a698d4381b00c3ece42e21, type: 3}
-  suelo: {fileID: 0}
   sprites:
   - {fileID: -3784475678862650978, guid: 6e87cc4f9af90d24e9b631439e8d58d8, type: 3}
   - {fileID: 5944035082240082844, guid: 6e87cc4f9af90d24e9b631439e8d58d8, type: 3}
   - {fileID: -2507816583152990964, guid: b6ed4d59a2513fd4898708cf2d225c34, type: 3}
-  tamanosCollider: []
   tipos:
-  - arbol
-  - arbol
+  - madera
+  - madera
   - roca
-  cantidades: 050000000500000005000000
   colorSuelo: {r: 0.87058824, g: 0.62352943, b: 0.2784314, a: 1}

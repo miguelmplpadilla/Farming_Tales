@@ -5,14 +5,16 @@ using UnityEngine;
 
 public class LootController : MonoBehaviour
 {
-    public string tipo = "arbol";
+    public string tipo = "madera";
     public int cant = 5;
+    public Sprite spr;
+    public Sprite[] sprites;
 
     public int life = 3;
 
     private void Awake()
     {
-        if (tipo == "arbol")
+        if (tipo == "madera")
         {
             gameObject.GetComponent<BoxCollider2D>().size = new Vector2(2.8f, 1);
             cant = 10;
@@ -22,6 +24,22 @@ public class LootController : MonoBehaviour
             gameObject.GetComponent<BoxCollider2D>().size = new Vector2(1.8f, 1);
             cant = 5;
             life = 3;
+        } else if (tipo == "oro")
+        {
+            gameObject.GetComponent<BoxCollider2D>().size = new Vector2(1.8f, 1);
+            cant = 2;
+            life = 2;
+        }
+    }
+
+    private void Start()
+    {
+        if (tipo == "madera")
+        {
+            spr = sprites[0];
+        } else if (tipo == "roca")
+        {
+            spr = sprites[1];
         }
     }
 
@@ -57,7 +75,20 @@ public class LootController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
-        
+    }
+
+    public void temblar()
+    {
+        StartCoroutine("tremble");
+    }
+    
+    IEnumerator tremble() {
+        for ( int i = 0; i < 5; i++)
+        {
+            transform.localPosition += new Vector3(0.05f, 0, 0);
+            yield return new WaitForSeconds(0.01f);
+            transform.localPosition -= new Vector3(0.05f, 0, 0);
+            yield return new WaitForSeconds(0.01f);
+        }
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class AttackController : MonoBehaviour
@@ -13,6 +14,8 @@ public class AttackController : MonoBehaviour
 
     private GameObject loot = null;
     private bool looting = false;
+    private InventarioController inventarioController;
+    private ToolBarController toolBarController;
 
     public int golpe = 2;
     
@@ -26,6 +29,8 @@ public class AttackController : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindWithTag("player");
+        inventarioController = GameObject.FindWithTag("toolBar").GetComponent<InventarioController>();
+        toolBarController = GameObject.FindWithTag("toolBar").GetComponent<ToolBarController>();
     }
 
     void Update()
@@ -38,12 +43,14 @@ public class AttackController : MonoBehaviour
             player.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
             playerController.isAttacking = true;
 
-            if (looting)
+            if (looting && toolBarController.position == 0)
             {
                 if (loot != null)
                 {
-                    Debug.Log(loot);
-                    loot.transform.parent.GetComponent<LootController>().life--;
+                    LootController lootController = loot.GetComponent<LootController>();
+                    inventarioController.anadirInventario(lootController.tipo, lootController.spr, lootController.cant, loot);
+                    lootController.temblar();
+                    lootController.life--;
                 }
             }
         }
@@ -53,7 +60,7 @@ public class AttackController : MonoBehaviour
     {
         if (other.CompareTag("looting"))
         {
-            loot = other.gameObject;
+            loot = other.transform.parent.gameObject;
             looting = true;
         }
     }
