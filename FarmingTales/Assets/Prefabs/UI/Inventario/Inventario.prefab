@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8555862904307895176}
   - component: {fileID: 8555862904307895177}
   m_Layer: 5
-  m_Name: pos8
+  m_Name: pos4
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -81,6 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
 --- !u!222 &8555862904307895176
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -102,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -133,7 +134,7 @@ GameObject:
   - component: {fileID: 8555862904385293506}
   - component: {fileID: 8555862904385293507}
   m_Layer: 5
-  m_Name: pos13
+  m_Name: pos9
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -200,6 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
 --- !u!222 &8555862904385293506
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -221,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -386,7 +388,7 @@ GameObject:
   - component: {fileID: 8555862904435497124}
   - component: {fileID: 8555862904435497125}
   m_Layer: 5
-  m_Name: pos7
+  m_Name: pos3
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -453,6 +455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
 --- !u!222 &8555862904435497124
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -474,7 +477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -923,7 +926,7 @@ GameObject:
   - component: {fileID: 8555862905110943372}
   - component: {fileID: 8555862905110943373}
   m_Layer: 5
-  m_Name: pos10
+  m_Name: pos6
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -990,6 +993,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
 --- !u!222 &8555862905110943372
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1011,7 +1015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1803,7 +1807,7 @@ GameObject:
   - component: {fileID: 8555862905948607039}
   - component: {fileID: 8555862905948607008}
   m_Layer: 5
-  m_Name: pos14
+  m_Name: pos10
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1870,6 +1874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
 --- !u!222 &8555862905948607039
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1891,7 +1896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2005,7 +2010,7 @@ GameObject:
   - component: {fileID: 8555862905982353581}
   - component: {fileID: 8555862905982353582}
   m_Layer: 5
-  m_Name: pos9
+  m_Name: pos5
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2072,6 +2077,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
 --- !u!222 &8555862905982353581
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2093,7 +2099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2199,7 +2205,7 @@ GameObject:
   - component: {fileID: 8555862906007361384}
   - component: {fileID: 8555862906007361385}
   m_Layer: 5
-  m_Name: pos12
+  m_Name: pos8
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2266,6 +2272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
 --- !u!222 &8555862906007361384
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2287,7 +2294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2318,7 +2325,7 @@ GameObject:
   - component: {fileID: 8555862906021745044}
   - component: {fileID: 8555862906021745045}
   m_Layer: 5
-  m_Name: pos11
+  m_Name: pos7
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2385,6 +2392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
 --- !u!222 &8555862906021745044
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2406,7 +2414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
