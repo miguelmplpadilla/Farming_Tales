@@ -154,6 +154,7 @@ GameObject:
   - component: {fileID: 306147709714548870}
   - component: {fileID: 306147709714548868}
   - component: {fileID: 306147709714548890}
+  - component: {fileID: 8845499760629553594}
   - component: {fileID: 306147709714548865}
   - component: {fileID: 306147709714548864}
   - component: {fileID: 306147709714548869}
@@ -246,7 +247,7 @@ MonoBehaviour:
   movement: {x: 0, y: 0}
   isAttacking: 0
   isGrounded: 1
-  jumpForce: 3
+  jumpForce: 3.5
   speed: 2
 --- !u!114 &306147709714548890
 MonoBehaviour:
@@ -261,6 +262,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   golpe: 2
+--- !u!114 &8845499760629553594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306147709714548867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ceefa3aa1f8aab4499c83a58f1ec65a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 8
 --- !u!50 &306147709714548865
 Rigidbody2D:
   serializedVersion: 4
@@ -277,7 +291,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6d2812a9a98d3134fb8949967b9d3a6a, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 1
