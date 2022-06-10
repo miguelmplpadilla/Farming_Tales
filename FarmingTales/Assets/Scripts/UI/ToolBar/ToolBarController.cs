@@ -16,10 +16,14 @@ public class ToolBarController : MonoBehaviour
     public float position = 0;
     private GameObject player;
     private AttackController attackController;
+    private InventarioController inventarioController;
+
+    public int posicionArrayInventario;
 
     private void Awake()
     {
         imageToolBar = GetComponent<Image>();
+        inventarioController = GetComponent<InventarioController>();
     }
 
     private void Start()
@@ -63,6 +67,33 @@ public class ToolBarController : MonoBehaviour
             else
             {
                 attackController.golpe = 1;
+            }
+        }
+
+        if (position != 0 && position != 1)
+        {
+            if (Input.GetAxis("Mouse ScrollWheel") > 0 || Input.GetAxis("Mouse ScrollWheel") < 0)
+            {
+                if (Input.GetAxis("Mouse ScrollWheel") > 0 && position == 1)
+                {
+                    posicionArrayInventario = 0;
+                }
+                else
+                {
+                    posicionArrayInventario = posicionArrayInventario - (int)(Input.GetAxis("Mouse ScrollWheel") * 10);
+                }
+
+                if (posicionArrayInventario == 4)
+                {
+                    posicionArrayInventario = 0;
+                }
+            
+                if (posicionArrayInventario == -1)
+                {
+                    posicionArrayInventario = 5;
+                }
+
+                Debug.Log(inventarioController.posiciones[posicionArrayInventario].GetComponent<PosicionController>().item);
             }
         }
     }
