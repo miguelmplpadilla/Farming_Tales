@@ -18,6 +18,7 @@ public class InventarioController : MonoBehaviour
     private ToolBarController toolBarController;
 
     public Sprite spritePrueba;
+    
 
     public bool cofreAbierto = false;
 
@@ -28,7 +29,7 @@ public class InventarioController : MonoBehaviour
         rectTransformInventario = inventario.GetComponent<RectTransform>();
         rectTransformRaton = GameObject.Find("Raton").GetComponent<RectTransform>();
         
-        anadirInventario("madera", spritePrueba, 1000, null);
+        anadirInventario("cofre", spritePrueba, 1, null);
 
         posicionRatonController = GameObject.Find("PosRaton").GetComponent<PosicionRatonController>();
 

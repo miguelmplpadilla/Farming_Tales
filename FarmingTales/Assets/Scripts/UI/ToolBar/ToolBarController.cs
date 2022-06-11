@@ -74,13 +74,13 @@ public class ToolBarController : MonoBehaviour
         {
             if (Input.GetAxis("Mouse ScrollWheel") > 0 || Input.GetAxis("Mouse ScrollWheel") < 0)
             {
-                if (Input.GetAxis("Mouse ScrollWheel") > 0 && position == 1)
+                if (Input.GetAxis("Mouse ScrollWheel") > 0 && position == 2)
                 {
                     posicionArrayInventario = 0;
                 }
                 else
                 {
-                    posicionArrayInventario = posicionArrayInventario - (int)(Input.GetAxis("Mouse ScrollWheel") * 10);
+                    posicionArrayInventario = (int)position - 2;
                 }
 
                 if (posicionArrayInventario == 4)
@@ -90,10 +90,18 @@ public class ToolBarController : MonoBehaviour
             
                 if (posicionArrayInventario == -1)
                 {
-                    posicionArrayInventario = 5;
+                    posicionArrayInventario = 3;
                 }
 
-                Debug.Log(inventarioController.posiciones[posicionArrayInventario].GetComponent<PosicionController>().item);
+                PosicionController posicionController = inventarioController.posiciones[posicionArrayInventario]
+                    .GetComponent<PosicionController>();
+
+                Debug.Log(posicionController.item);
+
+                if (posicionController.item == "cofre")
+                {
+                    
+                }
             }
         }
     }
