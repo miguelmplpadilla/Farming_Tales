@@ -12,6 +12,7 @@ TagManager:
   - toolBar
   - sueloBosque
   - suelo
+  - Inter
   layers:
   - Default
   - TransparentFX
