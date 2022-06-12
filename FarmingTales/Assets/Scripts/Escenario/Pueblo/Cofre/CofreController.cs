@@ -42,8 +42,8 @@ public class CofreController : MonoBehaviour
                     posicionInventarioCofres[i].sprite = inventarioCofreController.posiciones[i].GetComponent<Image>().sprite;
                 }
                 
-                rectTransformInventario.localScale = new Vector3(0, 1, 1);
-                rectTransformRaton.localScale = new Vector3(0, 1, 1);
+                //rectTransformInventario.localScale = new Vector3(0, 1, 1);
+                //rectTransformRaton.localScale = new Vector3(0, 1, 1);
                 inventarioCofreController.gameObject.GetComponent<RectTransform>().localScale = new Vector3(0,1,1);
                 abierto = false;
             }
