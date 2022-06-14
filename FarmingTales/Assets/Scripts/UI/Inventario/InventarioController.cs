@@ -16,11 +16,24 @@ public class InventarioController : MonoBehaviour
     private RectTransform rectTransformRaton;
     private PosicionRatonController posicionRatonController;
     private ToolBarController toolBarController;
+    private InventarioCofreController inventarioCofreController;
 
     public Sprite spritePrueba;
-    
 
-    public bool cofreAbierto = false;
+    private GameObject player;
+
+    public string[] tipos;
+    public Sprite[] sprs;
+
+    public IDictionary<string, Sprite> sprites = new Dictionary<string, Sprite>();
+
+    private void Awake()
+    {
+        for (int i = 0; i < tipos.Length; i++)
+        {
+            sprites.Add(tipos[i],sprs[i]);
+        }
+    }
 
     private void Start()
     {
@@ -29,11 +42,21 @@ public class InventarioController : MonoBehaviour
         rectTransformInventario = inventario.GetComponent<RectTransform>();
         rectTransformRaton = GameObject.Find("Raton").GetComponent<RectTransform>();
         
-        anadirInventario("cofre", spritePrueba, 1, null);
+        //anadirInventario("cofre", spritePrueba, 1, null);
+        //anadirInventario("madera", spritePrueba, 1, null);
 
         posicionRatonController = GameObject.Find("PosRaton").GetComponent<PosicionRatonController>();
 
         toolBarController = GetComponent<ToolBarController>();
+        
+        player = GameObject.Find("Player");
+
+        inventarioCofreController = GameObject.Find("InventarioCofre").GetComponent<InventarioCofreController>();
+
+        if (PlayerPrefs.HasKey("inventarioPosicion0"))
+        {
+            cargarInventarioDinero();
+        }
     }
 
     private void Update()
@@ -44,24 +67,31 @@ public class InventarioController : MonoBehaviour
             {
                 rectTransformInventario.localScale = new Vector3(1, 1, 1);
                 rectTransformRaton.localScale = new Vector3(1, 1, 1);
+
+                player.GetComponent<PlayerController>().mov = false;
             }
             else
             {
                 if (posicionRatonController.item != "" && posicionRatonController.cantidad > 0)
                 {
                     int resto = anadirInventario(posicionRatonController.item, posicionRatonController.GetComponent<Image>().sprite, posicionRatonController.cantidad, posicionRatonController.gameObject);
-
+                    
+                    if (inventarioCofreController.GetComponent<RectTransform>().localScale.x == 1)
+                    {
+                        inventarioCofreController.anadirInventario(posicionRatonController.item,posicionRatonController.GetComponent<Image>().sprite,resto,null);
+                    }
+                    
                     posicionRatonController.item = "";
                     posicionRatonController.cantidad = 0;
                     posicionRatonController.GetComponent<Image>().sprite = null;
-                    
-                    if (cofreAbierto)
-                    {
-                        // Aqui se añadiria el resto del inventario al cofre que estamos cerrando
-                    }
                 }
+                
                 rectTransformInventario.localScale = new Vector3(0, 1, 1);
                 rectTransformRaton.localScale = new Vector3(0, 1, 1);
+                
+                player.GetComponent<PlayerController>().mov = true;
+                
+                guardarInventario();
             }
         }
     }
@@ -79,6 +109,7 @@ public class InventarioController : MonoBehaviour
                     posiciones[i].GetComponentInChildren<TextMeshProUGUI>().text =
                         posiciones[i].GetComponent<PosicionController>().cantidad.ToString();
                     cantidad = 0;
+                    guardarInventario();
                     break;
                 }
                 else
@@ -88,6 +119,7 @@ public class InventarioController : MonoBehaviour
                     posiciones[i].GetComponentInChildren<TextMeshProUGUI>().text =
                         posiciones[i].GetComponent<PosicionController>().cantidad.ToString();
                     cantidad = (cantAnterior + cantidad) - 128;
+                    guardarInventario();
                 }
             }
         }
@@ -106,6 +138,7 @@ public class InventarioController : MonoBehaviour
                             posiciones[i].GetComponent<PosicionController>().cantidad.ToString();
                         cantidad = 0;
                         posiciones[i].GetComponent<Image>().sprite = sprite;
+                        guardarInventario();
                         break;
                     }
                     else
@@ -115,6 +148,7 @@ public class InventarioController : MonoBehaviour
                             posiciones[i].GetComponent<PosicionController>().cantidad.ToString();
                         cantidad = cantidad - 128;
                         posiciones[i].GetComponent<Image>().sprite = sprite;
+                        guardarInventario();
                     }
                 }
             }
@@ -137,6 +171,7 @@ public class InventarioController : MonoBehaviour
                         posicionesInventario[i].GetComponentInChildren<TextMeshProUGUI>().text =
                             posicionesInventario[i].GetComponent<PosicionController>().cantidad.ToString();
                         cantidad = 0;
+                        guardarInventario();
                         break;
                     }
                     else
@@ -146,6 +181,7 @@ public class InventarioController : MonoBehaviour
                         posicionesInventario[i].GetComponentInChildren<TextMeshProUGUI>().text =
                             posicionesInventario[i].GetComponent<PosicionController>().cantidad.ToString();
                         cantidad = (cantAnterior + cantidad) - 128;
+                        guardarInventario();
                     }
                 }
             }
@@ -167,6 +203,7 @@ public class InventarioController : MonoBehaviour
                                 posicionesInventario[i].GetComponent<PosicionController>().cantidad.ToString();
                             cantidad = 0;
                             posicionesInventario[i].GetComponent<Image>().sprite = sprite;
+                            guardarInventario();
                             break;
                         }
                         else
@@ -176,6 +213,7 @@ public class InventarioController : MonoBehaviour
                                 posicionesInventario[i].GetComponent<PosicionController>().cantidad.ToString();
                             cantidad = cantidad - 128;
                             posicionesInventario[i].GetComponent<Image>().sprite = sprite;
+                            guardarInventario();
                         }
                     }
                 }
@@ -190,5 +228,37 @@ public class InventarioController : MonoBehaviour
         int cantidadOro = int.Parse(oro.text);
 
         oro.text = (cantidadOro + cantidad).ToString();
+        
+        PlayerPrefs.SetString("dineroPlayer", oro.text);
+        PlayerPrefs.Save();
+    }
+
+    public void guardarInventario()
+    {
+        for (int i = 0; i < posiciones.Length; i++)
+        {
+            PosicionController posicionController = posiciones[i].GetComponent<PosicionController>();
+            PlayerPrefs.SetString("inventarioPosicion"+i, posicionController.item+","+posicionController.cantidad);
+        }
+        
+        PlayerPrefs.Save();
+    }
+
+    public void cargarInventarioDinero()
+    {
+        for (int i = 0; i < posiciones.Length; i++)
+        {
+            string[] datos = PlayerPrefs.GetString("inventarioPosicion"+i).Split(',');
+            PosicionController posicionController = posiciones[i].GetComponent<PosicionController>();
+
+            posicionController.item = datos[0];
+            posicionController.cantidad = int.Parse(datos[1]);
+
+            Debug.Log("Tipo: "+datos[0]);
+
+            posicionController.GetComponent<Image>().sprite = sprites[datos[0]];
+        }
+
+        oro.text = PlayerPrefs.GetString("dineroPlayer");
     }
 }

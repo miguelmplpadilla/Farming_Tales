@@ -11,8 +11,6 @@ public class PosicionController : MonoBehaviour, IPointerUpHandler, IPointerDown
     public string item = "";
     public int cantidad = 0;
 
-    private RectTransform rectTransform;
-
     private GameObject posicionRaton;
     private GameObject raton;
     
@@ -23,13 +21,14 @@ public class PosicionController : MonoBehaviour, IPointerUpHandler, IPointerDown
     private bool cofreAbierto = false;
 
     private InventarioController inventarioController;
+    private InventarioCofreController inventarioCofreController;
 
     private void Awake()
     {
-        rectTransform = GetComponent<RectTransform>();
         posicionRaton = GameObject.Find("PosRaton");
         raton = GameObject.Find("Raton");
         inventarioController = GameObject.Find("ToolBar").GetComponent<InventarioController>();
+        inventarioCofreController = GameObject.Find("InventarioCofre").GetComponent<InventarioCofreController>();
     }
 
     private void Start()
@@ -120,7 +119,7 @@ public class PosicionController : MonoBehaviour, IPointerUpHandler, IPointerDown
         {
             if (raton.GetComponent<RectTransform>().localScale.x != 0)
             {
-                if (!cofreAbierto)
+                if (inventarioCofreController.GetComponent<RectTransform>().localScale.x <= 0)
                 {
                     int resto = inventarioController.anadirSoloInventario(item, GetComponent<Image>().sprite, cantidad, gameObject);
 
@@ -137,7 +136,18 @@ public class PosicionController : MonoBehaviour, IPointerUpHandler, IPointerDown
                 }
                 else
                 {
-                    // Aqui se añadirian las cosas al cofre y no al inventario
+                    int resto = inventarioCofreController.anadirInventario(item, GetComponent<Image>().sprite, cantidad, gameObject);
+
+                    if (resto == 0)
+                    {
+                        item = "";
+                        GetComponent<Image>().sprite = null;
+                        cantidad = 0;
+                    }
+                    else
+                    {
+                        cantidad = resto;
+                    }
                 }
             }
         }

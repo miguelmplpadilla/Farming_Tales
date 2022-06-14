@@ -35,30 +35,33 @@ public class AttackController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && playerController.isGrounded == true && playerController.isAttacking == false) {
-            playerController.movement = Vector2.zero;
-            rigidbody.velocity = Vector2.zero;
-            animator.SetInteger("golpe", golpe);
-            animator.SetTrigger("golpear");
-            player.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
-            playerController.isAttacking = true;
+        if (playerController.mov)
+        {
+            if (Input.GetButtonDown("Fire1") && playerController.isGrounded == true && playerController.isAttacking == false) {
+                playerController.movement = Vector2.zero;
+                rigidbody.velocity = Vector2.zero;
+                animator.SetInteger("golpe", golpe);
+                animator.SetTrigger("golpear");
+                player.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+                playerController.isAttacking = true;
 
-            if (looting && toolBarController.position == 0)
-            {
-                if (loot != null)
+                if (looting && toolBarController.position == 0)
                 {
-                    LootController lootController = loot.GetComponent<LootController>();
-                    if (lootController.tipo != "oro")
+                    if (loot != null)
                     {
-                        inventarioController.anadirInventario(lootController.tipo, lootController.spr, lootController.cant, loot);
-                    }
-                    else
-                    {
-                        inventarioController.anadirDinero(lootController.cant);
-                    }
+                        LootController lootController = loot.GetComponent<LootController>();
+                        if (lootController.tipo != "oro")
+                        {
+                            inventarioController.anadirInventario(lootController.tipo, lootController.spr, lootController.cant, loot);
+                        }
+                        else
+                        {
+                            inventarioController.anadirDinero(lootController.cant);
+                        }
                     
-                    lootController.temblar();
-                    lootController.life--;
+                        lootController.temblar();
+                        lootController.life--;
+                    }
                 }
             }
         }

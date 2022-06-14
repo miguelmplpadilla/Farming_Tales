@@ -7,15 +7,24 @@ public class InteractuarController : MonoBehaviour
 {
 
     private bool interactuar = false;
-    private GameObject interactuado;
-    
+    private GameObject objInteractuado;
+    private PlayerController playerController;
+
+    private void Awake()
+    {
+        playerController = transform.parent.GetComponent<PlayerController>();
+    }
+
     void Update()
     {
-        if (interactuar)
+        if (playerController.mov)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse1))
+            if (interactuar)
             {
-                interactuado.SendMessage("inter");
+                if (Input.GetKeyDown(KeyCode.Mouse1))
+                {
+                    objInteractuado.SendMessage("inter");
+                }
             }
         }
     }
@@ -24,7 +33,7 @@ public class InteractuarController : MonoBehaviour
     {
         if (other.CompareTag("Inter"))
         {
-            interactuado = other.gameObject;
+            objInteractuado = other.gameObject;
             interactuar = true;
         }
     }
@@ -34,7 +43,7 @@ public class InteractuarController : MonoBehaviour
         if (other.CompareTag("Inter"))
         {
             interactuar = false;
-            interactuado = null;
+            objInteractuado = null;
         }
     }
 }

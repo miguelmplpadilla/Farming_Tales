@@ -8,9 +8,11 @@ public class LootController : MonoBehaviour
     public string tipo = "madera";
     public int cant = 5;
     public Sprite spr;
-    public Sprite[] sprites;
+    public IDictionary<string, Sprite> sprites;
 
     public int life = 3;
+
+    private InventarioController inventarioController;
 
     private void Awake()
     {
@@ -34,13 +36,11 @@ public class LootController : MonoBehaviour
 
     private void Start()
     {
-        if (tipo == "madera")
-        {
-            spr = sprites[0];
-        } else if (tipo == "roca")
-        {
-            spr = sprites[1];
-        }
+        inventarioController = GameObject.Find("ToolBar").GetComponent<InventarioController>();
+
+        sprites = inventarioController.sprites;
+
+        spr = sprites[tipo];
     }
 
     private void Update()

@@ -14,6 +14,8 @@ public class CofreController : MonoBehaviour
     private RectTransform rectTransformInventario;
     private RectTransform rectTransformRaton;
 
+    private GameObject player;
+
     private void Start()
     {
         inventarioCofreController = GameObject.Find("InventarioCofre").GetComponent<InventarioCofreController>();
@@ -27,6 +29,8 @@ public class CofreController : MonoBehaviour
         
         rectTransformInventario = GameObject.Find("Inventario").GetComponent<RectTransform>();
         rectTransformRaton = GameObject.Find("Raton").GetComponent<RectTransform>();
+        
+        player = GameObject.Find("Player");
     }
 
     private void Update()
@@ -42,9 +46,10 @@ public class CofreController : MonoBehaviour
                     posicionInventarioCofres[i].sprite = inventarioCofreController.posiciones[i].GetComponent<Image>().sprite;
                 }
                 
-                //rectTransformInventario.localScale = new Vector3(0, 1, 1);
-                //rectTransformRaton.localScale = new Vector3(0, 1, 1);
                 inventarioCofreController.gameObject.GetComponent<RectTransform>().localScale = new Vector3(0,1,1);
+                
+                player.GetComponent<PlayerController>().mov = true;
+                
                 abierto = false;
             }
         }
@@ -65,6 +70,8 @@ public class CofreController : MonoBehaviour
         rectTransformInventario.localScale = new Vector3(1, 1, 1);
         rectTransformRaton.localScale = new Vector3(1, 1, 1);
         inventarioCofreController.gameObject.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
+
+        player.GetComponent<PlayerController>().mov = false;
         
         abierto = true;
     }

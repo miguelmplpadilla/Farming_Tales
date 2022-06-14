@@ -20,6 +20,10 @@ public class ToolBarController : MonoBehaviour
 
     public int posicionArrayInventario;
 
+    private GameObject posicionadorItem;
+
+    public PosicionController posicionController;
+
     private void Awake()
     {
         imageToolBar = GetComponent<Image>();
@@ -31,6 +35,8 @@ public class ToolBarController : MonoBehaviour
         player = GameObject.FindWithTag("player");
         attackController = player.GetComponent<AttackController>();
         armaPlayer = player.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        
+        posicionadorItem = GameObject.Find("PosicionadorItem");
         
     }
 
@@ -93,14 +99,20 @@ public class ToolBarController : MonoBehaviour
                     posicionArrayInventario = 3;
                 }
 
-                PosicionController posicionController = inventarioController.posiciones[posicionArrayInventario]
+                posicionController = inventarioController.posiciones[posicionArrayInventario]
                     .GetComponent<PosicionController>();
 
                 Debug.Log(posicionController.item);
 
                 if (posicionController.item == "cofre")
                 {
-                    
+                    posicionadorItem.GetComponent<PosicionadorItemController>().itemPosicionado = Resources.Load("Prefabs/Instancias/cofre") as GameObject;
+                    posicionadorItem.GetComponent<PosicionadorItemController>().posicionController = posicionController;
+                }
+                else
+                {
+                    posicionadorItem.GetComponent<PosicionadorItemController>().itemPosicionado = null;
+                    posicionadorItem.GetComponent<PosicionadorItemController>().posicionController = null;
                 }
             }
         }
