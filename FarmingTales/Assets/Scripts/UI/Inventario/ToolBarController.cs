@@ -102,7 +102,7 @@ public class ToolBarController : MonoBehaviour
                 posicionController = inventarioController.posiciones[posicionArrayInventario]
                     .GetComponent<PosicionController>();
 
-                Debug.Log(posicionController.item);
+                //Debug.Log(posicionController.item);
 
                 if (posicionController.item == "cofre")
                 {

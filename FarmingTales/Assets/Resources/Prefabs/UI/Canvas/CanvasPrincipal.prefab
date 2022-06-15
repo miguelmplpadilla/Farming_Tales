@@ -465,6 +465,74 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -8929714730241205940, guid: 5e79748343a3d06408602fc3963807d4, type: 3}
     - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: sprs.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: tipos.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: sprs.Array.data[0]
+      value: 
+      objectReference: {fileID: 4337684191699249041, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: sprs.Array.data[1]
+      value: 
+      objectReference: {fileID: -488721925442295091, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: sprs.Array.data[2]
+      value: 
+      objectReference: {fileID: -7573354855677281409, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: sprs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1801263428120863714, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: sprs.Array.data[4]
+      value: 
+      objectReference: {fileID: -5971942374765049077, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: sprs.Array.data[5]
+      value: 
+      objectReference: {fileID: 4639506938558671751, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: sprs.Array.data[6]
+      value: 
+      objectReference: {fileID: -8929714730241205940, guid: 5e79748343a3d06408602fc3963807d4, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: sprs.Array.data[7]
+      value: 
+      objectReference: {fileID: 8033092973025764044, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: tipos.Array.data[0]
+      value: madera
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: tipos.Array.data[1]
+      value: roca
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: tipos.Array.data[2]
+      value: zanahoria
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: tipos.Array.data[3]
+      value: patata
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: tipos.Array.data[4]
+      value: trigo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: tipos.Array.data[5]
+      value: huevo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: tipos.Array.data[6]
+      value: cofre
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
       propertyPath: posiciones.Array.data[0]
       value: 
       objectReference: {fileID: 1027417319355864170}

@@ -12,12 +12,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7683650480403441520, guid: db6bef892072f364ebc01a83cb8b5bf3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 36.94378
+      objectReference: {fileID: 0}
+    - target: {fileID: 7683650480403441520, guid: db6bef892072f364ebc01a83cb8b5bf3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.734814
+      objectReference: {fileID: 0}
+    - target: {fileID: 7683650480403441520, guid: db6bef892072f364ebc01a83cb8b5bf3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.31699228
+      value: 4.139
       objectReference: {fileID: 0}
     - target: {fileID: 7683650480403441520, guid: db6bef892072f364ebc01a83cb8b5bf3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.44
+      value: -4.364
       objectReference: {fileID: 0}
     - target: {fileID: 7683650480403441520, guid: db6bef892072f364ebc01a83cb8b5bf3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -58,6 +66,18 @@ PrefabInstance:
     - target: {fileID: 7683650480403441524, guid: db6bef892072f364ebc01a83cb8b5bf3, type: 3}
       propertyPath: m_TagString
       value: suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7683650480403441527, guid: db6bef892072f364ebc01a83cb8b5bf3, type: 3}
+      propertyPath: m_Color.b
+      value: 0.18431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 7683650480403441527, guid: db6bef892072f364ebc01a83cb8b5bf3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7683650480403441527, guid: db6bef892072f364ebc01a83cb8b5bf3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.29411766
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db6bef892072f364ebc01a83cb8b5bf3, type: 3}

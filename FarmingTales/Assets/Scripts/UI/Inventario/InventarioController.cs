@@ -41,9 +41,6 @@ public class InventarioController : MonoBehaviour
         inventario = GameObject.Find("Inventario");
         rectTransformInventario = inventario.GetComponent<RectTransform>();
         rectTransformRaton = GameObject.Find("Raton").GetComponent<RectTransform>();
-        
-        //anadirInventario("cofre", spritePrueba, 1, null);
-        //anadirInventario("madera", spritePrueba, 1, null);
 
         posicionRatonController = GameObject.Find("PosRaton").GetComponent<PosicionRatonController>();
 
@@ -57,6 +54,9 @@ public class InventarioController : MonoBehaviour
         {
             cargarInventarioDinero();
         }
+        
+        anadirInventario("cofre", spritePrueba, 5, null);
+        //anadirInventario("madera", spritePrueba, 1, null);
     }
 
     private void Update()
@@ -254,7 +254,7 @@ public class InventarioController : MonoBehaviour
             posicionController.item = datos[0];
             posicionController.cantidad = int.Parse(datos[1]);
 
-            Debug.Log("Tipo: "+datos[0]);
+            //Debug.Log("Tipo: "+datos[0]);
 
             posicionController.GetComponent<Image>().sprite = sprites[datos[0]];
         }
