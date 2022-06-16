@@ -103,18 +103,23 @@ public class ToolBarController : MonoBehaviour
                     .GetComponent<PosicionController>();
 
                 //Debug.Log(posicionController.item);
-
-                if (posicionController.item == "cofre")
-                {
-                    posicionadorItem.GetComponent<PosicionadorItemController>().itemPosicionado = Resources.Load("Prefabs/Instancias/cofre") as GameObject;
-                    posicionadorItem.GetComponent<PosicionadorItemController>().posicionController = posicionController;
-                }
-                else
-                {
-                    posicionadorItem.GetComponent<PosicionadorItemController>().itemPosicionado = null;
-                    posicionadorItem.GetComponent<PosicionadorItemController>().posicionController = null;
-                }
             }
+            
+            if (posicionController.item == "cofre")
+            {
+                posicionadorItem.GetComponent<PosicionadorItemController>().itemPosicionado = Resources.Load("Prefabs/Instancias/cofre") as GameObject;
+                posicionadorItem.GetComponent<PosicionadorItemController>().posicionController = posicionController;
+            }
+            else
+            {
+                posicionadorItem.GetComponent<PosicionadorItemController>().itemPosicionado = null;
+                posicionadorItem.GetComponent<PosicionadorItemController>().posicionController = null;
+            }
+        }
+        else
+        {
+            posicionadorItem.GetComponent<PosicionadorItemController>().itemPosicionado = null;
+            posicionadorItem.GetComponent<PosicionadorItemController>().posicionController = null;
         }
     }
 

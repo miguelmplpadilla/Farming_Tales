@@ -19,6 +19,8 @@ public class PosicionadorItemController : MonoBehaviour
 
     private InventarioController inventarioController;
 
+    private GameObject inventario;
+
     private void Start()
     {
         mano = GameObject.Find("Mano");
@@ -31,6 +33,8 @@ public class PosicionadorItemController : MonoBehaviour
         inventarioController = GameObject.Find("ToolBar").GetComponent<InventarioController>();
 
         cargarPosicionesItem();
+        
+        inventario = GameObject.Find("Inventario");
         
         //PlayerPrefs.DeleteAll();
     }
@@ -61,7 +65,7 @@ public class PosicionadorItemController : MonoBehaviour
         
         transform.position = posicion;
 
-        if (distancia <= 1f && punto.GetComponent<PuntoGeneradoController>().ocupado == false)
+        if (distancia <= 1f && punto.GetComponent<PuntoGeneradoController>().ocupado == false && inventario.GetComponent<RectTransform>().localScale.x == 0)
         {
             if (Input.GetButtonDown("Fire1"))
             {

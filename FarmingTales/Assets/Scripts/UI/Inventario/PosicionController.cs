@@ -23,6 +23,8 @@ public class PosicionController : MonoBehaviour, IPointerUpHandler, IPointerDown
     private InventarioController inventarioController;
     private InventarioCofreController inventarioCofreController;
 
+    public bool isPosicionCofre = false;
+
     private void Awake()
     {
         posicionRaton = GameObject.Find("PosRaton");
@@ -136,17 +138,20 @@ public class PosicionController : MonoBehaviour, IPointerUpHandler, IPointerDown
                 }
                 else
                 {
-                    int resto = inventarioCofreController.anadirInventario(item, GetComponent<Image>().sprite, cantidad, gameObject);
+                    if (!isPosicionCofre)
+                    {
+                        int resto = inventarioCofreController.anadirInventario(item, GetComponent<Image>().sprite, cantidad, gameObject);
 
-                    if (resto == 0)
-                    {
-                        item = "";
-                        GetComponent<Image>().sprite = null;
-                        cantidad = 0;
-                    }
-                    else
-                    {
-                        cantidad = resto;
+                        if (resto == 0)
+                        {
+                            item = "";
+                            GetComponent<Image>().sprite = null;
+                            cantidad = 0;
+                        }
+                        else
+                        {
+                            cantidad = resto;
+                        }
                     }
                 }
             }
