@@ -44,11 +44,16 @@ public class PlayerController : MonoBehaviour
                 rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             }
         }
+        else
+        {
+            animator.SetBool("run", false);
+            rigidbody.velocity = Vector3.zero;
+        }
     }
     
     void FixedUpdate()
     {
-        if (isAttacking == false) {
+        if (!isAttacking && mov) {
             float horizontalVelocity = movement.normalized.x * speed;
             rigidbody.velocity = new Vector2(horizontalVelocity, rigidbody.velocity.y);
 

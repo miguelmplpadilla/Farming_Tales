@@ -55,7 +55,8 @@ public class InventarioController : MonoBehaviour
             cargarInventarioDinero();
         }
         
-        anadirInventario("cofre", spritePrueba, 5, null);
+        anadirInventario("plantacion", 5);
+        anadirInventario("patata", 5);
         //anadirInventario("madera", spritePrueba, 1, null);
     }
 
@@ -74,7 +75,7 @@ public class InventarioController : MonoBehaviour
             {
                 if (posicionRatonController.item != "" && posicionRatonController.cantidad > 0)
                 {
-                    int resto = anadirInventario(posicionRatonController.item, posicionRatonController.GetComponent<Image>().sprite, posicionRatonController.cantidad, posicionRatonController.gameObject);
+                    int resto = anadirInventario(posicionRatonController.item, posicionRatonController.cantidad);
                     
                     if (inventarioCofreController.GetComponent<RectTransform>().localScale.x == 1)
                     {
@@ -96,7 +97,7 @@ public class InventarioController : MonoBehaviour
         }
     }
 
-    public int anadirInventario(string tipo, Sprite sprite, int cantidad, GameObject other)
+    public int anadirInventario(string tipo, int cantidad)
     {
         
         for (int i = 0; i < posiciones.Length; i++)
@@ -137,7 +138,6 @@ public class InventarioController : MonoBehaviour
                         posiciones[i].GetComponentInChildren<TextMeshProUGUI>().text =
                             posiciones[i].GetComponent<PosicionController>().cantidad.ToString();
                         cantidad = 0;
-                        posiciones[i].GetComponent<Image>().sprite = sprite;
                         guardarInventario();
                         break;
                     }
@@ -147,7 +147,6 @@ public class InventarioController : MonoBehaviour
                         posiciones[i].GetComponentInChildren<TextMeshProUGUI>().text =
                             posiciones[i].GetComponent<PosicionController>().cantidad.ToString();
                         cantidad = cantidad - 128;
-                        posiciones[i].GetComponent<Image>().sprite = sprite;
                         guardarInventario();
                     }
                 }

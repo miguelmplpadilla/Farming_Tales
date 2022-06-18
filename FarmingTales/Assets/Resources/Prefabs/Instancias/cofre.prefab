@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7727413101762947213}
   - component: {fileID: 7727413101762947200}
   - component: {fileID: 7727413101762947215}
+  - component: {fileID: 2626272803438429915}
   m_Layer: 0
   m_Name: cofre
   m_TagString: Inter
@@ -96,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ace7f0b6aa70144d86b0f2c8c30a77b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
 --- !u!61 &7727413101762947215
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -122,3 +124,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.53333336, y: 0.502049}
   m_EdgeRadius: 0
+--- !u!95 &2626272803438429915
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7727413101762947212}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b092de25649a76f44b2b34781e4a9e52, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -52,7 +52,7 @@ public class AttackController : MonoBehaviour
                         LootController lootController = loot.GetComponent<LootController>();
                         if (lootController.tipo != "oro")
                         {
-                            inventarioController.anadirInventario(lootController.tipo, lootController.spr, lootController.cant, loot);
+                            inventarioController.anadirInventario(lootController.tipo, lootController.cant);
                         }
                         else
                         {

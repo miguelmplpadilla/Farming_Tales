@@ -24,6 +24,8 @@ public class ToolBarController : MonoBehaviour
 
     public PosicionController posicionController;
 
+    public string posicionActual = "";
+
     private void Awake()
     {
         imageToolBar = GetComponent<Image>();
@@ -105,9 +107,11 @@ public class ToolBarController : MonoBehaviour
                 //Debug.Log(posicionController.item);
             }
             
-            if (posicionController.item == "cofre")
+            posicionActual = posicionController.item;
+            
+            if (posicionController.item == "cofre" || posicionController.item == "plantacion")
             {
-                posicionadorItem.GetComponent<PosicionadorItemController>().itemPosicionado = Resources.Load("Prefabs/Instancias/cofre") as GameObject;
+                posicionadorItem.GetComponent<PosicionadorItemController>().itemPosicionado = Resources.Load("Prefabs/Instancias/"+posicionController.item) as GameObject;
                 posicionadorItem.GetComponent<PosicionadorItemController>().posicionController = posicionController;
             }
             else
@@ -120,6 +124,7 @@ public class ToolBarController : MonoBehaviour
         {
             posicionadorItem.GetComponent<PosicionadorItemController>().itemPosicionado = null;
             posicionadorItem.GetComponent<PosicionadorItemController>().posicionController = null;
+            posicionActual = "";
         }
     }
 

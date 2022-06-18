@@ -21,6 +21,13 @@ public class CofreController : MonoBehaviour
 
     private InventarioController inventarioController;
 
+    private Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     private void Start()
     {
         inventarioCofreController = GameObject.Find("InventarioCofre").GetComponent<InventarioCofreController>();
@@ -64,6 +71,8 @@ public class CofreController : MonoBehaviour
                 
                 guardarInventario();
                 
+                animator.SetTrigger("cerrar");
+                
                 abierto = false;
             }
         }
@@ -86,6 +95,8 @@ public class CofreController : MonoBehaviour
         inventarioCofreController.gameObject.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
 
         player.GetComponent<PlayerController>().mov = false;
+        
+        animator.SetTrigger("abrir");
         
         abierto = true;
     }
