@@ -27,6 +27,7 @@ public class PlantacionController : MonoBehaviour
     public Sprite terrenoSinPlanta;
 
     public bool recoger = false;
+    public bool regar = false;
     public int cantidad = 0;
 
     public int tiempo = 0;
@@ -48,19 +49,29 @@ public class PlantacionController : MonoBehaviour
         {
             if (!creciendo)
             {
-                for (int i = 0; i < spritesTerreno.Count; i++)
+                if (!regar)
                 {
-                    if (spritesTerreno[i].id == toolBarController.posicionActual)
+                    for (int i = 0; i < spritesTerreno.Count; i++)
                     {
-                        planta = spritesTerreno[i].id;
-                        cantidad = spritesTerreno[i].cantidad;
-                        posicionPlanta = i;
+                        if (spritesTerreno[i].id == toolBarController.posicionActual)
+                        {
+                            planta = spritesTerreno[i].id;
+                            cantidad = spritesTerreno[i].cantidad;
+                            posicionPlanta = i;
+                        }
+                    }
+
+                    if (planta != "")
+                    {
+                        toolBarController.posicionController.cantidad =
+                            toolBarController.posicionController.cantidad - 1;
+                        regar = true;
+                        spriteRenderer.sprite = spritesTerreno[posicionPlanta].sprites[0];
                     }
                 }
-
-                if (planta != "")
+                else
                 {
-                    toolBarController.posicionController.cantidad = toolBarController.posicionController.cantidad - 1;
+                    regar = false;
                     creciendo = true;
                     StartCoroutine("crecerPlanta");
                 }
@@ -73,14 +84,51 @@ public class PlantacionController : MonoBehaviour
             cantidad = 0;
             posicionPlanta = -1;
             spriteRenderer.sprite = terrenoSinPlanta;
-            creciendo = false;
             recoger = false;
+            regar = false;
         }
+    }
+    
+    public void mostrarInter()
+    {
+        if (isInArrayPlanta() != "" && !creciendo)
+        {
+            GetComponentInChildren<InteractuarUIController>().visibleDerecho();   
+        }
+        else
+        {
+            GetComponentInChildren<InteractuarUIController>().invisibleDerecho();
+        }
+
+        if (regar)
+        {
+            GetComponentInChildren<InteractuarUIController>().visibleDerecho();  
+        }
+    }
+
+    public void esconderInter()
+    {
+        GetComponentInChildren<InteractuarUIController>().invisibleDerecho();
+    }
+
+    private string isInArrayPlanta()
+    {
+        string plant = "";
+        
+        for (int i = 0; i < spritesTerreno.Count; i++)
+        {
+            if (spritesTerreno[i].id == toolBarController.posicionActual)
+            {
+                plant = spritesTerreno[i].id;
+            }
+        }
+
+        return plant;
     }
 
     IEnumerator crecerPlanta()
     {
-        spriteRenderer.sprite = spritesTerreno[posicionPlanta].sprites[0];
+        spriteRenderer.sprite = spritesTerreno[posicionPlanta].sprites[1];
         for (int i = 1; i < spritesTerreno[posicionPlanta].sprites.Count; i++)
         {
             for (int j = 0; j < tiempoPlantacion; j++)
@@ -92,7 +140,8 @@ public class PlantacionController : MonoBehaviour
             tiempo = 0;
             spriteRenderer.sprite = spritesTerreno[posicionPlanta].sprites[i];
         }
-
+        
+        creciendo = false;
         recoger = true;
         
         yield return null;

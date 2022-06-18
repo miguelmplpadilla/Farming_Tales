@@ -563,7 +563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 306147709714548871, guid: 947d0c7f1c3284e4aa67dc203e9c3c38, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.277
+      value: 0.223
       objectReference: {fileID: 0}
     - target: {fileID: 306147709714548871, guid: 947d0c7f1c3284e4aa67dc203e9c3c38, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1123,30 +1123,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasPrincipal
       objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: sprs.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: tipos.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: sprs.Array.data[7]
-      value: 
-      objectReference: {fileID: 8033092973025764044, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: sprs.Array.data[8]
-      value: 
-      objectReference: {fileID: 21300000, guid: bcae5d00d38541348a2b89942dbb3ceb, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: tipos.Array.data[7]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: tipos.Array.data[8]
-      value: plantacion
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
 --- !u!4 &1703131762 stripped
@@ -1396,10 +1372,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 999866667}
     m_Modifications:
-    - target: {fileID: 2287135750613653328, guid: dbdc47887373b324998747f70a203a39, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4679543818945958668, guid: dbdc47887373b324998747f70a203a39, type: 3}
       propertyPath: m_Name
       value: Bloqueador
@@ -1615,10 +1587,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8437111795126902402, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.86299974
+      objectReference: {fileID: 0}
     - target: {fileID: 8437111795379593548, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 1398856205}
+    - target: {fileID: 8437111795379593551, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8737497525618535572, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_Name
       value: Camara

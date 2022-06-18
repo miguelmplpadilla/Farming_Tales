@@ -101,6 +101,16 @@ public class CofreController : MonoBehaviour
         abierto = true;
     }
 
+    public void mostrarInter()
+    {
+        GetComponentInChildren<InteractuarUIController>().visibleDerecho();
+    }
+
+    public void esconderInter()
+    {
+        GetComponentInChildren<InteractuarUIController>().invisibleDerecho();
+    }
+
     public void setId(string ide)
     {
         id = ide;

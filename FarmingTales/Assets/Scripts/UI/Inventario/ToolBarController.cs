@@ -108,22 +108,29 @@ public class ToolBarController : MonoBehaviour
             }
             
             posicionActual = posicionController.item;
-            
-            if (posicionController.item == "cofre" || posicionController.item == "plantacion")
+
+            if (posicionadorItem != null)
             {
-                posicionadorItem.GetComponent<PosicionadorItemController>().itemPosicionado = Resources.Load("Prefabs/Instancias/"+posicionController.item) as GameObject;
-                posicionadorItem.GetComponent<PosicionadorItemController>().posicionController = posicionController;
-            }
-            else
-            {
-                posicionadorItem.GetComponent<PosicionadorItemController>().itemPosicionado = null;
-                posicionadorItem.GetComponent<PosicionadorItemController>().posicionController = null;
+                if (posicionController.item == "cofre" || posicionController.item == "plantacion")
+                {
+                    posicionadorItem.GetComponent<PosicionadorItemController>().itemPosicionado = Resources.Load("Prefabs/Instancias/"+posicionController.item) as GameObject;
+                    posicionadorItem.GetComponent<PosicionadorItemController>().posicionController = posicionController;
+                }
+                else
+                {
+                    posicionadorItem.GetComponent<PosicionadorItemController>().itemPosicionado = null;
+                    posicionadorItem.GetComponent<PosicionadorItemController>().posicionController = null;
+                }
             }
         }
         else
         {
-            posicionadorItem.GetComponent<PosicionadorItemController>().itemPosicionado = null;
-            posicionadorItem.GetComponent<PosicionadorItemController>().posicionController = null;
+            if (posicionadorItem != null)
+            {
+                posicionadorItem.GetComponent<PosicionadorItemController>().itemPosicionado = null;
+                posicionadorItem.GetComponent<PosicionadorItemController>().posicionController = null;
+            }
+
             posicionActual = "";
         }
     }

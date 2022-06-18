@@ -99,6 +99,15 @@ public class PosicionadorItemController : MonoBehaviour
             colorTemp.a = 0.3f;
             transform.GetChild(0).GetComponent<SpriteRenderer>().color = colorTemp;
         }
+
+        if (itemPosicionado == null)
+        {
+            GetComponentInChildren<InteractuarUIController>().invisibleIzquierdo();
+        }
+        else
+        {
+            GetComponentInChildren<InteractuarUIController>().visibleIzquierdo();
+        }
     }
 
     public GameObject instanceNearest()

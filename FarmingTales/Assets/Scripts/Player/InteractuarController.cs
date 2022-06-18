@@ -34,6 +34,7 @@ public class InteractuarController : MonoBehaviour
         if (other.CompareTag("Inter"))
         {
             objInteractuado = other.gameObject;
+            other.SendMessage("mostrarInter");
             interactuar = true;
         }
     }
@@ -42,6 +43,7 @@ public class InteractuarController : MonoBehaviour
     {
         if (other.CompareTag("Inter"))
         {
+            other.SendMessage("esconderInter");
             interactuar = false;
             objInteractuado = null;
         }

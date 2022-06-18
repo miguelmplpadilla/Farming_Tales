@@ -56,7 +56,7 @@ public class InventarioController : MonoBehaviour
         }
         
         anadirInventario("plantacion", 5);
-        anadirInventario("patata", 5);
+        anadirInventario("semillaTrigo", 5);
         //anadirInventario("madera", spritePrueba, 1, null);
     }
 
