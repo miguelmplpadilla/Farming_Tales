@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class PlantacionController : MonoBehaviour
     public List<sprite> spritesTerreno = new List<sprite>();
 
     public string id = "";
+    private int estado = 1;
 
     private ToolBarController toolBarController;
     private InventarioController inventarioController;
@@ -33,14 +35,20 @@ public class PlantacionController : MonoBehaviour
     public int tiempo = 0;
 
     public int tiempoPlantacion = 150;
+    public int tiempoActualPlantacion = 0;
 
     private bool creciendo = false;
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        estado = 1;
+    }
 
     void Start()
     {
         toolBarController = GameObject.Find("ToolBar").GetComponent<ToolBarController>();
         inventarioController = GameObject.Find("ToolBar").GetComponent<InventarioController>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void inter()
@@ -67,25 +75,33 @@ public class PlantacionController : MonoBehaviour
                             toolBarController.posicionController.cantidad - 1;
                         regar = true;
                         spriteRenderer.sprite = spritesTerreno[posicionPlanta].sprites[0];
+                        guardarPlantacion();
                     }
                 }
                 else
                 {
                     regar = false;
                     creciendo = true;
+                    spriteRenderer.sprite = spritesTerreno[posicionPlanta].sprites[1];
                     StartCoroutine("crecerPlanta");
+                    guardarPlantacion();
                 }
             }
         }
         else
         {
-            inventarioController.anadirInventario(planta,cantidad);
+            if (planta == "semillaTrigo")
+            {
+                inventarioController.anadirInventario("trigo",cantidad);
+            }
+            inventarioController.anadirInventario(planta,4);
             planta = "";
             cantidad = 0;
             posicionPlanta = -1;
             spriteRenderer.sprite = terrenoSinPlanta;
             recoger = false;
             regar = false;
+            guardarPlantacion();
         }
     }
     
@@ -102,6 +118,16 @@ public class PlantacionController : MonoBehaviour
 
         if (regar)
         {
+            GetComponentInChildren<InteractuarUIController>().visibleDerecho();
+            gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = true;
+        }
+        else
+        {
+            gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = false;
+        }
+        
+        if (recoger)
+        {
             GetComponentInChildren<InteractuarUIController>().visibleDerecho();  
         }
     }
@@ -109,6 +135,7 @@ public class PlantacionController : MonoBehaviour
     public void esconderInter()
     {
         GetComponentInChildren<InteractuarUIController>().invisibleDerecho();
+        gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = false;
     }
 
     private string isInArrayPlanta()
@@ -128,19 +155,22 @@ public class PlantacionController : MonoBehaviour
 
     IEnumerator crecerPlanta()
     {
-        spriteRenderer.sprite = spritesTerreno[posicionPlanta].sprites[1];
-        for (int i = 1; i < spritesTerreno[posicionPlanta].sprites.Count; i++)
+        Debug.Log("Estado: "+estado);
+        for (int i = estado; i < spritesTerreno[posicionPlanta].sprites.Count; i++)
         {
-            for (int j = 0; j < tiempoPlantacion; j++)
+            for (int j = tiempoActualPlantacion; j < tiempoPlantacion; j++)
             {
                 yield return new WaitForSeconds(1f);
                 tiempo++;
+                tiempoActualPlantacion = j;
+                guardarPlantacion();
             }
-
             tiempo = 0;
+            estado = i;
             spriteRenderer.sprite = spritesTerreno[posicionPlanta].sprites[i];
         }
-        
+
+        estado = 1;
         creciendo = false;
         recoger = true;
         
@@ -150,5 +180,62 @@ public class PlantacionController : MonoBehaviour
     public void setId(string ide)
     {
         id = ide;
+        cargarPlantacion();
+    }
+
+    private void guardarPlantacion()
+    {
+        PlayerPrefs.SetString(id+"planta", planta);
+        PlayerPrefs.SetInt(id+"cantidad", cantidad);
+        PlayerPrefs.SetInt(id+"estado", estado);
+        PlayerPrefs.SetInt(id+"tiempoActual", tiempoActualPlantacion);
+        if (creciendo)
+        {
+            PlayerPrefs.SetInt(id+"creciendo",1);
+        } else
+        {
+            PlayerPrefs.SetInt(id+"creciendo",0);
+        }
+        PlayerPrefs.Save();
+    }
+
+    private void cargarPlantacion()
+    {
+        planta = PlayerPrefs.GetString(id+"planta");
+
+        if (planta != "")
+        {
+            cantidad = PlayerPrefs.GetInt(id+"cantidad");
+            estado = PlayerPrefs.GetInt(id+"estado");
+            tiempoActualPlantacion = PlayerPrefs.GetInt(id+"tiempoActual");
+
+            if (PlayerPrefs.GetInt(id+"creciendo") == 1)
+            {
+                creciendo = true;
+            } else
+            {
+                creciendo = false;
+            }
+            
+            for (int i = 0; i < spritesTerreno.Count; i++)
+            {
+                if (spritesTerreno[i].id == planta)
+                {
+                    cantidad = spritesTerreno[i].cantidad;
+                    posicionPlanta = i;
+                }
+            }
+
+            if (creciendo)
+            {
+                spriteRenderer.sprite = spritesTerreno[posicionPlanta].sprites[estado];
+                StartCoroutine("crecerPlanta");
+            }
+            else
+            {
+                regar = true;
+                spriteRenderer.sprite = spritesTerreno[posicionPlanta].sprites[0];
+            }
+        }
     }
 }

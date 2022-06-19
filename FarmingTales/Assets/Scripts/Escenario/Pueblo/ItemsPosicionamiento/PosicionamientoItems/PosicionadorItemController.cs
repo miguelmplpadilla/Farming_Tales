@@ -36,7 +36,7 @@ public class PosicionadorItemController : MonoBehaviour
         
         inventario = GameObject.Find("Inventario");
         
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
     }
 
     private void Update()
