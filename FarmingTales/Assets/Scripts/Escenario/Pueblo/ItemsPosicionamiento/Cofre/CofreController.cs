@@ -45,10 +45,15 @@ public class CofreController : MonoBehaviour
         player = GameObject.Find("Player");
         
         inventarioController = GameObject.Find("ToolBar").GetComponent<InventarioController>();
+
+        Debug.Log("ide: "+id);
         
-        if (PlayerPrefs.HasKey(id+0))
+        if (id != "")
         {
-            cargarInventario();
+            if (PlayerPrefs.HasKey(id+0))
+            {
+                cargarInventario();
+            }
         }
     }
 

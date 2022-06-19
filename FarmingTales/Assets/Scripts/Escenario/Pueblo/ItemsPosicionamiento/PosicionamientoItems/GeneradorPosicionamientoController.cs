@@ -29,9 +29,4 @@ public class GeneradorPosicionamientoController : MonoBehaviour
             puntoGeneracion = new Vector2(puntoGeneracion.x + 0.7f, puntoGeneracion.y);
         }
     }
-
-    private void Start()
-    {
-        
-    }
 }

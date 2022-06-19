@@ -76,6 +76,8 @@ public class PosicionadorItemController : MonoBehaviour
 
                     punto.GetComponent<PuntoGeneradoController>().tipo = posicionController.item;
                     punto.GetComponent<PuntoGeneradoController>().ocupado = true;
+                    
+                    item.SendMessage("setId", posicionController.item + contarOcupados() + SceneManager.GetActiveScene().name);
 
                     posicionController.cantidad = posicionController.cantidad - 1;
                     if (posicionController.cantidad == 0)
@@ -156,8 +158,25 @@ public class PosicionadorItemController : MonoBehaviour
 
                 itemGenerado.transform.position = puntos[i].transform.position;
                 
-                itemGenerado.SendMessage("setId", puntos[i].GetComponent<PuntoGeneradoController>().tipo + i + SceneManager.GetActiveScene().name);
+                itemGenerado.SendMessage("setId", puntos[i].GetComponent<PuntoGeneradoController>().tipo + (i+1) + SceneManager.GetActiveScene().name);
+
+                Debug.Log(puntos[i].GetComponent<PuntoGeneradoController>().tipo + (i+1) + SceneManager.GetActiveScene().name);
             }
         }
+    }
+
+    public int contarOcupados()
+    {
+        int num = 0;
+        
+        for (int i = 0; i < puntos.Length; i++)
+        {
+            if (puntos[i].GetComponent<PuntoGeneradoController>().tipo != "")
+            {
+                num++;
+            }
+        }
+
+        return num;
     }
 }
