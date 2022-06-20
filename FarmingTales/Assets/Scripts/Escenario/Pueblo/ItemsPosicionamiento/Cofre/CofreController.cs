@@ -23,6 +23,8 @@ public class CofreController : MonoBehaviour
 
     private Animator animator;
 
+    public Vector2 posicionInventario;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -94,7 +96,8 @@ public class CofreController : MonoBehaviour
             inventarioCofreController.posiciones[i].GetComponent<Image>().sprite =
                 posicionInventarioCofres[i].sprite;
         }
-        
+
+        rectTransformInventario.transform.localPosition = posicionInventario;
         rectTransformInventario.localScale = new Vector3(1, 1, 1);
         rectTransformRaton.localScale = new Vector3(1, 1, 1);
         inventarioCofreController.gameObject.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);

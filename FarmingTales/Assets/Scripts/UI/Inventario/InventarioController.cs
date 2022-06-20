@@ -24,6 +24,8 @@ public class InventarioController : MonoBehaviour
 
     public string[] tipos;
     public Sprite[] sprs;
+    
+    public Vector2 posicionOriginal;
 
     public IDictionary<string, Sprite> sprites = new Dictionary<string, Sprite>();
 
@@ -71,6 +73,9 @@ public class InventarioController : MonoBehaviour
         {
             if (rectTransformInventario.localScale.x == 0)
             {
+
+                rectTransformInventario.transform.localPosition = posicionOriginal;
+                
                 rectTransformInventario.localScale = new Vector3(1, 1, 1);
                 rectTransformRaton.localScale = new Vector3(1, 1, 1);
 
