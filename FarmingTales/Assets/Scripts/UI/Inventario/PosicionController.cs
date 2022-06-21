@@ -22,6 +22,7 @@ public class PosicionController : MonoBehaviour, IPointerUpHandler, IPointerDown
 
     private InventarioController inventarioController;
     private InventarioCofreController inventarioCofreController;
+    private InventarioCofreController inventarioCofreExteriorController;
 
     public bool isPosicionCofre = false;
 
@@ -31,6 +32,7 @@ public class PosicionController : MonoBehaviour, IPointerUpHandler, IPointerDown
         raton = GameObject.Find("Raton");
         inventarioController = GameObject.Find("ToolBar").GetComponent<InventarioController>();
         inventarioCofreController = GameObject.Find("InventarioCofre").GetComponent<InventarioCofreController>();
+        inventarioCofreExteriorController = GameObject.Find("InvetarioCofreExterior").GetComponent<InventarioCofreController>();
     }
 
     private void Start()
@@ -123,7 +125,7 @@ public class PosicionController : MonoBehaviour, IPointerUpHandler, IPointerDown
         {
             if (raton.GetComponent<RectTransform>().localScale.x != 0)
             {
-                if (inventarioCofreController.GetComponent<RectTransform>().localScale.x <= 0)
+                if (inventarioCofreController.GetComponent<RectTransform>().localScale.x <= 0 && inventarioCofreExteriorController.GetComponent<RectTransform>().localScale.x <= 0)
                 {
                     int resto = inventarioController.anadirSoloInventario(item, GetComponent<Image>().sprite, cantidad, gameObject);
 
@@ -142,7 +144,17 @@ public class PosicionController : MonoBehaviour, IPointerUpHandler, IPointerDown
                 {
                     if (!isPosicionCofre)
                     {
-                        int resto = inventarioCofreController.anadirInventario(item, GetComponent<Image>().sprite, cantidad, gameObject);
+                        int resto = 0;
+                        
+                        if (inventarioCofreController.GetComponent<RectTransform>().localScale.x > 0)
+                        {
+                            resto = inventarioCofreController.anadirInventario(item, GetComponent<Image>().sprite, cantidad, gameObject);
+                        } 
+                        
+                        if (inventarioCofreExteriorController.GetComponent<RectTransform>().localScale.x > 0)
+                        {
+                            resto = inventarioCofreExteriorController.anadirInventario(item, GetComponent<Image>().sprite, cantidad, gameObject);
+                        }
 
                         if (resto == 0)
                         {

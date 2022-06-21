@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CofreController : MonoBehaviour
 {
 
     public string id = "";
+    public bool cofreExterior = false;
     
     public PosicionInventarioCofre[] posicionInventarioCofres;
     private InventarioCofreController inventarioCofreController;
@@ -32,7 +34,14 @@ public class CofreController : MonoBehaviour
 
     private void Start()
     {
-        inventarioCofreController = GameObject.Find("InventarioCofre").GetComponent<InventarioCofreController>();
+        if (!cofreExterior)
+        {
+            inventarioCofreController = GameObject.Find("InventarioCofre").GetComponent<InventarioCofreController>();
+        }
+        else
+        {
+            inventarioCofreController = GameObject.Find("InvetarioCofreExterior").GetComponent<InventarioCofreController>();
+        }
 
         posicionInventarioCofres = new PosicionInventarioCofre[inventarioCofreController.posiciones.Length];
 
@@ -48,7 +57,10 @@ public class CofreController : MonoBehaviour
         
         inventarioController = GameObject.Find("ToolBar").GetComponent<InventarioController>();
 
-        Debug.Log("ide: "+id);
+        if (cofreExterior)
+        {
+            id = "cofreExterior" + SceneManager.GetActiveScene().name;
+        }
         
         if (id != "")
         {
@@ -136,13 +148,16 @@ public class CofreController : MonoBehaviour
 
     public void cargarInventario()
     {
-        for (int i = 0; i < posicionInventarioCofres.Length; i++)
+        if (PlayerPrefs.HasKey(id+0))
         {
-            string[] datos = PlayerPrefs.GetString(id+i).Split(',');
-            posicionInventarioCofres[i].item = datos[0];
-            posicionInventarioCofres[i].cantidad = int.Parse(datos[1]);
+            for (int i = 0; i < posicionInventarioCofres.Length; i++)
+            {
+                string[] datos = PlayerPrefs.GetString(id+i).Split(',');
+                posicionInventarioCofres[i].item = datos[0];
+                posicionInventarioCofres[i].cantidad = int.Parse(datos[1]);
 
-            posicionInventarioCofres[i].sprite = inventarioController.sprites[datos[0]];
+                posicionInventarioCofres[i].sprite = inventarioController.sprites[datos[0]];
+            }
         }
     }
 }
