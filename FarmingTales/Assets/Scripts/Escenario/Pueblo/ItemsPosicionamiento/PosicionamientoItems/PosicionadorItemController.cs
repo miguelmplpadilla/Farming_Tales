@@ -42,7 +42,7 @@ public class PosicionadorItemController : MonoBehaviour
     private void Update()
     {
 
-        if (GetComponent<SpriteRenderer>().sprite == null && itemPosicionado != null)
+        if (itemPosicionado != null && GetComponent<SpriteRenderer>().sprite != itemPosicionado.GetComponent<SpriteRenderer>().sprite)
         {
             GetComponent<SpriteRenderer>().sprite = itemPosicionado.GetComponent<SpriteRenderer>().sprite;
             transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;

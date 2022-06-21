@@ -31,10 +31,14 @@ public class InventarioController : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.visible = false;
+        
         for (int i = 0; i < tipos.Length; i++)
         {
             sprites.Add(tipos[i],sprs[i]);
         }
+        
+        PlayerPrefs.DeleteAll();
     }
 
     private void Start()
@@ -63,8 +67,6 @@ public class InventarioController : MonoBehaviour
         anadirInventario("patata", 5);
         anadirInventario("zanahoria", 5);
         //anadirInventario("madera", spritePrueba, 1, null);
-        
-        //PlayerPrefs.DeleteAll();
     }
 
     private void Update()
