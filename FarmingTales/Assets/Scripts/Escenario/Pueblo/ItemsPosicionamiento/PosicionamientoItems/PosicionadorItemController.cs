@@ -80,19 +80,20 @@ public class PosicionadorItemController : MonoBehaviour
                         if (puntos[i].GetComponent<PuntoGeneradoController>().ocupado == false)
                         {
                             contValla++;
+
+                            if (contValla == 3)
+                            {
+                                break;
+                            }
                         }
                         else
                         {
                             ocupadoValla = true;
                             break;
                         }
-                        
-                        if (contValla == 3) ;
-                        {
-                            ocupadoValla = false;
-                            break;
-                        }
                     }
+
+                    Debug.Log("Ocupado: "+ocupadoValla);
                 }
                 else
                 {
@@ -125,6 +126,7 @@ public class PosicionadorItemController : MonoBehaviour
                             contarOcupados() + SceneManager.GetActiveScene().name;
 
                         puntos[posicionPunto + 1].GetComponent<PuntoGeneradoController>().ocupado = true;
+                        puntos[posicionPunto + 1].GetComponent<PuntoGeneradoController>().tipo = "granjaPosicion";
                         
                         GameObject granja2 = Instantiate(Resources.Load("Prefabs/Instancias/granjaPosicion") as GameObject);
                         granja1.transform.position = puntos[posicionPunto + 2].transform.position;
@@ -132,6 +134,7 @@ public class PosicionadorItemController : MonoBehaviour
                             contarOcupados() + SceneManager.GetActiveScene().name;
                         
                         puntos[posicionPunto + 2].GetComponent<PuntoGeneradoController>().ocupado = true;
+                        puntos[posicionPunto + 2].GetComponent<PuntoGeneradoController>().tipo = "granjaPosicion";
 
                     }
 
