@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795746245295965884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.471198, y: 0.47926462, z: 0}
-  m_LocalScale: {x: 0.6530612, y: 1, z: 1}
+  m_LocalPosition: {x: 11.5176, y: 0.47926462, z: 0}
+  m_LocalScale: {x: 1.0041746, y: 0.9948294, z: 1.3205792}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a35f18b03f41ab647b727dec7d5788ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntoPosicionado: 0
+  id: 
 --- !u!212 &277752507667146607
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -84,12 +86,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a42fb12309ccc4d44b7a769913933e58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5165c7f1752023048ba0300963f772ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 2
-  m_Size: {x: 0.8, y: 0.45}
+  m_DrawMode: 0
+  m_Size: {x: 1.92, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

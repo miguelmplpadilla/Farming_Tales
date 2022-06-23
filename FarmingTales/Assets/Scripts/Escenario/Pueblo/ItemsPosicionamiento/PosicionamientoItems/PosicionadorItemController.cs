@@ -65,7 +65,43 @@ public class PosicionadorItemController : MonoBehaviour
         
         transform.position = posicion;
 
-        if (distancia <= 1f && punto.GetComponent<PuntoGeneradoController>().ocupado == false && inventario.GetComponent<RectTransform>().localScale.x == 0)
+        bool ocupadoValla = false;
+        
+        if (itemPosicionado != null)
+        {
+            if (itemPosicionado.name == "valla")
+            {
+                if (punto.GetComponent<PuntoGeneradoController>().ocupado == false)
+                {
+                    int posPunto = punto.GetComponent<PuntoGeneradoController>().posicion;
+                    int contValla = 0;
+                    for (int i = posPunto; i < puntos.Length; i++)
+                    {
+                        if (puntos[i].GetComponent<PuntoGeneradoController>().ocupado == false)
+                        {
+                            contValla++;
+                        }
+                        else
+                        {
+                            ocupadoValla = true;
+                            break;
+                        }
+                        
+                        if (contValla == 3) ;
+                        {
+                            ocupadoValla = false;
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    ocupadoValla = true;
+                }
+            }
+        }
+
+        if (distancia <= 1f && punto.GetComponent<PuntoGeneradoController>().ocupado == false && inventario.GetComponent<RectTransform>().localScale.x == 0 && ocupadoValla == false)
         {
             if (Input.GetButtonDown("Fire1"))
             {
@@ -78,6 +114,26 @@ public class PosicionadorItemController : MonoBehaviour
                     punto.GetComponent<PuntoGeneradoController>().ocupado = true;
                     
                     item.SendMessage("setId", posicionController.item + contarOcupados() + SceneManager.GetActiveScene().name);
+
+                    if (posicionController.item == "valla")
+                    {
+                        int posicionPunto = punto.GetComponent<PuntoGeneradoController>().posicion;
+                        
+                        GameObject granja1 = Instantiate(Resources.Load("Prefabs/Instancias/granjaPosicion") as GameObject);
+                        granja1.transform.position = puntos[posicionPunto + 1].transform.position;
+                        granja1.GetComponent<GranjaPosicionController>().idGranja = posicionController.item +
+                            contarOcupados() + SceneManager.GetActiveScene().name;
+
+                        puntos[posicionPunto + 1].GetComponent<PuntoGeneradoController>().ocupado = true;
+                        
+                        GameObject granja2 = Instantiate(Resources.Load("Prefabs/Instancias/granjaPosicion") as GameObject);
+                        granja1.transform.position = puntos[posicionPunto + 2].transform.position;
+                        granja2.GetComponent<GranjaPosicionController>().idGranja = posicionController.item +
+                            contarOcupados() + SceneManager.GetActiveScene().name;
+                        
+                        puntos[posicionPunto + 2].GetComponent<PuntoGeneradoController>().ocupado = true;
+
+                    }
 
                     posicionController.cantidad = posicionController.cantidad - 1;
                     if (posicionController.cantidad == 0)

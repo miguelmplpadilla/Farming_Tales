@@ -6,4 +6,5 @@ public class PuntoGeneradoController : MonoBehaviour
 {
     public string tipo = "";
     public bool ocupado = false;
+    public int posicion = 0;
 }

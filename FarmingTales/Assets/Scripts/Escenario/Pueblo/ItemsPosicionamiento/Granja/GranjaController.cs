@@ -10,15 +10,23 @@ public class GranjaController : MonoBehaviour
     private GameObject posicionadorItem;
     public int puntoPosicionado;
 
+    public string id = "";
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         posicionadorItem = GameObject.Find("PosicionadorItem");
+        //spriteRenderer.size = new Vector2(spriteRenderer.size.x * 3, spriteRenderer.size.y);
+    }
+
+    public void setId(string ide)
+    {
+        id = ide;
     }
 
     void Update()
     {
-        float distancia = Vector3.Distance(transform.position, posicionadorItem.transform.position);
+        /*float distancia = Vector3.Distance(transform.position, posicionadorItem.transform.position);
         
         Debug.Log("Distancia: "+distancia);
         
@@ -37,7 +45,7 @@ public class GranjaController : MonoBehaviour
         else
         {
             spriteRenderer.size = new Vector2(0.8f, 0.45f);
-        }
+        }*/
         
     }
 }

@@ -25,6 +25,7 @@ public class GeneradorPosicionamientoController : MonoBehaviour
             puntos[i] = Instantiate(punto);
 
             puntos[i].transform.position = puntoGeneracion;
+            puntos[i].GetComponent<PuntoGeneradoController>().posicion = i;
 
             puntoGeneracion = new Vector2(puntoGeneracion.x + 0.7f, puntoGeneracion.y);
         }
