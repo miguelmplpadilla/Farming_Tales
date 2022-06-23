@@ -64,6 +64,16 @@ public class AttackController : MonoBehaviour
                     }
                 }
             }
+            
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                playerController.movement = Vector2.zero;
+                rigidbody.velocity = Vector2.zero;
+                animator.SetInteger("golpe", 1);
+                animator.SetTrigger("golpear");
+                player.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+                playerController.isAttacking = true;
+            }
         }
     }
 

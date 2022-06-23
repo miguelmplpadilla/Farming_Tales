@@ -155,7 +155,6 @@ public class PlantacionController : MonoBehaviour
 
     IEnumerator crecerPlanta()
     {
-        Debug.Log("Estado: "+estado);
         for (int i = estado; i < spritesTerreno[posicionPlanta].sprites.Count; i++)
         {
             for (int j = tiempoActualPlantacion; j < tiempoPlantacion; j++)

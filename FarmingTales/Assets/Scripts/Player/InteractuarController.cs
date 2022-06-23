@@ -9,10 +9,14 @@ public class InteractuarController : MonoBehaviour
     private bool interactuar = false;
     private GameObject objInteractuado;
     private PlayerController playerController;
+    private Rigidbody2D rigidbody;
+    private Animator animator;
 
     private void Awake()
     {
         playerController = transform.parent.GetComponent<PlayerController>();
+        rigidbody = transform.parent.GetComponent<Rigidbody2D>();
+        animator = transform.parent.GetComponent<Animator>();
     }
 
     void Update()
@@ -47,5 +51,17 @@ public class InteractuarController : MonoBehaviour
             interactuar = false;
             objInteractuado = null;
         }
+    }
+    
+    public void stopAtack()
+    {
+        StartCoroutine("stopAtackEnum");
+    }
+
+    IEnumerator stopAtackEnum()
+    {
+        yield return new WaitForSeconds(0.1f);
+        gameObject.transform.parent.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
+        playerController.isAttacking = false;
     }
 }

@@ -31,7 +31,7 @@ public class InventarioController : MonoBehaviour
 
     private void Awake()
     {
-        Cursor.visible = false;
+        //Cursor.visible = false;
         
         for (int i = 0; i < tipos.Length; i++)
         {
@@ -61,11 +61,12 @@ public class InventarioController : MonoBehaviour
             cargarInventarioDinero();
         }
         
-        anadirInventario("plantacion", 5);
+        //anadirInventario("plantacion", 5);
         anadirInventario("cofre", 5);
-        anadirInventario("semillaTrigo", 5);
-        anadirInventario("patata", 5);
-        anadirInventario("zanahoria", 5);
+        anadirInventario("valla", 5);
+        //nadirInventario("semillaTrigo", 5);
+        //anadirInventario("patata", 5);
+        //anadirInventario("zanahoria", 5);
         //anadirInventario("madera", spritePrueba, 1, null);
     }
 
