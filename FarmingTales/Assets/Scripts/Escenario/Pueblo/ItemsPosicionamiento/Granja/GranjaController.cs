@@ -16,7 +16,6 @@ public class GranjaController : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         posicionadorItem = GameObject.Find("PosicionadorItem");
-        //spriteRenderer.size = new Vector2(spriteRenderer.size.x * 3, spriteRenderer.size.y);
     }
 
     public void setId(string ide)
@@ -26,26 +25,21 @@ public class GranjaController : MonoBehaviour
 
     void Update()
     {
-        /*float distancia = Vector3.Distance(transform.position, posicionadorItem.transform.position);
         
-        Debug.Log("Distancia: "+distancia);
+    }
+
+    public void inter()
+    {
         
-        if (transform.position.x < posicionadorItem.transform.position.x)
-        {
-            if (Vector3.Distance(transform.position, posicionadorItem.transform.position) == 0)
-            {
-                spriteRenderer.size = new Vector2(0.8f, 0.45f);
-            }
-            else
-            {
-                float tamanoX = (float)Math.Round(0.8f * distancia, 2);
-                spriteRenderer.size = new Vector2(tamanoX*2, 0.45f);
-            }
-        }
-        else
-        {
-            spriteRenderer.size = new Vector2(0.8f, 0.45f);
-        }*/
-        
+    }
+
+    public void mostrarInter()
+    {
+        GetComponentInChildren<InteractuarUIController>().visibleDerecho();
+    }
+
+    public void esconderInter()
+    {
+        GetComponentInChildren<InteractuarUIController>().invisibleDerecho();
     }
 }

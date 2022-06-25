@@ -266,8 +266,6 @@ public class InventarioController : MonoBehaviour
             posicionController.item = datos[0];
             posicionController.cantidad = int.Parse(datos[1]);
 
-            //Debug.Log("Tipo: "+datos[0]);
-
             posicionController.GetComponent<Image>().sprite = sprites[datos[0]];
         }
 
