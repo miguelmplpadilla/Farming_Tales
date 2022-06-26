@@ -17,11 +17,11 @@ public class ComidaController : MonoBehaviour, IPointerDownHandler
     
     public IDictionary<string, int> comidaCantidad = new Dictionary<string, int>();
 
-    public int porcentageComida = 0;
-
     public Color color;
 
     private bool cofreAbierto = false;
+
+    public GameObject granja;
 
     private void Awake()
     {
@@ -34,11 +34,16 @@ public class ComidaController : MonoBehaviour, IPointerDownHandler
         }
     }
 
+    public void setGranja(GameObject g)
+    {
+        granja = g;
+    }
+
     public void OnPointerDown(PointerEventData eventData)
     {
         PosicionRatonController posicionRatonController = posicionRaton.GetComponent<PosicionRatonController>();
 
-        if (porcentageComida < 100)
+        if (granja != null && granja.GetComponent<GranjaController>().porcentageComida < 100)
         {
             if (comidaCantidad[posicionRatonController.item] != 0)
             {
@@ -51,18 +56,23 @@ public class ComidaController : MonoBehaviour, IPointerDownHandler
                     posicionRaton.GetComponent<Image>().sprite = null;
                 }
 
-                porcentageComida = porcentageComida + comidaCantidad[posicionRatonController.item];
+                granja.GetComponent<GranjaController>().porcentageComida = granja.GetComponent<GranjaController>().porcentageComida + comidaCantidad[posicionRatonController.item];
 
-                if (porcentageComida > 100)
+                if (granja.GetComponent<GranjaController>().porcentageComida > 100)
                 {
-                    porcentageComida = 100;
+                    granja.GetComponent<GranjaController>().porcentageComida = 100;
                 }
-
-                float barraComidaX = (52f * porcentageComida) / 100f;
-
-                barraComida.GetComponent<RectTransform>().sizeDelta = new Vector2(barraComidaX, 7.4995f);
-
             }
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (granja != null)
+        {
+            float barraComidaX = (52f * granja.GetComponent<GranjaController>().porcentageComida) / 100f;
+
+            barraComida.GetComponent<RectTransform>().sizeDelta = new Vector2(barraComidaX, 7.4995f);
         }
     }
 }

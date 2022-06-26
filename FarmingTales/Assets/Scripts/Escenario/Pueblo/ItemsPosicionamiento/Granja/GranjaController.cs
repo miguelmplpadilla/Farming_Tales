@@ -9,10 +9,11 @@ public class GranjaController : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
     
-    private GameObject posicionadorItem;
+    private GameObject toolBar;
     private GameObject inventarioGranja;
     private GameObject player;
     private GameObject inventario;
+    private GameObject comida;
     
     public PosicionInventarioCofre[] posicionesInventarioGranja;
     
@@ -27,10 +28,11 @@ public class GranjaController : MonoBehaviour
 
     private bool abierto = false;
 
+    public int porcentageComida = 0;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        posicionadorItem = GameObject.Find("PosicionadorItem");
         inventarioGranja = GameObject.Find("InventarioGranja");
     }
 
@@ -40,6 +42,8 @@ public class GranjaController : MonoBehaviour
         rectTransformRaton = GameObject.Find("Raton").GetComponent<RectTransform>();
         player = GameObject.Find("Player");
         inventario = GameObject.Find("Inventario");
+        toolBar = GameObject.Find("ToolBar");
+        comida = GameObject.Find("Comida");
         
         posicionesInventarioGranja = new PosicionInventarioCofre[inventarioGranja.GetComponent<InventarioGranjaController>().posiciones.Length];
 
@@ -55,6 +59,8 @@ public class GranjaController : MonoBehaviour
                 cargarInventario();
             }
         }
+
+        Instantiate(Resources.Load("Prefabs/Instancias/Animales/gallina") as GameObject).GetComponent<GallinaController>().granja = gameObject;
     }
     
     private void Update()
@@ -78,6 +84,28 @@ public class GranjaController : MonoBehaviour
                 
                 abierto = false;
             }
+        }
+    }
+
+    public void guardarItemGranja(string tipoItem, int cantidadItem)
+    {
+        for (int i = 0; i < inventarioGranja.GetComponent<InventarioGranjaController>().posiciones.Length; i++)
+        {
+            inventarioGranja.GetComponent<InventarioGranjaController>().posiciones[i].GetComponent<PosicionController>().item =
+                posicionesInventarioGranja[i].item;
+            inventarioGranja.GetComponent<InventarioGranjaController>().posiciones[i].GetComponent<PosicionController>().cantidad =
+                posicionesInventarioGranja[i].cantidad;
+            inventarioGranja.GetComponent<InventarioGranjaController>().posiciones[i].GetComponent<Image>().sprite =
+                posicionesInventarioGranja[i].sprite;
+        }
+
+        inventarioGranja.GetComponent<InventarioGranjaController>().anadirInventario(tipoItem, cantidadItem);
+    
+        for (int i = 0; i < posicionesInventarioGranja.Length; i++)
+        {
+            posicionesInventarioGranja[i].item = inventarioGranja.GetComponent<InventarioGranjaController>().posiciones[i].GetComponent<PosicionController>().item;
+            posicionesInventarioGranja[i].cantidad = inventarioGranja.GetComponent<InventarioGranjaController>().posiciones[i].GetComponent<PosicionController>().cantidad;
+            posicionesInventarioGranja[i].sprite = inventarioGranja.GetComponent<InventarioGranjaController>().posiciones[i].GetComponent<Image>().sprite;
         }
     }
 
@@ -106,7 +134,7 @@ public class GranjaController : MonoBehaviour
                 posicionesInventarioGranja[i].item = datos[0];
                 posicionesInventarioGranja[i].cantidad = int.Parse(datos[1]);
 
-                posicionesInventarioGranja[i].sprite = inventario.GetComponent<InventarioController>().sprites[datos[0]];
+                posicionesInventarioGranja[i].sprite = toolBar.GetComponent<InventarioController>().sprites[datos[0]];
             }
         }
     }
@@ -124,6 +152,7 @@ public class GranjaController : MonoBehaviour
                 posicionesInventarioGranja[i].sprite;
         }
 
+        comida.GetComponent<ComidaController>().setGranja(gameObject);
         rectTransformInventario.transform.localPosition = posicionInventario;
         rectTransformInventario.localScale = new Vector3(1, 1, 1);
         rectTransformRaton.localScale = new Vector3(1, 1, 1);

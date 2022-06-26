@@ -10,7 +10,7 @@ public class InventarioGranjaController : MonoBehaviour
     
     public GameObject[] posiciones;
 
-    public int anadirInventario(string tipo, Sprite sprite, int cantidad, GameObject other)
+    public int anadirInventario(string tipo, int cantidad)
     {
         
         for (int i = 0; i < posiciones.Length; i++)
@@ -49,7 +49,6 @@ public class InventarioGranjaController : MonoBehaviour
                         posiciones[i].GetComponentInChildren<TextMeshProUGUI>().text =
                             posiciones[i].GetComponent<PosicionController>().cantidad.ToString();
                         cantidad = 0;
-                        posiciones[i].GetComponent<Image>().sprite = sprite;
                         break;
                     }
                     else
@@ -58,7 +57,6 @@ public class InventarioGranjaController : MonoBehaviour
                         posiciones[i].GetComponentInChildren<TextMeshProUGUI>().text =
                             posiciones[i].GetComponent<PosicionController>().cantidad.ToString();
                         cantidad = cantidad - 128;
-                        posiciones[i].GetComponent<Image>().sprite = sprite;
                     }
                 }
             }

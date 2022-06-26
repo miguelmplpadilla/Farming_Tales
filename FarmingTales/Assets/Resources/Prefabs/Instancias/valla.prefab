@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puntoPosicionado: 0
+  posicionInventario: {x: -169.8, y: 53.6}
   id: 
 --- !u!212 &277752507667146607
 SpriteRenderer:
