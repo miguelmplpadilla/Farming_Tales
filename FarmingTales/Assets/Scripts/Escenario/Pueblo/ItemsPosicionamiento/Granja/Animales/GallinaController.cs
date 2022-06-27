@@ -7,7 +7,7 @@ public class GallinaController : MonoBehaviour
 {
 
     public GameObject granja;
-
+    
     public int tiempoPoner = 450;
     public int tiempoPonerTranscurrido = 0;
 

@@ -3145,8 +3145,8 @@ MonoBehaviour:
   - trigo
   - semillasTrigo
   numComida: 03000000070000000500000001000000
-  porcentageComida: 0
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
+  granja: {fileID: 0}
 --- !u!222 &9157587747773265457
 CanvasRenderer:
   m_ObjectHideFlags: 0

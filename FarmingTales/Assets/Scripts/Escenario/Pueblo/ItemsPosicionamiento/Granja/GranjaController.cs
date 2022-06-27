@@ -60,7 +60,11 @@ public class GranjaController : MonoBehaviour
             }
         }
 
-        Instantiate(Resources.Load("Prefabs/Instancias/Animales/gallina") as GameObject).GetComponent<GallinaController>().granja = gameObject;
+        GameObject gallina = Instantiate(Resources.Load("Prefabs/Instancias/Animales/gallina") as GameObject);
+        gallina.GetComponent<GallinaController>().granja = gameObject;
+        gallina.transform.position = transform.position;
+
+
     }
     
     private void Update()

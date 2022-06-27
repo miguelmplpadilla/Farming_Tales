@@ -50,6 +50,7 @@ MonoBehaviour:
   puntoPosicionado: 0
   posicionInventario: {x: -169.8, y: 53.6}
   id: 
+  porcentageComida: 0
 --- !u!212 &277752507667146607
 SpriteRenderer:
   m_ObjectHideFlags: 0
