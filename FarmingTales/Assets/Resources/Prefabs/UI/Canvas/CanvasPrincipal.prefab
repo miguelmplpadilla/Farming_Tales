@@ -14487,23 +14487,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8555862904307895175, guid: 85fa64533981540428a0a47ada1aa5d2, type: 3}
       propertyPath: isPosicionCofre
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8555862904385293505, guid: 85fa64533981540428a0a47ada1aa5d2, type: 3}
       propertyPath: isPosicionCofre
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8555862904435497123, guid: 85fa64533981540428a0a47ada1aa5d2, type: 3}
       propertyPath: isPosicionCofre
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8555862905110943371, guid: 85fa64533981540428a0a47ada1aa5d2, type: 3}
       propertyPath: isPosicionCofre
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8555862905948607038, guid: 85fa64533981540428a0a47ada1aa5d2, type: 3}
       propertyPath: isPosicionCofre
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8555862905980892663, guid: 85fa64533981540428a0a47ada1aa5d2, type: 3}
       propertyPath: m_Pivot.x
@@ -14599,15 +14599,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8555862905982353580, guid: 85fa64533981540428a0a47ada1aa5d2, type: 3}
       propertyPath: isPosicionCofre
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8555862906007361383, guid: 85fa64533981540428a0a47ada1aa5d2, type: 3}
       propertyPath: isPosicionCofre
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8555862906021745043, guid: 85fa64533981540428a0a47ada1aa5d2, type: 3}
       propertyPath: isPosicionCofre
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85fa64533981540428a0a47ada1aa5d2, type: 3}
