@@ -55,26 +55,29 @@ public class IncubadoraController : MonoBehaviour, IPointerDownHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         PosicionRatonController posicionRatonController = posicionRaton.GetComponent<PosicionRatonController>();
-
+        
         if (posicionRatonController.item != "")
         {
             if (posicionRatonController.item == "huevoFecundado")
             {
                 if (granjaIncubadora.item == "")
                 {
-                    granjaIncubadora.item = "huevoFecundado";
-                    granjaIncubadora.cantidad = 1;
-
-                    incubando = true;
-
-                    granjaIncubadora.startIncubar();
-
-                    posicionRatonController.cantidad = posicionRatonController.cantidad - 1;
-
-                    if (posicionRatonController.cantidad <= 0)
+                    if (granjaIncubadora.gameObject.GetComponent<GranjaController>().cantidadAnimales[0] + granjaIncubadora.gameObject.GetComponent<GranjaController>().cantidadAnimales[1] < 6)
                     {
-                        posicionRatonController.item = "";
-                        posicionRatonController.cantidad = 0;
+                        granjaIncubadora.item = "huevoFecundado";
+                        granjaIncubadora.cantidad = 1;
+
+                        incubando = true;
+
+                        granjaIncubadora.startIncubar();
+
+                        posicionRatonController.cantidad = posicionRatonController.cantidad - 1;
+
+                        if (posicionRatonController.cantidad <= 0)
+                        {
+                            posicionRatonController.item = "";
+                            posicionRatonController.cantidad = 0;
+                        }
                     }
                 }
                 else

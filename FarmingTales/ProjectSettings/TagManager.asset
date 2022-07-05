@@ -13,6 +13,7 @@ TagManager:
   - sueloBosque
   - suelo
   - Inter
+  - paredGranja
   layers:
   - Default
   - TransparentFX

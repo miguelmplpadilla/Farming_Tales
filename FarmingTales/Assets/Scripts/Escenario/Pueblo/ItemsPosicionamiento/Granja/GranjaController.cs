@@ -23,7 +23,7 @@ public class GranjaController : MonoBehaviour
     private RectTransform rectTransformInventario;
     private RectTransform rectTransformRaton;
     private List<TextMeshProUGUI> numAnimales = new List<TextMeshProUGUI>();
-    private int[] cantidadAnimales = new int[2];
+    public int[] cantidadAnimales = new int[2];
     
     public int puntoPosicionado;
     
@@ -65,17 +65,21 @@ public class GranjaController : MonoBehaviour
                 cargarInventario();
             }
         }
+        Vector2 posicionamientoAnimal = new Vector2(transform.position.x + 1f, transform.position.y);
 
-        GameObject gallina = Instantiate(Resources.Load("Prefabs/Instancias/Animales/gallina") as GameObject);
-        animales.Add(gallina);
-        gallina.GetComponent<GallinaController>().granja = gameObject;
-        gallina.transform.position = transform.position;
-        
-        GameObject vaca = Instantiate(Resources.Load("Prefabs/Instancias/Animales/vaca") as GameObject);
-        animales.Add(vaca);
-        vaca.GetComponent<VacaController>().granja = gameObject;
-        vaca.transform.position = transform.position;
-        
+        for (int i = 0; i < 2; i++)
+        {
+            GameObject gallina = Instantiate(Resources.Load("Prefabs/Instancias/Animales/gallina") as GameObject);
+            animales.Add(gallina);
+            gallina.GetComponent<GallinaController>().granja = gameObject;
+            gallina.transform.position = posicionamientoAnimal;
+    
+            GameObject vaca = Instantiate(Resources.Load("Prefabs/Instancias/Animales/vaca") as GameObject);
+            animales.Add(vaca);
+            vaca.GetComponent<VacaController>().granja = gameObject;
+            vaca.transform.position = posicionamientoAnimal;
+        }
+
         GameObject numerosAnimales = GameObject.Find("NumerosAnimales");
         
         for (int i = 0; i < numerosAnimales.transform.childCount; i++)
