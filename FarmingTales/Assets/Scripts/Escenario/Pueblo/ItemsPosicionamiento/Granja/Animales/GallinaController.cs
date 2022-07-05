@@ -7,6 +7,7 @@ public class GallinaController : MonoBehaviour
 {
 
     public GameObject granja;
+    public string tipo = "gallina";
     
     public int tiempoPoner = 200;
     public int tiempoPonerTranscurrido = 0;
@@ -29,7 +30,7 @@ public class GallinaController : MonoBehaviour
         {
             if (huevosAnadir > 0)
             {
-                granja.GetComponent<GranjaController>().guardarItemGranja("huevo", huevosAnadir);
+                granja.GetComponent<GranjaController>().guardarItemGranja("huevoFecundado", huevosAnadir);
                 huevosAnadir = 0;
             }
         }
@@ -77,6 +78,11 @@ public class GallinaController : MonoBehaviour
         {
             alimentado = false;
         }
+    }
+    
+    public string getTipe()
+    {
+        return tipo;
     }
     
 }

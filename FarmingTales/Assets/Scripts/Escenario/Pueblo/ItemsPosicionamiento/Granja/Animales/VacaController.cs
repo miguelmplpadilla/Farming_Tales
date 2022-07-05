@@ -5,6 +5,8 @@ using UnityEngine;
 public class VacaController : MonoBehaviour
 {
     public GameObject granja;
+
+    public string tipo = "vaca";
     
     public int tiempoLeche = 300;
     public int tiempoLecheTranscurrido = 0;
@@ -75,5 +77,10 @@ public class VacaController : MonoBehaviour
         {
             alimentado = false;
         }
+    }
+
+    public string getTipe()
+    {
+        return tipo;
     }
 }

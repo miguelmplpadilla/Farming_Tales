@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1637513960361587528}
   - component: {fileID: 2637118083835830437}
+  - component: {fileID: 5600245033232779438}
   - component: {fileID: 277752507667146607}
   - component: {fileID: 5832978124797731851}
   - component: {fileID: 2536475840226191667}
@@ -47,10 +48,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a35f18b03f41ab647b727dec7d5788ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animales: []
   puntoPosicionado: 0
   posicionInventario: {x: -169.8, y: 53.6}
   id: 
   porcentageComida: 0
+--- !u!114 &5600245033232779438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795746245295965884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f98091a326c33f74796355d2dcd77c28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: 
+  cantidad: 0
+  tiempoIncubacion: 10
+  tiempoIncubacionTranscurrido: 0
+  incubando: 0
 --- !u!212 &277752507667146607
 SpriteRenderer:
   m_ObjectHideFlags: 0

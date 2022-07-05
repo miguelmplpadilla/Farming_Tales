@@ -1035,6 +1035,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 161650501696491748, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_Name
+      value: NumeroPollo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2297469430493021001, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2384730821656971171, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1123,23 +1131,84 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasPrincipal
       objectReference: {fileID: 0}
+    - target: {fileID: 6169322032822330980, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: tiempoIncubacion
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6327393732787105791, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_text
+      value: 'Cerdos:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6327393732787105791, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_fontSize
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6327393732787105791, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6350542031350540019, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_Name
+      value: NumeroVaca
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612305772975599598, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_Name
+      value: Pollo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726965050219022303, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_Name
+      value: Vaca
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382639393502405850, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_text
+      value: 'Pollos:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382639393502405850, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_fontSize
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382639393502405850, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8804540398410997270, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_text
+      value: 'Vacas:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8804540398410997270, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_fontSize
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8804540398410997270, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: sprs.Array.size
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: tipos.Array.size
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: sprs.Array.data[11]
       value: 
       objectReference: {fileID: 21300000, guid: 58e00a6c758df76498ea3ba3e84c3781, type: 3}
     - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: sprs.Array.data[12]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5ad8f830feb0b784caa92f3bbf3f34b0, type: 3}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: tipos.Array.data[11]
       value: leche
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: tipos.Array.data[12]
+      value: huevoFecundado
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7777163184949450111, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
 --- !u!4 &1703131762 stripped
 Transform:

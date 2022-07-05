@@ -98,7 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   granja: {fileID: 0}
-  tiempoPoner: 450
+  tipo: gallina
+  tiempoPoner: 10
   tiempoPonerTranscurrido: 0
   alimentado: 0
   huevosAnadir: 0

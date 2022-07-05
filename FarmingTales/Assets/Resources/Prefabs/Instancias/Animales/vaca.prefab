@@ -98,7 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   granja: {fileID: 0}
-  tiempoLeche: 300
+  tipo: vaca
+  tiempoLeche: 200
   tiempoLecheTranscurrido: 0
   alimentado: 0
   lecheAnadir: 0
