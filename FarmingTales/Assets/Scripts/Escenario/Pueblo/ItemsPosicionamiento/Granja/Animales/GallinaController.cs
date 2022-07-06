@@ -8,6 +8,7 @@ public class GallinaController : MonoBehaviour
 
     public GameObject granja;
     public string tipo = "gallina";
+    public string id = "";
     
     public int tiempoPoner = 200;
     public int tiempoPonerTranscurrido = 0;
@@ -32,6 +33,7 @@ public class GallinaController : MonoBehaviour
             {
                 granja.GetComponent<GranjaController>().guardarItemGranja("huevoFecundado", huevosAnadir);
                 huevosAnadir = 0;
+                guardarPartida();
             }
         }
     }
@@ -42,13 +44,15 @@ public class GallinaController : MonoBehaviour
         {
             if (alimentado)
             {
-                for (int i = 0; i < tiempoPoner; i++)
+                for (int i = tiempoPonerTranscurrido; i < tiempoPoner; i++)
                 {
                     yield return new WaitForSeconds(1f);
                     tiempoPonerTranscurrido++;
+                    guardarPartida();
                 }
                 ponerHuevo();
                 tiempoPonerTranscurrido = 0;
+                guardarPartida();
                 yield return null;
             }
             else
@@ -63,6 +67,7 @@ public class GallinaController : MonoBehaviour
     {
         huevosAnadir++;
         alimentado = false;
+        guardarPartida();
     }
 
     public void comer()
@@ -78,11 +83,50 @@ public class GallinaController : MonoBehaviour
         {
             alimentado = false;
         }
+        guardarPartida();
     }
     
     public string getTipe()
     {
         return tipo;
+    }
+
+    public void setId(string ide)
+    {
+        id = ide;
+        cargarPartida();
+    }
+
+    private void cargarPartida()
+    {
+        if (PlayerPrefs.HasKey(id+"TiempoPonerTranscurrido"))
+        {
+            tiempoPonerTranscurrido = int.Parse(PlayerPrefs.GetString(id + "TiempoPonerTranscurrido"));
+            huevosAnadir = int.Parse(PlayerPrefs.GetString(id + "HuevosAnadir"));
+            if (PlayerPrefs.GetString(id + "Alimentado").Equals("1"))
+            {
+                alimentado = true;
+            }
+            else
+            {
+                alimentado = false;
+            }
+        }
+    }
+
+    private void guardarPartida()
+    {
+        PlayerPrefs.SetString(id+"TiempoPonerTranscurrido", tiempoPonerTranscurrido.ToString());
+        PlayerPrefs.SetString(id+"HuevosAnadir", huevosAnadir.ToString());
+        if (alimentado)
+        {
+            PlayerPrefs.SetString(id+"Alimentado", "1");
+        }
+        else
+        {
+            PlayerPrefs.SetString(id+"Alimentado", "2");
+        }
+        PlayerPrefs.Save();
     }
     
 }
