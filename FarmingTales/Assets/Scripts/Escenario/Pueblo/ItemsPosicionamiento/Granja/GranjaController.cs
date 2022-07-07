@@ -67,10 +67,8 @@ public class GranjaController : MonoBehaviour
         }
         Vector2 posicionamientoAnimal = new Vector2(transform.position.x + 1f, transform.position.y);
 
-        //anadirAnimal("gallina");
-
-        //anadirAnimal("vaca");
-        
+        anadirAnimal("gallina");
+        anadirAnimal("vaca");
 
         GameObject numerosAnimales = GameObject.Find("NumerosAnimales");
         
@@ -114,6 +112,26 @@ public class GranjaController : MonoBehaviour
                 abierto = false;
             }
         }
+    }
+
+    private void LateUpdate()
+    {
+        cantidadAnimales[0] = 0;
+        cantidadAnimales[1] = 0;
+        
+        for (int i = 0; i < animales.Count; i++)
+        {
+            if (animales[i].name == "gallina(Clone)")
+            {
+                cantidadAnimales[0]++;
+            } else if (animales[i].name == "vaca(Clone)")
+            {
+                cantidadAnimales[1]++;
+            }
+        }
+
+        numAnimales[0].text = cantidadAnimales[0].ToString();
+        numAnimales[1].text = cantidadAnimales[1].ToString();
     }
 
     public void guardarItemGranja(string tipoItem, int cantidadItem)
@@ -230,24 +248,7 @@ public class GranjaController : MonoBehaviour
         animal.transform.SendMessage("setGranja", gameObject);
         animal.transform.position = posicionamientoAnimal;
         animales.Add(animal);
-        
-        cantidadAnimales[0] = 0;
-        cantidadAnimales[1] = 0;
-        
-        for (int i = 0; i < animales.Count; i++)
-        {
-            if (animales[i].name == "gallina(Clone)")
-            {
-                cantidadAnimales[0]++;
-            } else if (animales[i].name == "vaca(Clone)")
-            {
-                cantidadAnimales[1]++;
-            }
-        }
 
-        numAnimales[0].text = cantidadAnimales[0].ToString();
-        numAnimales[1].text = cantidadAnimales[1].ToString();
-        
         guardarPartida();
     }
 
