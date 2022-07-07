@@ -114,6 +114,11 @@ public class GallinaController : MonoBehaviour
         }
     }
 
+    public void setGranja(GameObject g)
+    {
+        granja = g;
+    }
+
     private void guardarPartida()
     {
         PlayerPrefs.SetString(id+"TiempoPonerTranscurrido", tiempoPonerTranscurrido.ToString());

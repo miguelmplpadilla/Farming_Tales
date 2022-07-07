@@ -67,18 +67,10 @@ public class GranjaController : MonoBehaviour
         }
         Vector2 posicionamientoAnimal = new Vector2(transform.position.x + 1f, transform.position.y);
 
-        for (int i = 0; i < 2; i++)
-        {
-            GameObject gallina = Instantiate(Resources.Load("Prefabs/Instancias/Animales/gallina") as GameObject);
-            animales.Add(gallina);
-            gallina.GetComponent<GallinaController>().granja = gameObject;
-            gallina.transform.position = posicionamientoAnimal;
-    
-            GameObject vaca = Instantiate(Resources.Load("Prefabs/Instancias/Animales/vaca") as GameObject);
-            animales.Add(vaca);
-            vaca.GetComponent<VacaController>().granja = gameObject;
-            vaca.transform.position = posicionamientoAnimal;
-        }
+        //anadirAnimal("gallina");
+
+        //anadirAnimal("vaca");
+        
 
         GameObject numerosAnimales = GameObject.Find("NumerosAnimales");
         
@@ -149,6 +141,7 @@ public class GranjaController : MonoBehaviour
     public void setId(string ide)
     {
         id = ide;
+        cargarPartida();
     }
 
     public void guardarInventario()
@@ -226,5 +219,74 @@ public class GranjaController : MonoBehaviour
     public void esconderInter()
     {
         GetComponentInChildren<InteractuarUIController>().invisibleDerecho();
+    }
+
+    public void anadirAnimal(string tipoAnimal)
+    {
+        Vector2 posicionamientoAnimal = new Vector2(transform.position.x + 1f, transform.position.y);
+        
+        GameObject animal = Instantiate(Resources.Load("Prefabs/Instancias/Animales/"+tipoAnimal) as GameObject);
+        animal.SendMessage("setId", montarIdAnimal(tipoAnimal));
+        animal.transform.SendMessage("setGranja", gameObject);
+        animal.transform.position = posicionamientoAnimal;
+        animales.Add(animal);
+        
+        cantidadAnimales[0] = 0;
+        cantidadAnimales[1] = 0;
+        
+        for (int i = 0; i < animales.Count; i++)
+        {
+            if (animales[i].name == "gallina(Clone)")
+            {
+                cantidadAnimales[0]++;
+            } else if (animales[i].name == "vaca(Clone)")
+            {
+                cantidadAnimales[1]++;
+            }
+        }
+
+        numAnimales[0].text = cantidadAnimales[0].ToString();
+        numAnimales[1].text = cantidadAnimales[1].ToString();
+        
+        guardarPartida();
+    }
+
+    public string montarIdAnimal(string tipoAnimal)
+    {
+        return id+tipoAnimal+animales.Count;
+    }
+
+    public void guardarPartida()
+    {
+        PlayerPrefs.SetInt(id+"NumeroAnimales", animales.Count);
+        for (int i = 0; i < animales.Count; i++)
+        {
+            if (animales[i].name == "gallina(Clone)")
+            {
+                PlayerPrefs.SetString(id+"Animal"+i, "gallina");
+            } else if (animales[i].name == "vaca(Clone)")
+            {
+                PlayerPrefs.SetString(id+"Animal"+i, "vaca");
+            }
+        }
+        
+        PlayerPrefs.SetInt(id+"CantidadComida", porcentageComida);
+        PlayerPrefs.Save();
+    }
+
+    public void cargarPartida()
+    {
+        Vector2 posicionamientoAnimal = new Vector2(transform.position.x + 1f, transform.position.y);
+        
+        for (int i = 0; i < PlayerPrefs.GetInt(id+"NumeroAnimales"); i++)
+        {
+            GameObject animal = Instantiate(Resources.Load("Prefabs/Instancias/Animales/"+PlayerPrefs.GetString(id+"Animal"+i)) as GameObject);
+            animal.SendMessage("setGranja", gameObject);
+            animal.SendMessage("setId", montarIdAnimal(PlayerPrefs.GetString(id+"Animal"+i)));
+            animal.transform.position = posicionamientoAnimal;
+            animales.Add(animal);
+        }
+
+        porcentageComida = PlayerPrefs.GetInt(id + "CantidadComida");
     }
 }

@@ -62,6 +62,8 @@ public class ComidaController : MonoBehaviour, IPointerDownHandler
                 {
                     granja.GetComponent<GranjaController>().porcentageComida = 100;
                 }
+                
+                granja.GetComponent<GranjaController>().guardarPartida();
             }
         }
     }

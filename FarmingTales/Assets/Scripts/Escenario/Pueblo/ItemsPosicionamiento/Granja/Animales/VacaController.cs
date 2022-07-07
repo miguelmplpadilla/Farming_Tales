@@ -7,6 +7,7 @@ public class VacaController : MonoBehaviour
     public GameObject granja;
 
     public string tipo = "vaca";
+    public string id = "";
     
     public int tiempoLeche = 300;
     public int tiempoLecheTranscurrido = 0;
@@ -41,7 +42,7 @@ public class VacaController : MonoBehaviour
         {
             if (alimentado)
             {
-                for (int i = 0; i < tiempoLeche; i++)
+                for (int i = tiempoLecheTranscurrido; i < tiempoLeche; i++)
                 {
                     yield return new WaitForSeconds(1f);
                     tiempoLecheTranscurrido++;
@@ -78,9 +79,52 @@ public class VacaController : MonoBehaviour
             alimentado = false;
         }
     }
+    
+    public void setGranja(GameObject g)
+    {
+        granja = g;
+    }
 
     public string getTipe()
     {
         return tipo;
+    }
+    
+    public void setId(string ide)
+    {
+        id = ide;
+        cargarPartida();
+    }
+
+    private void cargarPartida()
+    {
+        if (PlayerPrefs.HasKey(id+"TiempoLecheTranscurrido"))
+        {
+            tiempoLecheTranscurrido = int.Parse(PlayerPrefs.GetString(id + "TiempoLecheTranscurrido"));
+            lecheAnadir = int.Parse(PlayerPrefs.GetString(id + "LecheAnadir"));
+            if (PlayerPrefs.GetString(id + "Alimentado").Equals("1"))
+            {
+                alimentado = true;
+            }
+            else
+            {
+                alimentado = false;
+            }
+        }
+    }
+
+    private void guardarPartida()
+    {
+        PlayerPrefs.SetString(id+"TiempoLecheTranscurrido", tiempoLecheTranscurrido.ToString());
+        PlayerPrefs.SetString(id+"LecheAnadir", lecheAnadir.ToString());
+        if (alimentado)
+        {
+            PlayerPrefs.SetString(id+"Alimentado", "1");
+        }
+        else
+        {
+            PlayerPrefs.SetString(id+"Alimentado", "2");
+        }
+        PlayerPrefs.Save();
     }
 }
