@@ -38,7 +38,7 @@ public class InventarioController : MonoBehaviour
             sprites.Add(tipos[i],sprs[i]);
         }
         
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
     }
 
     private void Start()
@@ -65,6 +65,7 @@ public class InventarioController : MonoBehaviour
         anadirInventario("cofre", 5);
         anadirInventario("patata", 50);
         anadirInventario("valla", 5);
+        anadirInventario("huevoFecundado", 5);
         //nadirInventario("semillaTrigo", 5);
         //anadirInventario("patata", 5);
         //anadirInventario("zanahoria", 5);

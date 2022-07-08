@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class GallinaController : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class GallinaController : MonoBehaviour
     public bool alimentado = false;
 
     public int huevosAnadir = 0;
+    public int huevoFecundadoAnadir = 0;
 
     private GameObject inventarioGranja;
 
@@ -31,8 +33,15 @@ public class GallinaController : MonoBehaviour
         {
             if (huevosAnadir > 0)
             {
-                granja.GetComponent<GranjaController>().guardarItemGranja("huevoFecundado", huevosAnadir);
+                granja.GetComponent<GranjaController>().guardarItemGranja("huevo", huevosAnadir);
                 huevosAnadir = 0;
+                guardarPartida();
+            }
+
+            if (huevoFecundadoAnadir > 0)
+            {
+                granja.GetComponent<GranjaController>().guardarItemGranja("huevoFecundado", huevoFecundadoAnadir);
+                huevoFecundadoAnadir = 0;
                 guardarPartida();
             }
         }
@@ -65,7 +74,27 @@ public class GallinaController : MonoBehaviour
 
     public void ponerHuevo()
     {
-        huevosAnadir++;
+        Random r = new Random();
+        int num = r.Next(100);
+
+        Debug.Log("Numero aleatorio: "+num);
+
+        if (granja.GetComponent<GranjaController>().cantidadAnimales[0] >= 2)
+        {
+            if (num > 90 && num <= 100)
+            {
+                huevoFecundadoAnadir++;
+            }
+            else
+            {
+                huevosAnadir++;
+            }
+        }
+        else
+        {
+            huevosAnadir++;
+        }
+
         alimentado = false;
         guardarPartida();
     }
@@ -103,6 +132,7 @@ public class GallinaController : MonoBehaviour
         {
             tiempoPonerTranscurrido = int.Parse(PlayerPrefs.GetString(id + "TiempoPonerTranscurrido"));
             huevosAnadir = int.Parse(PlayerPrefs.GetString(id + "HuevosAnadir"));
+            huevoFecundadoAnadir = int.Parse(PlayerPrefs.GetString(id + "HuevosFecundadosAnadir"));
             if (PlayerPrefs.GetString(id + "Alimentado").Equals("1"))
             {
                 alimentado = true;
@@ -123,6 +153,7 @@ public class GallinaController : MonoBehaviour
     {
         PlayerPrefs.SetString(id+"TiempoPonerTranscurrido", tiempoPonerTranscurrido.ToString());
         PlayerPrefs.SetString(id+"HuevosAnadir", huevosAnadir.ToString());
+        PlayerPrefs.SetString(id+"HuevosFecundadosAnadir", huevoFecundadoAnadir.ToString());
         if (alimentado)
         {
             PlayerPrefs.SetString(id+"Alimentado", "1");
