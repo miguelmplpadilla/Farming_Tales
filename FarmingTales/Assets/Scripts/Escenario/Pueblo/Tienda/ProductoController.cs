@@ -11,8 +11,10 @@ public class ProductoController : MonoBehaviour
     private Image imagenProducto;
     private TextMeshProUGUI nombreProducto;
     private TextMeshProUGUI precio;
+    public string id;
 
     private CreadorProductosController creadorProductosController;
+    private TiendaController tiendaController;
 
     private void Awake()
     {
@@ -23,14 +25,21 @@ public class ProductoController : MonoBehaviour
 
     private void Start()
     {
+        tiendaController = GameObject.Find("TiendaController").GetComponent<TiendaController>();
         creadorProductosController = GameObject.Find("CreadorProductos").GetComponent<CreadorProductosController>();
     }
 
-    public void anadirDatos(string item, Sprite imagen, int cantidadPrecio)
+    public void anadirDatos(string ide, string item, Sprite imagen, int cantidadPrecio)
     {
+        id = ide;
         imagenProducto.sprite = imagen;
         nombreProducto.text = item;
         precio.text = cantidadPrecio.ToString();
+    }
+
+    public void selectProduct()
+    {
+        tiendaController.seleccionarProducto(GetComponent<ProductoController>());
     }
 
     public Sprite getImagenProducto()

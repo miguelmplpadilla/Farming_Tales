@@ -70,6 +70,8 @@ public class InventarioController : MonoBehaviour
         //anadirInventario("patata", 5);
         //anadirInventario("zanahoria", 5);
         //anadirInventario("madera", spritePrueba, 1, null);
+        
+        anadirDinero(10000);
     }
 
     private void Update()
@@ -114,7 +116,6 @@ public class InventarioController : MonoBehaviour
 
     public int anadirInventario(string tipo, int cantidad)
     {
-        
         for (int i = 0; i < posiciones.Length; i++)
         {
             if (posiciones[i].GetComponent<PosicionController>().item == tipo)

@@ -46,7 +46,7 @@ public class CreadorProductosController : MonoBehaviour
         for (int i = 0; i < productosAnadir.Count; i++)
         {
             GameObject instanciado = Instantiate(producto, continer.transform.position, Quaternion.identity, continer.transform);
-            instanciado.GetComponent<ProductoController>().anadirDatos(productosDisponibles[productosAnadir[i]].nombreProducto, productosDisponibles[productosAnadir[i]].imagen, productosDisponibles[productosAnadir[i]].precio);
+            instanciado.GetComponent<ProductoController>().anadirDatos(productosDisponibles[productosAnadir[i]].id, productosDisponibles[productosAnadir[i]].nombreProducto, productosDisponibles[productosAnadir[i]].imagen, productosDisponibles[productosAnadir[i]].precio);
             productos.Add(instanciado);
         }
     }

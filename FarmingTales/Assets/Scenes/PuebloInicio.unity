@@ -1047,22 +1047,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 98.67965
-      objectReference: {fileID: 0}
-    - target: {fileID: 1524716459, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.000015259
-      objectReference: {fileID: 0}
-    - target: {fileID: 1524716459, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 52.713
-      objectReference: {fileID: 0}
-    - target: {fileID: 1889845362639934477, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_Name
-      value: ElegirCompraVenta
-      objectReference: {fileID: 0}
     - target: {fileID: 2384730821656971171, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1150,18 +1134,6 @@ PrefabInstance:
     - target: {fileID: 2384730821656971175, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_Name
       value: CanvasPrincipal
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957555562899607981, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5887863607798857936, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_Name
-      value: ElegirComprarVender
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438820593125395034, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
