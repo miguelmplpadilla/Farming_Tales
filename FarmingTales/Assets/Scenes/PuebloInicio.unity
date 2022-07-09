@@ -1035,58 +1035,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[0].id
-      value: patata
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[1].id
-      value: zanahoria
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[2].id
-      value: semillaTrigo
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[0].imagen
-      value: 
-      objectReference: {fileID: 1801263428120863714, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[0].precio
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[1].imagen
-      value: 
-      objectReference: {fileID: -7573354855677281409, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[1].precio
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[2].imagen
-      value: 
-      objectReference: {fileID: 21300000, guid: 88ae07391e88a4a42ab6232a101387fb, type: 3}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[2].precio
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[0].nombreProducto
-      value: Patata
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[1].nombreProducto
-      value: Zanahoria
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[2].nombreProducto
-      value: Semilla de Trigo
-      objectReference: {fileID: 0}
     - target: {fileID: 310007190, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1098,6 +1046,22 @@ PrefabInstance:
     - target: {fileID: 310007190, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 98.67965
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524716459, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000015259
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524716459, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 52.713
+      objectReference: {fileID: 0}
+    - target: {fileID: 1889845362639934477, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_Name
+      value: ElegirCompraVenta
       objectReference: {fileID: 0}
     - target: {fileID: 2384730821656971171, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_Pivot.x
@@ -1187,28 +1151,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasPrincipal
       objectReference: {fileID: 0}
-    - target: {fileID: 4459627190523881521, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
+    - target: {fileID: 3957555562899607981, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4459627190523881521, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
+    - target: {fileID: 5887863607798857936, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_Name
+      value: ElegirComprarVender
       objectReference: {fileID: 0}
-    - target: {fileID: 4459627190523881521, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459627190523881521, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459627190523881521, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459627190523881521, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_AnchoredPosition.y
+    - target: {fileID: 6438820593125395034, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_LocalScale.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
