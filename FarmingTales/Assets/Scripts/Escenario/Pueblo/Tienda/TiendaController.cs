@@ -9,9 +9,10 @@ public class TiendaController : MonoBehaviour
     public ProductoController productoComprar;
 
     public GameObject panelProductos;
-    public GameObject panelElegirComprarVender;
     public GameObject comprar;
     public GameObject vender;
+
+    private CreadorProductosController creadorProductosController;
 
     public InventarioController inventarioController;
 
@@ -22,27 +23,30 @@ public class TiendaController : MonoBehaviour
     private void Start()
     {
         inventarioController = GameObject.Find("ToolBar").GetComponent<InventarioController>();
+        creadorProductosController = GameObject.Find("CreadorProductos").GetComponent<CreadorProductosController>();
     }
 
-    public void seleccionarProducto(ProductoController productoController)
+    public void mostrarCompra(ProductoController proController)
     {
-        productoComprar = productoController;
-
+        productoComprar = proController;
         panelProductos.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
-        panelElegirComprarVender.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
-        getDisponibilidadProductoComprar(productoController.id);
-    }
-
-    public void mostrarCompra()
-    {
-        panelElegirComprarVender.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
         comprar.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
     }
     
-    public void mostrarVender()
+    public void mostrarVender(ProductoController proController)
     {
-        panelElegirComprarVender.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+        productoComprar = proController;
+        panelProductos.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
         vender.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+    }
+    
+    public void mostrarListaComprar() {
+        creadorProductosController.listaComprar();
+    }
+
+    public void mostrarListaVender()
+    {
+        creadorProductosController.listaVender();
     }
 
     public void sumarProducto()

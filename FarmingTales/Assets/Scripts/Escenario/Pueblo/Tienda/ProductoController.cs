@@ -12,6 +12,8 @@ public class ProductoController : MonoBehaviour
     private TextMeshProUGUI nombreProducto;
     private TextMeshProUGUI precio;
     public string id;
+    public int cantidadVenta = 0;
+    private int comprarVender = 1;
 
     private CreadorProductosController creadorProductosController;
     private TiendaController tiendaController;
@@ -29,17 +31,35 @@ public class ProductoController : MonoBehaviour
         creadorProductosController = GameObject.Find("CreadorProductos").GetComponent<CreadorProductosController>();
     }
 
-    public void anadirDatos(string ide, string item, Sprite imagen, int cantidadPrecio)
+    public void anadirDatos(string ide, string item, Sprite imagen, int cantidadPrecio, int compVend)
     {
         id = ide;
         imagenProducto.sprite = imagen;
         nombreProducto.text = item;
         precio.text = cantidadPrecio.ToString();
+        comprarVender = compVend;
+    }
+    
+    public void anadirDatos(string ide, string item, Sprite imagen, int cantidadPrecio, int cantVenta, int compVend)
+    {
+        id = ide;
+        imagenProducto.sprite = imagen;
+        nombreProducto.text = item;
+        precio.text = cantidadPrecio.ToString();
+        cantidadVenta = cantVenta;
+        comprarVender = compVend;
     }
 
     public void selectProduct()
     {
-        tiendaController.seleccionarProducto(GetComponent<ProductoController>());
+        if (comprarVender == 1)
+        {
+            tiendaController.mostrarCompra(GetComponent<ProductoController>());
+        }
+        else if (comprarVender == 2)
+        {
+            tiendaController.mostrarVender(GetComponent<ProductoController>());
+        }
     }
 
     public Sprite getImagenProducto()
