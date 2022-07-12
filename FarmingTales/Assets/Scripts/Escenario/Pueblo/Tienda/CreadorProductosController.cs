@@ -79,12 +79,18 @@ public class CreadorProductosController : MonoBehaviour
         pro.Add("patata");
         pro.Add("zanahoria");
         pro.Add("semillaTrigo");
+        pro.Add("cofre");
+        pro.Add("valla");
+        pro.Add("madera");
+        pro.Add("roca");
         anadirProductosComprar(pro);
     }
 
     public void listaVender()
     {
         eliminarProductos();
+        productosVender = new List<string>();
+        productosVenderCantidad = new List<int>();
         disponibilidadVenta();
         anadirProductosVender(productosVender, productosVenderCantidad);
     }

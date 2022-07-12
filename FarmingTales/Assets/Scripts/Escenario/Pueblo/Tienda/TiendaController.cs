@@ -31,6 +31,7 @@ public class TiendaController : MonoBehaviour
         productoComprar = proController;
         panelProductos.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
         comprar.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+        vender.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
     }
     
     public void mostrarVender(ProductoController proController)
@@ -38,20 +39,59 @@ public class TiendaController : MonoBehaviour
         productoComprar = proController;
         panelProductos.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
         vender.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+        comprar.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
     }
     
     public void mostrarListaComprar() {
+        comprar.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+        vender.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+        
+        panelProductos.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+        
         creadorProductosController.listaComprar();
     }
 
     public void mostrarListaVender()
     {
+        vender.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+        comprar.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+        
+        panelProductos.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+        
         creadorProductosController.listaVender();
+    }
+    
+    public void sumarProductoVender()
+    {
+        if (cantidadProducto < productoComprar.cantidadVenta && cantidadProducto < 128)
+        {
+            cantidadProducto++;
+            precioProducto = cantidadProducto * productoComprar.getPrecioProducto();
+        }
+        
+        vender.transform.Find("TextoCantidadVender").GetComponent<TextMeshProUGUI>().text =
+            cantidadProducto.ToString();
+        vender.transform.Find("TextoOroVender").GetComponent<TextMeshProUGUI>().text = precioProducto.ToString();
+        
+    }
+
+    public void restarProductoVender()
+    {
+        if (cantidadProducto > 0)
+        {
+            cantidadProducto--;
+            precioProducto = cantidadProducto * productoComprar.getPrecioProducto();
+        }
+        
+        vender.transform.Find("TextoCantidadVender").GetComponent<TextMeshProUGUI>().text =
+            cantidadProducto.ToString();
+        vender.transform.Find("TextoOroVender").GetComponent<TextMeshProUGUI>().text = precioProducto.ToString();
+        
     }
 
     public void sumarProducto()
     {
-        if (cantidadProducto <= cantidadMaximaProducto && cantidadProducto < 128)
+        if (cantidadProducto < cantidadMaximaProducto && cantidadProducto < 128)
         {
             cantidadProducto++;
             precioProducto = cantidadProducto * productoComprar.getPrecioProducto();
@@ -95,28 +135,75 @@ public class TiendaController : MonoBehaviour
             comprar.transform.Find("TextoOroComprar").GetComponent<TextMeshProUGUI>().color = Color.white;
         }
 
-        if (comprar.GetComponent<RectTransform>().localScale.x > 0)
-        {
-            comprar.transform.Find("TextoCantidadComprar").GetComponent<TextMeshProUGUI>().text =
-                cantidadProducto.ToString();
-            comprar.transform.Find("TextoOroComprar").GetComponent<TextMeshProUGUI>().text = precioProducto.ToString();
-        } else if (vender.GetComponent<RectTransform>().localScale.x > 0)
-        {
-            vender.transform.Find("TextoCantidadVender").GetComponent<TextMeshProUGUI>().text =
-                cantidadProducto.ToString();
-        }
+        comprar.transform.Find("TextoCantidadComprar").GetComponent<TextMeshProUGUI>().text =
+            cantidadProducto.ToString();
+        comprar.transform.Find("TextoOroComprar").GetComponent<TextMeshProUGUI>().text = precioProducto.ToString();
     }
 
     public void comprarProducto()
     {
-        if (precioProducto <= int.Parse(inventarioController.oro.text))
+        if (precioProducto <= int.Parse(inventarioController.oro.text) && cantidadProducto < cantidadMaximaProducto && cantidadProducto < 128)
         {
             inventarioController.anadirInventario(productoComprar.id, cantidadProducto);
             comprar.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
             panelProductos.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
             string oro = (int.Parse(inventarioController.oro.text) - precioProducto).ToString();
             inventarioController.oro.text = (oro);
+            
+            comprar.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+            
+            cantidadProducto = 0;
+            precioProducto = 0;
+            comprar.transform.Find("TextoCantidadComprar").GetComponent<TextMeshProUGUI>().text =
+                cantidadProducto.ToString();
+            comprar.transform.Find("TextoOroComprar").GetComponent<TextMeshProUGUI>().text = precioProducto.ToString();
+            
+            mostrarListaComprar();
         }
+    }
+
+    public void venderProducto()
+    {
+        if (cantidadProducto <= productoComprar.cantidadVenta && cantidadProducto < 128)
+        {
+            for (int i = 0; i < inventarioController.posiciones.Length; i++)
+            {
+                if (inventarioController.posiciones[i].GetComponent<PosicionController>().item == productoComprar.id)
+                {
+                    if (inventarioController.posiciones[i].GetComponent<PosicionController>().cantidad > cantidadProducto)
+                    {
+                        inventarioController.posiciones[i].GetComponent<PosicionController>().cantidad =
+                            inventarioController.posiciones[i].GetComponent<PosicionController>().cantidad -
+                            cantidadProducto;
+                        if (inventarioController.posiciones[i].GetComponent<PosicionController>().cantidad == 0)
+                        {
+                            inventarioController.posiciones[i].GetComponent<PosicionController>().item = "";
+                        }
+                        break;
+                    }
+                    else
+                    {
+                        cantidadProducto = cantidadProducto -
+                                           inventarioController.posiciones[i].GetComponent<PosicionController>().cantidad;
+                        inventarioController.posiciones[i].GetComponent<PosicionController>().cantidad = 0;
+                        inventarioController.posiciones[i].GetComponent<PosicionController>().item = "";
+                    }
+                }
+            }
+        
+            inventarioController.oro.text = ((int.Parse(inventarioController.oro.text) + precioProducto).ToString());
+        
+            vender.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+            
+            cantidadProducto = 0;
+            precioProducto = 0;
+            vender.transform.Find("TextoCantidadVender").GetComponent<TextMeshProUGUI>().text =
+                cantidadProducto.ToString();
+            vender.transform.Find("TextoOroVender").GetComponent<TextMeshProUGUI>().text = precioProducto.ToString();
+            
+            mostrarListaVender();
+        }
+
     }
 
     public void getDisponibilidadProductoComprar(string itemBuscar)
