@@ -46,6 +46,9 @@ public class CreadorProductosController : MonoBehaviour
         pro.Add("patata");
         pro.Add("zanahoria");
         pro.Add("semillaTrigo");
+        pro.Add("valla");
+        pro.Add("madera");
+        pro.Add("roca");
         anadirProductosComprar(pro);
     }
 
@@ -84,6 +87,7 @@ public class CreadorProductosController : MonoBehaviour
         pro.Add("madera");
         pro.Add("roca");
         anadirProductosComprar(pro);
+        
     }
 
     public void listaVender()

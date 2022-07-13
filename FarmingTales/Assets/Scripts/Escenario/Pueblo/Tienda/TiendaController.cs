@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TiendaController : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class TiendaController : MonoBehaviour
     public GameObject panelProductos;
     public GameObject comprar;
     public GameObject vender;
+
+    public Sprite imagenTiendaComprar;
+    public Sprite imagenTiendaVender;
 
     private CreadorProductosController creadorProductosController;
 
@@ -32,6 +36,8 @@ public class TiendaController : MonoBehaviour
         panelProductos.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
         comprar.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         vender.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+
+        transform.parent.GetComponent<Image>().sprite = imagenTiendaComprar;
     }
     
     public void mostrarVender(ProductoController proController)
@@ -40,6 +46,8 @@ public class TiendaController : MonoBehaviour
         panelProductos.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
         vender.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         comprar.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+        
+        transform.parent.GetComponent<Image>().sprite = imagenTiendaVender;
     }
     
     public void mostrarListaComprar() {
@@ -49,6 +57,8 @@ public class TiendaController : MonoBehaviour
         panelProductos.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         
         creadorProductosController.listaComprar();
+        
+        transform.parent.GetComponent<Image>().sprite = imagenTiendaComprar;
     }
 
     public void mostrarListaVender()
@@ -59,6 +69,8 @@ public class TiendaController : MonoBehaviour
         panelProductos.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         
         creadorProductosController.listaVender();
+        
+        transform.parent.GetComponent<Image>().sprite = imagenTiendaVender;
     }
     
     public void sumarProductoVender()
