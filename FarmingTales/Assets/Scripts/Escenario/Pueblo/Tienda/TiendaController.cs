@@ -33,7 +33,14 @@ public class TiendaController : MonoBehaviour
     public void mostrarCompra(ProductoController proController)
     {
         productoComprar = proController;
+        getDisponibilidadProductoComprar(proController.id);
         panelProductos.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+
+        comprar.transform.Find("TextoComprarProducto").GetComponent<TextMeshProUGUI>().text = "Comprar "+proController.getNombreProducto();
+        comprar.transform.Find("MarcoProductoComprar").transform.Find("ImagenProductoComprar").GetComponent<Image>()
+            .sprite = proController.getImagenProducto();
+        
+        
         comprar.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         vender.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
 
@@ -44,6 +51,11 @@ public class TiendaController : MonoBehaviour
     {
         productoComprar = proController;
         panelProductos.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+        
+        vender.transform.Find("TextoVenderProducto").GetComponent<TextMeshProUGUI>().text = "Vender "+proController.getNombreProducto();
+        vender.transform.Find("MarcoProductoVender").transform.Find("ImagenProductoVender").GetComponent<Image>()
+            .sprite = proController.getImagenProducto();
+        
         vender.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         comprar.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
         

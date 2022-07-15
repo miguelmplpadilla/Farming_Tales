@@ -290,11 +290,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8228528022670978063, guid: dbdc47887373b324998747f70a203a39, type: 3}
   m_PrefabInstance: {fileID: 1348917555741925524}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &827452569 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-  m_PrefabInstance: {fileID: 1496615421}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &999866666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,231 +1039,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[3].id
-      value: cofre
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[4].id
-      value: madera
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[5].id
-      value: roca
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[6].id
-      value: huevo
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[7].id
-      value: cuboLeche
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[8].id
-      value: valla
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[9].id
-      value: plantacion
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[10].id
-      value: huevoFecundado
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[11].id
-      value: trigo
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[0].precio
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[1].precio
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[2].precio
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[3].imagen
-      value: 
-      objectReference: {fileID: -8929714730241205940, guid: 5e79748343a3d06408602fc3963807d4, type: 3}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[3].precio
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[4].imagen
-      value: 
-      objectReference: {fileID: 4337684191699249041, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[4].precio
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[5].imagen
-      value: 
-      objectReference: {fileID: -488721925442295091, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[5].precio
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[6].imagen
-      value: 
-      objectReference: {fileID: 4639506938558671751, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[6].precio
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[7].imagen
-      value: 
-      objectReference: {fileID: 21300000, guid: 58e00a6c758df76498ea3ba3e84c3781, type: 3}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[7].precio
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[8].imagen
-      value: 
-      objectReference: {fileID: 21300000, guid: 5165c7f1752023048ba0300963f772ea, type: 3}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[8].precio
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[9].imagen
-      value: 
-      objectReference: {fileID: 21300000, guid: bcae5d00d38541348a2b89942dbb3ceb, type: 3}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[9].precio
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[10].imagen
-      value: 
-      objectReference: {fileID: 21300000, guid: 5ad8f830feb0b784caa92f3bbf3f34b0, type: 3}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[10].precio
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[11].imagen
-      value: 
-      objectReference: {fileID: -5971942374765049077, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[11].precio
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[3].nombreProducto
-      value: Cofre
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[4].nombreProducto
-      value: Madera
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[5].nombreProducto
-      value: Roca
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[6].nombreProducto
-      value: Huevo
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[7].nombreProducto
-      value: Cubo de leche
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[8].nombreProducto
-      value: Valla para granja
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[9].nombreProducto
-      value: Terreno de plantacion
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[10].nombreProducto
-      value: Huevo fecundado
-      objectReference: {fileID: 0}
-    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[11].nombreProducto
-      value: Trigo
-      objectReference: {fileID: 0}
-    - target: {fileID: 310007190, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+    - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 310007190, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+    - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 310007190, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+    - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0.06325489
       objectReference: {fileID: 0}
-    - target: {fileID: 333132236, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_Size
-      value: 0.5756041
-      objectReference: {fileID: 0}
-    - target: {fileID: 333132236, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_Value
-      value: 1.3292663
-      objectReference: {fileID: 0}
-    - target: {fileID: 333132236, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_HandleRect
-      value: 
-      objectReference: {fileID: 827452569}
-    - target: {fileID: 333132236, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_Navigation.m_WrapAround
+    - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.30624473
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -102.64577
+      value: -7.8311615
       objectReference: {fileID: 0}
-    - target: {fileID: 454566558, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_VerticalScrollbarVisibility
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1003504032, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: vender
-      value: 
-      objectReference: {fileID: 1789719496}
-    - target: {fileID: 1003504032, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: imagenTiendaVender
-      value: 
-      objectReference: {fileID: -5751450986868800880, guid: 53f8aebc9a596c04d9d2edd6d49a4412, type: 3}
-    - target: {fileID: 1003504032, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: imagenTiendaComprar
-      value: 
-      objectReference: {fileID: -1462312789040039468, guid: 53f8aebc9a596c04d9d2edd6d49a4412, type: 3}
     - target: {fileID: 953903233076158612, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2185439109554912591, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0
       objectReference: {fileID: 0}
@@ -1360,108 +1151,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasPrincipal
       objectReference: {fileID: 0}
-    - target: {fileID: 3309479109301731439, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: sumarProductoVender
-      objectReference: {fileID: 0}
-    - target: {fileID: 5387747524129605177, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6100846562803168208, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6100846562803168208, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6100846562803168208, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1771392720}
-    - target: {fileID: 6100846562803168208, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6100846562803168208, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: mostrarListaVender
-      objectReference: {fileID: 0}
-    - target: {fileID: 6100846562803168208, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TiendaController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6100846562803168208, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6974962392113755344, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6974962392113755344, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6974962392113755344, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1771392720}
-    - target: {fileID: 6974962392113755344, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6974962392113755344, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: mostrarListaComprar
-      objectReference: {fileID: 0}
-    - target: {fileID: 6974962392113755344, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TiendaController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6974962392113755344, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 9173555869783269953, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: restarProductoVender
-      objectReference: {fileID: 0}
-    - target: {fileID: 9198104685458085967, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9198104685458085967, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9198104685458085967, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
 --- !u!4 &1703131762 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8228528022670978063, guid: dbdc47887373b324998747f70a203a39, type: 3}
   m_PrefabInstance: {fileID: 296555305}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1771392720 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1003504032, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-  m_PrefabInstance: {fileID: 1496615421}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21549631fdaba974e99e56173d4f513d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1789719496 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7192211726670915083, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-  m_PrefabInstance: {fileID: 1496615421}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1874446389
 PrefabInstance:
