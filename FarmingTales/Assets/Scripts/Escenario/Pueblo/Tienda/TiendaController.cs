@@ -8,12 +8,19 @@ using UnityEngine.UI;
 public class TiendaController : MonoBehaviour
 {
     public ProductoController productoComprar;
+    
+    public TextAsset dialogos;
 
     public GameObject panelProductos;
     public GameObject comprar;
     public GameObject vender;
     private GameObject player;
     private GameObject inventario;
+    private GameObject cuadroDialogo;
+    private TextMeshProUGUI textoDialogo;
+    private Image imagenDialogo;
+    
+    private DialogeController dialogeController = new DialogeController();
 
     public Sprite imagenTiendaComprar;
     public Sprite imagenTiendaVender;
@@ -32,6 +39,9 @@ public class TiendaController : MonoBehaviour
         creadorProductosController = GameObject.Find("CreadorProductos").GetComponent<CreadorProductosController>();
         player = GameObject.Find("Player");
         inventario = GameObject.Find("ToolBar");
+        cuadroDialogo = GameObject.Find("CuadroDialogo");
+        textoDialogo = GameObject.Find("TextoDialogo").GetComponent<TextMeshProUGUI>();
+        imagenDialogo = GameObject.Find("ImagenNPC").GetComponent<Image>();
     }
 
     public void mostrarCompra(ProductoController proController)
@@ -72,6 +82,8 @@ public class TiendaController : MonoBehaviour
         
         panelProductos.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         
+        StartCoroutine("mostrarFrase", dialogeController.getTextoDialogos(dialogos, creadorProductosController.tendero.GetComponent<TenderoController>().hablante, "AbrirComprar", "Español")[0]);
+        
         creadorProductosController.listaComprar();
         
         transform.parent.GetComponent<Image>().sprite = imagenTiendaComprar;
@@ -83,6 +95,8 @@ public class TiendaController : MonoBehaviour
         comprar.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
         
         panelProductos.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+        
+        StartCoroutine("mostrarFrase", dialogeController.getTextoDialogos(dialogos, creadorProductosController.tendero.GetComponent<TenderoController>().hablante, "AbrirVender", "Español")[0]);
         
         creadorProductosController.listaVender();
         
@@ -185,8 +199,10 @@ public class TiendaController : MonoBehaviour
             comprar.transform.Find("TextoCantidadComprar").GetComponent<TextMeshProUGUI>().text =
                 cantidadProducto.ToString();
             comprar.transform.Find("TextoOroComprar").GetComponent<TextMeshProUGUI>().text = precioProducto.ToString();
-            
+
             mostrarListaComprar();
+            
+            StartCoroutine("mostrarFrase", dialogeController.getTextoDialogos(dialogos, creadorProductosController.tendero.GetComponent<TenderoController>().hablante, "Comprar", "Español")[0]);
         }
     }
 
@@ -230,6 +246,8 @@ public class TiendaController : MonoBehaviour
             vender.transform.Find("TextoOroVender").GetComponent<TextMeshProUGUI>().text = precioProducto.ToString();
             
             mostrarListaVender();
+            
+            StartCoroutine("mostrarFrase", dialogeController.getTextoDialogos(dialogos, creadorProductosController.tendero.GetComponent<TenderoController>().hablante, "Vender", "Español")[0]);
         }
 
     }
@@ -256,11 +274,30 @@ public class TiendaController : MonoBehaviour
         gameObject.transform.parent.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
 
         inventario.GetComponent<InventarioController>().mostrar = true;
+        
+        cuadroDialogo.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
     }
 
     public void mostrarTienda()
     {
+        StartCoroutine("mostrarFrase", dialogeController.getTextoDialogos(dialogos, creadorProductosController.tendero.GetComponent<TenderoController>().hablante, "Bienvenida", "Español")[0]);
         player.GetComponent<PlayerController>().mov = false;
         gameObject.transform.parent.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+
+        imagenDialogo.sprite = creadorProductosController.tendero.GetComponent<TenderoController>().imagen;
+        
+        cuadroDialogo.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+    }
+    
+    IEnumerator mostrarFrase(string frase)
+    {
+        string currentFrase = "";
+        
+        for (int j = 0; j < frase.Length; j++) {
+            currentFrase = currentFrase + frase[j];
+            textoDialogo.text = currentFrase;
+
+            yield return new WaitForSeconds(0.01f);
+        }
     }
 }

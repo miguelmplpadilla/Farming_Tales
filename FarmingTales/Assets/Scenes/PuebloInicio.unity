@@ -205,7 +205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1278174120623993098, guid: 7d7cf9b84a8c6494c85db9708c5be9fc, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1278174120623993098, guid: 7d7cf9b84a8c6494c85db9708c5be9fc, type: 3}
       propertyPath: m_AnchorMax.x
@@ -559,7 +559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 306147709714548871, guid: 947d0c7f1c3284e4aa67dc203e9c3c38, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 306147709714548871, guid: 947d0c7f1c3284e4aa67dc203e9c3c38, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1038,7 +1038,6 @@ GameObject:
   - component: {fileID: 1295599380}
   - component: {fileID: 1295599379}
   - component: {fileID: 1295599378}
-  - component: {fileID: 1295599381}
   - component: {fileID: 1295599377}
   - component: {fileID: 1295599376}
   m_Layer: 0
@@ -1107,6 +1106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268393d620f6f9d4482f9ebb30bac7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imagen: {fileID: -9101247539452197670, guid: a350b68da161d6545bfd55d2cecb8c62, type: 3}
+  hablante: TenderoPruebloInicio
   productosComprar:
   - madera
   - roca
@@ -1179,30 +1180,8 @@ Transform:
   m_LocalScale: {x: 2.9623, y: 2.9623, z: 2.9623}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1295599381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1295599375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57e9599867616144bad194f15bce50bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogos: {fileID: 0}
-  hablante: 
-  image: {fileID: 0}
-  panel: {fileID: 1496615424}
-  objectTexto: {fileID: 1496615422}
-  imagePanel: {fileID: 1496615423}
-  hablar: 0
-  hablando: 0
-  idioma: "Espa\xF1ol"
-  frase: saludo
 --- !u!4 &1398856205 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 306147709714548871, guid: 947d0c7f1c3284e4aa67dc203e9c3c38, type: 3}
@@ -1221,7 +1200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.999345
+      value: 0.9998617
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMin.y
@@ -1233,7 +1212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.72691345
+      value: 0.69125366
       objectReference: {fileID: 0}
     - target: {fileID: 2384730821656971171, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_Pivot.x
@@ -1245,7 +1224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2384730821656971171, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2384730821656971171, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1323,27 +1302,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasPrincipal
       objectReference: {fileID: 0}
-    - target: {fileID: 7769027274778629706, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: m_Name
-      value: TextoCuadro
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
---- !u!1 &1496615422 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7769027274778629706, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-  m_PrefabInstance: {fileID: 1496615421}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1496615423 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8364468923963627417, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-  m_PrefabInstance: {fileID: 1496615421}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1496615424 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 82348067398101625, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-  m_PrefabInstance: {fileID: 1496615421}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1703131762 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8228528022670978063, guid: dbdc47887373b324998747f70a203a39, type: 3}
@@ -1358,7 +1318,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 564281149530536646, guid: 83dd9bd533c1aed428d2ca418d137b3b, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 564281149530536646, guid: 83dd9bd533c1aed428d2ca418d137b3b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1715,7 +1675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 106505526458514742, guid: b629551a470db294693f0b968fb36c18, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 106505526458514742, guid: b629551a470db294693f0b968fb36c18, type: 3}
       propertyPath: m_LocalPosition.x

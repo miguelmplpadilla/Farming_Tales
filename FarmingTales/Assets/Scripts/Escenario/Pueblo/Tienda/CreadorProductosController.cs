@@ -26,7 +26,7 @@ public class CreadorProductosController : MonoBehaviour
 
     public GameObject producto;
     public GameObject continer;
-    private GameObject tendero;
+    public GameObject tendero;
 
     public List<GameObject> productos = new List<GameObject>();
 

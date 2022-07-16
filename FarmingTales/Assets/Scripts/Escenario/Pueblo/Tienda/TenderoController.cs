@@ -10,6 +10,10 @@ public class TenderoController : MonoBehaviour
     private GameObject creadorProductos;
     private GameObject tienda;
     private GameObject inventario;
+
+    public Sprite imagen;
+    
+    public string hablante;
     
     private bool interactuar = true;
 
@@ -21,11 +25,6 @@ public class TenderoController : MonoBehaviour
         creadorProductos = GameObject.Find("CreadorProductos");
         tienda = GameObject.Find("TiendaController");
         inventario = GameObject.Find("ToolBar");
-    }
-
-    
-    void Update()
-    {
     }
 
     public void inter()
