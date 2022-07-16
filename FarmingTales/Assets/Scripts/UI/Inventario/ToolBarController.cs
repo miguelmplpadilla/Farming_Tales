@@ -44,7 +44,9 @@ public class ToolBarController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetAxis("Mouse ScrollWheel") > 0 || Input.GetAxis("Mouse ScrollWheel") < 0)
+        if (player.GetComponent<PlayerController>().mov)
+        {
+            if (Input.GetAxis("Mouse ScrollWheel") > 0 || Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             if (Input.GetAxis("Mouse ScrollWheel") > 0 && position == 1)
             {
@@ -132,6 +134,7 @@ public class ToolBarController : MonoBehaviour
             }
 
             posicionActual = "";
+        }
         }
     }
 

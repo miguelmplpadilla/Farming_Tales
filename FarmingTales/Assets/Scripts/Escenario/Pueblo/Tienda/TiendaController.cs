@@ -12,6 +12,8 @@ public class TiendaController : MonoBehaviour
     public GameObject panelProductos;
     public GameObject comprar;
     public GameObject vender;
+    private GameObject player;
+    private GameObject inventario;
 
     public Sprite imagenTiendaComprar;
     public Sprite imagenTiendaVender;
@@ -28,6 +30,8 @@ public class TiendaController : MonoBehaviour
     {
         inventarioController = GameObject.Find("ToolBar").GetComponent<InventarioController>();
         creadorProductosController = GameObject.Find("CreadorProductos").GetComponent<CreadorProductosController>();
+        player = GameObject.Find("Player");
+        inventario = GameObject.Find("ToolBar");
     }
 
     public void mostrarCompra(ProductoController proController)
@@ -244,5 +248,19 @@ public class TiendaController : MonoBehaviour
                 cantidadMaximaProducto = cantidadMaximaProducto + 128;
             }
         }
+    }
+
+    public void cerrarTienda()
+    {
+        player.GetComponent<PlayerController>().mov = true;
+        gameObject.transform.parent.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+
+        inventario.GetComponent<InventarioController>().mostrar = true;
+    }
+
+    public void mostrarTienda()
+    {
+        player.GetComponent<PlayerController>().mov = false;
+        gameObject.transform.parent.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
     }
 }

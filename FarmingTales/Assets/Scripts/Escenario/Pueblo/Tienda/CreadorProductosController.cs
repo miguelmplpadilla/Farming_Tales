@@ -20,15 +20,22 @@ public class CreadorProductosController : MonoBehaviour
     private List<string> productosComprar = new List<string>();
     private List<string> productosVender = new List<string>();
     private List<int> productosVenderCantidad = new List<int>();
+    private List<string> proComprar = new List<string>();
 
     public IDictionary<string, ObjProducto> productosDisponibles = new Dictionary<string, ObjProducto>();
 
     public GameObject producto;
     public GameObject continer;
+    private GameObject tendero;
 
     public List<GameObject> productos = new List<GameObject>();
 
     private InventarioController inventarioController;
+
+    public void setTendero(GameObject ten)
+    {
+        tendero = ten;
+    }
 
     private void Awake()
     {
@@ -41,22 +48,12 @@ public class CreadorProductosController : MonoBehaviour
     void Start()
     {
         inventarioController = GameObject.Find("ToolBar").GetComponent<InventarioController>();
-        
-        List<string> pro = new List<string>();
-        pro.Add("patata");
-        pro.Add("zanahoria");
-        pro.Add("semillaTrigo");
-        pro.Add("valla");
-        pro.Add("madera");
-        pro.Add("roca");
-        anadirProductosComprar(pro);
     }
 
     public void anadirProductosComprar(List<string> productosAnadir)
     {
         for (int i = 0; i < productosAnadir.Count; i++)
         {
-            Debug.Log("Producto añadido: "+i);
             productosComprar.Add(productosAnadir[i]);
             GameObject instanciado = Instantiate(producto, continer.transform.position, Quaternion.identity, continer.transform);
             instanciado.GetComponent<ProductoController>().anadirDatos(productosDisponibles[productosAnadir[i]].id, productosDisponibles[productosAnadir[i]].nombreProducto, productosDisponibles[productosAnadir[i]].imagen, productosDisponibles[productosAnadir[i]].precio, 1);
@@ -78,16 +75,7 @@ public class CreadorProductosController : MonoBehaviour
     public void listaComprar()
     {
         eliminarProductos();
-        List<string> pro = new List<string>();
-        pro.Add("patata");
-        pro.Add("zanahoria");
-        pro.Add("semillaTrigo");
-        pro.Add("cofre");
-        pro.Add("valla");
-        pro.Add("madera");
-        pro.Add("roca");
-        anadirProductosComprar(pro);
-        
+        anadirProductosComprar(tendero.GetComponent<TenderoController>().productosComprar);
     }
 
     public void listaVender()
@@ -129,10 +117,8 @@ public class CreadorProductosController : MonoBehaviour
 
     public void eliminarProductos()
     {
-        Debug.Log("He entrado a eliminar producto");
         for (int i = 0; i < productos.Count; i++)
         {
-            Debug.Log("Producto eliminado: "+i);
             Destroy(productos[i]);
         }
         productos = new List<GameObject>();

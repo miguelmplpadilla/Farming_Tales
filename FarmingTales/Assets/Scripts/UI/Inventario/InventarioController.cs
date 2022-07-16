@@ -10,6 +10,8 @@ public class InventarioController : MonoBehaviour
 
     public GameObject[] posiciones = new GameObject[4];
     public GameObject[] posicionesInventario = new GameObject[4];
+    private GameObject tienda;
+    
     public TextMeshProUGUI oro;
     private GameObject inventario;
     private RectTransform rectTransformInventario;
@@ -24,6 +26,8 @@ public class InventarioController : MonoBehaviour
 
     public string[] tipos;
     public Sprite[] sprs;
+
+    public bool mostrar = true;
     
     public Vector2 posicionOriginal;
 
@@ -72,11 +76,13 @@ public class InventarioController : MonoBehaviour
         //anadirInventario("madera", spritePrueba, 1, null);
         
         anadirDinero(10000);
+        
+        tienda = GameObject.Find("InterfazTienda");
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && mostrar)
         {
             if (rectTransformInventario.localScale.x == 0)
             {
