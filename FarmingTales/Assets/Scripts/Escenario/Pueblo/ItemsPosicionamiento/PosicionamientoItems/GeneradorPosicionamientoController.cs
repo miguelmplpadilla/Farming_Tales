@@ -18,7 +18,7 @@ public class GeneradorPosicionamientoController : MonoBehaviour
     {
         puntos = new GameObject[numeroPuntos];
 
-        puntoGeneracion = new Vector2(11f,0f);
+        puntoGeneracion = new Vector2(15f,0f);
         
         for (int i = 0; i < numeroPuntos; i++)
         {

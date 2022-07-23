@@ -39,12 +39,12 @@ public class TenderoController : MonoBehaviour
 
     public void mostrarInter()
     {
-        
+        GetComponentInChildren<InteractuarUIController>().visible();
     }
 
     public void esconderInter()
     {
-        
+        GetComponentInChildren<InteractuarUIController>().invisibleDerecho();
     }
 
     private void OnTriggerStay2D(Collider2D other)

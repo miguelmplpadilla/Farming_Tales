@@ -18,6 +18,11 @@ public class InteractuarUIController : MonoBehaviour
         spriteRenderer.enabled = true;
     }
     
+    public void visible()
+    {
+        spriteRenderer.enabled = true;
+    }
+    
     public void visibleIzquierdo()
     {
         transform.localScale = new Vector3(1, 1, 1);

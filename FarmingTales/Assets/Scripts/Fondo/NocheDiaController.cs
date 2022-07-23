@@ -20,11 +20,13 @@ public class NocheDiaController : MonoBehaviour
 
     IEnumerator nocheDia()
     {
-        for (int i = 0; i < tiempoDiaNoche; i++)
+        for (int i = hora; i < tiempoDiaNoche; i++)
         {
             hora++;
             yield return new WaitForSeconds(1f);
         }
+        
+        hora = 0;
 
         StartCoroutine("cambiarFondo");
         
@@ -65,11 +67,35 @@ public class NocheDiaController : MonoBehaviour
             }
             estado = 1;
         }
-        
-        hora = 0;
-        
+
         StartCoroutine("nocheDia");
         
         yield return null;
+    }
+
+    public void dia()
+    {
+        StopCoroutine("nocheDia");
+        Color colorTemp = Color.white;
+        colorTemp.a = 1;
+        fondosDia[0].GetComponent<SpriteRenderer>().color = colorTemp;
+        fondosDia[1].GetComponent<SpriteRenderer>().color = colorTemp;
+        fondosDia[2].GetComponent<SpriteRenderer>().color = colorTemp;
+        estado = 2;
+        hora = 0;
+        StartCoroutine("nocheDia");
+    }
+
+    public void noche()
+    {
+        StopCoroutine("nocheDia");
+        Color colorTemp = Color.white;
+        colorTemp.a = 0;
+        fondosDia[0].GetComponent<SpriteRenderer>().color = colorTemp;
+        fondosDia[1].GetComponent<SpriteRenderer>().color = colorTemp;
+        fondosDia[2].GetComponent<SpriteRenderer>().color = colorTemp;
+        estado = 1;
+        hora = 0;
+        StartCoroutine("nocheDia");
     }
 }
