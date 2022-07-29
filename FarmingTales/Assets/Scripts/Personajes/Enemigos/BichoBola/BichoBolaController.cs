@@ -9,6 +9,7 @@ public class BichoBolaController : MonoBehaviour
     public float speed = 0.1f;
     private Animator animator;
     public bool atacar = true;
+    public bool hit = false;
     
     void Start()
     {
@@ -19,26 +20,40 @@ public class BichoBolaController : MonoBehaviour
     
     void Update()
     {
-        float distancia = Vector2.Distance(player.transform.position, transform.position);
-
-        Debug.Log("Distancia: "+distancia);
-        
-        if (distancia > 1)
+        if (!hit)
         {
-            if (atacar)
+            float distancia = Vector2.Distance(player.transform.position, transform.position);
+
+            Debug.Log("Distancia: "+distancia);
+        
+            if (distancia > 1)
             {
-                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-                animator.SetBool("run", true);
+                if (atacar)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+                    animator.SetBool("run", true);
+                }
             }
+            else
+            {
+                if (atacar)
+                {
+                    StartCoroutine("atacando");
+                    atacar = false;
+                }
+            }   
         }
         else
         {
-            if (atacar)
-            {
-                StartCoroutine("atacando");
-                atacar = false;
-            }
+            StopCoroutine("atacando");
+            StopCoroutine("waitAtacar");
+            atacar = true;
         }
+    }
+
+    public void setHit(bool h)
+    {
+        hit = h;
     }
 
     private void LateUpdate()
@@ -76,4 +91,6 @@ public class BichoBolaController : MonoBehaviour
     {
         StartCoroutine("waitAtacar");
     }
+    
+    
 }
