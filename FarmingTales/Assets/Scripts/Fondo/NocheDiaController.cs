@@ -11,7 +11,7 @@ public class NocheDiaController : MonoBehaviour
     public GameObject[] fondosDia;
     public GameObject[] fondosNoche;
 
-    private int estado = 1;
+    public int estado = 1;
 
     void Start()
     {
@@ -44,9 +44,7 @@ public class NocheDiaController : MonoBehaviour
                 fondosDia[0].GetComponent<SpriteRenderer>().color = colorTemp;
                 fondosDia[1].GetComponent<SpriteRenderer>().color = colorTemp;
                 fondosDia[2].GetComponent<SpriteRenderer>().color = colorTemp;
-                
-                Debug.Log(i/1000);
-            
+
                 yield return null;
             }
             estado = 2;
@@ -61,8 +59,6 @@ public class NocheDiaController : MonoBehaviour
                 fondosDia[1].GetComponent<SpriteRenderer>().color = colorTemp;
                 fondosDia[2].GetComponent<SpriteRenderer>().color = colorTemp;
 
-                Debug.Log(i/1000);
-            
                 yield return null;
             }
             estado = 1;
@@ -76,12 +72,13 @@ public class NocheDiaController : MonoBehaviour
     public void dia()
     {
         StopCoroutine("nocheDia");
+        StopCoroutine("cambiarFondo");
         Color colorTemp = Color.white;
         colorTemp.a = 1;
         fondosDia[0].GetComponent<SpriteRenderer>().color = colorTemp;
         fondosDia[1].GetComponent<SpriteRenderer>().color = colorTemp;
         fondosDia[2].GetComponent<SpriteRenderer>().color = colorTemp;
-        estado = 2;
+        estado = 1;
         hora = 0;
         StartCoroutine("nocheDia");
     }
@@ -89,12 +86,13 @@ public class NocheDiaController : MonoBehaviour
     public void noche()
     {
         StopCoroutine("nocheDia");
+        StopCoroutine("cambiarFondo");
         Color colorTemp = Color.white;
         colorTemp.a = 0;
         fondosDia[0].GetComponent<SpriteRenderer>().color = colorTemp;
         fondosDia[1].GetComponent<SpriteRenderer>().color = colorTemp;
         fondosDia[2].GetComponent<SpriteRenderer>().color = colorTemp;
-        estado = 1;
+        estado = 2;
         hora = 0;
         StartCoroutine("nocheDia");
     }

@@ -14,24 +14,22 @@ public class CamaController : MonoBehaviour
         nocheDiaController = GameObject.Find("Fondos").GetComponent<NocheDiaController>();
     }
 
-    
-    void Update()
-    {
-        
-    }
-
     public void inter()
     {
-        player.GetComponent<PlayerController>().mov = false;
-        StartCoroutine("transicion");
+        if (nocheDiaController.estado == 2)
+        {
+            player.GetComponent<PlayerController>().mov = false;
+            StartCoroutine("transicion");
+        }
     }
 
     IEnumerator transicion()
     {
-
+        fundido.gameObject.SetActive(true);
+        
         fundido.SetTrigger("fundido");
         
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         
         nocheDiaController.dia();
         
@@ -40,6 +38,10 @@ public class CamaController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         
         player.GetComponent<PlayerController>().mov = true;
+        
+        yield return new WaitForSeconds(2f);
+        
+        fundido.gameObject.SetActive(false);
     }
     
     public void mostrarInter()

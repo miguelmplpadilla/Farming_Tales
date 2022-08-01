@@ -10,6 +10,8 @@ public class BichoBolaController : MonoBehaviour
     private Animator animator;
     public bool atacar = true;
     public bool hit = false;
+    private bool acabadoCrear = true;
+    private bool mov = true;
     
     void Start()
     {
@@ -20,28 +22,35 @@ public class BichoBolaController : MonoBehaviour
     
     void Update()
     {
-        if (!hit)
+        if (mov)
         {
-            float distancia = Vector2.Distance(player.transform.position, transform.position);
-
-            Debug.Log("Distancia: "+distancia);
-        
-            if (distancia > 1)
+            if (!hit)
             {
-                if (atacar)
+                float distancia = Vector2.Distance(player.transform.position, transform.position);
+
+                if (distancia > 1)
                 {
-                    transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-                    animator.SetBool("run", true);
+                    if (atacar)
+                    {
+                        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+                        animator.SetBool("run", true);
+                    }
                 }
+                else
+                {
+                    if (atacar)
+                    {
+                        StartCoroutine("atacando");
+                        atacar = false;
+                    }
+                }   
             }
             else
             {
-                if (atacar)
-                {
-                    StartCoroutine("atacando");
-                    atacar = false;
-                }
-            }   
+                StopCoroutine("atacando");
+                StopCoroutine("waitAtacar");
+                atacar = true;
+            }
         }
         else
         {
@@ -91,6 +100,43 @@ public class BichoBolaController : MonoBehaviour
     {
         StartCoroutine("waitAtacar");
     }
-    
-    
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("BoxCamara"))
+        {
+            if (!GetComponent<SpriteRenderer>().enabled)
+            {
+                mov = false;
+                GetComponent<SpriteRenderer>().enabled = false;
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("BoxCamara"))
+        {
+            if (!GetComponent<SpriteRenderer>().enabled)
+            {
+                mov = true;
+                GetComponent<SpriteRenderer>().enabled = true;
+                acabadoCrear = false;
+            }
+        }
+    }
+
+    public void startComprobarPosicionCrear()
+    {
+        StartCoroutine("comprobarPosicionCrear");
+    }
+
+    IEnumerator comprobarPosicionCrear()
+    {
+        yield return new WaitForSeconds(1f);
+        if (mov)
+        {
+            GetComponent<SpriteRenderer>().enabled = true;
+        }
+    }
 }
