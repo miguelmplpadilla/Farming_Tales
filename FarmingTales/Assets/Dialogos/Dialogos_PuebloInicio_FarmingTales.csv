@@ -3,3 +3,8 @@ TenderoPruebloInicio,AbrirComprar,Que desea comprar viajero?,What do you want to
 TenderoPruebloInicio,Comprar,Muchas gracias por la compra viajero,Thank you very much for the purchase traveler
 TenderoPruebloInicio,AbrirVender,Que desea vender viajero?,What do you want to sell traveler?
 TenderoPruebloInicio,Vender,Muchas gracias. aquí tienes tu dinero viajero,Thank you very much. here's your money. traveler
+Buonero,Bienvenida,Muy buenas viajero,hello traveler
+Buonero,AbrirComprar,Que desea comprar viajero?,What do you want to buy traveler?
+Buonero,Comprar,Muchas gracias por la compra viajero,Thank you very much for the purchase traveler
+Buonero,AbrirVender,Que desea vender viajero?,What do you want to sell traveler?
+Buonero,Vender,Muchas gracias. aquí tienes tu dinero viajero,Thank you very much. here's your money. traveler
