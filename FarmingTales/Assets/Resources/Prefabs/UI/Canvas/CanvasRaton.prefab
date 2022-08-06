@@ -196,6 +196,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4207165261081912873, guid: 711b4a3afc75f584693a73c762c06708, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d8a6e43c436758d47935438451122e9d, type: 2}
+    - target: {fileID: 4207165261081912873, guid: 711b4a3afc75f584693a73c762c06708, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7540740207927943981, guid: d8a6e43c436758d47935438451122e9d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 711b4a3afc75f584693a73c762c06708, type: 3}
 --- !u!224 &1278174121396293633 stripped
@@ -296,6 +304,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8580681061041084598, guid: 13ab4e687e26dd04cb86fa6b214ead54, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8580681061041084599, guid: 13ab4e687e26dd04cb86fa6b214ead54, type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

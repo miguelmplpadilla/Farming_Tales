@@ -443,6 +443,7 @@ MonoBehaviour:
   - {fileID: 7927409815795864812}
   - {fileID: 7927409814912377688}
   - {fileID: 7927409814987302333}
+  estado: 1
 --- !u!1 &7927409815795864812
 GameObject:
   m_ObjectHideFlags: 0
