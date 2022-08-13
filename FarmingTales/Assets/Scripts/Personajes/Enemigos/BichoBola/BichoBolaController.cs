@@ -7,6 +7,7 @@ public class BichoBolaController : MonoBehaviour
 {
     private GameObject player;
     public float speed = 0.1f;
+    public int dano = 1;
     private Animator animator;
     public bool atacar = true;
     public bool hit = false;
@@ -28,27 +29,37 @@ public class BichoBolaController : MonoBehaviour
             {
                 float distancia = Vector2.Distance(player.transform.position, transform.position);
 
-                if (distancia > 1)
+                if (distancia < 5)
                 {
-                    if (atacar)
+                    if (distancia > 1)
                     {
-                        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-                        animator.SetBool("run", true);
+                        if (atacar)
+                        {
+                            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+                            animator.SetBool("run", true);
+                        }
+                    }
+                    else
+                    {
+                        if (atacar)
+                        {
+                            StartCoroutine("atacando");
+                            atacar = false;
+                        }
                     }
                 }
                 else
                 {
-                    if (atacar)
-                    {
-                        StartCoroutine("atacando");
-                        atacar = false;
-                    }
-                }   
+                    StopCoroutine("atacando");
+                    StopCoroutine("waitAtacar");
+                    atacar = true;
+                }
             }
             else
             {
                 StopCoroutine("atacando");
                 StopCoroutine("waitAtacar");
+                animator.SetBool("run", false);
                 atacar = true;
             }
         }
