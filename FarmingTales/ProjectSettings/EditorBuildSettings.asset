@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PuebloInicio.unity
     guid: 8d4f8b35aeecfdd48b9ebc5db07beb97
+  - enabled: 1
+    path: Assets/Scenes/PuebloFueraCastillo.unity
+    guid: db294b25c02c1324bb548638b03046c6
+  - enabled: 1
+    path: Assets/Scenes/Mapa.unity
+    guid: 197e9cb060cd3054090c7de8669b9fbb
   m_configObjects: {}

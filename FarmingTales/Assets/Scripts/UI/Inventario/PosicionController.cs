@@ -76,8 +76,6 @@ public class PosicionController : MonoBehaviour, IPointerUpHandler, IPointerDown
 
     public void OnPointerDown(PointerEventData eventData)
     {
-
-        Debug.Log("Prueba posicion raton");
         
         PosicionRatonController posicionRatonController = posicionRaton.GetComponent<PosicionRatonController>();
         if (!Input.GetKey(KeyCode.LeftShift))

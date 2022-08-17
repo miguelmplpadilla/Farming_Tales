@@ -38,8 +38,6 @@ public class BuoneroController : MonoBehaviour
             
                 int direccion = random.Next(1, 3);
 
-                Debug.Log("Direccion: "+direccion);
-
                 if (direccion == 1)
                 {
                     transform.localScale = new Vector3(1f, 1f, 1f);
