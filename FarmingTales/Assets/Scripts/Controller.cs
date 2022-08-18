@@ -12,7 +12,7 @@ public class Controller : MonoBehaviour
 
     private void Awake()
     {
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
     }
 
     void Start()

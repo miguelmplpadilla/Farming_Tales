@@ -113,7 +113,7 @@ public class ToolBarController : MonoBehaviour
 
             if (posicionadorItem != null)
             {
-                if (posicionController.item == "cofre" || posicionController.item == "plantacion" || posicionController.item == "valla")
+                if (posicionController.item == "cofre" || posicionController.item == "plantacion" || posicionController.item == "valla" || posicionController.item == "mesaCrafteo")
                 {
                     posicionadorItem.GetComponent<PosicionadorItemController>().itemPosicionado = Resources.Load("Prefabs/Instancias/"+posicionController.item) as GameObject;
                     posicionadorItem.GetComponent<PosicionadorItemController>().posicionController = posicionController;
