@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7677513948508844026, guid: c0f3103a477c89142b03f272d1ba4fab, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6812505716003183006, guid: 5f3a968b038776e4daa6c6b2116e4cba, type: 3}
     - target: {fileID: 7677513948508844027, guid: c0f3103a477c89142b03f272d1ba4fab, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -53,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7677513948508844029, guid: c0f3103a477c89142b03f272d1ba4fab, type: 3}
       propertyPath: m_Name
-      value: BichoBolaBlanco
+      value: BichoBolaBlanco Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7677513948508844030, guid: c0f3103a477c89142b03f272d1ba4fab, type: 3}
       propertyPath: m_Controller

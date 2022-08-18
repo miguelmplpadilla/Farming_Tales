@@ -41,8 +41,6 @@ public class InventarioController : MonoBehaviour
         {
             sprites.Add(tipos[i],sprs[i]);
         }
-        
-        PlayerPrefs.DeleteAll();
     }
 
     private void Start()

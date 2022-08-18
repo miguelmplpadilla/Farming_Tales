@@ -707,7 +707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.0050835013
+      value: 0.0012968183
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_SizeDelta.y
@@ -715,7 +715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.041503906
+      value: 0.46554565
       objectReference: {fileID: 0}
     - target: {fileID: 2384730821656971171, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_Pivot.x
@@ -917,12 +917,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6032575602645425826, guid: c0fce6469821c8748bd8ce652aea9e1b, type: 3}
       propertyPath: enemigos.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6032575602645425826, guid: c0fce6469821c8748bd8ce652aea9e1b, type: 3}
       propertyPath: enemigos.Array.data[1]
       value: 
       objectReference: {fileID: 7776292744419251545, guid: 748a2a7ca9475af4c980de550ee41440, type: 3}
+    - target: {fileID: 6032575602645425826, guid: c0fce6469821c8748bd8ce652aea9e1b, type: 3}
+      propertyPath: enemigos.Array.data[2]
+      value: 
+      objectReference: {fileID: 1759329169548319709, guid: 4bb182000bfaf804494d4a1a842ec2fc, type: 3}
     - target: {fileID: 6032575602645425827, guid: c0fce6469821c8748bd8ce652aea9e1b, type: 3}
       propertyPath: m_Name
       value: CreadorEnemigos
@@ -1100,7 +1104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8437111795126902402, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.016431943
+      value: 0.016417235
       objectReference: {fileID: 0}
     - target: {fileID: 8437111795126902402, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_LocalPosition.y

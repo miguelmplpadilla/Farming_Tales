@@ -50,7 +50,7 @@ public class MapaController : MonoBehaviour
         fundidoAnimator.gameObject.SetActive(true);
 
         string nivelAnterior = PlayerPrefs.GetString("NivelAnterior");
-        
+
         StartCoroutine("rutinaMoverNivel", nivelAnterior);
     }
 
