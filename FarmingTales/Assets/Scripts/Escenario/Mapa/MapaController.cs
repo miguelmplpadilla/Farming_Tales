@@ -43,6 +43,17 @@ public class MapaController : MonoBehaviour
         botones.SetActive(true);
     }
 
+    public void volverNivel()
+    {
+        panelMoverNivel.SetActive(false);
+        mov = false;
+        fundidoAnimator.gameObject.SetActive(true);
+
+        string nivelAnterior = PlayerPrefs.GetString("NivelAnterior");
+        
+        StartCoroutine("rutinaMoverNivel", nivelAnterior);
+    }
+
     public void moverNivel()
     {
         if (mov)

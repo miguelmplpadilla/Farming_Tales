@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,7 +23,17 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+    private void Start()
+    {
+        /*Debug.Log(PlayerPrefs.GetString("NivelAnterior"));
+        if (SceneManager.GetActiveScene().name.Equals(PlayerPrefs.GetString("NivelAnterior")))
+        {
+            Debug.Log(PlayerPrefs.GetFloat("PlayerX"));
+            Debug.Log(PlayerPrefs.GetFloat("PlayerY"));
+            gameObject.transform.position = new Vector3(PlayerPrefs.GetFloat("PlayerX"),PlayerPrefs.GetFloat("PlayerY"), 1f);
+        }*/
+    }
+
     void Update()
     {
         if (mov)

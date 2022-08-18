@@ -7,9 +7,11 @@ public class Controller : MonoBehaviour
 {
 
     public Animator fundidoNegro;
+    private GameObject player;
     
     void Start()
     {
+        player = GameObject.Find("Player");
         fundidoNegro.gameObject.SetActive(true);
         fundidoNegro.SetTrigger("desfundido");
 
