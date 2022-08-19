@@ -31,6 +31,11 @@ public class LootController : MonoBehaviour
             gameObject.GetComponent<BoxCollider2D>().size = new Vector2(1.8f, 1);
             cant = 2;
             life = 2;
+        } else if (tipo == "rocaHierro")
+        {
+            gameObject.GetComponent<BoxCollider2D>().size = new Vector2(1.8f, 1);
+            cant = 3;
+            life = 3;
         }
     }
 

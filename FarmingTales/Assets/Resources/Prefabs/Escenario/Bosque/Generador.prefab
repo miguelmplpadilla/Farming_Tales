@@ -48,8 +48,10 @@ MonoBehaviour:
   - {fileID: -3784475678862650978, guid: 6e87cc4f9af90d24e9b631439e8d58d8, type: 3}
   - {fileID: 5944035082240082844, guid: 6e87cc4f9af90d24e9b631439e8d58d8, type: 3}
   - {fileID: -2507816583152990964, guid: b6ed4d59a2513fd4898708cf2d225c34, type: 3}
+  - {fileID: 21300000, guid: 7874a23868576de47ba6b5e9d20c3393, type: 3}
   tipos:
   - madera
   - madera
   - roca
+  - rocaHierro
   colorSuelo: {r: 0.87058824, g: 0.62352943, b: 0.2784314, a: 1}
