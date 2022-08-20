@@ -237,10 +237,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268393d620f6f9d4482f9ebb30bac7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imagen: {fileID: 8793639957104055765, guid: f8f1fcfc709bc384f9eaa67ba288b5e0, type: 3}
+  imagen: {fileID: 5704996980451228263, guid: 34ca1f35739a0814cb491d39492149c3, type: 3}
   hablante: Buonero
   productosComprar:
-  - madera
+  - hierro
 --- !u!114 &1385860869462475355
 MonoBehaviour:
   m_ObjectHideFlags: 0

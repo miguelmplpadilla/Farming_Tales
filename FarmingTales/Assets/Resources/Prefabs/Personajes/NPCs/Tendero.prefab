@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 3691444379836044035}
   - component: {fileID: 3691444379836044036}
   - component: {fileID: 3691444379836044037}
+  - component: {fileID: 7830253135758137994}
   - component: {fileID: 3691444379836044038}
   - component: {fileID: 3691444379836044039}
+  - component: {fileID: 4092601476708738962}
   m_Layer: 0
   m_Name: Tendero
   m_TagString: Inter
@@ -75,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 90
-  m_Sprite: {fileID: -9101247539452197670, guid: a350b68da161d6545bfd55d2cecb8c62, type: 3}
+  m_Sprite: {fileID: -9051173868600350197, guid: ab513351bb54df74094c2117be1459e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,17 +100,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268393d620f6f9d4482f9ebb30bac7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imagen: {fileID: -9101247539452197670, guid: a350b68da161d6545bfd55d2cecb8c62, type: 3}
+  imagen: {fileID: 3019189405146784975, guid: 34ca1f35739a0814cb491d39492149c3, type: 3}
   hablante: TenderoPruebloInicio
   productosComprar:
-  - madera
-  - roca
   - patata
   - semillaTrigo
   - zanahoria
-  - cofre
-  - valla
   - huevoFecundado
+--- !u!114 &7830253135758137994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3691444379836044056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 276476fbaa250d448898da66ff2f1485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numeroNpc: 1
 --- !u!61 &3691444379836044038
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -126,7 +137,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.16, y: 0.24}
+    oldSize: {x: 0.26666668, y: 0.26666668}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -156,6 +167,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &4092601476708738962
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3691444379836044056}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a90cba6f5aa700479153e7767d94fcc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &4976768589171270165
 PrefabInstance:
   m_ObjectHideFlags: 0
