@@ -12,9 +12,12 @@ public class ProductoMesaController : MonoBehaviour
     private InventarioController inventarioController;
 
     public List<Materiales> materiales = new List<Materiales>();
+
+    private TextoEmergenteController textoEmergenteController;
     
     private void Start()
     {
+        textoEmergenteController = GameObject.Find("PanelTextoEmergente").GetComponent<TextoEmergenteController>();
         inventarioController = GameObject.Find("ToolBar").GetComponent<InventarioController>();
     }
 
@@ -28,10 +31,8 @@ public class ProductoMesaController : MonoBehaviour
 
     public void fabricar()
     {
-        Debug.Log("Frabricando");
         if (comprobarMaterial())
         {
-            Debug.Log("Estoy fabricando");
             if (inventarioController.comprobarEspacio(nombreProductoMesa, 1))
             {
                 restarMateriales();
@@ -40,9 +41,12 @@ public class ProductoMesaController : MonoBehaviour
             }
             else
             {
-                // Mostrar al jugador que no hay espacio
-                Debug.Log("No hay espacio suficiente");
+                textoEmergenteController.mostrarTexto("No tienes espacio suficiente en el inventario");
             }
+        }
+        else
+        {
+            textoEmergenteController.mostrarTexto("No tienes los mteriales necesarios");
         }
     }
 

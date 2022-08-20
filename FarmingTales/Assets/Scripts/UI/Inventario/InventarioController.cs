@@ -67,7 +67,7 @@ public class InventarioController : MonoBehaviour
         }
         
         anadirInventario("mesaCrafteo", 5);
-        anadirInventario("madera", 100);
+        anadirInventario("madera", 10000);
         anadirInventario("hierro", 100);
 
         anadirDinero(10000);
