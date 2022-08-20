@@ -66,6 +66,8 @@ public class InventarioController : MonoBehaviour
         //anadirInventario("plantacion", 5);
         anadirInventario("cofre", 5);
         anadirInventario("mesaCrafteo", 5);
+        anadirInventario("madera", 100);
+        anadirInventario("hierro", 100);
         //nadirInventario("semillaTrigo", 5);
         //anadirInventario("patata", 5);
         //anadirInventario("zanahoria", 5);
@@ -238,6 +240,55 @@ public class InventarioController : MonoBehaviour
         }
 
         return cantidad;
+    }
+
+    public bool comprobarEspacio(string tipo, int cantidad)
+    {
+        for (int i = 0; i < posiciones.Length; i++)
+        {
+            if (posiciones[i].GetComponent<PosicionController>().item == tipo)
+            {
+                if ((posiciones[i].GetComponent<PosicionController>().cantidad+cantidad) < 128)
+                {
+                    cantidad = 0;
+                    break;
+                }
+                else
+                {
+                    int cantAnterior = posiciones[i].GetComponent<PosicionController>().cantidad;
+                    cantidad = (cantAnterior + cantidad) - 128;
+                }
+            }
+        }
+
+        if (cantidad > 0)
+        {
+            for (int i = 0; i < posiciones.Length; i++)
+            {
+                if (posiciones[i].GetComponent<PosicionController>().item == "")
+                {
+                    posiciones[i].GetComponent<PosicionController>().item = tipo;
+                    if (cantidad < 128)
+                    {
+                        cantidad = 0;
+                        break;
+                    }
+                    else
+                    {
+                        cantidad = cantidad - 128;
+                    }
+                }
+            }
+        }
+
+        bool hayEspacio = true;
+
+        if (cantidad > 0)
+        {
+            hayEspacio = false;
+        }
+        
+        return hayEspacio;
     }
 
     public void anadirDinero(int cantidad)

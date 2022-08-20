@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ProductoMesaController : MonoBehaviour
@@ -10,12 +11,6 @@ public class ProductoMesaController : MonoBehaviour
 
     private InventarioController inventarioController;
 
-    public class Materiales
-    {
-        public string nombre;
-        public int cantidad;
-    }
-
     public List<Materiales> materiales = new List<Materiales>();
     
     private void Start()
@@ -23,18 +18,30 @@ public class ProductoMesaController : MonoBehaviour
         inventarioController = GameObject.Find("ToolBar").GetComponent<InventarioController>();
     }
 
+    public void anadirDatos(string name, List<Materiales> materials)
+    {
+        nombreProductoMesa = name;
+        materiales = materials;
+
+        gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = nombreProductoMesa;
+    }
+
     public void fabricar()
     {
+        Debug.Log("Frabricando");
         if (comprobarMaterial())
         {
-            restarMateriales();
-
-            int sobra = inventarioController.anadirInventario(nombreProductoMesa, 1);
-
-            if (sobra > 0)
+            Debug.Log("Estoy fabricando");
+            if (inventarioController.comprobarEspacio(nombreProductoMesa, 1))
             {
-                // Añadir a cofre exterior
-                Debug.Log("No hay suficiente espacio en el inventario");
+                restarMateriales();
+
+                inventarioController.anadirInventario(nombreProductoMesa, 1);
+            }
+            else
+            {
+                // Mostrar al jugador que no hay espacio
+                Debug.Log("No hay espacio suficiente");
             }
         }
     }
@@ -77,7 +84,34 @@ public class ProductoMesaController : MonoBehaviour
 
     public void restarMateriales()
     {
-        
+        for (int i = 0; i < materiales.Count; i++)
+        {
+            int cantidadARestar = materiales[i].cantidad;
+            for (int j = 0; j < inventarioController.posiciones.Length; j++)
+            {
+                if (inventarioController.posiciones[j].GetComponent<PosicionController>().item.Equals(materiales[i].nombre))
+                {
+                    if (inventarioController.posiciones[j].GetComponent<PosicionController>().cantidad == cantidadARestar)
+                    {
+                        inventarioController.posiciones[j].GetComponent<PosicionController>().cantidad = 0;
+                        inventarioController.posiciones[j].GetComponent<PosicionController>().item = "";
+                        cantidadARestar = 0;
+                        break;
+                    } else if (inventarioController.posiciones[j].GetComponent<PosicionController>().cantidad < cantidadARestar)
+                    {
+                        cantidadARestar -= inventarioController.posiciones[j].GetComponent<PosicionController>()
+                            .cantidad;
+                        inventarioController.posiciones[j].GetComponent<PosicionController>().cantidad = 0;
+                        inventarioController.posiciones[j].GetComponent<PosicionController>().item = "";
+                    } else if (inventarioController.posiciones[j].GetComponent<PosicionController>().cantidad > cantidadARestar)
+                    {
+                        inventarioController.posiciones[j].GetComponent<PosicionController>().cantidad -= cantidadARestar;
+                        cantidadARestar = 0;
+                        break;
+                    }
+                }
+            }
+        }
     }
 
 }
