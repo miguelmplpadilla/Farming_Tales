@@ -68,14 +68,10 @@ public class ProductoMesaController : MonoBehaviour
                 }
             }
 
-            if (cantidadSeguir >= materiales[i].cantidad)
+            if (cantidadSeguir < materiales[i].cantidad)
             {
                 seguir = false;
                 break;
-            }
-            else
-            {
-                cantidadSeguir = 0;
             }
         }
 

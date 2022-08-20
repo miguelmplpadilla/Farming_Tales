@@ -35,6 +35,9 @@ public class InventarioController : MonoBehaviour
 
     private void Awake()
     {
+        
+        PlayerPrefs.DeleteAll();
+        
         //Cursor.visible = false;
         
         for (int i = 0; i < tipos.Length; i++)
@@ -63,16 +66,10 @@ public class InventarioController : MonoBehaviour
             cargarInventarioDinero();
         }
         
-        //anadirInventario("plantacion", 5);
-        anadirInventario("cofre", 5);
         anadirInventario("mesaCrafteo", 5);
         anadirInventario("madera", 100);
         anadirInventario("hierro", 100);
-        //nadirInventario("semillaTrigo", 5);
-        //anadirInventario("patata", 5);
-        //anadirInventario("zanahoria", 5);
-        //anadirInventario("madera", spritePrueba, 1, null);
-        
+
         anadirDinero(10000);
         
         tienda = GameObject.Find("InterfazTienda");

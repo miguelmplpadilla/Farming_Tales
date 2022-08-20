@@ -10,6 +10,9 @@ public class CreadorProduictosMesa : MonoBehaviour
 
     public GameObject producto;
     public GameObject continer;
+    private GameObject player;
+    
+    private InventarioController inventarioController;
     
     [System.Serializable]
     public class ObjProducto
@@ -23,6 +26,8 @@ public class CreadorProduictosMesa : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.Find("Player");
+        inventarioController = GameObject.Find("ToolBar").GetComponent<InventarioController>();
         crearProductos();
     }
 
@@ -52,6 +57,13 @@ public class CreadorProduictosMesa : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void cerrarMesaCrafteo()
+    {
+        inventarioController.mostrar = true;
+        player.GetComponent<PlayerController>().mov = true;
+        transform.parent.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
     }
     
 }
