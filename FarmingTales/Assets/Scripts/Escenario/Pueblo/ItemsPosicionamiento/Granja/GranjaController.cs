@@ -67,8 +67,8 @@ public class GranjaController : MonoBehaviour
         }
         Vector2 posicionamientoAnimal = new Vector2(transform.position.x + 1f, transform.position.y);
 
-        anadirAnimal("gallina");
-        anadirAnimal("vaca");
+        //anadirAnimal("gallina");
+        //anadirAnimal("vaca");
 
         GameObject numerosAnimales = GameObject.Find("NumerosAnimales");
         

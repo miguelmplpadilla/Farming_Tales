@@ -15,6 +15,8 @@ public class ProductoController : MonoBehaviour
     public int cantidadVenta = 0;
     private int comprarVender = 1;
 
+    private bool animalGranja = false;
+
     private CreadorProductosController creadorProductosController;
     private TiendaController tiendaController;
 
@@ -31,16 +33,17 @@ public class ProductoController : MonoBehaviour
         creadorProductosController = GameObject.Find("CreadorProductos").GetComponent<CreadorProductosController>();
     }
 
-    public void anadirDatos(string ide, string item, Sprite imagen, int cantidadPrecio, int compVend)
+    public void anadirDatos(string ide, string item, Sprite imagen, int cantidadPrecio, int compVend, bool animal)
     {
         id = ide;
         imagenProducto.sprite = imagen;
         nombreProducto.text = item;
         precio.text = cantidadPrecio.ToString();
         comprarVender = compVend;
+        animalGranja = animal;
     }
     
-    public void anadirDatos(string ide, string item, Sprite imagen, int cantidadPrecio, int cantVenta, int compVend)
+    public void anadirDatos(string ide, string item, Sprite imagen, int cantidadPrecio, int cantVenta, int compVend, bool animal)
     {
         id = ide;
         imagenProducto.sprite = imagen;
@@ -48,17 +51,28 @@ public class ProductoController : MonoBehaviour
         precio.text = cantidadPrecio.ToString();
         cantidadVenta = cantVenta;
         comprarVender = compVend;
+        animalGranja = animal;
     }
 
     public void selectProduct()
     {
-        if (comprarVender == 1)
+        if (!animalGranja)
         {
-            tiendaController.mostrarCompra(GetComponent<ProductoController>());
+            if (comprarVender == 1)
+            {
+                tiendaController.mostrarCompra(GetComponent<ProductoController>());
+            }
+            else if (comprarVender == 2)
+            {
+                tiendaController.mostrarVender(GetComponent<ProductoController>());
+            }
         }
-        else if (comprarVender == 2)
+        else
         {
-            tiendaController.mostrarVender(GetComponent<ProductoController>());
+            if (comprarVender == 1)
+            {
+                tiendaController.mostrarComprarAnimal(GetComponent<ProductoController>());
+            }
         }
     }
 

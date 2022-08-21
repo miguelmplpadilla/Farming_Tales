@@ -13,6 +13,7 @@ public class CreadorProductosController : MonoBehaviour
         public string nombreProducto;
         public Sprite imagen;
         public int precio;
+        public bool animalGranja = false;
     }
     
     public List<ObjProducto> listaProductos = new List<ObjProducto>();
@@ -56,7 +57,7 @@ public class CreadorProductosController : MonoBehaviour
         {
             productosComprar.Add(productosAnadir[i]);
             GameObject instanciado = Instantiate(producto, continer.transform.position, Quaternion.identity, continer.transform);
-            instanciado.GetComponent<ProductoController>().anadirDatos(productosDisponibles[productosAnadir[i]].id, productosDisponibles[productosAnadir[i]].nombreProducto, productosDisponibles[productosAnadir[i]].imagen, productosDisponibles[productosAnadir[i]].precio, 1);
+            instanciado.GetComponent<ProductoController>().anadirDatos(productosDisponibles[productosAnadir[i]].id, productosDisponibles[productosAnadir[i]].nombreProducto, productosDisponibles[productosAnadir[i]].imagen, productosDisponibles[productosAnadir[i]].precio, 1, productosDisponibles[productosAnadir[i]].animalGranja);
             productos.Add(instanciado);
         }
     }
@@ -67,7 +68,7 @@ public class CreadorProductosController : MonoBehaviour
         {
             GameObject instanciado = Instantiate(producto, continer.transform.position, Quaternion.identity, continer.transform);
             int precioVenta = (int) Math.Round((productosDisponibles[productosAnadir[i]].precio * 0.5f));
-            instanciado.GetComponent<ProductoController>().anadirDatos(productosDisponibles[productosAnadir[i]].id, productosDisponibles[productosAnadir[i]].nombreProducto, productosDisponibles[productosAnadir[i]].imagen, precioVenta, cantidadVender[i], 2);
+            instanciado.GetComponent<ProductoController>().anadirDatos(productosDisponibles[productosAnadir[i]].id, productosDisponibles[productosAnadir[i]].nombreProducto, productosDisponibles[productosAnadir[i]].imagen, precioVenta, cantidadVender[i], 2, productosDisponibles[productosAnadir[i]].animalGranja);
             productos.Add(instanciado);
         }
     }

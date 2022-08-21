@@ -14,11 +14,13 @@ public class TiendaController : MonoBehaviour
     public GameObject panelProductos;
     public GameObject comprar;
     public GameObject vender;
+    public GameObject comprarAnimal;
     private GameObject player;
     private GameObject inventario;
     private GameObject cuadroDialogo;
     private TextMeshProUGUI textoDialogo;
     private Image imagenDialogo;
+    private TextoEmergenteController textoEmergenteController;
     
     private DialogeController dialogeController = new DialogeController();
 
@@ -42,6 +44,7 @@ public class TiendaController : MonoBehaviour
         cuadroDialogo = GameObject.Find("CuadroDialogo");
         textoDialogo = GameObject.Find("TextoDialogo").GetComponent<TextMeshProUGUI>();
         imagenDialogo = GameObject.Find("ImagenNPC").GetComponent<Image>();
+        textoEmergenteController = GameObject.Find("PanelTextoEmergente").GetComponent<TextoEmergenteController>();
     }
 
     public void mostrarCompra(ProductoController proController)
@@ -75,9 +78,70 @@ public class TiendaController : MonoBehaviour
         
         transform.parent.GetComponent<Image>().sprite = imagenTiendaVender;
     }
+
+    public void mostrarComprarAnimal(ProductoController proController)
+    {
+        productoComprar = proController;
+        panelProductos.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+        
+        comprarAnimal.transform.Find("MarcoProductoComprar").transform.Find("ImagenProductoComprar").GetComponent<Image>()
+            .sprite = proController.getImagenProducto();
+        
+        comprarAnimal.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+        comprar.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+        vender.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+        
+        transform.parent.GetComponent<Image>().sprite = imagenTiendaComprar;
+        
+    }
+
+    public void siComprarAnimal()
+    {
+        List<GameObject> granjas = new List<GameObject>();
+
+        foreach (var gameObj in FindObjectsOfType(typeof(GameObject)) as GameObject[])
+        {
+            if(gameObj.name == "valla(Clone)")
+            {
+                granjas.Add(gameObj);
+            }
+        }
+
+        if (granjas.Count <= 0)
+        {
+            textoEmergenteController.mostrarTexto("No tienes ninguna granja");
+        }
+        else
+        {
+            bool animalAnadido = false;
+            for (int i = 0; i < granjas.Count; i++)
+            {
+                if (granjas[i].GetComponent<GranjaController>().animales.Count < 6)
+                {
+                    granjas[i].GetComponent<GranjaController>().anadirAnimal(productoComprar.id);
+                    animalAnadido = true;
+                    break;
+                }
+            }
+
+            if (animalAnadido)
+            {
+                textoEmergenteController.mostrarTexto("Animal sumado a la granja");
+                StartCoroutine("mostrarFrase", dialogeController.getTextoDialogos(dialogos, creadorProductosController.tendero.GetComponent<TenderoController>().hablante, "Comprar", "Español")[0]);
+                string oro = (int.Parse(inventarioController.oro.text) - productoComprar.getPrecioProducto()).ToString();
+                inventarioController.oro.text = oro;
+            }
+            else
+            {
+                textoEmergenteController.mostrarTexto("No tienes espacio en ninguna granja");
+            }
+            
+        }
+    }
     
     public void mostrarListaComprar() {
         comprar.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+        comprarAnimal.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
         vender.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
         
         panelProductos.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
@@ -93,6 +157,7 @@ public class TiendaController : MonoBehaviour
     {
         vender.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
         comprar.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+        comprarAnimal.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
         
         panelProductos.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         
@@ -190,7 +255,7 @@ public class TiendaController : MonoBehaviour
             comprar.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
             panelProductos.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
             string oro = (int.Parse(inventarioController.oro.text) - precioProducto).ToString();
-            inventarioController.oro.text = (oro);
+            inventarioController.oro.text = oro;
             
             comprar.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
             
