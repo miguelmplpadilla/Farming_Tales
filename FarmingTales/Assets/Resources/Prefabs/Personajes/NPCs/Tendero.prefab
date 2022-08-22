@@ -100,13 +100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268393d620f6f9d4482f9ebb30bac7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imagen: {fileID: 3019189405146784975, guid: 34ca1f35739a0814cb491d39492149c3, type: 3}
-  hablante: TenderoPruebloInicio
+  granjero: 1
+  imagen: {fileID: 21300000, guid: 9ed60d3a4ccc7d64c97348796abcc5c1, type: 3}
+  hablante: TenderoGranjero
   productosComprar:
-  - patata
-  - semillaTrigo
-  - zanahoria
-  - huevoFecundado
+  - gallina
+  - vaca
 --- !u!114 &7830253135758137994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 276476fbaa250d448898da66ff2f1485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numeroNpc: 1
+  numeroNpc: 4
 --- !u!61 &3691444379836044038
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -215,11 +214,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5367176874362754942, guid: 5aaa9c0b586760449b45cad362704d10, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.009
+      value: -0.0024
       objectReference: {fileID: 0}
     - target: {fileID: 5367176874362754942, guid: 5aaa9c0b586760449b45cad362704d10, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.237
+      value: 0.2844
       objectReference: {fileID: 0}
     - target: {fileID: 5367176874362754942, guid: 5aaa9c0b586760449b45cad362704d10, type: 3}
       propertyPath: m_LocalPosition.z

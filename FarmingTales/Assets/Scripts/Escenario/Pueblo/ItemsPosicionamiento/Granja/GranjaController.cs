@@ -275,7 +275,6 @@ public class GranjaController : MonoBehaviour
             }
             else
             {
-                Debug.Log("Animales: "+animales.ToString());
                 break;
             }
             

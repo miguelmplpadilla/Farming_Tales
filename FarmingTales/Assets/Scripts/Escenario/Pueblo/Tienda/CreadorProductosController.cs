@@ -32,6 +32,8 @@ public class CreadorProductosController : MonoBehaviour
     public List<GameObject> productos = new List<GameObject>();
 
     private InventarioController inventarioController;
+    
+    private TextoEmergenteController textoEmergenteController;
 
     public void setTendero(GameObject ten)
     {
@@ -49,6 +51,7 @@ public class CreadorProductosController : MonoBehaviour
     void Start()
     {
         inventarioController = GameObject.Find("ToolBar").GetComponent<InventarioController>();
+        textoEmergenteController = GameObject.Find("PanelTextoEmergente").GetComponent<TextoEmergenteController>();
     }
 
     public void anadirProductosComprar(List<string> productosAnadir)
@@ -114,15 +117,35 @@ public class CreadorProductosController : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < productosVenderCantidad.Count; i++)
+        bool reiniciar = false;
+        while (true)
         {
-            if (productosVenderCantidad[i] == 0)
+            for (int i = 0; i < productosVenderCantidad.Count; i++)
             {
-                productosVender.RemoveAt(i);
-                productosVenderCantidad.RemoveAt(i);
+                if (productosVenderCantidad[i] == 0)
+                {
+                    productosVender.RemoveAt(i);
+                    productosVenderCantidad.RemoveAt(i);
+                    reiniciar = true;
+                    break;
+                }
+            }
+            
+            if (reiniciar)
+            {
+                reiniciar = false;
+            }
+            else
+            {
+                break;
             }
         }
         
+        if (productosVender.Count <= 0)
+        {
+            textoEmergenteController.mostrarTexto("No tienes animales para vender");
+        }
+
         anadirProductosVender(productosVender, productosVenderCantidad);
         
     }
@@ -133,6 +156,12 @@ public class CreadorProductosController : MonoBehaviour
         productosVender = new List<string>();
         productosVenderCantidad = new List<int>();
         disponibilidadVenta();
+
+        if (productosVender.Count <= 0)
+        {
+            textoEmergenteController.mostrarTexto("No tienes productos para vender");
+        }
+        
         anadirProductosVender(productosVender, productosVenderCantidad);
     }
 

@@ -8,3 +8,8 @@ Buonero,AbrirComprar,Que desea comprar viajero?,What do you want to buy traveler
 Buonero,Comprar,Muchas gracias por la compra viajero,Thank you very much for the purchase traveler
 Buonero,AbrirVender,Que desea vender viajero?,What do you want to sell traveler?
 Buonero,Vender,Muchas gracias. aquí tienes tu dinero viajero,Thank you very much. here's your money. traveler
+TenderoGranjero,Bienvenida,Bienvenido a mi tienda viajero,Welcome to my shop traveler
+TenderoGranjero,AbrirComprar,Desea comprar algún animal?,Do you want to buy an animal?
+TenderoGranjero,Comprar,Muchas gracias por la compra viajero,Thank you very much for the purchase traveler
+TenderoGranjero,AbrirVender,Desea venedr algún animal?,Do you want to sell an animal?
+TenderoGranjero,Vender,Muchas gracias. aquí tienes tu dinero viajero,Thank you very much. here's your money. traveler

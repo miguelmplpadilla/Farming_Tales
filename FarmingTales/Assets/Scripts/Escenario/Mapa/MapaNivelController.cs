@@ -20,12 +20,14 @@ public class MapaNivelController : MonoBehaviour
         fundidoNegro.gameObject.SetActive(true);
         fundidoNegro.SetTrigger("fundido");
         
+        PlayerPrefs.SetString("NivelGuardadoPartida", SceneManager.GetActiveScene().name);
         PlayerPrefs.SetString("NivelAnterior", SceneManager.GetActiveScene().name);
         PlayerPrefs.SetFloat("PlayerX", player.transform.position.x);
         PlayerPrefs.SetFloat("PlayerY", player.transform.position.y);
         PlayerPrefs.Save();
         
-        StartCoroutine("moverMapa");
+        //StartCoroutine("moverMapa");
+        SceneManager.LoadScene("Mapa");
     }
 
     IEnumerator moverMapa()
