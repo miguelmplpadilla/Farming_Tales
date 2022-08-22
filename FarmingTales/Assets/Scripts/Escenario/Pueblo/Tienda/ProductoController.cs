@@ -15,7 +15,7 @@ public class ProductoController : MonoBehaviour
     public int cantidadVenta = 0;
     private int comprarVender = 1;
 
-    private bool animalGranja = false;
+    public bool animalGranja = false;
 
     private CreadorProductosController creadorProductosController;
     private TiendaController tiendaController;
@@ -56,23 +56,19 @@ public class ProductoController : MonoBehaviour
 
     public void selectProduct()
     {
-        if (!animalGranja)
+        if (comprarVender == 1)
         {
-            if (comprarVender == 1)
+            if (!animalGranja)
             {
                 tiendaController.mostrarCompra(GetComponent<ProductoController>());
-            }
-            else if (comprarVender == 2)
-            {
-                tiendaController.mostrarVender(GetComponent<ProductoController>());
-            }
-        }
-        else
-        {
-            if (comprarVender == 1)
+            } else
             {
                 tiendaController.mostrarComprarAnimal(GetComponent<ProductoController>());
             }
+        }
+        else if (comprarVender == 2)
+        {
+            tiendaController.mostrarVender(GetComponent<ProductoController>());
         }
     }
 

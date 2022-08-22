@@ -11,6 +11,8 @@ public class TenderoController : MonoBehaviour
     private GameObject tienda;
     private GameObject inventario;
 
+    public bool granjero;
+
     public Sprite imagen;
     
     public string hablante;
@@ -32,7 +34,7 @@ public class TenderoController : MonoBehaviour
         player.GetComponent<PlayerController>().mov = false;
         creadorProductos.GetComponent<CreadorProductosController>().setTendero(gameObject);
         creadorProductos.GetComponent<CreadorProductosController>().listaComprar();
-        tienda.GetComponent<TiendaController>().mostrarTienda();
+        tienda.GetComponent<TiendaController>().mostrarTienda(granjero);
 
         inventario.GetComponent<InventarioController>().mostrar = false;
     }

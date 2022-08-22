@@ -79,6 +79,54 @@ public class CreadorProductosController : MonoBehaviour
         anadirProductosComprar(tendero.GetComponent<TenderoController>().productosComprar);
     }
 
+    public void listaVenderAnimales()
+    {
+        eliminarProductos();
+        productosVender = new List<string>();
+        productosVenderCantidad = new List<int>();
+        
+        List<GameObject> granjas = new List<GameObject>();
+
+        foreach (var gameObj in FindObjectsOfType(typeof(GameObject)) as GameObject[])
+        {
+            if(gameObj.name == "valla(Clone)")
+            {
+                granjas.Add(gameObj);
+            }
+        }
+        
+        productosVender.Add("gallina");
+        productosVender.Add("vaca");
+        productosVenderCantidad.Add(0);
+        productosVenderCantidad.Add(0);
+
+        for (int i = 0; i < granjas.Count; i++)
+        {
+            for (int j = 0; j < granjas[i].GetComponent<GranjaController>().animales.Count; j++)
+            {
+                if (granjas[i].GetComponent<GranjaController>().animales[j].name.Equals("gallina(Clone)"))
+                {
+                    productosVenderCantidad[0]++;
+                } else if (granjas[i].GetComponent<GranjaController>().animales[j].name.Equals("vaca(Clone)"))
+                {
+                    productosVenderCantidad[1]++;
+                }
+            }
+        }
+
+        for (int i = 0; i < productosVenderCantidad.Count; i++)
+        {
+            if (productosVenderCantidad[i] == 0)
+            {
+                productosVender.RemoveAt(i);
+                productosVenderCantidad.RemoveAt(i);
+            }
+        }
+        
+        anadirProductosVender(productosVender, productosVenderCantidad);
+        
+    }
+
     public void listaVender()
     {
         eliminarProductos();

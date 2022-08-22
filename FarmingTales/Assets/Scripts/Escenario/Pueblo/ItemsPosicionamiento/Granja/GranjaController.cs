@@ -252,6 +252,38 @@ public class GranjaController : MonoBehaviour
         guardarPartida();
     }
 
+    public int eliminarAnimal(string tipoAnimal, int cantEliminacion)
+    {
+        bool reiniciar = false;
+        while (true)
+        {
+            for (int i = 0; i < animales.Count; i++)
+            {
+                if (animales[i].name.Equals(tipoAnimal+"(Clone)"))
+                {
+                    Destroy(animales[i]);
+                    animales.RemoveAt(i);
+                    cantEliminacion--;
+                    reiniciar = true;
+                    break;
+                }
+            }
+
+            if (reiniciar)
+            {
+                reiniciar = false;
+            }
+            else
+            {
+                Debug.Log("Animales: "+animales.ToString());
+                break;
+            }
+            
+        }
+
+        return cantEliminacion;
+    }
+
     public string montarIdAnimal(string tipoAnimal)
     {
         return id+tipoAnimal+animales.Count;

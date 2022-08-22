@@ -21,6 +21,8 @@ public class TiendaController : MonoBehaviour
     private TextMeshProUGUI textoDialogo;
     private Image imagenDialogo;
     private TextoEmergenteController textoEmergenteController;
+
+    private bool granjero;
     
     private DialogeController dialogeController = new DialogeController();
 
@@ -162,9 +164,16 @@ public class TiendaController : MonoBehaviour
         panelProductos.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         
         StartCoroutine("mostrarFrase", dialogeController.getTextoDialogos(dialogos, creadorProductosController.tendero.GetComponent<TenderoController>().hablante, "AbrirVender", "Español")[0]);
-        
-        creadorProductosController.listaVender();
-        
+
+        if (!granjero)
+        {
+            creadorProductosController.listaVender();
+        }
+        else
+        {
+            creadorProductosController.listaVenderAnimales();
+        }
+
         transform.parent.GetComponent<Image>().sprite = imagenTiendaVender;
     }
     
@@ -273,6 +282,7 @@ public class TiendaController : MonoBehaviour
 
     public void venderProducto()
     {
+        int cantRestar = cantidadProducto;
         if (cantidadProducto <= productoComprar.cantidadVenta && cantidadProducto < 128)
         {
             for (int i = 0; i < inventarioController.posiciones.Length; i++)
@@ -313,6 +323,25 @@ public class TiendaController : MonoBehaviour
             mostrarListaVender();
             
             StartCoroutine("mostrarFrase", dialogeController.getTextoDialogos(dialogos, creadorProductosController.tendero.GetComponent<TenderoController>().hablante, "Vender", "Español")[0]);
+
+            if (productoComprar.animalGranja)
+            {
+                Debug.Log("Eliminando animales");
+                Debug.Log(cantRestar);
+                foreach (var gameObj in FindObjectsOfType(typeof(GameObject)) as GameObject[])
+                {
+                    if(gameObj.name == "valla(Clone)")
+                    {
+                        if (cantRestar > 0)
+                        {
+                            cantRestar = gameObj.GetComponent<GranjaController>().eliminarAnimal(productoComprar.id, cantRestar);
+                        }
+                    }
+                }
+                
+                mostrarListaVender();
+            }
+            
         }
 
     }
@@ -343,8 +372,10 @@ public class TiendaController : MonoBehaviour
         cuadroDialogo.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
     }
 
-    public void mostrarTienda()
+    public void mostrarTienda(bool gra)
     {
+        granjero = gra;
+        
         StartCoroutine("mostrarFrase", dialogeController.getTextoDialogos(dialogos, creadorProductosController.tendero.GetComponent<TenderoController>().hablante, "Bienvenida", "Español")[0]);
         player.GetComponent<PlayerController>().mov = false;
         gameObject.transform.parent.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
