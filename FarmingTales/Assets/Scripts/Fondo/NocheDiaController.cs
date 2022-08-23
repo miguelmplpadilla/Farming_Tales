@@ -15,6 +15,22 @@ public class NocheDiaController : MonoBehaviour
 
     void Start()
     {
+
+        if (PlayerPrefs.HasKey("HoraDia"))
+        {
+            hora = PlayerPrefs.GetInt("HoraDia");
+            estado = PlayerPrefs.GetInt("DiaNoche");
+
+            if (estado == 2)
+            {
+                Color colorTemp = Color.white;
+                colorTemp.a = 0;
+                fondosDia[0].GetComponent<SpriteRenderer>().color = colorTemp;
+                fondosDia[1].GetComponent<SpriteRenderer>().color = colorTemp;
+                fondosDia[2].GetComponent<SpriteRenderer>().color = colorTemp;
+            }
+        }
+
         StartCoroutine("nocheDia");
     }
 
@@ -23,6 +39,8 @@ public class NocheDiaController : MonoBehaviour
         for (int i = hora; i < tiempoDiaNoche; i++)
         {
             hora++;
+            PlayerPrefs.SetInt("HoraDia", hora);
+            PlayerPrefs.SetInt("DiaNoche", estado);
             yield return new WaitForSeconds(1f);
         }
         

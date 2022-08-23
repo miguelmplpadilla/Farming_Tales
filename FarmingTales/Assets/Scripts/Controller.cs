@@ -36,9 +36,8 @@ public class Controller : MonoBehaviour
         {
             if (!PlayerPrefs.HasKey("NivelGuardadoPartida"))
             {
-                GameObject botonCargarPartida = GameObject.Find("CargarPartida");
-                GameObject.Find("NuevaPartida").transform.position = botonCargarPartida.transform.position;
-                botonCargarPartida.SetActive(false);
+                GameObject.Find("NuevaPartida").GetComponent<RectTransform>().anchoredPosition =  new Vector3(0f,-80, 1);
+                GameObject.Find("CargarPartida").SetActive(false);
             }
         }
         
@@ -96,12 +95,10 @@ public class Controller : MonoBehaviour
 
     IEnumerator guardadoPartida()
     {
-        Debug.Log("Iniciado guardar partida");
         while (true)
         {
-            yield return new WaitForSeconds(20);
-            Debug.Log("Partida guardada");
             PlayerPrefs.SetString("NivelGuardadoPartida", SceneManager.GetActiveScene().name);
+            yield return new WaitForSeconds(300);
         }
     }
 
