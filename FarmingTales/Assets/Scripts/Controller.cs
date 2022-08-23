@@ -13,6 +13,7 @@ public class Controller : MonoBehaviour
 
     public bool paused = false;
     public bool guardarPartida;
+    public bool pausarPartida = true;
 
     private void Awake()
     {
@@ -30,14 +31,27 @@ public class Controller : MonoBehaviour
         {
             StartCoroutine("guardadoPartida");
         }
+
+        if (SceneManager.GetActiveScene().name.Equals("PantallaInicio"))
+        {
+            if (!PlayerPrefs.HasKey("NivelGuardadoPartida"))
+            {
+                GameObject botonCargarPartida = GameObject.Find("CargarPartida");
+                GameObject.Find("NuevaPartida").transform.position = botonCargarPartida.transform.position;
+                botonCargarPartida.SetActive(false);
+            }
+        }
         
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (pausarPartida)
         {
-            pausarDespausar();
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                pausarDespausar();
+            }
         }
     }
 
@@ -62,7 +76,15 @@ public class Controller : MonoBehaviour
 
     public void salirJuego()
     {
-        Application.Quit();
+        if (SceneManager.GetActiveScene().name.Equals("PantallaInicio"))
+        {
+            Application.Quit();
+        }
+        else
+        {
+            PlayerPrefs.SetString("NivelGuardadoPartida", SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("PantallaInicio");
+        }
     }
 
     public void abrirMapa()
@@ -74,11 +96,24 @@ public class Controller : MonoBehaviour
 
     IEnumerator guardadoPartida()
     {
+        Debug.Log("Iniciado guardar partida");
         while (true)
         {
-            yield return new WaitForSeconds(300);
+            yield return new WaitForSeconds(20);
+            Debug.Log("Partida guardada");
             PlayerPrefs.SetString("NivelGuardadoPartida", SceneManager.GetActiveScene().name);
         }
+    }
+
+    public void cargarPartida()
+    {
+        SceneManager.LoadScene(PlayerPrefs.GetString("NivelGuardadoPartida"));
+    }
+
+    public void nuevaPartida()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("PuebloInicio");
     }
 
 }
