@@ -54,8 +54,9 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (Input.GetButtonDown("Jump") && isGrounded == true && isAttacking == false) {
-                rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            if (Input.GetButtonDown("Jump") && isGrounded == true && isAttacking == false)
+            {
+                saltar();
             }
         }
         else
@@ -63,6 +64,11 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("run", false);
             rigidbody.velocity = Vector3.zero;
         }
+    }
+
+    public void saltar()
+    {
+        rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
     
     void FixedUpdate()

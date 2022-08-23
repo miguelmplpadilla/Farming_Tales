@@ -22,6 +22,11 @@ public class InteractuarUIController : MonoBehaviour
     {
         spriteRenderer.enabled = true;
     }
+
+    public void esconder()
+    {
+        spriteRenderer.enabled = false;
+    }
     
     public void visibleIzquierdo()
     {
