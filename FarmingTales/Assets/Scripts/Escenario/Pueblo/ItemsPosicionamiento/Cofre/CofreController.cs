@@ -10,7 +10,17 @@ public class CofreController : MonoBehaviour
 
     public string id = "";
     public bool cofreExterior = false;
-    
+
+    [System.Serializable]
+    public class ObjetosAnadirCofre
+    {
+        public string item = "";
+        public int cantidad = 0;
+        public Sprite sprite;
+    }
+
+    public List<ObjetosAnadirCofre> objetosAnadir = new List<ObjetosAnadirCofre>();
+
     public PosicionInventarioCofre[] posicionInventarioCofres;
     private InventarioCofreController inventarioCofreController;
     
@@ -60,6 +70,17 @@ public class CofreController : MonoBehaviour
         if (cofreExterior)
         {
             id = "cofreExterior" + SceneManager.GetActiveScene().name;
+        }
+        
+        if (objetosAnadir.Count > 0)
+        {
+            posicionInventarioCofres = new PosicionInventarioCofre[objetosAnadir.Count];
+
+            for (int i = 0; i < objetosAnadir.Count; i++)
+            {
+                posicionInventarioCofres[i] = new PosicionInventarioCofre(objetosAnadir[i].item, objetosAnadir[i].cantidad, objetosAnadir[i].sprite);
+            }
+            
         }
         
         if (id != "")

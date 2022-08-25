@@ -48,7 +48,7 @@ public class EscaleraController : MonoBehaviour
             
             if (bajar)
             {
-                if (Input.GetKeyDown(KeyCode.Mouse1))
+                if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetButtonDown("Jump"))
                 {
                     StartCoroutine("bajarEscalera");
                 }
@@ -86,9 +86,6 @@ public class EscaleraController : MonoBehaviour
             player.GetComponent<Rigidbody2D>().velocity =
                 new Vector2(player.GetComponent<Rigidbody2D>().velocity.x, verticalVelocity);
 
-
-            Debug.Log(verticalInput);
-            
             if (verticalInput > 0)
             {
                 playerAnimator.SetInteger("subirBajarEscalera", 1);

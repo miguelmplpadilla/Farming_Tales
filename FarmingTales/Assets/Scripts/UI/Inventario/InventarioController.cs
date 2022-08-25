@@ -36,7 +36,7 @@ public class InventarioController : MonoBehaviour
     private void Awake()
     {
         
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
         
         //Cursor.visible = false;
         
