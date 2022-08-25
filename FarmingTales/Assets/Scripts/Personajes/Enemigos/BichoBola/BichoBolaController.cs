@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using UnityEngine;
 
 public class BichoBolaController : MonoBehaviour
@@ -12,7 +13,13 @@ public class BichoBolaController : MonoBehaviour
     public bool atacar = true;
     public bool hit = false;
     private bool acabadoCrear = true;
-    private bool mov = true;
+    public bool mov = true;
+
+    public float distancia = 0;
+
+    public bool noGirar = false;
+    
+    private bool pararEnemigo = false;
     
     void Start()
     {
@@ -27,7 +34,7 @@ public class BichoBolaController : MonoBehaviour
         {
             if (!hit)
             {
-                float distancia = Vector2.Distance(player.transform.position, transform.position);
+                distancia = Vector2.Distance(player.transform.position, transform.position);
 
                 if (distancia < 5)
                 {
@@ -53,6 +60,7 @@ public class BichoBolaController : MonoBehaviour
                     StopCoroutine("atacando");
                     StopCoroutine("waitAtacar");
                     atacar = true;
+                    hit = false;
                 }
             }
             else
@@ -61,6 +69,7 @@ public class BichoBolaController : MonoBehaviour
                 StopCoroutine("waitAtacar");
                 animator.SetBool("run", false);
                 atacar = true;
+                hit = false;
             }
         }
         else
@@ -68,6 +77,7 @@ public class BichoBolaController : MonoBehaviour
             StopCoroutine("atacando");
             StopCoroutine("waitAtacar");
             atacar = true;
+            hit = false;
         }
     }
 
@@ -78,21 +88,25 @@ public class BichoBolaController : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (player.transform.position.x > transform.position.x)
+        if (!noGirar)
         {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-        else
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
+            if (player.transform.position.x > transform.position.x)
+            {
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+            else
+            {
+                transform.localScale = new Vector3(-1, 1, 1);
+            }   
         }
     }
 
     IEnumerator atacando()
     {
         animator.SetBool("run", false);
+        noGirar = true;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         
         animator.SetTrigger("atacar");
     }
@@ -101,7 +115,8 @@ public class BichoBolaController : MonoBehaviour
     {
 
         yield return new WaitForSeconds(1f);
-        
+
+        noGirar = false;
         animator.SetBool("run", true);
         
         atacar = true;
@@ -128,7 +143,7 @@ public class BichoBolaController : MonoBehaviour
     {
         if (other.CompareTag("BoxCamara"))
         {
-            if (!GetComponent<SpriteRenderer>().enabled)
+            if (!GetComponent<SpriteRenderer>().enabled && !pararEnemigo)
             {
                 mov = true;
                 GetComponent<SpriteRenderer>().enabled = true;
@@ -149,5 +164,21 @@ public class BichoBolaController : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().enabled = true;
         }
+    }
+
+    public void stopEnemigo()
+    {
+        pararEnemigo = true;
+        mov = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Rigidbody2D>().gravityScale = 0;
+    }
+
+    public void startEnemigo()
+    {
+        pararEnemigo = false;
+        mov = true;
+        GetComponent<SpriteRenderer>().enabled = true;
+        GetComponent<Rigidbody2D>().gravityScale = 1;
     }
 }

@@ -21,11 +21,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7677513948508844027, guid: c0f3103a477c89142b03f272d1ba4fab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.129
+      value: 39.26159
       objectReference: {fileID: 0}
     - target: {fileID: 7677513948508844027, guid: c0f3103a477c89142b03f272d1ba4fab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.205
+      value: -6.474064
       objectReference: {fileID: 0}
     - target: {fileID: 7677513948508844027, guid: c0f3103a477c89142b03f272d1ba4fab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -37,15 +37,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7677513948508844027, guid: c0f3103a477c89142b03f272d1ba4fab, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7677513948508844027, guid: c0f3103a477c89142b03f272d1ba4fab, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7677513948508844027, guid: c0f3103a477c89142b03f272d1ba4fab, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7677513948508844027, guid: c0f3103a477c89142b03f272d1ba4fab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7677513948508844029, guid: c0f3103a477c89142b03f272d1ba4fab, type: 3}
       propertyPath: m_Name
-      value: BichoBolaBlanco
+      value: BichoBolaBlanco1
       objectReference: {fileID: 0}
     - target: {fileID: 7677513948508844030, guid: c0f3103a477c89142b03f272d1ba4fab, type: 3}
       propertyPath: m_Controller
