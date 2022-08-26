@@ -52,6 +52,11 @@ public class Controller : MonoBehaviour
                 pausarDespausar();
             }
         }
+        
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            SceneManager.LoadScene("Mapa");
+        }
     }
 
     public void pausarDespausar()

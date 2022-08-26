@@ -12,6 +12,8 @@ public class PlantacionController : MonoBehaviour
         public int cantidad;
         public List<Sprite> sprites;
     }
+
+    private int tiempoAnterior;
     
     public List<sprite> spritesTerreno = new List<sprite>();
 
@@ -195,6 +197,12 @@ public class PlantacionController : MonoBehaviour
         {
             PlayerPrefs.SetInt(id+"creciendo",0);
         }
+        
+        DateTime dt = DateTime.Now;
+        int ms = dt.Millisecond;
+        
+        PlayerPrefs.SetString("TiempoAnterior", ms.ToString());
+        
         PlayerPrefs.Save();
     }
 
@@ -237,4 +245,5 @@ public class PlantacionController : MonoBehaviour
             }
         }
     }
+    
 }

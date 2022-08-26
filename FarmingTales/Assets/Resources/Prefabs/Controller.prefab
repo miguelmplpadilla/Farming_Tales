@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fundidoNegro: {fileID: 0}
   paused: 0
+  guardarPartida: 1
+  pausarPartida: 1

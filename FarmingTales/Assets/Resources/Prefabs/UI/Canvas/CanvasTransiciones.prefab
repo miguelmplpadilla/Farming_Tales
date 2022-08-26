@@ -385,8 +385,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: (62 caracteres como maximo)
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d8a6e43c436758d47935438451122e9d, type: 2}
-  m_sharedMaterial: {fileID: -7540740207927943981, guid: d8a6e43c436758d47935438451122e9d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1fb3dff2a3bc8334181e251a68c0504e, type: 2}
+  m_sharedMaterial: {fileID: 1609268501172646369, guid: 1fb3dff2a3bc8334181e251a68c0504e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

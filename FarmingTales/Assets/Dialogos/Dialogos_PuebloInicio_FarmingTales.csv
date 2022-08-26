@@ -13,3 +13,11 @@ TenderoGranjero,AbrirComprar,Desea comprar algún animal?,Do you want to buy an 
 TenderoGranjero,Comprar,Muchas gracias por la compra viajero,Thank you very much for the purchase traveler
 TenderoGranjero,AbrirVender,Desea venedr algún animal?,Do you want to sell an animal?
 TenderoGranjero,Vender,Muchas gracias. aquí tienes tu dinero viajero,Thank you very much. here's your money. traveler
+NPC1,Dialogo1,Hola viajero. como vas?,
+NPC1,Dialogo1,En este pueblo puedes encontrar variedad de tiendas y gente,
+NPC1,Dialogo1,Para los viajeros tenemos al final del pueblo una carpa para que puedas dormir gratis,
+NPC1,Dialogo1,Además al lado de la tienda tienes un lugar para plantar y colocar lo que quieras,
+NPC1,Dialogo1,La carpa es para el primer viajero que llegue así que es toda tuya,
+NPC1,Dialogo2,Te está gustando el pueblo viajero?,
+NPC1,Dialogo3,He oído que dentro de poco podremos rentar un barco para poder salir a pescar,
+NPC1,Dialogo3,No es emocionante?,
