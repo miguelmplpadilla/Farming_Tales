@@ -22,59 +22,30 @@ public class NPCController : MonoBehaviour {
 
     // UI
     public Sprite image;
-    public GameObject panel;
-    public GameObject objectTexto;
+    private GameObject panel;
+    private GameObject objectTexto;
     private TextMeshProUGUI texto;
-    public GameObject imagePanel;
+    private GameObject imagePanel;
 
     private List<String> frases = new List<string>();
     private DialogeController dialogeController = new DialogeController();
 
     public bool hablando = false;
+    public bool hablar = true;
     public string idioma = "Español";
     public string[] frasesDisponibles;
-
-    private void Awake() {
-        texto = objectTexto.GetComponent<TextMeshProUGUI>();
-        //animator = gameObject.GetComponent<Animator>();
-        player = GameObject.Find("Player");
-    }
 
     void Start()
     {
         idioma = "Español";
-
-        /*Random random = new Random();
-        int numFrase = random.Next(0, frasesDisponibles.Length);
-        
-        frases = dialogeController.getTextoDialogos(dialogos, hablante, frasesDisponibles[numFrase], idioma);*/
+        panel = GameObject.Find("CuadroDialogo");
+        objectTexto = GameObject.Find("TextoDialogo");
+        imagePanel = GameObject.Find("ImagenNPC");
+        texto = objectTexto.GetComponent<TextMeshProUGUI>();
+        player = GameObject.Find("Player");
     }
 
-
-    /*void Update()
-    {
-        if (hablar == true && hablando == false)
-        {
-            if (Input.GetKeyDown(KeyCode.F)) {
-                player.GetComponent<PlayerController>().mov = false;
-                hablando = true;
-                panel.SetActive(true);
-                imagePanel.GetComponent<Image>().sprite = image;
-                StartCoroutine("mostrarFrase");
-                animator.SetBool("talk",true);
-                if (player.transform.position.x > gameObject.transform.position.x)
-                {
-                    gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
-                }
-                else
-                {
-                    gameObject.transform.localScale = new Vector3(-1f, 1f, 1f);
-                }
-            }
-        }
-    }*/
-
-    private void empezarHablar() {
+    public void empezarHablar() {
         if (hablando == false) {
             hablando = true;
             panel.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
@@ -86,6 +57,8 @@ public class NPCController : MonoBehaviour {
             else {
                 gameObject.transform.localScale = new Vector3(-2.9623f, 2.9623f, 1f);
             }
+
+            Debug.Log("He empezado a hablar");
         }
     }
     
@@ -93,9 +66,19 @@ public class NPCController : MonoBehaviour {
         bool seguir = true;
         for (int i = 0; i < frases.Count; i++) {
             if (seguir == true) {
-                if (frases[i].Equals("execute1")) {
+                if (frases[i].Equals("execute1"))
+                {
+                    GameObject.Find("HistoriaController").GetComponent<HistoriaController>()
+                        .StartCoroutine("transicionHistoriaCastillo");
                     seguir = true;
-                } else if (frases[i].Equals("execute2")) {
+                } else if (frases[i].Equals("execute2"))
+                {
+                    GameObject.Find("HistoriaController").GetComponent<HistoriaController>()
+                        .StartCoroutine("transicionArribaCastillo");
+                    seguir = true;
+                } else if (frases[i].Equals("execute3"))
+                {
+                    GameObject.Find("HistoriaController").GetComponent<HistoriaController>().moverCamaraPlayer();
                     seguir = true;
                 }
                 else {
@@ -129,12 +112,18 @@ public class NPCController : MonoBehaviour {
     
     public void mostrarInter()
     {
-        GetComponentInChildren<InteractuarUIController>().visible();
+        if (hablar)
+        {
+            GetComponentInChildren<InteractuarUIController>().visible();
+        }
     }
 
     public void esconderInter()
     {
-        GetComponentInChildren<InteractuarUIController>().esconder();
+        if (hablar)
+        {
+            GetComponentInChildren<InteractuarUIController>().esconder();
+        }
     }
 
     private void dejarHablar() {
@@ -149,13 +138,34 @@ public class NPCController : MonoBehaviour {
     {
         idioma = "Español";
 
-        int numFraseAnterior = numFrase;
+        numFraseAnteriores.Add(numFrase);
+
+        if (numFraseAnteriores.Count >= 3)
+        {
+            numFraseAnteriores = new List<int>();
+        }
+            
         while (true)
         {
             Random random = new Random();
             numFrase = random.Next(0, frasesDisponibles.Length);
 
-            if (numFrase != numFraseAnterior)
+            bool sePuedeNumFrase = true;
+                
+            for (int i = 0; i < numFraseAnteriores.Count; i++)
+            {
+                if (numFrase != numFraseAnteriores[i])
+                {
+                    sePuedeNumFrase = true;
+                }
+                else
+                {
+                    sePuedeNumFrase = false;
+                    break;
+                }
+            }
+
+            if (sePuedeNumFrase)
             {
                 break;
             }
@@ -165,46 +175,60 @@ public class NPCController : MonoBehaviour {
     }
 
     public void inter() {
-        if (!hablando) {
+        if (!hablando && hablar) {
             player.GetComponent<PlayerController>().mov = false;
             hablando = false;
-            
-            numFraseAnteriores.Add(numFrase);
 
-            if (numFraseAnteriores.Count >= 3)
+            if (frasesDisponibles.Length > 1)
             {
-                numFraseAnteriores = new List<int>();
-            }
-            
-            while (true)
-            {
-                Random random = new Random();
-                numFrase = random.Next(0, frasesDisponibles.Length);
+                numFraseAnteriores.Add(numFrase);
 
-                bool sePuedeNumFrase = true;
-                
-                for (int i = 0; i < numFraseAnteriores.Count; i++)
+                if (numFraseAnteriores.Count >= 3)
                 {
-                    if (numFrase != numFraseAnteriores[i])
+                    numFraseAnteriores = new List<int>();
+                }
+            
+                while (true)
+                {
+                    Random random = new Random();
+                    numFrase = random.Next(0, frasesDisponibles.Length);
+
+                    Debug.Log(numFrase);
+
+                    bool sePuedeNumFrase = true;
+                
+                    for (int i = 0; i < numFraseAnteriores.Count; i++)
                     {
-                        sePuedeNumFrase = true;
+                        if (numFrase != numFraseAnteriores[i])
+                        {
+                            sePuedeNumFrase = true;
+                        }
+                        else
+                        {
+                            sePuedeNumFrase = false;
+                            break;
+                        }
                     }
-                    else
+
+                    if (sePuedeNumFrase)
                     {
-                        sePuedeNumFrase = false;
                         break;
                     }
                 }
-
-                if (sePuedeNumFrase)
-                {
-                    break;
-                }
             }
-        
+            else
+            {
+                numFrase = 0;
+            }
+
             frases = dialogeController.getTextoDialogos(dialogos, hablante, frasesDisponibles[numFrase], idioma);
             
             empezarHablar();
         }
+    }
+
+    public void getFraseEspecifica(int numFraseEspecifica)
+    {
+        frases = dialogeController.getTextoDialogos(dialogos, hablante, frasesDisponibles[numFraseEspecifica], idioma);
     }
 }
