@@ -19,6 +19,8 @@ public class TenderoController : MonoBehaviour
     
     private bool interactuar = true;
 
+    public bool hablar = true;
+
     public List<String> productosComprar = new List<string>();
 
     void Start()
@@ -31,12 +33,15 @@ public class TenderoController : MonoBehaviour
 
     public void inter()
     {
-        player.GetComponent<PlayerController>().mov = false;
-        creadorProductos.GetComponent<CreadorProductosController>().setTendero(gameObject);
-        creadorProductos.GetComponent<CreadorProductosController>().listaComprar();
-        tienda.GetComponent<TiendaController>().mostrarTienda(granjero);
+        if (hablar)
+        {
+            player.GetComponent<PlayerController>().mov = false;
+            creadorProductos.GetComponent<CreadorProductosController>().setTendero(gameObject);
+            creadorProductos.GetComponent<CreadorProductosController>().listaComprar();
+            tienda.GetComponent<TiendaController>().mostrarTienda(granjero);
 
-        inventario.GetComponent<InventarioController>().mostrar = false;
+            inventario.GetComponent<InventarioController>().mostrar = false;
+        }
     }
 
     public void mostrarInter()
