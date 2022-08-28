@@ -2690,7 +2690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.0050835013
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2698,7 +2698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.041549683
+      value: 0.6382599
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2706,7 +2706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.99491644
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMin.y
@@ -2718,7 +2718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.3199005
+      value: 0.63920593
       objectReference: {fileID: 0}
     - target: {fileID: 2384730821656971171, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_Pivot.x
@@ -2807,382 +2807,6 @@ PrefabInstance:
     - target: {fileID: 2384730821656971175, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_Name
       value: CanvasPrincipal
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.size
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.size
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[0].item
-      value: madera
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[1].item
-      value: roca
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[2].item
-      value: zanahoria
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[3].item
-      value: patata
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[4].item
-      value: trigo
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[5].item
-      value: huevo
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[6].item
-      value: cofre
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[7].item
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[8].item
-      value: plantacion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[9].item
-      value: semillaTrigo
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[10].item
-      value: valla
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[11].item
-      value: leche
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[12].item
-      value: huevoFecundado
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[13].item
-      value: mesaCrafteo
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[14].item
-      value: hierro
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[0].sprite
-      value: 
-      objectReference: {fileID: 4337684191699249041, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[1].sprite
-      value: 
-      objectReference: {fileID: -488721925442295091, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[2].sprite
-      value: 
-      objectReference: {fileID: -7573354855677281409, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[3].sprite
-      value: 
-      objectReference: {fileID: 1801263428120863714, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[4].sprite
-      value: 
-      objectReference: {fileID: -5971942374765049077, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[5].sprite
-      value: 
-      objectReference: {fileID: 4639506938558671751, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[6].sprite
-      value: 
-      objectReference: {fileID: -8929714730241205940, guid: 5e79748343a3d06408602fc3963807d4, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[7].sprite
-      value: 
-      objectReference: {fileID: 8033092973025764044, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[8].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: bcae5d00d38541348a2b89942dbb3ceb, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[9].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 88ae07391e88a4a42ab6232a101387fb, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[10].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5165c7f1752023048ba0300963f772ea, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[11].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 58e00a6c758df76498ea3ba3e84c3781, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[12].sprite
-      value: 
-      objectReference: {fileID: 2464841037539403840, guid: 5ad8f830feb0b784caa92f3bbf3f34b0, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[13].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c094b70e4685c004e9db2e91e4866271, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[14].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 02075140333822c46b47a55148423a75, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[0].tipoItem
-      value: construccion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[1].tipoItem
-      value: construccion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[2].tipoItem
-      value: comida
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[3].tipoItem
-      value: comida
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[4].tipoItem
-      value: construccion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[5].tipoItem
-      value: comida
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[6].tipoItem
-      value: construccion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[7].tipoItem
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[8].tipoItem
-      value: construccion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[9].tipoItem
-      value: construccion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[10].tipoItem
-      value: construccion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[11].tipoItem
-      value: comida
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[12].tipoItem
-      value: construccion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[13].tipoItem
-      value: construccion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: infoObjetos.Array.data[14].tipoItem
-      value: construccion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[0].item
-      value: madera
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[1].item
-      value: roca
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[2].item
-      value: zanahoria
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[3].item
-      value: patata
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[4].item
-      value: trigo
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[5].item
-      value: huevo
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[6].item
-      value: cofre
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[8].item
-      value: plantacion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[9].item
-      value: semillaTrigo
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[10].item
-      value: valla
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[11].item
-      value: leche
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[12].item
-      value: huevoFecundado
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[13].item
-      value: mesaCrafteo
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[14].item
-      value: hierro
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[0].sprite
-      value: 
-      objectReference: {fileID: 4337684191699249041, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[1].sprite
-      value: 
-      objectReference: {fileID: -488721925442295091, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[2].sprite
-      value: 
-      objectReference: {fileID: -7573354855677281409, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[3].sprite
-      value: 
-      objectReference: {fileID: 1801263428120863714, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[4].sprite
-      value: 
-      objectReference: {fileID: -5971942374765049077, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[5].sprite
-      value: 
-      objectReference: {fileID: 4639506938558671751, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[6].sprite
-      value: 
-      objectReference: {fileID: -8929714730241205940, guid: 5e79748343a3d06408602fc3963807d4, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[7].sprite
-      value: 
-      objectReference: {fileID: 8033092973025764044, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[8].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: bcae5d00d38541348a2b89942dbb3ceb, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[9].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 88ae07391e88a4a42ab6232a101387fb, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[10].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5165c7f1752023048ba0300963f772ea, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[11].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 58e00a6c758df76498ea3ba3e84c3781, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[12].sprite
-      value: 
-      objectReference: {fileID: 2464841037539403840, guid: 5ad8f830feb0b784caa92f3bbf3f34b0, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[13].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c094b70e4685c004e9db2e91e4866271, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[14].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 02075140333822c46b47a55148423a75, type: 3}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[0].tipoItem
-      value: construccion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[1].tipoItem
-      value: construccion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[2].tipoItem
-      value: comida
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[3].tipoItem
-      value: comida
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[4].tipoItem
-      value: construccion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[5].tipoItem
-      value: comida
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[6].tipoItem
-      value: construccion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[8].tipoItem
-      value: construccion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[9].tipoItem
-      value: construccion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[10].tipoItem
-      value: construccion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[11].tipoItem
-      value: comida
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[12].tipoItem
-      value: construccion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[13].tipoItem
-      value: construccion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[14].tipoItem
-      value: construccion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[2].vidaRecuperar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[3].vidaRecuperar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[5].vidaRecuperar
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[11].vidaRecuperar
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
@@ -26083,9 +25707,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 306147708930822738, guid: 947d0c7f1c3284e4aa67dc203e9c3c38, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 306147708930822749, guid: 947d0c7f1c3284e4aa67dc203e9c3c38, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.18
+      objectReference: {fileID: 0}
     - target: {fileID: 306147709714548867, guid: 947d0c7f1c3284e4aa67dc203e9c3c38, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 306147709714548870, guid: 947d0c7f1c3284e4aa67dc203e9c3c38, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 306147709714548871, guid: 947d0c7f1c3284e4aa67dc203e9c3c38, type: 3}
       propertyPath: m_RootOrder
@@ -26133,10 +25769,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8845499760629553594, guid: 947d0c7f1c3284e4aa67dc203e9c3c38, type: 3}
       propertyPath: life
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8845499760629553594, guid: 947d0c7f1c3284e4aa67dc203e9c3c38, type: 3}
-      propertyPath: vidaCompleta
       value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -27049,7 +26681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8437111795126902402, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.695994
+      value: -10.696492
       objectReference: {fileID: 0}
     - target: {fileID: 8437111795126902402, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_LocalPosition.y
@@ -27061,7 +26693,7 @@ PrefabInstance:
       objectReference: {fileID: 1565443974}
     - target: {fileID: 8437111795379593551, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9835272
+      value: -1.980217
       objectReference: {fileID: 0}
     - target: {fileID: 8437111795379593551, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_LocalPosition.y
@@ -64851,10 +64483,6 @@ PrefabInstance:
       propertyPath: fundidoNegro
       value: 
       objectReference: {fileID: 998270081}
-    - target: {fileID: 1868572796735242609, guid: bb478bf2b7d2ec848a0e6aae243eefd3, type: 3}
-      propertyPath: guardarPartida
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1868572796735242622, guid: bb478bf2b7d2ec848a0e6aae243eefd3, type: 3}
       propertyPath: m_RootOrder
       value: 13

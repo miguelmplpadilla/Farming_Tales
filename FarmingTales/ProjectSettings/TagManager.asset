@@ -17,6 +17,7 @@ TagManager:
   - HitBoxPlayer
   - BoxCamara
   - Enemigo
+  - HitBoxEnemy
   layers:
   - Default
   - TransparentFX

@@ -254,7 +254,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1205057268}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.9974325
+  m_Size: 0.9999957
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -855,7 +855,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 454566557}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9974324
+  m_Size: 0.99999565
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1030,8 +1030,8 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.9974324}
-  m_AnchoredPosition: {x: -5.0999985, y: 0.9830475}
+  m_AnchorMax: {x: 1, y: 0.99999565}
+  m_AnchoredPosition: {x: -5.0999985, y: 0.6399689}
   m_SizeDelta: {x: -13.681, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &454566560
@@ -1650,9 +1650,9 @@ RectTransform:
   m_Father: {fileID: 879203283}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.0025675297}
+  m_AnchorMin: {x: 0, y: 0.0000042915344}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.199997, y: 0.2953949}
+  m_AnchoredPosition: {x: -1.199997, y: 0.63842773}
   m_SizeDelta: {x: -6.8202486, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1205057273
@@ -2932,6 +2932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &4878888634865168747
@@ -3533,6 +3534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &3578997068530120531
@@ -3654,6 +3656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &7304621572738637647
@@ -4403,6 +4406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &66460010724854512
@@ -4599,6 +4603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &4284749875874661379
@@ -4720,6 +4725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &6859005649278077906
@@ -4974,6 +4980,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &4539670692679367012
@@ -5438,6 +5445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &2264342935091723373
@@ -5751,6 +5759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &5745356044642717708
@@ -6937,6 +6946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &7775700897354737998
@@ -7935,6 +7945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &4560005696763234273
@@ -8324,6 +8335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &7347192880129286204
@@ -8520,6 +8532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &6998881627516222062
@@ -9059,6 +9072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &4624289242475801032
@@ -9447,6 +9461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &3261392816689600896
@@ -9643,6 +9658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &1983304794705104466
@@ -9898,6 +9914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &7792500372017696178
@@ -10019,6 +10036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &3166159294856830886
@@ -10140,6 +10158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &4103984204842988717
@@ -10904,6 +10923,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &3635013664068174554
@@ -11025,6 +11045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &7450711299201740079
@@ -11221,6 +11242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &3842453471397045577
@@ -11776,6 +11798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &6655525914412620054
@@ -12809,6 +12832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &6729393132282317693
@@ -13005,6 +13029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &2457744124630525956
@@ -14438,6 +14463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &5036500828043787317
@@ -15302,6 +15328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &8674143060295009564
@@ -15825,6 +15852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &3943079586820207495
@@ -17523,6 +17551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &6155943873892741080
@@ -18456,6 +18485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &209288768093250698
@@ -18711,6 +18741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &6492098367706703965
@@ -19380,6 +19411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &8168778349283178616
@@ -19635,6 +19667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &3415277115227176116
@@ -19756,6 +19789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &4908190824957646678
@@ -20219,6 +20253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &337504073915937634
@@ -20928,6 +20963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   cantidad: 0
+  tipoItem: 
   color: {r: 0.827451, g: 0.7490196, b: 0.6627451, a: 0.003921569}
   isPosicionCofre: 1
 --- !u!222 &6684613528501210032
@@ -22493,6 +22529,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2384730821318007867}
     - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
       propertyPath: posicionesInventario.Array.data[0]
       value: 
       objectReference: {fileID: 2384730822973724350}
@@ -22524,6 +22564,194 @@ PrefabInstance:
       propertyPath: posicionesInventario.Array.data[7]
       value: 
       objectReference: {fileID: 2384730821318007867}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[0].item
+      value: madera
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[1].item
+      value: roca
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[2].item
+      value: zanahoria
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[3].item
+      value: patata
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[4].item
+      value: trigo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[5].item
+      value: huevo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[6].item
+      value: cofre
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[8].item
+      value: plantacion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[9].item
+      value: semillaTrigo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[10].item
+      value: valla
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[11].item
+      value: leche
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[12].item
+      value: huevoFecundado
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[13].item
+      value: mesaCrafteo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[14].item
+      value: hierro
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 4337684191699249041, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: -488721925442295091, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: -7573354855677281409, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[3].sprite
+      value: 
+      objectReference: {fileID: 1801263428120863714, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[4].sprite
+      value: 
+      objectReference: {fileID: -5971942374765049077, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[5].sprite
+      value: 
+      objectReference: {fileID: 4639506938558671751, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[6].sprite
+      value: 
+      objectReference: {fileID: -8929714730241205940, guid: 5e79748343a3d06408602fc3963807d4, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[7].sprite
+      value: 
+      objectReference: {fileID: 8033092973025764044, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[8].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bcae5d00d38541348a2b89942dbb3ceb, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[9].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 88ae07391e88a4a42ab6232a101387fb, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[10].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5165c7f1752023048ba0300963f772ea, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[11].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 58e00a6c758df76498ea3ba3e84c3781, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[12].sprite
+      value: 
+      objectReference: {fileID: 2464841037539403840, guid: 5ad8f830feb0b784caa92f3bbf3f34b0, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[13].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c094b70e4685c004e9db2e91e4866271, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[14].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 02075140333822c46b47a55148423a75, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[0].tipoItem
+      value: construccion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[1].tipoItem
+      value: construccion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[2].tipoItem
+      value: comida
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[3].tipoItem
+      value: comida
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[4].tipoItem
+      value: construccion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[5].tipoItem
+      value: comida
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[6].tipoItem
+      value: construccion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[8].tipoItem
+      value: construccion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[9].tipoItem
+      value: construccion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[10].tipoItem
+      value: construccion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[11].tipoItem
+      value: comida
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[12].tipoItem
+      value: construccion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[13].tipoItem
+      value: construccion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[14].tipoItem
+      value: construccion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[2].vidaRecuperar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[3].vidaRecuperar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[5].vidaRecuperar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[11].vidaRecuperar
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5469502380743819636, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

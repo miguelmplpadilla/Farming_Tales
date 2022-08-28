@@ -322,6 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd99aff3b1b9f045a46ccc36be9ecfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  comer: 0
   golpe: 2
 --- !u!114 &8845499760629553594
 MonoBehaviour:
@@ -335,7 +336,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ceefa3aa1f8aab4499c83a58f1ec65a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 8
+  vidaCompleta: 8
+  life: 1
 --- !u!50 &306147709714548865
 Rigidbody2D:
   serializedVersion: 4

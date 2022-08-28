@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.SetBool("run", false);
+            animator.SetBool("jump", false);
             rigidbody.velocity = Vector3.zero;
         }
     }
@@ -83,6 +84,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                 animator.SetBool("run", false);
+                animator.SetBool("jump", false);
             }
         }
     }
