@@ -27,6 +27,10 @@ public class InventarioController : MonoBehaviour
     public string[] tipos;
     public Sprite[] sprs;
 
+    public List<ObjetoInventario> objetosInventario = new List<ObjetoInventario>();
+    
+    public IDictionary<string, ObjetoInventario> infoObjetos = new Dictionary<string, ObjetoInventario>();
+
     public bool mostrar = true;
     
     public Vector2 posicionOriginal;
@@ -43,6 +47,11 @@ public class InventarioController : MonoBehaviour
         for (int i = 0; i < tipos.Length; i++)
         {
             sprites.Add(tipos[i],sprs[i]);
+        }
+
+        for (int i = 0; i < objetosInventario.Count; i++)
+        {
+            infoObjetos.Add(objetosInventario[i].item, objetosInventario[i]);
         }
     }
 

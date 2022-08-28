@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class LifePlayerController : MonoBehaviour
 {
 
+    public int vidaCompleta = 8;
     public int life = 8;
     private RectTransform rectTransformBarraVida;
 
@@ -29,5 +30,21 @@ public class LifePlayerController : MonoBehaviour
         float tamanoBarraVida = (float)(14.34568 * life);
         rectTransformBarraVida.sizeDelta = new Vector2(tamanoBarraVida, 12.1327f);
         rectTransformBarraVida.gameObject.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(tamanoBarraVida, 4.0773f);
+    }
+
+    public bool sumarVida(int sumar)
+    {
+        bool vidaRecuperada = false;
+        if (life < vidaCompleta)
+        {
+            vidaRecuperada = true;
+            life += sumar;
+            if (life > vidaCompleta)
+            {
+                life = vidaCompleta;
+            }
+        }
+
+        return vidaRecuperada;
     }
 }

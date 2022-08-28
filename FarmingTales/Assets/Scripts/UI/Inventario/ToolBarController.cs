@@ -123,6 +123,15 @@ public class ToolBarController : MonoBehaviour
                     posicionadorItem.GetComponent<PosicionadorItemController>().itemPosicionado = null;
                     posicionadorItem.GetComponent<PosicionadorItemController>().posicionController = null;
                 }
+
+                if (inventarioController.infoObjetos[posicionController.item].tipoItem == "comida")
+                {
+                    player.GetComponent<AttackController>().comer = true;
+                }
+                else
+                {
+                    player.GetComponent<AttackController>().comer = false;
+                }
             }
         }
         else

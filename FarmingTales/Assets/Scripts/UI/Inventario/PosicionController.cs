@@ -10,6 +10,7 @@ public class PosicionController : MonoBehaviour, IPointerUpHandler, IPointerDown
 {
     public string item = "";
     public int cantidad = 0;
+    public string tipoItem = "";
 
     private GameObject posicionRaton;
     private GameObject raton;

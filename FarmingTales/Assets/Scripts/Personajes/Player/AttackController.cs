@@ -9,6 +9,7 @@ public class AttackController : MonoBehaviour
 
     private Rigidbody2D rigidbody;
     private PlayerController playerController;
+    private LifePlayerController lifePlayerController;
     private Animator animator;
     private GameObject player;
 
@@ -17,12 +18,15 @@ public class AttackController : MonoBehaviour
     private InventarioController inventarioController;
     private ToolBarController toolBarController;
 
+    public bool comer;
+
     public int golpe = 2;
     
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         playerController = GetComponent<PlayerController>();
+        lifePlayerController = GetComponent<LifePlayerController>();
         animator = GetComponent<Animator>();
     }
 
@@ -69,10 +73,36 @@ public class AttackController : MonoBehaviour
             {
                 playerController.movement = Vector2.zero;
                 rigidbody.velocity = Vector2.zero;
-                animator.SetInteger("golpe", 1);
-                animator.SetTrigger("golpear");
-                player.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
-                playerController.isAttacking = true;
+                if (!comer)
+                {
+                    animator.SetInteger("golpe", 1);
+                    animator.SetTrigger("golpear");
+                    player.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+                    playerController.isAttacking = true;
+                }
+                else
+                {
+                    if (!playerController.isAttacking)
+                    {
+                        int vidaRecuperar = inventarioController.infoObjetos[toolBarController.posicionController.item].vidaRecuperar;
+                        
+                        bool vidaRecuperada = lifePlayerController.sumarVida(vidaRecuperar);
+
+                        if (vidaRecuperada)
+                        {
+                            animator.SetTrigger("comer");
+
+                            toolBarController.posicionController.cantidad -= 1;
+
+                            if (toolBarController.posicionController.cantidad <= 0)
+                            {
+                                toolBarController.posicionController.item = "";
+                            }
+                            player.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+                            playerController.isAttacking = true;
+                        }
+                    }
+                }
             }
         }
     }

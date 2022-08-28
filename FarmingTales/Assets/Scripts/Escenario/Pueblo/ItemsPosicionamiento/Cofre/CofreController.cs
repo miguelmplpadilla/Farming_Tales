@@ -177,7 +177,7 @@ public class CofreController : MonoBehaviour
                 posicionInventarioCofres[i].item = datos[0];
                 posicionInventarioCofres[i].cantidad = int.Parse(datos[1]);
 
-                posicionInventarioCofres[i].sprite = inventarioController.sprites[datos[0]];
+                posicionInventarioCofres[i].sprite = inventarioController.infoObjetos[datos[0]].sprite;
             }
         }
     }

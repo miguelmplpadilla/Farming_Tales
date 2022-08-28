@@ -8,7 +8,7 @@ public class LootController : MonoBehaviour
     public string tipo = "madera";
     public int cant = 5;
     public Sprite spr;
-    public IDictionary<string, Sprite> sprites;
+    public IDictionary<string, ObjetoInventario> sprites;
 
     public int life = 3;
 
@@ -43,9 +43,9 @@ public class LootController : MonoBehaviour
     {
         inventarioController = GameObject.Find("ToolBar").GetComponent<InventarioController>();
 
-        sprites = inventarioController.sprites;
+        sprites = inventarioController.infoObjetos;
 
-        spr = sprites[tipo];
+        spr = sprites[tipo].sprite;
     }
 
     private void Update()
