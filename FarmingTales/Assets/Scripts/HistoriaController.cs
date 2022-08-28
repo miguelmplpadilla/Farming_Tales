@@ -85,18 +85,17 @@ public class HistoriaController : MonoBehaviour
 
         player.transform.position = GameObject.Find("PosicionPlayerCastillo").transform.position;
         npcSalvar.transform.position = GameObject.Find("PosicionNpcCastillo").transform.position;
-        npcSalvar.transform.localScale = new Vector3(-2.9623f, 2.9623f, 1);
         player.transform.localScale = new Vector3(-1, 1, 1);
         
         transicion.SetTrigger("desfundido");
-
-        yield return new WaitForSeconds(3f);
-        
-        transicion.gameObject.SetActive(false);
         
         camara.Follow = rey.transform;
         rey.GetComponent<NPCController>().inter();
-        rey.GetComponent<NPCController>().hablando = false;
+        rey.GetComponent<NPCController>().hablar = false;
+
+        yield return new WaitForSeconds(3f);
+
+        transicion.gameObject.SetActive(false);
     }
 
     IEnumerator transicionArribaCastillo()
@@ -131,12 +130,19 @@ public class HistoriaController : MonoBehaviour
         if (PlayerPrefs.HasKey(historia))
         {
             
-            int puntoControl = PlayerPrefs.GetInt(historia);
+            puntoControl = PlayerPrefs.GetInt(historia);
 
             if (puntoControl == 1)
             {
-            
-            
+
+                for (int i = 0; i < enemigos.Length; i++)
+                {
+                    Destroy(enemigos[i]);
+                }
+                
+                npcSalvar.transform.position = GameObject.Find("PosicionNpcCastillo").transform.position;
+                
+                puerta.SetTrigger("abrir");
             
             }
             

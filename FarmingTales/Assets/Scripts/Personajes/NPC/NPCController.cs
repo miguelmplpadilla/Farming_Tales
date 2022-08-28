@@ -57,8 +57,6 @@ public class NPCController : MonoBehaviour {
             else {
                 gameObject.transform.localScale = new Vector3(-2.9623f, 2.9623f, 1f);
             }
-
-            Debug.Log("He empezado a hablar");
         }
     }
     

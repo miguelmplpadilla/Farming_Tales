@@ -38,7 +38,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        
         if (mov)
         {
             if (!isAttacking) {
