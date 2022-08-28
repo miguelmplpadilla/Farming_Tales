@@ -9,6 +9,8 @@ public class VidaEnemigoController : MonoBehaviour
     public int vida = 2;
     private Animator animator;
 
+    private bool muriendo = false;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -18,15 +20,19 @@ public class VidaEnemigoController : MonoBehaviour
     {
         if (other.CompareTag("HitBoxPlayer"))
         {
-            gameObject.SendMessage("setHit", true);
-            vida--;
-            if (vida == 0)
+            if (!muriendo)
             {
-                animator.SetTrigger("muerte");
-            }
-            else
-            {
-                animator.SetTrigger("hit");
+                gameObject.SendMessage("setHit", true);
+                vida--;
+                if (vida <= 0)
+                {
+                    animator.SetTrigger("muerte");
+                    muriendo = true;
+                }
+                else
+                {
+                    animator.SetTrigger("hit");
+                }
             }
         }
     }

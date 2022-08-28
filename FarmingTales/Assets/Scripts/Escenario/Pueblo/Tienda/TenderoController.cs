@@ -44,14 +44,25 @@ public class TenderoController : MonoBehaviour
         }
     }
 
+    public void setHablar(bool h)
+    {
+        hablar = h;
+    }
+
     public void mostrarInter()
     {
-        GetComponentInChildren<InteractuarUIController>().visible();
+        if (hablar)
+        {
+            GetComponentInChildren<InteractuarUIController>().visible();
+        }
     }
 
     public void esconderInter()
     {
-        GetComponentInChildren<InteractuarUIController>().invisibleDerecho();
+        if (hablar)
+        {
+            GetComponentInChildren<InteractuarUIController>().invisibleDerecho();
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)

@@ -51,11 +51,21 @@ public class NPCController : MonoBehaviour {
             panel.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
             imagePanel.GetComponent<Image>().sprite = image;
             StartCoroutine("mostrarFrase");
+            
+            float escalaInteractuarX = transform.GetChild(0).transform.localScale.x;
+
+            if (escalaInteractuarX < 0)
+            {
+                escalaInteractuarX = -escalaInteractuarX;
+            }
+            
             if (player.transform.position.x > gameObject.transform.position.x) {
                 gameObject.transform.localScale = new Vector3(2.9623f, 2.9623f, 1f);
+                transform.GetChild(0).transform.localScale = new Vector3(-escalaInteractuarX,transform.GetChild(0).transform.localScale.y, 1);
             }
             else {
                 gameObject.transform.localScale = new Vector3(-2.9623f, 2.9623f, 1f);
+                transform.GetChild(0).transform.localScale = new Vector3(escalaInteractuarX,transform.GetChild(0).transform.localScale.y, 1);
             }
         }
     }
@@ -72,11 +82,21 @@ public class NPCController : MonoBehaviour {
                 } else if (frases[i].Equals("execute2"))
                 {
                     GameObject.Find("HistoriaController").GetComponent<HistoriaController>()
-                        .StartCoroutine("transicionArribaCastillo");
+                        .StartCoroutine("transicionArribaCastillo", 1);
                     seguir = true;
                 } else if (frases[i].Equals("execute3"))
                 {
                     GameObject.Find("HistoriaController").GetComponent<HistoriaController>().moverCamaraPlayer();
+                    seguir = true;
+                } else if (frases[i].Equals("execute4"))
+                {
+                    GameObject.Find("HistoriaController").GetComponent<HistoriaController>()
+                        .StartCoroutine("transicionMazmorraCastillo");
+                    seguir = true;
+                } else if (frases[i].Equals("execute5"))
+                {
+                    GameObject.Find("HistoriaController").GetComponent<HistoriaController>()
+                        .StartCoroutine("transicionArribaCastillo", 3);
                     seguir = true;
                 }
                 else {
@@ -223,6 +243,11 @@ public class NPCController : MonoBehaviour {
             
             empezarHablar();
         }
+    }
+
+    public void setHablar(bool h)
+    {
+        hablar = h;
     }
 
     public void getFraseEspecifica(int numFraseEspecifica)

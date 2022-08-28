@@ -1,8 +1,8 @@
-TenderoPruebloInicio,Bienvenida,Muy buenas viajero,hello traveler
-TenderoPruebloInicio,AbrirComprar,Que desea comprar viajero?,What do you want to buy traveler?
-TenderoPruebloInicio,Comprar,Muchas gracias por la compra viajero,Thank you very much for the purchase traveler
-TenderoPruebloInicio,AbrirVender,Que desea vender viajero?,What do you want to sell traveler?
-TenderoPruebloInicio,Vender,Muchas gracias. aquí tienes tu dinero viajero,Thank you very much. here's your money. traveler
+Tendero,Bienvenida,Muy buenas viajero,hello traveler
+Tendero,AbrirComprar,Que desea comprar viajero?,What do you want to buy traveler?
+Tendero,Comprar,Muchas gracias por la compra viajero,Thank you very much for the purchase traveler
+Tendero,AbrirVender,Que desea vender viajero?,What do you want to sell traveler?
+Tendero,Vender,Muchas gracias. aquí tienes tu dinero viajero,Thank you very much. here's your money. traveler
 Buonero,Bienvenida,Muy buenas viajero,hello traveler
 Buonero,AbrirComprar,Que desea comprar viajero?,What do you want to buy traveler?
 Buonero,Comprar,Muchas gracias por la compra viajero,Thank you very much for the purchase traveler
@@ -27,5 +27,20 @@ NPCHistoria1,Dialogo2,Muchas gracias viajero,
 NPCHistoria1,Dialogo2,Ya pensaba que no lo contaba,
 NPCHistoria1,Dialogo2,Ven conmigo. quiero presentarte a alguien,
 NPCHistoria1,Dialogo2,execute1,
-Rey,Dialogo1,Hola viajero,
+Rey,Dialogo1,Hola viajero. muchas gracias por salvar a mi ayudante de las garras de esas ruines bestias,
+Rey,Dialogo1,Hemos estado sufriendo diversos ataques en los cuales han desaparecido muchos ciudadanos,
+Rey,Dialogo1,Estaria muy agradecido si nos ayudaras,
+Rey,Dialogo1,Hemos descubierto que las bestias se esconden en la cueva que hay al final de pueblo,
+Rey,Dialogo1,Mi amigo que ha hablado muy bien de ti,
+Rey,Dialogo1,Te recompensaré con una generosa cantidad de oro,
 Rey,Dialogo1,execute2,
+NPCHistoria2,Dialogo1,Muchas gracias viajero,
+NPCHistoria2,Dialogo1,Gracias a ti no volveremos a sufrir ataques de esos asquerosos seres,
+NPCHistoria2,Dialogo1,No se atreverán a salir de esta cueva nunca más,
+NPCHistoria2,Dialogo1,execute4,
+Rey,Dialogo2,Aquí tienes tu recompensa. espero que sea suficiente para ti,
+Rey,Dialogo2,Y si tenemos algún problema estaría agradecido de precisar de tu ayuda,
+Rey,Dialogo2,Espero que nos volvemos a ver viajero,
+Rey,Dialogo2,execute5,
+NPCHistoria2,Dialogo2,Muchas gracias por salvarnos viajero. te estare eternamente agradecido,
+NPCAldeanoCastillo1,Dialogo1,Desde que has llegado al pueblo las cosas han empezado a ir mejor,
