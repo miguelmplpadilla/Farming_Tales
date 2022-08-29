@@ -25,7 +25,8 @@ public class IncubadoraController : MonoBehaviour, IPointerDownHandler
 
     private void LateUpdate()
     {
-        GetComponent<Image>().sprite = toolBar.GetComponent<InventarioController>().sprites["huevoFecundado"];
+        GetComponent<Image>().sprite =
+            toolBar.GetComponent<InventarioController>().infoObjetos["huevoFecundado"].sprite;
 
         if (granjaIncubadora != null)
         {

@@ -13,6 +13,8 @@ public class PlantacionController : MonoBehaviour
         public List<Sprite> sprites;
     }
 
+    private ParticulasController particulasController;
+
     private int tiempoAnterior;
     
     public List<sprite> spritesTerreno = new List<sprite>();
@@ -49,6 +51,7 @@ public class PlantacionController : MonoBehaviour
 
     void Start()
     {
+        particulasController = transform.GetChild(2).GetComponent<ParticulasController>();
         toolBarController = GameObject.Find("ToolBar").GetComponent<ToolBarController>();
         inventarioController = GameObject.Find("ToolBar").GetComponent<InventarioController>();
     }
@@ -77,6 +80,7 @@ public class PlantacionController : MonoBehaviour
                             toolBarController.posicionController.cantidad - 1;
                         regar = true;
                         spriteRenderer.sprite = spritesTerreno[posicionPlanta].sprites[0];
+                        particulasController.startParticulas(1);
                         guardarPlantacion();
                     }
                 }
@@ -86,6 +90,7 @@ public class PlantacionController : MonoBehaviour
                     creciendo = true;
                     spriteRenderer.sprite = spritesTerreno[posicionPlanta].sprites[1];
                     StartCoroutine("crecerPlanta");
+                    particulasController.startParticulas(0);
                     guardarPlantacion();
                 }
             }
@@ -103,6 +108,7 @@ public class PlantacionController : MonoBehaviour
             spriteRenderer.sprite = terrenoSinPlanta;
             recoger = false;
             regar = false;
+            particulasController.startParticulas(1);
             guardarPlantacion();
         }
     }

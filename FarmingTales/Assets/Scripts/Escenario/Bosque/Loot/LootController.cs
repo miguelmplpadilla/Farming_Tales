@@ -10,32 +10,33 @@ public class LootController : MonoBehaviour
     public Sprite spr;
     public IDictionary<string, ObjetoInventario> sprites;
 
+    public int numParticula;
+
+    public List<string> tiposLoot = new List<string>();
+    public List<info> infos = new List<info>();
+
+    [System.Serializable]
+    public class info
+    {
+        public Vector2 size;
+        public int cant;
+        public int life;
+        public int numParticula;
+    }
+
+    public IDictionary<string, info> infoLoot = new Dictionary<string, info>();
+
+    private ParticulasController particulasController;
+
     public int life = 3;
 
     private InventarioController inventarioController;
 
     private void Awake()
     {
-        if (tipo == "madera")
+        for (int i = 0; i < tiposLoot.Count; i++)
         {
-            gameObject.GetComponent<BoxCollider2D>().size = new Vector2(2.8f, 1);
-            cant = 10;
-            life = 5;
-        } else if (tipo == "roca")
-        {
-            gameObject.GetComponent<BoxCollider2D>().size = new Vector2(1.8f, 1);
-            cant = 5;
-            life = 3;
-        } else if (tipo == "oro")
-        {
-            gameObject.GetComponent<BoxCollider2D>().size = new Vector2(1.8f, 1);
-            cant = 2;
-            life = 2;
-        } else if (tipo == "rocaHierro")
-        {
-            gameObject.GetComponent<BoxCollider2D>().size = new Vector2(1.8f, 1);
-            cant = 3;
-            life = 3;
+            infoLoot.Add(tiposLoot[i], infos[i]);
         }
     }
 
@@ -46,14 +47,13 @@ public class LootController : MonoBehaviour
         sprites = inventarioController.infoObjetos;
 
         spr = sprites[tipo].sprite;
-    }
 
-    private void Update()
-    {
-        if (life <= 0)
-        {
-            Destroy(gameObject);
-        }
+        particulasController = transform.GetChild(1).GetComponent<ParticulasController>();
+        
+        gameObject.GetComponent<BoxCollider2D>().size = infoLoot[tipo].size;
+        cant = infoLoot[tipo].cant;
+        life = infoLoot[tipo].life;
+        numParticula = infoLoot[tipo].numParticula;
     }
 
     public void setDatos(string tipe, Sprite sprite)
@@ -88,12 +88,19 @@ public class LootController : MonoBehaviour
     }
     
     IEnumerator tremble() {
+        particulasController.startParticulas(numParticula);
+        
         for ( int i = 0; i < 5; i++)
         {
             transform.localPosition += new Vector3(0.05f, 0, 0);
             yield return new WaitForSeconds(0.01f);
             transform.localPosition -= new Vector3(0.05f, 0, 0);
             yield return new WaitForSeconds(0.01f);
+        }
+        
+        if (life <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
