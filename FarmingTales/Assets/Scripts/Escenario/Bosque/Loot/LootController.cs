@@ -8,7 +8,10 @@ public class LootController : MonoBehaviour
     public string tipo = "madera";
     public int cant = 5;
     public Sprite spr;
+    public int numAudio;
     public IDictionary<string, ObjetoInventario> sprites;
+
+    private AudioController audioController;
 
     public int numParticula;
 
@@ -22,6 +25,7 @@ public class LootController : MonoBehaviour
         public int cant;
         public int life;
         public int numParticula;
+        public int numAudio;
     }
 
     public IDictionary<string, info> infoLoot = new Dictionary<string, info>();
@@ -38,6 +42,8 @@ public class LootController : MonoBehaviour
         {
             infoLoot.Add(tiposLoot[i], infos[i]);
         }
+
+        audioController = GetComponent<AudioController>();
     }
 
     private void Start()
@@ -54,6 +60,7 @@ public class LootController : MonoBehaviour
         cant = infoLoot[tipo].cant;
         life = infoLoot[tipo].life;
         numParticula = infoLoot[tipo].numParticula;
+        numAudio = infoLoot[tipo].numAudio;
     }
 
     public void setDatos(string tipe, Sprite sprite)
@@ -89,6 +96,7 @@ public class LootController : MonoBehaviour
     
     IEnumerator tremble() {
         particulasController.startParticulas(numParticula);
+        audioController.playAudio(numAudio);
         
         for ( int i = 0; i < 5; i++)
         {
