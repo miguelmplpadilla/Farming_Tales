@@ -67,7 +67,7 @@ public class PosicionController : MonoBehaviour, IPointerUpHandler, IPointerDown
             texto.text = "";
         }
 
-        GetComponent<Image>().sprite = inventarioController.sprites[item];
+        GetComponent<Image>().sprite = inventarioController.infoObjetos[item].sprite;
     }
 
     public void OnPointerUp(PointerEventData eventData)

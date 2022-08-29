@@ -129,6 +129,26 @@ MonoBehaviour:
     imagen: {fileID: 21300000, guid: fec341689324acd4bb6bf3363dad7017, type: 3}
     precio: 300
     animalGranja: 1
+  - id: pocionCuracion
+    nombreProducto: Pocion
+    imagen: {fileID: -1210325436634913000, guid: 9add83632539b0b4d99d183d14552af4, type: 3}
+    precio: 500
+    animalGranja: 0
+  - id: manzana
+    nombreProducto: Manzana
+    imagen: {fileID: 7975962711950580111, guid: 9add83632539b0b4d99d183d14552af4, type: 3}
+    precio: 100
+    animalGranja: 0
+  - id: hongo
+    nombreProducto: Hongo
+    imagen: {fileID: 3613768459190833633, guid: 9add83632539b0b4d99d183d14552af4, type: 3}
+    precio: 200
+    animalGranja: 0
+  - id: naranja
+    nombreProducto: Naranja
+    imagen: {fileID: -2128955922677816400, guid: 9add83632539b0b4d99d183d14552af4, type: 3}
+    precio: 100
+    animalGranja: 0
   producto: {fileID: 1413770635038842393, guid: 08f0d4a88a5762c44bfb9fe4733fd632, type: 3}
   continer: {fileID: 454566556}
   tendero: {fileID: 0}
@@ -253,8 +273,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1659950800}
   m_HandleRect: {fileID: 1205057268}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.9999957
+  m_Value: 0
+  m_Size: 0.9949164
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -854,8 +874,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 310007191}
   m_HandleRect: {fileID: 454566557}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.99999565
+  m_Value: 1
+  m_Size: 0.99491644
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1029,9 +1049,9 @@ RectTransform:
   m_Father: {fileID: 476423305}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.99999565}
-  m_AnchoredPosition: {x: -5.0999985, y: 0.6399689}
+  m_AnchorMin: {x: 0, y: 0.005083561}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -5.0999985, y: -0.041519165}
   m_SizeDelta: {x: -13.681, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &454566560
@@ -1650,9 +1670,9 @@ RectTransform:
   m_Father: {fileID: 879203283}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.0000042915344}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.199997, y: 0.63842773}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0.9949164}
+  m_AnchoredPosition: {x: -1.199997, y: 1.3199463}
   m_SizeDelta: {x: -6.8202486, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1205057273
@@ -22530,7 +22550,7 @@ PrefabInstance:
       objectReference: {fileID: 2384730821318007867}
     - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
       propertyPath: objetosInventario.Array.size
-      value: 15
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
       propertyPath: posicionesInventario.Array.data[0]
@@ -22621,6 +22641,22 @@ PrefabInstance:
       value: hierro
       objectReference: {fileID: 0}
     - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[15].item
+      value: pocionCuracion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[16].item
+      value: manzana
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[17].item
+      value: hongo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[18].item
+      value: naranja
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
       propertyPath: objetosInventario.Array.data[0].sprite
       value: 
       objectReference: {fileID: 4337684191699249041, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
@@ -22681,6 +22717,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 02075140333822c46b47a55148423a75, type: 3}
     - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[15].sprite
+      value: 
+      objectReference: {fileID: -1210325436634913000, guid: 9add83632539b0b4d99d183d14552af4, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[16].sprite
+      value: 
+      objectReference: {fileID: 7975962711950580111, guid: 9add83632539b0b4d99d183d14552af4, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[17].sprite
+      value: 
+      objectReference: {fileID: 3613768459190833633, guid: 9add83632539b0b4d99d183d14552af4, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[18].sprite
+      value: 
+      objectReference: {fileID: -2128955922677816400, guid: 9add83632539b0b4d99d183d14552af4, type: 3}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
       propertyPath: objetosInventario.Array.data[0].tipoItem
       value: construccion
       objectReference: {fileID: 0}
@@ -22737,6 +22789,22 @@ PrefabInstance:
       value: construccion
       objectReference: {fileID: 0}
     - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[15].tipoItem
+      value: comida
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[16].tipoItem
+      value: comida
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[17].tipoItem
+      value: comida
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[18].tipoItem
+      value: comida
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
       propertyPath: objetosInventario.Array.data[2].vidaRecuperar
       value: 1
       objectReference: {fileID: 0}
@@ -22750,6 +22818,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
       propertyPath: objetosInventario.Array.data[11].vidaRecuperar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[15].vidaRecuperar
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[16].vidaRecuperar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[17].vidaRecuperar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591153790754194984, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}
+      propertyPath: objetosInventario.Array.data[18].vidaRecuperar
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5469502380743819636, guid: 882d5f3433068bb489e62efe42ea9755, type: 3}

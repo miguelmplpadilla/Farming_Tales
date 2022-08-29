@@ -337,7 +337,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidaCompleta: 8
-  life: 1
+  life: 8
+  hit: 0
+  muriendo: 0
 --- !u!50 &306147709714548865
 Rigidbody2D:
   serializedVersion: 4

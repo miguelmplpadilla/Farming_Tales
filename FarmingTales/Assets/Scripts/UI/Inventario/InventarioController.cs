@@ -24,9 +24,6 @@ public class InventarioController : MonoBehaviour
 
     private GameObject player;
 
-    public string[] tipos;
-    public Sprite[] sprs;
-
     public List<ObjetoInventario> objetosInventario = new List<ObjetoInventario>();
     
     public IDictionary<string, ObjetoInventario> infoObjetos = new Dictionary<string, ObjetoInventario>();
@@ -44,11 +41,6 @@ public class InventarioController : MonoBehaviour
         
         //Cursor.visible = false;
         
-        for (int i = 0; i < tipos.Length; i++)
-        {
-            sprites.Add(tipos[i],sprs[i]);
-        }
-
         for (int i = 0; i < objetosInventario.Count; i++)
         {
             infoObjetos.Add(objetosInventario[i].item, objetosInventario[i]);
@@ -329,7 +321,7 @@ public class InventarioController : MonoBehaviour
             posicionController.item = datos[0];
             posicionController.cantidad = int.Parse(datos[1]);
 
-            posicionController.GetComponent<Image>().sprite = sprites[datos[0]];
+            posicionController.GetComponent<Image>().sprite = infoObjetos[datos[0]].sprite;
         }
 
         oro.text = PlayerPrefs.GetString("dineroPlayer");
