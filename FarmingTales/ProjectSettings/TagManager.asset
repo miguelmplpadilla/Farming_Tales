@@ -18,6 +18,7 @@ TagManager:
   - BoxCamara
   - Enemigo
   - HitBoxEnemy
+  - Raton
   layers:
   - Default
   - TransparentFX

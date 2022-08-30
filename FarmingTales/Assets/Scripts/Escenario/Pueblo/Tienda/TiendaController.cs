@@ -258,7 +258,7 @@ public class TiendaController : MonoBehaviour
 
     public void comprarProducto()
     {
-        if (precioProducto <= int.Parse(inventarioController.oro.text) && cantidadProducto < cantidadMaximaProducto && cantidadProducto < 128)
+        if (precioProducto <= int.Parse(inventarioController.oro.text) && cantidadProducto < cantidadMaximaProducto && cantidadProducto <= 128)
         {
             inventarioController.anadirInventario(productoComprar.id, cantidadProducto);
             comprar.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
@@ -283,7 +283,7 @@ public class TiendaController : MonoBehaviour
     public void venderProducto()
     {
         int cantRestar = cantidadProducto;
-        if (cantidadProducto <= productoComprar.cantidadVenta && cantidadProducto < 128)
+        if (cantidadProducto <= productoComprar.cantidadVenta && cantidadProducto <= 128)
         {
             for (int i = 0; i < inventarioController.posiciones.Length; i++)
             {
@@ -381,6 +381,8 @@ public class TiendaController : MonoBehaviour
         gameObject.transform.parent.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
 
         imagenDialogo.sprite = creadorProductosController.tendero.GetComponent<TenderoController>().imagen;
+        
+        mostrarListaComprar();
         
         cuadroDialogo.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
     }

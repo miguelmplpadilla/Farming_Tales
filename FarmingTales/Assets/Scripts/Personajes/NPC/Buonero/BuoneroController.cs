@@ -89,6 +89,14 @@ public class BuoneroController : MonoBehaviour
         if (col.CompareTag("Inter"))
         {
             StopCoroutine("caminar");
+            
+            float escalaInteractuarX = transform.GetChild(1).transform.localScale.x;
+
+            if (escalaInteractuarX < 0)
+            {
+                escalaInteractuarX = -escalaInteractuarX;
+            }
+            
             if (transform.localScale.x == 1)
             {
                 transform.localScale = new Vector3(-1f, 1f, 1f);

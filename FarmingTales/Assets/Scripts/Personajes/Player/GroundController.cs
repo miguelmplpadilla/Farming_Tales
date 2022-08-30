@@ -32,4 +32,12 @@ public class GroundController : MonoBehaviour
             animator.SetBool("jump", false);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("sueloBosque") || col.CompareTag("suelo"))
+        {
+            transform.parent.GetComponent<AudioController>().playAudio(2);
+        }
+    }
 }

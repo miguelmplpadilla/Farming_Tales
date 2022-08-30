@@ -77,8 +77,6 @@ public class GallinaController : MonoBehaviour
         Random r = new Random();
         int num = r.Next(100);
 
-        Debug.Log("Numero aleatorio: "+num);
-
         if (granja.GetComponent<GranjaController>().cantidadAnimales[0] >= 2)
         {
             if (num > 90 && num <= 100)

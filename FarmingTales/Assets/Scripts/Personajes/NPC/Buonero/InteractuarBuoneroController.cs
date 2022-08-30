@@ -40,14 +40,24 @@ public class InteractuarBuoneroController : MonoBehaviour
     {
         if (col.CompareTag("player"))
         {
+            
+            float escalaInteractuarX = transform.parent.GetChild(1).transform.localScale.x;
+
+            if (escalaInteractuarX < 0)
+            {
+                escalaInteractuarX = -escalaInteractuarX;
+            }
+            
             buoneroController.stopCaminar();
             if (player.transform.position.x > transform.parent.position.x)
             {
                 transform.parent.localScale = new Vector3(1f, 1f, 1f);
+                transform.parent.GetChild(1).transform.localScale = new Vector3(-escalaInteractuarX, transform.parent.GetChild(1).transform.localScale.y, 1);
             }
             else
             {
                 transform.parent.localScale = new Vector3(-1f, 1f, 1f);
+                transform.parent.GetChild(1).transform.localScale = new Vector3(escalaInteractuarX, transform.parent.GetChild(1).transform.localScale.y, 1);
             }
 
            buoneroController.mov = false;

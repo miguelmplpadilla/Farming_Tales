@@ -182,7 +182,7 @@ public class GranjaController : MonoBehaviour
                 posicionesInventarioGranja[i].item = datos[0];
                 posicionesInventarioGranja[i].cantidad = int.Parse(datos[1]);
 
-                posicionesInventarioGranja[i].sprite = toolBar.GetComponent<InventarioController>().sprites[datos[0]];
+                posicionesInventarioGranja[i].sprite = toolBar.GetComponent<InventarioController>().infoObjetos[datos[0]].sprite;
             }
         }
     }
