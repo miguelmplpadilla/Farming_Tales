@@ -38,6 +38,8 @@ public class ProductoMesaController : MonoBehaviour
                 restarMateriales();
 
                 inventarioController.anadirInventario(nombreProductoMesa, 1);
+                
+                textoEmergenteController.mostrarTexto("Objeto creado");
             }
             else
             {
@@ -46,7 +48,7 @@ public class ProductoMesaController : MonoBehaviour
         }
         else
         {
-            textoEmergenteController.mostrarTexto("No tienes los mteriales necesarios");
+            textoEmergenteController.mostrarTexto("No tienes los materiales necesarios");
         }
     }
 

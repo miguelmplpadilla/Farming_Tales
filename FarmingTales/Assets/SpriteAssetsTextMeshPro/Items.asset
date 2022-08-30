@@ -91,14 +91,14 @@ MonoBehaviour:
     m_Unicode: 65534
     m_GlyphIndex: 2
     m_Scale: 1
-    m_Name: Items_2
-    m_HashCode: 1139268075
+    m_Name: roca
+    m_HashCode: 4140479
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 3
     m_Scale: 1
-    m_Name: Items_3
-    m_HashCode: 1139268074
+    m_Name: zanahoria
+    m_HashCode: -301034839
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 4

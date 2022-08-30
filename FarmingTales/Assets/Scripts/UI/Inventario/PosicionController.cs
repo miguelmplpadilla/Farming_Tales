@@ -110,6 +110,19 @@ public class PosicionController : MonoBehaviour, IPointerUpHandler, IPointerDown
                                 cantidad = 128;
                             }
                         }
+                    } else if (posicionRatonController.item != item)
+                    {
+                        string itemInventario = item;
+                        int cantidadInventario = cantidad;
+                        Sprite spriteInventario = GetComponent<Image>().sprite;
+
+                        item = posicionRatonController.item;
+                        cantidad = posicionRatonController.cantidad;
+                        GetComponent<Image>().sprite = posicionRaton.GetComponent<Image>().sprite;
+
+                        posicionRatonController.item = itemInventario;
+                        posicionRatonController.cantidad = cantidadInventario;
+                        posicionRaton.GetComponent<Image>().sprite = spriteInventario;
                     }
                 }
             

@@ -23,7 +23,6 @@ public class GeneradorEnemigos : MonoBehaviour
         {
             if (nocheDiaController.estado == 2)
             {
-                Debug.Log("Creando enemigos");
                 for (int i = 0; i < 4; i++)
                 {
                     Random random = new Random();
@@ -36,8 +35,6 @@ public class GeneradorEnemigos : MonoBehaviour
                     
                     enemigo.SendMessage("startComprobarPosicionCrear");
                 }
-
-                Debug.Log("Enemigos creados");
             
                 enemigosGenerados = true;
             }

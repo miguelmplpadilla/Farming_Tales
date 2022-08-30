@@ -14,6 +14,8 @@ public class PlantacionController : MonoBehaviour
     }
 
     private ParticulasController particulasController;
+    
+    private TextoEmergenteController textoEmergenteController;
 
     private int tiempoAnterior;
     
@@ -54,6 +56,7 @@ public class PlantacionController : MonoBehaviour
         particulasController = transform.GetChild(2).GetComponent<ParticulasController>();
         toolBarController = GameObject.Find("ToolBar").GetComponent<ToolBarController>();
         inventarioController = GameObject.Find("ToolBar").GetComponent<InventarioController>();
+        textoEmergenteController = GameObject.Find("PanelTextoEmergente").GetComponent<TextoEmergenteController>();
     }
 
     public void inter()
@@ -97,19 +100,59 @@ public class PlantacionController : MonoBehaviour
         }
         else
         {
+
+            int resto1 = 0;
+            
             if (planta == "semillaTrigo")
             {
-                inventarioController.anadirInventario("trigo",cantidad);
+                resto1 = inventarioController.anadirInventario("trigo",cantidad);
+                
+                if (resto1 == cantidad)
+                {
+                    textoEmergenteController.mostrarTexto("No tienes espacio suficiente para trigo");
+                }
             }
-            inventarioController.anadirInventario(planta,4);
-            planta = "";
-            cantidad = 0;
-            posicionPlanta = -1;
-            spriteRenderer.sprite = terrenoSinPlanta;
-            recoger = false;
-            regar = false;
-            particulasController.startParticulas(1);
-            guardarPlantacion();
+            int resto2 = inventarioController.anadirInventario(planta,4);
+
+            Debug.Log("Resto1: "+resto1);
+            Debug.Log("Resto2: "+resto2);
+
+            if (resto1 != 0)
+            {
+                if (resto2 == 4 || resto1 == cantidad)
+                {
+                    textoEmergenteController.mostrarTexto("No tienes espacio suficiente para "+planta);
+                }
+                else
+                {
+                    planta = "";
+                    cantidad = 0;
+                    posicionPlanta = -1;
+                    spriteRenderer.sprite = terrenoSinPlanta;
+                    recoger = false;
+                    regar = false;
+                    particulasController.startParticulas(1);
+                    guardarPlantacion();
+                }
+            }
+            else
+            {
+                if (resto2 == 4)
+                {
+                    textoEmergenteController.mostrarTexto("No tienes espacio suficiente para "+planta);
+                }
+                else
+                {
+                    planta = "";
+                    cantidad = 0;
+                    posicionPlanta = -1;
+                    spriteRenderer.sprite = terrenoSinPlanta;
+                    recoger = false;
+                    regar = false;
+                    particulasController.startParticulas(1);
+                    guardarPlantacion();
+                }
+            }
         }
     }
     

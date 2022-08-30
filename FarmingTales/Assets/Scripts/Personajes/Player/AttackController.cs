@@ -17,6 +17,8 @@ public class AttackController : MonoBehaviour
     private bool looting = false;
     private InventarioController inventarioController;
     private ToolBarController toolBarController;
+    
+    private TextoEmergenteController textoEmergenteController;
 
     public bool comer;
 
@@ -35,13 +37,14 @@ public class AttackController : MonoBehaviour
         player = GameObject.FindWithTag("player");
         inventarioController = GameObject.FindWithTag("toolBar").GetComponent<InventarioController>();
         toolBarController = GameObject.FindWithTag("toolBar").GetComponent<ToolBarController>();
+        textoEmergenteController = GameObject.Find("PanelTextoEmergente").GetComponent<TextoEmergenteController>();
     }
 
     void Update()
     {
         if (playerController.mov)
         {
-            if (Input.GetButtonDown("Fire1") && playerController.isGrounded == true && playerController.isAttacking == false) {
+            if (Input.GetButtonDown("Fire1") && playerController.isGrounded && !playerController.isAttacking) {
                 playerController.movement = Vector2.zero;
                 rigidbody.velocity = Vector2.zero;
                 animator.SetInteger("golpe", golpe);
@@ -54,17 +57,27 @@ public class AttackController : MonoBehaviour
                     if (loot != null)
                     {
                         LootController lootController = loot.GetComponent<LootController>();
+
+                        int sobra = 0;
+                        
                         if (lootController.tipo != "oro")
                         {
-                            inventarioController.anadirInventario(lootController.tipo, lootController.cant);
+                            sobra = inventarioController.anadirInventario(lootController.tipo, lootController.cant);
                         }
                         else
                         {
                             inventarioController.anadirDinero(lootController.cant);
                         }
-                    
-                        lootController.temblar();
-                        lootController.life--;
+
+                        if (sobra != lootController.cant)
+                        {
+                            lootController.temblar();
+                            lootController.life--;
+                        }
+                        else
+                        {
+                            textoEmergenteController.mostrarTexto("No tienes espacio suficiente en el inventario para este tipo de objeto");
+                        }
                     }
                 }
             }
