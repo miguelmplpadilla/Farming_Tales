@@ -37,6 +37,14 @@ public class EscaleraController : MonoBehaviour
         
         player.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
     }
+    
+    public void quitar()
+    {
+    }
+    
+    public void mostrarInterQuitar()
+    {
+    }
 
     private void Update()
     {

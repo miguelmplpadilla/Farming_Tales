@@ -29,6 +29,14 @@ public class MapaNivelController : MonoBehaviour
         //StartCoroutine("moverMapa");
         SceneManager.LoadScene("Mapa");
     }
+    
+    public void quitar()
+    {
+    }
+    
+    public void mostrarInterQuitar()
+    {
+    }
 
     IEnumerator moverMapa()
     {

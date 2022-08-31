@@ -24,6 +24,14 @@ public class PalancaController : MonoBehaviour
         player.GetComponent<PlayerController>().mov = false;
         StartCoroutine("abrirPuertas");
     }
+    
+    public void quitar()
+    {
+    }
+    
+    public void mostrarInterQuitar()
+    {
+    }
 
     IEnumerator abrirPuertas()
     {

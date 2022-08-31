@@ -244,6 +244,14 @@ public class NPCController : MonoBehaviour {
             empezarHablar();
         }
     }
+    
+    public void quitar()
+    {
+    }
+    
+    public void mostrarInterQuitar()
+    {
+    }
 
     public void setHablar(bool h)
     {

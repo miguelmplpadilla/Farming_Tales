@@ -26,6 +26,14 @@ public class InteractuarBuoneroController : MonoBehaviour
         tenderoController.inter();
     }
     
+    public void quitar()
+    {
+    }
+    
+    public void mostrarInterQuitar()
+    {
+    }
+    
     public void mostrarInter()
     {
         transform.parent.GetComponentInChildren<InteractuarUIController>().visible();

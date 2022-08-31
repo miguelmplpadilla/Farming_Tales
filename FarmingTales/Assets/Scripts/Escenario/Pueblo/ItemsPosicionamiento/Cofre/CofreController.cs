@@ -36,6 +36,9 @@ public class CofreController : MonoBehaviour
     private Animator animator;
 
     public Vector2 posicionInventario;
+    
+    private GeneradorPosicionamientoController generadorPosicionamientoController;
+    private PosicionadorItemController posicionadorItemController;
 
     private void Awake()
     {
@@ -44,6 +47,10 @@ public class CofreController : MonoBehaviour
 
     private void Start()
     {
+        generadorPosicionamientoController =
+            GameObject.Find("GeneradorPosiciones").GetComponent<GeneradorPosicionamientoController>();
+        posicionadorItemController = GameObject.Find("PosicionadorItem").GetComponent<PosicionadorItemController>();
+        
         if (!cofreExterior)
         {
             inventarioCofreController = GameObject.Find("InventarioCofre").GetComponent<InventarioCofreController>();
@@ -117,6 +124,30 @@ public class CofreController : MonoBehaviour
             }
         }
     }
+    
+    public void quitar()
+    {
+        if (!cofreExterior)
+        {
+            for (int i = 0; i < generadorPosicionamientoController.puntos.Length; i++)
+            {
+                string idPosicionGenerado = generadorPosicionamientoController.puntos[i].GetComponent<PuntoGeneradoController>().tipo + (i+1) + SceneManager.GetActiveScene().name;
+
+                if (idPosicionGenerado.Equals(id))
+                {
+                    generadorPosicionamientoController.puntos[i].GetComponent<PuntoGeneradoController>().tipo = "";
+                    generadorPosicionamientoController.puntos[i].GetComponent<PuntoGeneradoController>().ocupado = false;
+                    break;
+                }
+            }
+            
+            posicionadorItemController.guardarPosicionesItem();
+
+            inventarioController.anadirInventario("cofre", 1);
+        
+            Destroy(gameObject);
+        }
+    }
 
     public void inter()
     {
@@ -150,6 +181,15 @@ public class CofreController : MonoBehaviour
     public void esconderInter()
     {
         GetComponentInChildren<InteractuarUIController>().invisibleDerecho();
+    }
+    
+    public void mostrarInterQuitar()
+    {
+        if (!cofreExterior)
+        {
+            transform.GetChild(1).GetComponent<InteractuarUIController>().visible();
+            transform.GetChild(1).GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
+        }
     }
 
     public void setId(string ide)

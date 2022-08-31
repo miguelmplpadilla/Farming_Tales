@@ -22,6 +22,14 @@ public class CamaController : MonoBehaviour
             StartCoroutine("transicion");
         }
     }
+    
+    public void quitar()
+    {
+    }
+    
+    public void mostrarInterQuitar()
+    {
+    }
 
     IEnumerator transicion()
     {

@@ -1306,11 +1306,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.9949163
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.006357312
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1318,71 +1318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.21209717
-      objectReference: {fileID: 0}
-    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[2].imagen
-      value: 
-      objectReference: {fileID: 21300000, guid: 88ae07391e88a4a42ab6232a101387fb, type: 3}
-    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[3].imagen
-      value: 
-      objectReference: {fileID: 21300000, guid: c094b70e4685c004e9db2e91e4866271, type: 3}
-    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[4].imagen
-      value: 
-      objectReference: {fileID: 21300000, guid: 1b78d36db5eebab4d975d5779cf351c1, type: 3}
-    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[2].nombreProducto
-      value: semillaTrigo
-      objectReference: {fileID: 0}
-    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[3].nombreProducto
-      value: mesaCrafteo
-      objectReference: {fileID: 0}
-    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[4].nombreProducto
-      value: plantacion
-      objectReference: {fileID: 0}
-    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[2].materialesNecesarios.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[3].materialesNecesarios.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[4].materialesNecesarios.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[2].materialesNecesarios.Array.data[0].nombre
-      value: trigo
-      objectReference: {fileID: 0}
-    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[3].materialesNecesarios.Array.data[0].nombre
-      value: madera
-      objectReference: {fileID: 0}
-    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[4].materialesNecesarios.Array.data[0].nombre
-      value: roca
-      objectReference: {fileID: 0}
-    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[2].materialesNecesarios.Array.data[0].cantidad
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[3].materialesNecesarios.Array.data[0].cantidad
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: listaProductos.Array.data[4].materialesNecesarios.Array.data[0].cantidad
-      value: 50
+      value: 1.3199615
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1390,11 +1326,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.9949163
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.012967825
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1402,7 +1338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.09729
+      value: 1.3199615
       objectReference: {fileID: 0}
     - target: {fileID: 1444948683, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1496,10 +1432,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasPrincipal
       objectReference: {fileID: 0}
-    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
-      propertyPath: objetosInventario.Array.data[8].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 1b78d36db5eebab4d975d5779cf351c1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
 --- !u!1 &1588200093
@@ -2298,11 +2230,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 106505526458514742, guid: b629551a470db294693f0b968fb36c18, type: 3}
       propertyPath: m_LocalScale.x
-      value: 37.723293
+      value: 40.884502
       objectReference: {fileID: 0}
     - target: {fileID: 106505526458514742, guid: b629551a470db294693f0b968fb36c18, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.5293
+      value: 6.1094
       objectReference: {fileID: 0}
     - target: {fileID: 106505526458514742, guid: b629551a470db294693f0b968fb36c18, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2408,7 +2340,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 250915410, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
-      value: 22.7
+      value: 26.5
       objectReference: {fileID: 0}
     - target: {fileID: 250915410, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
@@ -2420,7 +2352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 250915410, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
-      value: 22.7
+      value: 26.5
       objectReference: {fileID: 0}
     - target: {fileID: 2874003407508953192, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_RootOrder
@@ -2468,7 +2400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8437111795126902402, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.746564
+      value: 12.746984
       objectReference: {fileID: 0}
     - target: {fileID: 8437111795126902402, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_LocalPosition.y

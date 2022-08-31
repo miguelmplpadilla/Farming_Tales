@@ -12,11 +12,14 @@ public class InteractuarController : MonoBehaviour
     private Rigidbody2D rigidbody;
     private Animator animator;
 
+    private GameObject indicador;
+
     private void Awake()
     {
         playerController = transform.parent.GetComponent<PlayerController>();
         rigidbody = transform.parent.GetComponent<Rigidbody2D>();
         animator = transform.parent.GetComponent<Animator>();
+        indicador = GameObject.Find("Indicador");
     }
 
     void Update()
@@ -29,6 +32,14 @@ public class InteractuarController : MonoBehaviour
                 {
                     objInteractuado.SendMessage("inter");
                 }
+
+                if (!indicador.GetComponent<SpriteRenderer>().enabled)
+                {
+                    if (Input.GetKeyDown(KeyCode.Mouse0))
+                    {
+                        objInteractuado.SendMessage("quitar");
+                    }
+                }
             }
         }
     }
@@ -39,6 +50,7 @@ public class InteractuarController : MonoBehaviour
         {
             objInteractuado = other.gameObject;
             other.SendMessage("mostrarInter");
+            other.SendMessage("mostrarInterQuitar");
             interactuar = true;
         }
     }

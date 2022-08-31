@@ -43,6 +43,14 @@ public class TenderoController : MonoBehaviour
             inventario.GetComponent<InventarioController>().mostrar = false;
         }
     }
+    
+    public void quitar()
+    {
+    }
+    
+    public void mostrarInterQuitar()
+    {
+    }
 
     public void setHablar(bool h)
     {

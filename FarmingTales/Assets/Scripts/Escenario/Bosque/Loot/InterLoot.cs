@@ -14,6 +14,14 @@ public class InterLoot : MonoBehaviour
 
     public void inter() {}
     
+    public void quitar()
+    {
+    }
+    
+    public void mostrarInterQuitar()
+    {
+    }
+    
     public void mostrarInter()
     {
         if (toolBarController.position == 0)

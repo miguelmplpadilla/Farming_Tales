@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GranjaController : MonoBehaviour
@@ -34,6 +35,10 @@ public class GranjaController : MonoBehaviour
     private bool abierto = false;
 
     public int porcentageComida = 0;
+    
+    private GeneradorPosicionamientoController generadorPosicionamientoController;
+    private InventarioController inventarioController;
+    private PosicionadorItemController posicionadorItemController;
 
     private void Awake()
     {
@@ -43,6 +48,8 @@ public class GranjaController : MonoBehaviour
 
     private void Start()
     {
+        generadorPosicionamientoController =
+            GameObject.Find("GeneradorPosiciones").GetComponent<GeneradorPosicionamientoController>();
         inventario = GameObject.Find("Inventario");
         rectTransformInventario = inventario.GetComponent<RectTransform>();
         rectTransformRaton = GameObject.Find("Raton").GetComponent<RectTransform>();
@@ -50,6 +57,8 @@ public class GranjaController : MonoBehaviour
         toolBar = GameObject.Find("ToolBar");
         comida = GameObject.Find("Comida");
         incubadora = GameObject.Find("Incubadora");
+        inventarioController = toolBar.GetComponent<InventarioController>();
+        posicionadorItemController = GameObject.Find("PosicionadorItem").GetComponent<PosicionadorItemController>();
         
         posicionesInventarioGranja = new PosicionInventarioCofre[inventarioGranja.GetComponent<InventarioGranjaController>().posiciones.Length];
 
@@ -229,6 +238,76 @@ public class GranjaController : MonoBehaviour
         abierto = true;
     }
 
+    public void quitar()
+    {
+        for (int i = 0; i < generadorPosicionamientoController.puntos.Length; i++)
+        {
+            string idPosicionGenerado = generadorPosicionamientoController.puntos[i].GetComponent<PuntoGeneradoController>().tipo + (i+1) + SceneManager.GetActiveScene().name;
+
+            if (idPosicionGenerado.Equals(id))
+            {
+                generadorPosicionamientoController.puntos[i].GetComponent<PuntoGeneradoController>().tipo = "";
+                generadorPosicionamientoController.puntos[i].GetComponent<PuntoGeneradoController>().ocupado = false;
+                
+                generadorPosicionamientoController.puntos[i+1].GetComponent<PuntoGeneradoController>().tipo = "";
+                generadorPosicionamientoController.puntos[i+1].GetComponent<PuntoGeneradoController>().ocupado = false;
+                
+                generadorPosicionamientoController.puntos[i+2].GetComponent<PuntoGeneradoController>().tipo = "";
+                generadorPosicionamientoController.puntos[i+2].GetComponent<PuntoGeneradoController>().ocupado = false;
+                
+                string idPosicionGranja1 = "granjaPosicion" + (i+2) + SceneManager.GetActiveScene().name;
+                string idPosicionGranja2 = "granjaPosicion" + (i+3) + SceneManager.GetActiveScene().name;
+
+                List<GameObject> posicionGranjas = new List<GameObject>();
+
+                foreach (var gameObj in FindObjectsOfType(typeof(GameObject)) as GameObject[])
+                {
+                    if(gameObj.name.Equals("granjaPosicion(Clone)"))
+                    {
+                        posicionGranjas.Add(gameObj);
+                    }
+                }
+
+                for (int j = 0; j < posicionGranjas.Count; j++)
+                {
+                    if (posicionGranjas[j] != null)
+                    {
+                        if (posicionGranjas[j].GetComponent<GranjaPosicionController>().id.Equals(idPosicionGranja1))
+                        {
+                            Destroy(posicionGranjas[j]);
+                            break;
+                        }
+                    }
+                }
+                
+                for (int j = 0; j < posicionGranjas.Count; j++)
+                {
+                    if (posicionGranjas[j] != null)
+                    {
+                        if (posicionGranjas[j].GetComponent<GranjaPosicionController>().id.Equals(idPosicionGranja2))
+                        {
+                            Destroy(posicionGranjas[j]);
+                            break;
+                        }
+                    }
+                }
+
+                break;
+            }
+        }
+        
+        posicionadorItemController.guardarPosicionesItem();
+
+        inventarioController.anadirInventario("valla", 1);
+
+        for (int i = 0; i < animales.Count; i++)
+        {
+            Destroy(animales[i]);
+        }
+        
+        Destroy(gameObject);
+    }
+
     public void mostrarInter()
     {
         GetComponentInChildren<InteractuarUIController>().visibleDerecho();
@@ -237,6 +316,14 @@ public class GranjaController : MonoBehaviour
     public void esconderInter()
     {
         GetComponentInChildren<InteractuarUIController>().invisibleDerecho();
+        transform.GetChild(1).GetComponent<InteractuarUIController>().esconder();
+        transform.GetChild(1).GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+    }
+    
+    public void mostrarInterQuitar()
+    {
+        transform.GetChild(1).GetComponent<InteractuarUIController>().visible();
+        transform.GetChild(1).GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
     }
 
     public void anadirAnimal(string tipoAnimal)

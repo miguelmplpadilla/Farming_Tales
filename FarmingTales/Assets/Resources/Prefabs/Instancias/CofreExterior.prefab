@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 
   cofreExterior: 1
+  objetosAnadir: []
   posicionInventario: {x: -169.8, y: 53.6}
 --- !u!61 &3234645966019135334
 BoxCollider2D:
@@ -125,7 +126,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.62300014, y: 0.5810121}
+  m_Size: {x: 0.32188064, y: 0.5810121}
   m_EdgeRadius: 0
 --- !u!95 &1286277885
 Animator:

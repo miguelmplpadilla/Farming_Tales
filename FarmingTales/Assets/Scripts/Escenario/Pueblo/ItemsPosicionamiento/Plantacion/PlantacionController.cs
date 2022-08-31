@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlantacionController : MonoBehaviour
 {
@@ -45,6 +46,9 @@ public class PlantacionController : MonoBehaviour
 
     private bool creciendo = false;
 
+    private GeneradorPosicionamientoController generadorPosicionamientoController;
+    private PosicionadorItemController posicionadorItemController;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -53,10 +57,34 @@ public class PlantacionController : MonoBehaviour
 
     void Start()
     {
-        particulasController = transform.GetChild(2).GetComponent<ParticulasController>();
+        generadorPosicionamientoController =
+            GameObject.Find("GeneradorPosiciones").GetComponent<GeneradorPosicionamientoController>();
+        particulasController = transform.GetChild(3).GetComponent<ParticulasController>();
         toolBarController = GameObject.Find("ToolBar").GetComponent<ToolBarController>();
         inventarioController = GameObject.Find("ToolBar").GetComponent<InventarioController>();
         textoEmergenteController = GameObject.Find("PanelTextoEmergente").GetComponent<TextoEmergenteController>();
+        posicionadorItemController = GameObject.Find("PosicionadorItem").GetComponent<PosicionadorItemController>();
+    }
+
+    public void quitar()
+    {
+        for (int i = 0; i < generadorPosicionamientoController.puntos.Length; i++)
+        {
+            string idPosicionGenerado = generadorPosicionamientoController.puntos[i].GetComponent<PuntoGeneradoController>().tipo + (i+1) + SceneManager.GetActiveScene().name;
+
+            if (idPosicionGenerado.Equals(id))
+            {
+                generadorPosicionamientoController.puntos[i].GetComponent<PuntoGeneradoController>().tipo = "";
+                generadorPosicionamientoController.puntos[i].GetComponent<PuntoGeneradoController>().ocupado = false;
+                break;
+            }
+        }
+        
+        posicionadorItemController.guardarPosicionesItem();
+
+        inventarioController.anadirInventario("plantacion", 1);
+        
+        Destroy(gameObject);
     }
 
     public void inter()
@@ -114,9 +142,6 @@ public class PlantacionController : MonoBehaviour
             }
             int resto2 = inventarioController.anadirInventario(planta,4);
 
-            Debug.Log("Resto1: "+resto1);
-            Debug.Log("Resto2: "+resto2);
-
             if (resto1 != 0)
             {
                 if (resto2 == 4 || resto1 == cantidad)
@@ -160,33 +185,46 @@ public class PlantacionController : MonoBehaviour
     {
         if (isInArrayPlanta() != "" && !creciendo)
         {
-            GetComponentInChildren<InteractuarUIController>().visibleDerecho();   
+            transform.GetChild(0).GetComponent<InteractuarUIController>().visible();
         }
         else
         {
-            GetComponentInChildren<InteractuarUIController>().invisibleDerecho();
+            transform.GetChild(0).GetComponent<InteractuarUIController>().esconder();
         }
 
         if (regar)
         {
-            GetComponentInChildren<InteractuarUIController>().visibleDerecho();
-            gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = true;
+            transform.GetChild(0).GetComponent<InteractuarUIController>().visible();
+            transform.GetChild(2).GetComponent<SpriteRenderer>().enabled = true;
         }
         else
         {
-            gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = false;
+            transform.GetChild(0).GetComponent<InteractuarUIController>().esconder();
+            transform.GetChild(2).GetComponent<SpriteRenderer>().enabled = false;
+            
+            if (isInArrayPlanta() != "" && !creciendo)
+            {
+                transform.GetChild(0).GetComponent<InteractuarUIController>().visible();
+            }
         }
         
         if (recoger)
         {
-            GetComponentInChildren<InteractuarUIController>().visibleDerecho();  
+            transform.GetChild(0).GetComponent<InteractuarUIController>().visible();
         }
+    }
+
+    public void mostrarInterQuitar()
+    {
+        transform.GetChild(1).GetComponent<InteractuarUIController>().visible();
+        transform.GetChild(1).GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
     }
 
     public void esconderInter()
     {
-        GetComponentInChildren<InteractuarUIController>().invisibleDerecho();
-        gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = false;
+        transform.GetChild(0).GetComponent<InteractuarUIController>().esconder();
+        transform.GetChild(1).GetComponent<InteractuarUIController>().esconder();
+        transform.GetChild(1).GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
     }
 
     private string isInArrayPlanta()
