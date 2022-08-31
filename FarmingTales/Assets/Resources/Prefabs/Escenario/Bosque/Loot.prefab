@@ -125,27 +125,27 @@ MonoBehaviour:
   tiposLoot:
   - madera
   - roca
-  - oro
   - hierro
+  - oro
   infos:
   - size: {x: 2.8, y: 1}
-    cant: 10
+    cant: 3
     life: 5
     numParticula: 1
     numAudio: 0
   - size: {x: 1.8, y: 1}
-    cant: 5
+    cant: 3
     life: 3
     numParticula: 2
     numAudio: 1
   - size: {x: 1.8, y: 1}
     cant: 2
-    life: 2
+    life: 3
     numParticula: 2
     numAudio: 1
   - size: {x: 1.8, y: 1}
-    cant: 3
-    life: 3
+    cant: 1
+    life: 2
     numParticula: 2
     numAudio: 1
   life: 3

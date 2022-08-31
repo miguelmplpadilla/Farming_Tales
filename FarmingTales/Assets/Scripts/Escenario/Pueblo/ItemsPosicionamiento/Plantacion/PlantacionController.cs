@@ -27,6 +27,7 @@ public class PlantacionController : MonoBehaviour
 
     private ToolBarController toolBarController;
     private InventarioController inventarioController;
+    private AudioController audioController;
 
     public string planta = "";
     public int posicionPlanta = -1;
@@ -51,6 +52,7 @@ public class PlantacionController : MonoBehaviour
 
     private void Awake()
     {
+        audioController = GetComponent<AudioController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         estado = 1;
     }
@@ -84,6 +86,9 @@ public class PlantacionController : MonoBehaviour
 
         inventarioController.anadirInventario("plantacion", 1);
         
+        PlayerPrefs.DeleteKey(id+"planta");
+        PlayerPrefs.Save();
+        
         Destroy(gameObject);
     }
 
@@ -112,6 +117,7 @@ public class PlantacionController : MonoBehaviour
                         regar = true;
                         spriteRenderer.sprite = spritesTerreno[posicionPlanta].sprites[0];
                         particulasController.startParticulas(1);
+                        audioController.playAudio(0);
                         guardarPlantacion();
                     }
                 }
@@ -122,6 +128,7 @@ public class PlantacionController : MonoBehaviour
                     spriteRenderer.sprite = spritesTerreno[posicionPlanta].sprites[1];
                     StartCoroutine("crecerPlanta");
                     particulasController.startParticulas(0);
+                    audioController.playAudio(1);
                     guardarPlantacion();
                 }
             }
@@ -157,6 +164,7 @@ public class PlantacionController : MonoBehaviour
                     recoger = false;
                     regar = false;
                     particulasController.startParticulas(1);
+                    audioController.playAudio(0);
                     guardarPlantacion();
                 }
             }
@@ -175,6 +183,7 @@ public class PlantacionController : MonoBehaviour
                     recoger = false;
                     regar = false;
                     particulasController.startParticulas(1);
+                    audioController.playAudio(0);
                     guardarPlantacion();
                 }
             }

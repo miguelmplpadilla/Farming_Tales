@@ -50,7 +50,11 @@ public class InteractuarController : MonoBehaviour
         {
             objInteractuado = other.gameObject;
             other.SendMessage("mostrarInter");
-            other.SendMessage("mostrarInterQuitar");
+            if (!indicador.GetComponent<SpriteRenderer>().enabled)
+            {
+                other.SendMessage("mostrarInterQuitar");
+            }
+
             interactuar = true;
         }
     }

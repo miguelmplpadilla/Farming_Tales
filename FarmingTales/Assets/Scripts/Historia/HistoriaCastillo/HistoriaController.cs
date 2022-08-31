@@ -26,8 +26,11 @@ public class HistoriaController : MonoBehaviour
 
     private TextoEmergenteController textoEmergenteController;
     
+    private InventarioController inventarioController;
+    
     private void Start()
     {
+        inventarioController = GameObject.FindWithTag("toolBar").GetComponent<InventarioController>();
         textoEmergenteController = GameObject.Find("PanelTextoEmergente").GetComponent<TextoEmergenteController>();
         player = GameObject.Find("Player");
         camara = GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>();
@@ -49,6 +52,11 @@ public class HistoriaController : MonoBehaviour
 
     public void guardadorHistoria()
     {
+        if (puntoControl == 3)
+        {
+            inventarioController.anadirDinero(2000);
+        }
+        
         PlayerPrefs.SetInt(historia, puntoControl);
         PlayerPrefs.Save();
     }

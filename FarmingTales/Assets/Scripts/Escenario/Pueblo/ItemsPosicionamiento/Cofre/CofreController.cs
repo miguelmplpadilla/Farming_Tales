@@ -144,6 +144,9 @@ public class CofreController : MonoBehaviour
             posicionadorItemController.guardarPosicionesItem();
 
             inventarioController.anadirInventario("cofre", 1);
+            
+            PlayerPrefs.DeleteKey(id+0);
+            PlayerPrefs.Save();
         
             Destroy(gameObject);
         }

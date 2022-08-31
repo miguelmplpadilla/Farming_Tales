@@ -305,6 +305,10 @@ public class GranjaController : MonoBehaviour
             Destroy(animales[i]);
         }
         
+        PlayerPrefs.DeleteKey(id+0);
+        PlayerPrefs.DeleteKey(id+"NumeroAnimales");
+        PlayerPrefs.Save();
+        
         Destroy(gameObject);
     }
 

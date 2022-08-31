@@ -149,8 +149,15 @@ public class ToolBarController : MonoBehaviour
 
     private void LateUpdate()
     {
-        imageToolBar.sprite = spritesToolBar[(int)position];
-        
+        try
+        {
+            imageToolBar.sprite = spritesToolBar[(int) position];
+        }
+        catch (Exception e)
+        {
+            position = 0;
+        }
+
         if (position == 0 || position == 1)
         {
             armaPlayer.sprite = spritesArmas[(int)position];

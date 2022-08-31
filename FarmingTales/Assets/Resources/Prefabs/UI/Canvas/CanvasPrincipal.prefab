@@ -52,92 +52,92 @@ MonoBehaviour:
   - id: patata
     nombreProducto: Patata
     imagen: {fileID: 1801263428120863714, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    precio: 15
+    precio: 100
     animalGranja: 0
   - id: zanahoria
     nombreProducto: Zanahoria
     imagen: {fileID: -7573354855677281409, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    precio: 15
+    precio: 100
     animalGranja: 0
   - id: semillaTrigo
     nombreProducto: Semilla de Trigo
     imagen: {fileID: 21300000, guid: 88ae07391e88a4a42ab6232a101387fb, type: 3}
-    precio: 10
+    precio: 120
     animalGranja: 0
   - id: cofre
     nombreProducto: Cofre
     imagen: {fileID: -8929714730241205940, guid: 5e79748343a3d06408602fc3963807d4, type: 3}
-    precio: 30
+    precio: 300
     animalGranja: 0
   - id: madera
     nombreProducto: Madera
     imagen: {fileID: 4337684191699249041, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    precio: 10
+    precio: 20
     animalGranja: 0
   - id: roca
     nombreProducto: Roca
     imagen: {fileID: -488721925442295091, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    precio: 10
+    precio: 30
     animalGranja: 0
   - id: huevo
     nombreProducto: Huevo
     imagen: {fileID: 4639506938558671751, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    precio: 10
+    precio: 150
     animalGranja: 0
   - id: cuboLeche
     nombreProducto: Cubo de leche
     imagen: {fileID: 21300000, guid: 58e00a6c758df76498ea3ba3e84c3781, type: 3}
-    precio: 10
+    precio: 200
     animalGranja: 0
   - id: valla
     nombreProducto: Valla para granja
     imagen: {fileID: 21300000, guid: 5165c7f1752023048ba0300963f772ea, type: 3}
-    precio: 50
+    precio: 400
     animalGranja: 0
   - id: plantacion
     nombreProducto: Terreno de plantacion
     imagen: {fileID: 21300000, guid: bcae5d00d38541348a2b89942dbb3ceb, type: 3}
-    precio: 50
+    precio: 200
     animalGranja: 0
   - id: huevoFecundado
     nombreProducto: Huevo fecundado
     imagen: {fileID: 2464841037539403840, guid: 5ad8f830feb0b784caa92f3bbf3f34b0, type: 3}
-    precio: 20
+    precio: 350
     animalGranja: 0
   - id: trigo
     nombreProducto: Trigo
     imagen: {fileID: -5971942374765049077, guid: e1f299af8d1b4ba47a1cf527475d83c0, type: 3}
-    precio: 20
+    precio: 200
     animalGranja: 0
   - id: mesaCrafteo
     nombreProducto: Mesa de crafteo
     imagen: {fileID: 21300000, guid: c094b70e4685c004e9db2e91e4866271, type: 3}
-    precio: 100
+    precio: 250
     animalGranja: 0
   - id: gallina
     nombreProducto: Gallina
     imagen: {fileID: 21300000, guid: 88a2d86ef84a35848bd03305b0cdb923, type: 3}
-    precio: 200
+    precio: 500
     animalGranja: 1
   - id: hierro
     nombreProducto: Hierro
     imagen: {fileID: 21300000, guid: 02075140333822c46b47a55148423a75, type: 3}
-    precio: 20
+    precio: 70
     animalGranja: 0
   - id: vaca
     nombreProducto: Vaca
     imagen: {fileID: 21300000, guid: fec341689324acd4bb6bf3363dad7017, type: 3}
-    precio: 300
+    precio: 600
     animalGranja: 1
   - id: pocionCuracion
     nombreProducto: Pocion
     imagen: {fileID: -1210325436634913000, guid: 9add83632539b0b4d99d183d14552af4, type: 3}
-    precio: 500
+    precio: 800
     animalGranja: 0
   - id: manzana
     nombreProducto: Manzana
     imagen: {fileID: 7975962711950580111, guid: 9add83632539b0b4d99d183d14552af4, type: 3}
-    precio: 100
+    precio: 200
     animalGranja: 0
   - id: hongo
     nombreProducto: Hongo
@@ -147,7 +147,7 @@ MonoBehaviour:
   - id: naranja
     nombreProducto: Naranja
     imagen: {fileID: -2128955922677816400, guid: 9add83632539b0b4d99d183d14552af4, type: 3}
-    precio: 100
+    precio: 200
     animalGranja: 0
   producto: {fileID: 1413770635038842393, guid: 08f0d4a88a5762c44bfb9fe4733fd632, type: 3}
   continer: {fileID: 454566556}
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1205057268}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.9999954
+  m_Size: 0.9974323
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -951,7 +951,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 454566557}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.9999954
+  m_Size: 0.9974323
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1125,9 +1125,9 @@ RectTransform:
   m_Father: {fileID: 476423305}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.0000045895576}
+  m_AnchorMin: {x: 0, y: 0.0025677085}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5.0999985, y: 0.63783264}
+  m_AnchoredPosition: {x: -5.0999985, y: 0.29534912}
   m_SizeDelta: {x: -13.681, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &454566560
@@ -1382,14 +1382,16 @@ MonoBehaviour:
     imagen: {fileID: -8929714730241205940, guid: 5e79748343a3d06408602fc3963807d4, type: 3}
     materialesNecesarios:
     - nombre: madera
-      cantidad: 10
+      cantidad: 150
     - nombre: hierro
-      cantidad: 5
+      cantidad: 50
   - nombreProducto: valla
     imagen: {fileID: 21300000, guid: 5165c7f1752023048ba0300963f772ea, type: 3}
     materialesNecesarios:
     - nombre: madera
-      cantidad: 20
+      cantidad: 200
+    - nombre: roca
+      cantidad: 100
   - nombreProducto: semillaTrigo
     imagen: {fileID: 21300000, guid: 88ae07391e88a4a42ab6232a101387fb, type: 3}
     materialesNecesarios:
@@ -1399,12 +1401,12 @@ MonoBehaviour:
     imagen: {fileID: 21300000, guid: c094b70e4685c004e9db2e91e4866271, type: 3}
     materialesNecesarios:
     - nombre: madera
-      cantidad: 50
+      cantidad: 200
   - nombreProducto: plantacion
     imagen: {fileID: 21300000, guid: 1b78d36db5eebab4d975d5779cf351c1, type: 3}
     materialesNecesarios:
     - nombre: roca
-      cantidad: 50
+      cantidad: 150
 --- !u!1 &785050290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,9 +1838,9 @@ RectTransform:
   m_Father: {fileID: 879203283}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.0000045895576}
+  m_AnchorMin: {x: 0, y: 0.0025677085}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.199997, y: 0.63783264}
+  m_AnchoredPosition: {x: -1.199997, y: 0.29534912}
   m_SizeDelta: {x: -6.8202486, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1205057273
