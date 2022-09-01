@@ -24,7 +24,7 @@ public class InteractuarController : MonoBehaviour
 
     void Update()
     {
-        if (playerController.mov)
+        if (playerController.mov && !animator.GetBool("jump"))
         {
             if (interactuar)
             {

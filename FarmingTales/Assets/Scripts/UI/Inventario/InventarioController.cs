@@ -67,10 +67,10 @@ public class InventarioController : MonoBehaviour
             cargarInventarioDinero();
         }
         
-        anadirInventario("cofre", 5);
+        /*anadirInventario("cofre", 5);
         anadirInventario("valla", 5);
         anadirInventario("zanahoria", 50);
-        anadirInventario("plantacion", 5);
+        anadirInventario("plantacion", 5);*/
 
         anadirDinero(10000);
         
@@ -79,7 +79,7 @@ public class InventarioController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && mostrar)
+        if (Input.GetKeyDown(KeyCode.E) && mostrar && !player.GetComponent<Animator>().GetBool("jump"))
         {
             if (rectTransformInventario.localScale.x == 0)
             {

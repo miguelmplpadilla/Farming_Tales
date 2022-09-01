@@ -69,32 +69,28 @@ public class Controller : MonoBehaviour
                 pausarDespausar();
             }
         }
-        
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            PlayerPrefs.DeleteAll();
-        }
     }
 
     public void pausarDespausar()
     {
         PlayerController playerController = player.GetComponent<PlayerController>();
-        if (playerController.mov)
+        
+        if (!paused)
         {
-            if (!paused)
+            if (playerController.mov)
             {
                 panelPausa.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
                 playerController.mov = false;
                 Time.timeScale = 0;
                 paused = true;
             }
-            else
-            {
-                panelPausa.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
-                playerController.mov = true;
-                Time.timeScale = 1;
-                paused = false;
-            }
+        }
+        else
+        {
+            panelPausa.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+            playerController.mov = true;
+            Time.timeScale = 1;
+            paused = false;
         }
     }
 
