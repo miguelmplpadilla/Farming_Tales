@@ -33,7 +33,7 @@ public class InteractuarController : MonoBehaviour
                     objInteractuado.SendMessage("inter");
                 }
 
-                if (!indicador.GetComponent<SpriteRenderer>().enabled)
+                if (indicador != null && !indicador.GetComponent<SpriteRenderer>().enabled)
                 {
                     if (Input.GetKeyDown(KeyCode.Mouse0))
                     {
@@ -50,7 +50,7 @@ public class InteractuarController : MonoBehaviour
         {
             objInteractuado = other.gameObject;
             other.SendMessage("mostrarInter");
-            if (!indicador.GetComponent<SpriteRenderer>().enabled)
+            if (indicador != null && !indicador.GetComponent<SpriteRenderer>().enabled)
             {
                 other.SendMessage("mostrarInterQuitar");
             }

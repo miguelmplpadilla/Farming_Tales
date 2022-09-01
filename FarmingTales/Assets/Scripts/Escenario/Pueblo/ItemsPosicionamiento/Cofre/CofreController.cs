@@ -184,6 +184,11 @@ public class CofreController : MonoBehaviour
     public void esconderInter()
     {
         GetComponentInChildren<InteractuarUIController>().invisibleDerecho();
+        if (!cofreExterior)
+        {
+            transform.GetChild(1).GetComponent<InteractuarUIController>().esconder();
+            transform.GetChild(1).GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+        }
     }
     
     public void mostrarInterQuitar()

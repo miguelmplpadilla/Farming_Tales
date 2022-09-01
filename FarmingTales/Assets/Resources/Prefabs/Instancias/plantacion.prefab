@@ -305,8 +305,9 @@ MonoBehaviour:
   regar: 0
   cantidad: 0
   tiempo: 0
-  tiempoPlantacion: 10
+  tiempoPlantacion: 50
   tiempoActualPlantacion: 0
+  contadorTiempoTranscurridoJuegoPlantacion: 0
 --- !u!61 &4204952813936794617
 BoxCollider2D:
   m_ObjectHideFlags: 0

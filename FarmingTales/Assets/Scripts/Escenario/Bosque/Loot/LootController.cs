@@ -111,4 +111,14 @@ public class LootController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
+    public void inter() {}
+    
+    public void quitar()
+    {
+    }
+    
+    public void mostrarInterQuitar()
+    {
+    }
 }

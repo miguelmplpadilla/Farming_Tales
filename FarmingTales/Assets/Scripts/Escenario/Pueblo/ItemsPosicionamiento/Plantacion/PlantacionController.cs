@@ -49,6 +49,9 @@ public class PlantacionController : MonoBehaviour
 
     private GeneradorPosicionamientoController generadorPosicionamientoController;
     private PosicionadorItemController posicionadorItemController;
+    private Controller controller;
+
+    public int contadorTiempoTranscurridoJuegoPlantacion = 0;
 
     private void Awake()
     {
@@ -59,6 +62,7 @@ public class PlantacionController : MonoBehaviour
 
     void Start()
     {
+        controller = GameObject.Find("Controller").GetComponent<Controller>();
         generadorPosicionamientoController =
             GameObject.Find("GeneradorPosiciones").GetComponent<GeneradorPosicionamientoController>();
         particulasController = transform.GetChild(3).GetComponent<ParticulasController>();
@@ -278,6 +282,8 @@ public class PlantacionController : MonoBehaviour
     {
         id = ide;
         cargarPlantacion();
+
+        StartCoroutine("contadorTiempoTranscurridoPlantacion");
     }
 
     private void guardarPlantacion()
@@ -331,6 +337,33 @@ public class PlantacionController : MonoBehaviour
 
             if (creciendo)
             {
+                
+                if (PlayerPrefs.HasKey("ContadorTiempoTranscurridoJuegoPlantacion"+id))
+                {
+                    contadorTiempoTranscurridoJuegoPlantacion = PlayerPrefs.GetInt("ContadorTiempoTranscurridoJuegoPlantacion" + id);
+                    int tiempoJuego = PlayerPrefs.GetInt("ContadorTiempoTranscurridoJuego");
+
+                    int resto = tiempoJuego - contadorTiempoTranscurridoJuegoPlantacion;
+
+                    int cantSumar = 0;
+
+                    if (resto >= tiempoPlantacion)
+                    {
+                        cantSumar = resto / tiempoPlantacion;
+
+                        if (cantSumar < spritesTerreno[posicionPlanta].sprites.Count)
+                        {
+                            estado = cantSumar;
+                        }
+                        else
+                        {
+                            estado = spritesTerreno[posicionPlanta].sprites.Count;
+                        }
+                    }
+                }
+                
+                contadorTiempoTranscurridoJuegoPlantacion = PlayerPrefs.GetInt("ContadorTiempoTranscurridoJuego");
+                
                 spriteRenderer.sprite = spritesTerreno[posicionPlanta].sprites[estado];
                 StartCoroutine("crecerPlanta");
             }
@@ -339,6 +372,16 @@ public class PlantacionController : MonoBehaviour
                 regar = true;
                 spriteRenderer.sprite = spritesTerreno[posicionPlanta].sprites[0];
             }
+        }
+    }
+
+    IEnumerator contadorTiempoTranscurridoPlantacion()
+    {
+        while (true)
+        {
+            contadorTiempoTranscurridoJuegoPlantacion++;
+            PlayerPrefs.SetInt("ContadorTiempoTranscurridoJuegoPlantacion"+id, contadorTiempoTranscurridoJuegoPlantacion);
+            yield return new WaitForSeconds(1f);
         }
     }
     

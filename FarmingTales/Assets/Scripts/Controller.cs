@@ -15,9 +15,19 @@ public class Controller : MonoBehaviour
     public bool guardarPartida;
     public bool pausarPartida = true;
 
+    public int contadorTiempoTranscurridoJuego = 0;
+
     private void Awake()
     {
-        //PlayerPrefs.DeleteAll();
+        if (guardarPartida)
+        {
+            if (PlayerPrefs.HasKey("ContadorTiempoTranscurridoJuego"))
+            {
+                contadorTiempoTranscurridoJuego = PlayerPrefs.GetInt("ContadorTiempoTranscurridoJuego");
+            }
+
+            StartCoroutine("contadorTiempoJuego");
+        }
     }
 
     void Start()
@@ -116,6 +126,16 @@ public class Controller : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("PuebloInicio");
+    }
+
+    IEnumerator contadorTiempoJuego()
+    {
+        while (true)
+        {
+            contadorTiempoTranscurridoJuego++;
+            PlayerPrefs.SetInt("ContadorTiempoTranscurridoJuego", contadorTiempoTranscurridoJuego);
+            yield return new WaitForSeconds(1f);
+        }
     }
 
 }

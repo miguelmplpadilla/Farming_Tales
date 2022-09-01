@@ -32,9 +32,6 @@ public class InterLoot : MonoBehaviour
 
     public void esconderInter()
     {
-        if (toolBarController.position == 0)
-        {
-            GetComponentInChildren<InteractuarUIController>().esconder();
-        }
+        GetComponentInChildren<InteractuarUIController>().esconder();
     }
 }
