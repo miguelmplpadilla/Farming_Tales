@@ -80,14 +80,6 @@ public class Generador : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-    }
-
     public float getNumaleatorio(int max, int min)
     {
         Random rand = new Random();

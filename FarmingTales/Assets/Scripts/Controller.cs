@@ -72,7 +72,7 @@ public class Controller : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Y))
         {
-            SceneManager.LoadScene("Mapa");
+            PlayerPrefs.DeleteAll();
         }
     }
 
@@ -107,6 +107,7 @@ public class Controller : MonoBehaviour
         else
         {
             PlayerPrefs.SetString("NivelGuardadoPartida", SceneManager.GetActiveScene().name);
+            Time.timeScale = 1;
             SceneManager.LoadScene("PantallaInicio");
         }
     }
