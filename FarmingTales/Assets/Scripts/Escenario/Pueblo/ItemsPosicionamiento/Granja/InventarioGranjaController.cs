@@ -10,6 +10,13 @@ public class InventarioGranjaController : MonoBehaviour
     
     public GameObject[] posiciones;
 
+    private GameObject player;
+
+    private void Start()
+    {
+        player = GameObject.Find("Player");
+    }
+
     public int anadirInventario(string tipo, int cantidad)
     {
         
@@ -64,4 +71,15 @@ public class InventarioGranjaController : MonoBehaviour
 
         return cantidad;
     }
+
+    public void cerrarGranja()
+    {
+        player.GetComponent<PlayerController>().mov = true;
+
+        transform.localScale = new Vector3(0, 1, 1);
+
+        GameObject.Find("Inventario").transform.localScale = new Vector3(0, 1, 1);
+
+    }
+    
 }

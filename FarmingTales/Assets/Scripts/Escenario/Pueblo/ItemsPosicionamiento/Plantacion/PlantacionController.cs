@@ -11,6 +11,7 @@ public class PlantacionController : MonoBehaviour
     {
         public string id;
         public int cantidad;
+        public int tiempoCrecer;
         public List<Sprite> sprites;
     }
 
@@ -110,6 +111,7 @@ public class PlantacionController : MonoBehaviour
                         {
                             planta = spritesTerreno[i].id;
                             cantidad = spritesTerreno[i].cantidad;
+                            tiempoPlantacion = spritesTerreno[i].tiempoCrecer;
                             posicionPlanta = i;
                         }
                     }
@@ -151,7 +153,7 @@ public class PlantacionController : MonoBehaviour
                     textoEmergenteController.mostrarTexto("No tienes espacio suficiente para trigo");
                 }
             }
-            int resto2 = inventarioController.anadirInventario(planta,4);
+            int resto2 = inventarioController.anadirInventario(planta,cantidad);
 
             if (resto1 != 0)
             {
@@ -357,7 +359,7 @@ public class PlantacionController : MonoBehaviour
                         }
                         else
                         {
-                            estado = spritesTerreno[posicionPlanta].sprites.Count;
+                            estado = spritesTerreno[posicionPlanta].sprites.Count-1;
                         }
                     }
                 }

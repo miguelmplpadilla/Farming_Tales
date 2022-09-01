@@ -11,6 +11,8 @@ public class CofreController : MonoBehaviour
     public string id = "";
     public bool cofreExterior = false;
 
+    public bool romper = true;
+
     [System.Serializable]
     public class ObjetosAnadirCofre
     {
@@ -127,7 +129,7 @@ public class CofreController : MonoBehaviour
     
     public void quitar()
     {
-        if (!cofreExterior)
+        if (!cofreExterior && romper)
         {
             for (int i = 0; i < generadorPosicionamientoController.puntos.Length; i++)
             {
@@ -170,6 +172,8 @@ public class CofreController : MonoBehaviour
         inventarioCofreController.gameObject.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
 
         player.GetComponent<PlayerController>().mov = false;
+
+        inventarioCofreController.cofre = gameObject;
         
         animator.SetTrigger("abrir");
         
@@ -193,7 +197,7 @@ public class CofreController : MonoBehaviour
     
     public void mostrarInterQuitar()
     {
-        if (!cofreExterior)
+        if (!cofreExterior && romper)
         {
             transform.GetChild(1).GetComponent<InteractuarUIController>().visible();
             transform.GetChild(1).GetChild(0).GetComponent<SpriteRenderer>().enabled = true;

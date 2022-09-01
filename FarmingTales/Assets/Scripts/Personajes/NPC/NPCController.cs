@@ -211,8 +211,6 @@ public class NPCController : MonoBehaviour {
                     Random random = new Random();
                     numFrase = random.Next(0, frasesDisponibles.Length);
 
-                    Debug.Log(numFrase);
-
                     bool sePuedeNumFrase = true;
                 
                     for (int i = 0; i < numFraseAnteriores.Count; i++)

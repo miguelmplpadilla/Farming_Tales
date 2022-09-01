@@ -3668,7 +3668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8437111795126902402, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.149461
+      value: 0.14855132
       objectReference: {fileID: 0}
     - target: {fileID: 8437111795126902402, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_LocalPosition.y
@@ -52743,6 +52743,14 @@ PrefabInstance:
       propertyPath: fundidoNegro
       value: 
       objectReference: {fileID: 1717417037}
+    - target: {fileID: 1868572796735242609, guid: bb478bf2b7d2ec848a0e6aae243eefd3, type: 3}
+      propertyPath: pausarPartida
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1868572796735242609, guid: bb478bf2b7d2ec848a0e6aae243eefd3, type: 3}
+      propertyPath: guardarPartida
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1868572796735242622, guid: bb478bf2b7d2ec848a0e6aae243eefd3, type: 3}
       propertyPath: m_RootOrder
       value: 7

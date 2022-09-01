@@ -10,6 +10,8 @@ public class InventarioCofreController : MonoBehaviour
 
     public GameObject[] posiciones;
 
+    public GameObject cofre;
+
     public int anadirInventario(string tipo, Sprite sprite, int cantidad, GameObject other)
     {
         
@@ -65,5 +67,16 @@ public class InventarioCofreController : MonoBehaviour
         }
 
         return cantidad;
+    }
+
+    public void cerrarCofre()
+    {
+        GameObject.Find("Player").GetComponent<PlayerController>().mov = true;
+
+        transform.localScale = new Vector3(0, 1, 1);
+
+        GameObject.Find("Inventario").transform.localScale = new Vector3(0, 1, 1);
+        
+        cofre.GetComponent<Animator>().SetTrigger("cerrar");
     }
 }

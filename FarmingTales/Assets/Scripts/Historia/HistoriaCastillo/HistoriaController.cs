@@ -41,6 +41,8 @@ public class HistoriaController : MonoBehaviour
             camara.Follow = npcSalvar.transform;
             npcSalvar.GetComponent<NPCController>().inter();
             npcSalvar.GetComponent<NPCController>().hablar = false;
+
+            player.transform.position = GameObject.Find("InicioPueblo").transform.position;
         }
 
     }
@@ -52,11 +54,6 @@ public class HistoriaController : MonoBehaviour
 
     public void guardadorHistoria()
     {
-        if (puntoControl == 3)
-        {
-            inventarioController.anadirDinero(2000);
-        }
-        
         PlayerPrefs.SetInt(historia, puntoControl);
         PlayerPrefs.Save();
     }
@@ -128,9 +125,27 @@ public class HistoriaController : MonoBehaviour
         
         player.GetComponent<PlayerController>().mov = true;
         moverCamaraPlayer();
+        
+        if (pControl == 3)
+        {
+            inventarioController.anadirDinero(2000);
+            for (int i = 0; i < NPCsMazmorraMover.Length; i++)
+            {
+                NPCsMazmorraMover[i].SendMessage("setHablar", true);
+                NPCsMazmorraMover[i].transform.position = GameObject.Find("Posicion" + NPCsMazmorraMover[i].name).transform.position;
+            }
+            
+            npcMazmorraSalvar.transform.position = GameObject.Find("Posicion" + npcMazmorraSalvar.name).transform.position;
+            npcMazmorraSalvar.GetComponent<NPCController>().frasesDisponibles[0] = "Dialogo2";
+        }
 
         yield return new WaitForSeconds(3f);
-        
+
+        if (pControl == 3)
+        {
+            inventarioController.anadirDinero(2000);
+        }
+
         transicion.gameObject.SetActive(false);
         
         puerta.SetTrigger("abrir");
@@ -158,8 +173,11 @@ public class HistoriaController : MonoBehaviour
         
         camara.Follow = rey.transform;
         rey.GetComponent<NPCController>().frasesDisponibles[0] = "Dialogo2";
+        rey.GetComponent<NPCController>().hablar = true;
+        rey.GetComponent<NPCController>().hablando = false;
         rey.GetComponent<NPCController>().inter();
         rey.GetComponent<NPCController>().hablar = false;
+        rey.GetComponent<NPCController>().hablando = true;
 
         yield return new WaitForSeconds(3f);
 
@@ -204,22 +222,23 @@ public class HistoriaController : MonoBehaviour
                     rey.GetComponent<NPCController>().frasesDisponibles[0] = "Dialogo2";
                     rey.GetComponent<NPCController>().inter();
                     rey.GetComponent<NPCController>().hablar = false;
+                    
+                    for (int i = 0; i < NPCsMazmorraMover.Length; i++)
+                    {
+                        NPCsMazmorraMover[i].SendMessage("setHablar", false);
+                    }
                 }
 
-                for (int i = 0; i < NPCsMazmorraMover.Length; i++)
+                if (puntoControl == 3)
                 {
-                    NPCsMazmorraMover[i].SendMessage("setHablar", true);
-                    NPCsMazmorraMover[i].transform.position = GameObject.Find("Posicion" + NPCsMazmorraMover[i].name).transform.position;
-                }
+                    for (int i = 0; i < NPCsMazmorraMover.Length; i++)
+                    {
+                        NPCsMazmorraMover[i].SendMessage("setHablar", true);
+                        NPCsMazmorraMover[i].transform.position = GameObject.Find("Posicion" + NPCsMazmorraMover[i].name).transform.position;
+                    }
             
-                npcMazmorraSalvar.transform.position = GameObject.Find("Posicion" + npcMazmorraSalvar.name).transform.position;
-                npcMazmorraSalvar.GetComponent<NPCController>().frasesDisponibles[0] = "Dialogo2";
-            }
-            else
-            {
-                for (int i = 0; i < NPCsMazmorraMover.Length; i++)
-                {
-                    NPCsMazmorraMover[i].SendMessage("setHablar", false);
+                    npcMazmorraSalvar.transform.position = GameObject.Find("Posicion" + npcMazmorraSalvar.name).transform.position;
+                    npcMazmorraSalvar.GetComponent<NPCController>().frasesDisponibles[0] = "Dialogo2";
                 }
             }
         }

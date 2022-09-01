@@ -100,10 +100,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   granja: {fileID: 0}
   tipo: gallina
-  tiempoPoner: 10
+  id: 
+  tiempoPoner: 200
   tiempoPonerTranscurrido: 0
   alimentado: 0
   huevosAnadir: 0
+  huevoFecundadoAnadir: 0
 --- !u!114 &8013636343521139139
 MonoBehaviour:
   m_ObjectHideFlags: 0

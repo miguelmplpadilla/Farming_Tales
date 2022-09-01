@@ -16,6 +16,7 @@ public class Controller : MonoBehaviour
     public bool pausarPartida = true;
 
     public int contadorTiempoTranscurridoJuego = 0;
+    private bool noMoverPlayer = false;
 
     private void Awake()
     {
@@ -40,6 +41,12 @@ public class Controller : MonoBehaviour
         if (guardarPartida)
         {
             StartCoroutine("guardadoPartida");
+
+            if (!PlayerPrefs.HasKey(SceneManager.GetActiveScene().name+"Visitado"))
+            {
+                player.transform.position = GameObject.Find("InicioPueblo").transform.position;
+                PlayerPrefs.SetString(SceneManager.GetActiveScene().name+"Visitado", "Visitado");
+            }
         }
 
         if (SceneManager.GetActiveScene().name.Equals("PantallaInicio"))
@@ -50,7 +57,7 @@ public class Controller : MonoBehaviour
                 GameObject.Find("CargarPartida").SetActive(false);
             }
         }
-        
+
     }
 
     private void Update()
@@ -72,19 +79,22 @@ public class Controller : MonoBehaviour
     public void pausarDespausar()
     {
         PlayerController playerController = player.GetComponent<PlayerController>();
-        if (!paused)
+        if (playerController.mov)
         {
-            panelPausa.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
-            playerController.mov = false;
-            Time.timeScale = 0;
-            paused = true;
-        }
-        else
-        {
-            panelPausa.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
-            playerController.mov = true;
-            Time.timeScale = 1;
-            paused = false;
+            if (!paused)
+            {
+                panelPausa.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+                playerController.mov = false;
+                Time.timeScale = 0;
+                paused = true;
+            }
+            else
+            {
+                panelPausa.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+                playerController.mov = true;
+                Time.timeScale = 1;
+                paused = false;
+            }
         }
     }
 

@@ -114,10 +114,11 @@ MonoBehaviour:
   granja: {fileID: 0}
   tipo: vaca
   id: 
-  tiempoLeche: 10
+  tiempoLeche: 300
   tiempoLecheTranscurrido: 0
   alimentado: 0
   lecheAnadir: 0
+  contadorTiempoTranscurridoJuegoVaca: 0
 --- !u!61 &7042928150718145552
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -18,6 +18,8 @@ public class VacaController : MonoBehaviour
 
     private GameObject inventarioGranja;
 
+    public int contadorTiempoTranscurridoJuegoVaca = 0;
+
     void Start()
     {
         inventarioGranja = GameObject.Find("InventarioGranja");
@@ -94,6 +96,8 @@ public class VacaController : MonoBehaviour
     {
         id = ide;
         cargarPartida();
+        
+        StartCoroutine("contadorTiempoTranscurridoPlantacion");
     }
 
     private void cargarPartida()
@@ -110,6 +114,16 @@ public class VacaController : MonoBehaviour
             {
                 alimentado = false;
             }
+        }
+    }
+    
+    IEnumerator contadorTiempoTranscurridoPlantacion()
+    {
+        while (true)
+        {
+            contadorTiempoTranscurridoJuegoVaca++;
+            PlayerPrefs.SetInt("ContadorTiempoTranscurridoJuegoVaca"+id, contadorTiempoTranscurridoJuegoVaca);
+            yield return new WaitForSeconds(1f);
         }
     }
 

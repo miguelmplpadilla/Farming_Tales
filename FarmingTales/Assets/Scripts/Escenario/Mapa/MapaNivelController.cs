@@ -48,11 +48,13 @@ public class MapaNivelController : MonoBehaviour
     public void mostrarInter()
     {
         GetComponentInChildren<InteractuarUIController>().visible();
+        transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = true;
     }
 
     public void esconderInter()
     {
         GetComponentInChildren<InteractuarUIController>().invisibleDerecho();
+        transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = false;
     }
     
 }

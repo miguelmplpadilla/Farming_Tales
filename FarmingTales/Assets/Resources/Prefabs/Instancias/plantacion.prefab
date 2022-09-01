@@ -268,7 +268,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spritesTerreno:
   - id: patata
-    cantidad: 4
+    cantidad: 3
+    tiempoCrecer: 200
     sprites:
     - {fileID: 4797091324645190713, guid: ab01a31a63bb6ba4e80e71795468654e, type: 3}
     - {fileID: 2401439985596971486, guid: ab01a31a63bb6ba4e80e71795468654e, type: 3}
@@ -279,6 +280,7 @@ MonoBehaviour:
     - {fileID: -751503295021688651, guid: ab01a31a63bb6ba4e80e71795468654e, type: 3}
   - id: zanahoria
     cantidad: 3
+    tiempoCrecer: 150
     sprites:
     - {fileID: 5646023854832508743, guid: 8d1334aa1a3a240408193a2331adedb3, type: 3}
     - {fileID: 1400472645795517666, guid: 8d1334aa1a3a240408193a2331adedb3, type: 3}
@@ -289,6 +291,7 @@ MonoBehaviour:
     - {fileID: 3871046891743073433, guid: 8d1334aa1a3a240408193a2331adedb3, type: 3}
   - id: semillaTrigo
     cantidad: 2
+    tiempoCrecer: 250
     sprites:
     - {fileID: 51754406930413177, guid: fd93c16d78023c2468361a8570e5030b, type: 3}
     - {fileID: -6355621372983643697, guid: fd93c16d78023c2468361a8570e5030b, type: 3}

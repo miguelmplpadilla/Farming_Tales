@@ -129,12 +129,12 @@ MonoBehaviour:
   - oro
   infos:
   - size: {x: 2.8, y: 1}
-    cant: 3
+    cant: 5
     life: 5
     numParticula: 1
     numAudio: 0
   - size: {x: 1.8, y: 1}
-    cant: 3
+    cant: 5
     life: 3
     numParticula: 2
     numAudio: 1
