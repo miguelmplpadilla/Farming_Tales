@@ -25,15 +25,15 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().name.Equals(PlayerPrefs.GetString("NivelAnterior")))
+        /*if (SceneManager.GetActiveScene().name.Equals(PlayerPrefs.GetString("NivelAnterior")))
         {
             gameObject.transform.position = new Vector3(PlayerPrefs.GetFloat("PlayerX"),PlayerPrefs.GetFloat("PlayerY"), 1f);
-        }
-        
-        PlayerPrefs.DeleteKey("NivelAnterior");
-        PlayerPrefs.DeleteKey("PlayerX");
-        PlayerPrefs.DeleteKey("PlayerY");
-        
+            
+            PlayerPrefs.DeleteKey("NivelAnterior");
+            PlayerPrefs.DeleteKey("PlayerX");
+            PlayerPrefs.DeleteKey("PlayerY");
+        }*/
+
     }
 
     void Update()

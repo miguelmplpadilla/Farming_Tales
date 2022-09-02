@@ -110,7 +110,8 @@ public class Controller : MonoBehaviour
 
     public void abrirMapa()
     {
-        //PlayerPrefs.SetString("NivelAnterior", SceneManager.GetActiveScene().name);
+        PlayerPrefs.SetString("NivelAnterior", SceneManager.GetActiveScene().name);
+        PlayerPrefs.Save();
         Time.timeScale = 1;
         SceneManager.LoadScene("Mapa");
     }
