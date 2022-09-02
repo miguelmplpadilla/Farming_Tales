@@ -16,7 +16,7 @@ public class HistoriaController : MonoBehaviour
     public Animator puerta;
 
     public GameObject[] enemigos;
-    public GameObject npcSalvar;
+    private GameObject npcSalvar;
     public GameObject npcMazmorraSalvar;
     public GameObject rey;
 
@@ -30,21 +30,12 @@ public class HistoriaController : MonoBehaviour
     
     private void Start()
     {
+        npcSalvar = GameObject.Find("NPCHistoria1");
         inventarioController = GameObject.FindWithTag("toolBar").GetComponent<InventarioController>();
         textoEmergenteController = GameObject.Find("PanelTextoEmergente").GetComponent<TextoEmergenteController>();
         player = GameObject.Find("Player");
         camara = GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>();
         cargarHistoria();
-
-        if (puntoControl == 0)
-        {
-            camara.Follow = npcSalvar.transform;
-            npcSalvar.GetComponent<NPCController>().inter();
-            npcSalvar.GetComponent<NPCController>().hablar = false;
-
-            player.transform.position = GameObject.Find("InicioPueblo").transform.position;
-        }
-
     }
 
     public void moverCamaraPlayer()
@@ -128,7 +119,6 @@ public class HistoriaController : MonoBehaviour
         
         if (pControl == 3)
         {
-            inventarioController.anadirDinero(2000);
             for (int i = 0; i < NPCsMazmorraMover.Length; i++)
             {
                 NPCsMazmorraMover[i].SendMessage("setHablar", true);
@@ -143,7 +133,7 @@ public class HistoriaController : MonoBehaviour
 
         if (pControl == 3)
         {
-            inventarioController.anadirDinero(2000);
+            inventarioController.anadirDinero(4000);
         }
 
         transicion.gameObject.SetActive(false);
@@ -245,6 +235,23 @@ public class HistoriaController : MonoBehaviour
         else
         {
             puntoControl = 0;
+            
+            if (puntoControl == 0)
+            {
+                /*try
+                {
+                    camara.Follow = npcSalvar.transform;
+                    npcSalvar.SendMessage("setVariablesHablar", true);
+                    npcSalvar.SendMessage("inter");
+                    npcSalvar.SendMessage("setVariablesHablar", false);
+
+                    player.transform.position = GameObject.Find("InicioPueblo").transform.position;
+                }
+                catch (Exception e)
+                {
+                    Debug.Log("Error: "+e);
+                }*/
+            }
         }
     }
     

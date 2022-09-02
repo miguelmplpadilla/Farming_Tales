@@ -132,6 +132,8 @@ public class TiendaController : MonoBehaviour
                 StartCoroutine("mostrarFrase", dialogeController.getTextoDialogos(dialogos, creadorProductosController.tendero.GetComponent<TenderoController>().hablante, "Comprar", "Español")[0]);
                 string oro = (int.Parse(inventarioController.oro.text) - productoComprar.getPrecioProducto()).ToString();
                 inventarioController.oro.text = oro;
+                
+                PlayerPrefs.SetString("dineroPlayer", oro);
             }
             else
             {
@@ -266,6 +268,8 @@ public class TiendaController : MonoBehaviour
             string oro = (int.Parse(inventarioController.oro.text) - precioProducto).ToString();
             inventarioController.oro.text = oro;
             
+            PlayerPrefs.SetString("dineroPlayer", oro);
+            
             comprar.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
             
             cantidadProducto = 0;
@@ -310,7 +314,9 @@ public class TiendaController : MonoBehaviour
                 }
             }
         
-            inventarioController.oro.text = ((int.Parse(inventarioController.oro.text) + precioProducto).ToString());
+            //inventarioController.oro.text = ((int.Parse(inventarioController.oro.text) + precioProducto).ToString());
+            
+            inventarioController.anadirDinero((int.Parse(inventarioController.oro.text) + precioProducto));
         
             vender.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
             

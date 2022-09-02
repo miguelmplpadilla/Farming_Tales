@@ -66,13 +66,13 @@ public class InventarioController : MonoBehaviour
         {
             cargarInventarioDinero();
         }
-        
+
         /*anadirInventario("cofre", 5);
         anadirInventario("valla", 5);
         anadirInventario("zanahoria", 50);
         anadirInventario("plantacion", 5);*/
 
-        anadirDinero(10000);
+        //anadirDinero(10000);
         
         tienda = GameObject.Find("InterfazTienda");
     }
@@ -324,6 +324,9 @@ public class InventarioController : MonoBehaviour
             posicionController.GetComponent<Image>().sprite = infoObjetos[datos[0]].sprite;
         }
 
-        oro.text = PlayerPrefs.GetString("dineroPlayer");
+        if (PlayerPrefs.HasKey("dineroPlayer"))
+        {
+            oro.text = PlayerPrefs.GetString("dineroPlayer");
+        }
     }
 }

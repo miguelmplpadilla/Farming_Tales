@@ -27,8 +27,8 @@ public class NPCController : MonoBehaviour {
     private TextMeshProUGUI texto;
     private GameObject imagePanel;
 
-    private List<String> frases = new List<string>();
-    private DialogeController dialogeController = new DialogeController();
+    public List<String> frases = new List<string>();
+    public DialogeController dialogeController = new DialogeController();
 
     public bool hablando = false;
     public bool hablar = true;
@@ -43,6 +43,20 @@ public class NPCController : MonoBehaviour {
         imagePanel = GameObject.Find("ImagenNPC");
         texto = objectTexto.GetComponent<TextMeshProUGUI>();
         player = GameObject.Find("Player");
+    }
+
+    public void setVariablesHablar(bool h1)
+    {
+        if (h1)
+        {
+            hablando = false;
+        }
+        else
+        {
+            hablando = true;
+        }
+        
+        hablar = h1;
     }
 
     public void empezarHablar() {
