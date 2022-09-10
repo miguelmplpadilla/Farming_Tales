@@ -177,7 +177,7 @@ MonoBehaviour:
   item: 
   cantidad: 0
   id: 
-  tiempoIncubacion: 10
+  tiempoIncubacion: 300
   tiempoIncubacionTranscurrido: 0
   incubando: 0
 --- !u!212 &277752507667146607

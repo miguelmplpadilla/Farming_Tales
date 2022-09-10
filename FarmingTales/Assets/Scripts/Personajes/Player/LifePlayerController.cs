@@ -27,10 +27,10 @@ public class LifePlayerController : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        /*if (Input.GetKeyDown(KeyCode.K))
         {
             restarVida(1);
-        }
+        }*/
     }
 
     private void LateUpdate()
@@ -46,10 +46,13 @@ public class LifePlayerController : MonoBehaviour
         {
             playerController.mov = false;
             life -= restar;
-            animator.SetTrigger("hit");
             if (life <= 0)
             {
                 animator.SetBool("muriendo", true);
+            }
+            else
+            {
+                animator.SetTrigger("hit");
             }
 
             hit = true;

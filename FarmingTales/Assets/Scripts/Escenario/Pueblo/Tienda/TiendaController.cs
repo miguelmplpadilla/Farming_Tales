@@ -79,6 +79,17 @@ public class TiendaController : MonoBehaviour
         comprar.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
         
         transform.parent.GetComponent<Image>().sprite = imagenTiendaVender;
+        
+        cantidadProducto = 0;
+        precioProducto = 0;
+        
+        comprar.transform.Find("TextoCantidadComprar").GetComponent<TextMeshProUGUI>().text =
+            cantidadProducto.ToString();
+        comprar.transform.Find("TextoOroComprar").GetComponent<TextMeshProUGUI>().text = precioProducto.ToString();
+        
+        vender.transform.Find("TextoCantidadVender").GetComponent<TextMeshProUGUI>().text =
+            cantidadProducto.ToString();
+        vender.transform.Find("TextoOroVender").GetComponent<TextMeshProUGUI>().text = precioProducto.ToString();
     }
 
     public void mostrarComprarAnimal(ProductoController proController)
@@ -95,6 +106,16 @@ public class TiendaController : MonoBehaviour
         
         transform.parent.GetComponent<Image>().sprite = imagenTiendaComprar;
         
+        cantidadProducto = 0;
+        precioProducto = 0;
+        
+        comprar.transform.Find("TextoCantidadComprar").GetComponent<TextMeshProUGUI>().text =
+            cantidadProducto.ToString();
+        comprar.transform.Find("TextoOroComprar").GetComponent<TextMeshProUGUI>().text = precioProducto.ToString();
+        
+        vender.transform.Find("TextoCantidadVender").GetComponent<TextMeshProUGUI>().text =
+            cantidadProducto.ToString();
+        vender.transform.Find("TextoOroVender").GetComponent<TextMeshProUGUI>().text = precioProducto.ToString();
     }
 
     public void siComprarAnimal()
@@ -155,6 +176,17 @@ public class TiendaController : MonoBehaviour
         creadorProductosController.listaComprar();
         
         transform.parent.GetComponent<Image>().sprite = imagenTiendaComprar;
+        
+        cantidadProducto = 0;
+        precioProducto = 0;
+        
+        comprar.transform.Find("TextoCantidadComprar").GetComponent<TextMeshProUGUI>().text =
+            cantidadProducto.ToString();
+        comprar.transform.Find("TextoOroComprar").GetComponent<TextMeshProUGUI>().text = precioProducto.ToString();
+        
+        vender.transform.Find("TextoCantidadVender").GetComponent<TextMeshProUGUI>().text =
+            cantidadProducto.ToString();
+        vender.transform.Find("TextoOroVender").GetComponent<TextMeshProUGUI>().text = precioProducto.ToString();
     }
 
     public void mostrarListaVender()
@@ -177,13 +209,39 @@ public class TiendaController : MonoBehaviour
         }
 
         transform.parent.GetComponent<Image>().sprite = imagenTiendaVender;
+        
+        cantidadProducto = 0;
+        precioProducto = 0;
+        
+        comprar.transform.Find("TextoCantidadComprar").GetComponent<TextMeshProUGUI>().text =
+            cantidadProducto.ToString();
+        comprar.transform.Find("TextoOroComprar").GetComponent<TextMeshProUGUI>().text = precioProducto.ToString();
+        
+        vender.transform.Find("TextoCantidadVender").GetComponent<TextMeshProUGUI>().text =
+            cantidadProducto.ToString();
+        vender.transform.Find("TextoOroVender").GetComponent<TextMeshProUGUI>().text = precioProducto.ToString();
     }
     
     public void sumarProductoVender()
     {
         if (cantidadProducto < productoComprar.cantidadVenta && cantidadProducto < 128)
         {
-            cantidadProducto++;
+            if (!Input.GetKey(KeyCode.LeftShift))
+            {
+                cantidadProducto++;
+            }
+            else
+            {
+                if (productoComprar.cantidadVenta < 128)
+                {
+                    cantidadProducto = productoComprar.cantidadVenta;
+                }
+                else
+                {
+                    cantidadProducto = 128;
+                }
+            }
+            
             precioProducto = cantidadProducto * productoComprar.getPrecioProducto();
         }
         
@@ -197,7 +255,14 @@ public class TiendaController : MonoBehaviour
     {
         if (cantidadProducto > 0)
         {
-            cantidadProducto--;
+            if (!Input.GetKey(KeyCode.LeftShift))
+            {
+                cantidadProducto--;
+            }
+            else
+            {
+                cantidadProducto = 0;
+            }
             precioProducto = cantidadProducto * productoComprar.getPrecioProducto();
         }
         
@@ -211,7 +276,22 @@ public class TiendaController : MonoBehaviour
     {
         if (cantidadProducto < cantidadMaximaProducto && cantidadProducto < 128)
         {
-            cantidadProducto++;
+            if (!Input.GetKey(KeyCode.LeftShift))
+            {
+                cantidadProducto++;
+            }
+            else
+            {
+                if (cantidadMaximaProducto < 128)
+                {
+                    cantidadProducto = cantidadMaximaProducto;
+                }
+                else
+                {
+                    cantidadProducto = 128;
+                }
+            }
+
             precioProducto = cantidadProducto * productoComprar.getPrecioProducto();
         }
         
@@ -240,7 +320,15 @@ public class TiendaController : MonoBehaviour
     {
         if (cantidadProducto > 0)
         {
-            cantidadProducto--;
+            if (!Input.GetKey(KeyCode.LeftShift))
+            {
+                cantidadProducto--;
+            }
+            else
+            {
+                cantidadProducto = 0;
+            }
+
             precioProducto = cantidadProducto * productoComprar.getPrecioProducto();
         }
 
@@ -376,6 +464,17 @@ public class TiendaController : MonoBehaviour
         inventario.GetComponent<InventarioController>().mostrar = true;
         
         cuadroDialogo.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+        
+        cantidadProducto = 0;
+        precioProducto = 0;
+        
+        comprar.transform.Find("TextoCantidadComprar").GetComponent<TextMeshProUGUI>().text =
+            cantidadProducto.ToString();
+        comprar.transform.Find("TextoOroComprar").GetComponent<TextMeshProUGUI>().text = precioProducto.ToString();
+        
+        vender.transform.Find("TextoCantidadVender").GetComponent<TextMeshProUGUI>().text =
+            cantidadProducto.ToString();
+        vender.transform.Find("TextoOroVender").GetComponent<TextMeshProUGUI>().text = precioProducto.ToString();
     }
 
     public void mostrarTienda(bool gra)

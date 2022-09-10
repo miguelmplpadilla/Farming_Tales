@@ -45,11 +45,11 @@ public class IncubadoraController : MonoBehaviour, IPointerDownHandler
 
         if (incubando)
         {
-            textoIncubando.GetComponent<TextMeshProUGUI>().text = "<- Incubando";
+            textoIncubando.GetComponent<TextMeshProUGUI>().text = "<- Incubando huevo";
         }
         else
         {
-            textoIncubando.GetComponent<TextMeshProUGUI>().text = "<- Vacio";
+            textoIncubando.GetComponent<TextMeshProUGUI>().text = "<- Incubadora Vacia";
         }
     }
 
