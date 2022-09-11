@@ -254,6 +254,8 @@ MonoBehaviour:
   - {fileID: 322328406355353045, guid: ba12beaaf385cfd419eb578050bf2841, type: 3}
   - {fileID: 2283067490493392931, guid: 6ab67d4fc68f8804cbfaba7a4b8797b7, type: 3}
   salas: []
+  girar1: {fileID: 4902271297170004898, guid: 7bcac54c81da6ea46bec03d3bd1822b0, type: 3}
+  girar2: {fileID: 5395709278680124546, guid: 493470f7988e51340a3606b10327a8d6, type: 3}
 --- !u!1 &1527968462
 GameObject:
   m_ObjectHideFlags: 0
