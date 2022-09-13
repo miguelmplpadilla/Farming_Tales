@@ -9,6 +9,8 @@ using Random = System.Random;
 public class GeneradorMazmorra : MonoBehaviour
 {
 
+    public GameObject salaInicio;
+
     public GameObject[] salasDisponibles;
     public List<GameObject> salas;
 
@@ -31,6 +33,8 @@ public class GeneradorMazmorra : MonoBehaviour
 
         GameObject salaAnterior = null;
         
+        GameObject salaInstanciadaInicio = Instantiate(salaInicio, grid.transform.position, Quaternion.identity, grid.transform);
+        
         for (int i = 0; i < numSalaGenerar; i++)
         {
 
@@ -52,7 +56,9 @@ public class GeneradorMazmorra : MonoBehaviour
             
             if (i == 0)
             {
-                salaInstanciada.transform.position = new Vector3(0, 0, 0);
+                salaAnterior = salaInstanciadaInicio.transform.GetChild(0).GetChild(0).gameObject;
+                salaInstanciada.transform.position = new Vector3(salaAnterior.transform.position.x,
+                    salaAnterior.transform.position.y, salaAnterior.transform.position.z);
             }
             else
             {

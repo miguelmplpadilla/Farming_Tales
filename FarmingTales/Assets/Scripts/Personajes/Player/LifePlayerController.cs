@@ -22,6 +22,8 @@ public class LifePlayerController : MonoBehaviour
         rectTransformBarraVida = GameObject.Find("BarraVidaPlayer").GetComponent<RectTransform>();
         animator = GetComponent<Animator>();
         playerController = GetComponent<PlayerController>();
+
+        life = PlayerPrefs.GetInt("VidaPlayer");
     }
 
     
@@ -56,6 +58,8 @@ public class LifePlayerController : MonoBehaviour
             }
 
             hit = true;
+            
+            PlayerPrefs.SetInt("VidaPlayer", life);
         }
     }
 
@@ -70,6 +74,8 @@ public class LifePlayerController : MonoBehaviour
             {
                 life = vidaCompleta;
             }
+            
+            PlayerPrefs.SetInt("VidaPlayer", life);
         }
 
         return vidaRecuperada;
