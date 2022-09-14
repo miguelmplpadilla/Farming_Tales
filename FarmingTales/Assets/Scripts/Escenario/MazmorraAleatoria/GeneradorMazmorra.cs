@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = System.Random;
@@ -10,6 +9,11 @@ public class GeneradorMazmorra : MonoBehaviour
 {
 
     public GameObject salaInicio;
+
+    public GameObject[] enemigos;
+    public GameObject[] objetosColocacion;
+    
+    public GameObject salaFinal;
 
     public GameObject[] salasDisponibles;
     public List<GameObject> salas;
@@ -68,6 +72,47 @@ public class GeneradorMazmorra : MonoBehaviour
             }
 
             salas.Add(salaInstanciada);
+
+            GameObject padreInstancias = null;
+            try
+            {
+                padreInstancias = salaInstanciada.transform.Find("Instancias").gameObject;
+            }
+            catch (Exception e)
+            {
+                padreInstancias = null;
+            }
+
+            if (padreInstancias != null)
+            {
+                random = new Random();
+                foreach (Transform child in padreInstancias.transform)
+                {
+                    int numInstanciar = random.Next(0, 5);
+
+                    Debug.Log(numInstanciar);
+                    GameObject instanciado = null;
+                    Vector2 posicionInstancia = new Vector2(0,0);
+
+                    if (numInstanciar == 0)
+                    {
+                        int numEnemigoInstanciar = random.Next(0, enemigos.Length);
+                        instanciado = Instantiate(enemigos[numEnemigoInstanciar], salaInstanciada.transform.position, Quaternion.identity, salaInstanciada.transform);
+                        
+                        posicionInstancia =
+                            new Vector2(child.transform.position.x, child.transform.position.y + 0.1f);
+                    } else if (numInstanciar >= 1)
+                    {
+                        int numObjetoInstanciar = random.Next(0, objetosColocacion.Length);
+                        instanciado = Instantiate(objetosColocacion[numObjetoInstanciar], salaInstanciada.transform.position, Quaternion.identity, salaInstanciada.transform);
+                        
+                        posicionInstancia =
+                            new Vector2(child.transform.position.x, child.transform.position.y);
+                    }
+                    
+                    instanciado.transform.position = posicionInstancia;
+                }
+            }
             
             random = new Random();
             int numGirar = random.Next(0, 10);
@@ -129,6 +174,16 @@ public class GeneradorMazmorra : MonoBehaviour
             }
             
         }
+        
+        GameObject salaInstanciadaFinal = Instantiate(salaFinal, grid.transform.position, Quaternion.identity, grid.transform);
+        
+        salaInstanciadaFinal.transform.localScale = localScale;
+        
+        salaAnterior = salas[salas.Count-1].transform.GetChild(0).GetChild(0).gameObject;
+        salaInstanciadaFinal.transform.position = new Vector3(salaAnterior.transform.position.x,
+            salaAnterior.transform.position.y, salaAnterior.transform.position.z);
+        
+        salas.Add(salaInstanciadaFinal);
     }
 
     private void Update()

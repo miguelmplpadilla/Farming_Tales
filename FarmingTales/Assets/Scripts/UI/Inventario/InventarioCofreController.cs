@@ -77,6 +77,9 @@ public class InventarioCofreController : MonoBehaviour
 
         GameObject.Find("Inventario").transform.localScale = new Vector3(0, 1, 1);
         
+        cofre.GetComponent<CofreController>().guardarInventarioArray();
+        cofre.GetComponent<CofreController>().guardarInventario();
+        
         cofre.GetComponent<Animator>().SetTrigger("cerrar");
     }
 }

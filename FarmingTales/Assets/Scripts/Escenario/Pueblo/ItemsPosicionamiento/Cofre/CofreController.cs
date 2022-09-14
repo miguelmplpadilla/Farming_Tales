@@ -107,12 +107,7 @@ public class CofreController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                for (int i = 0; i < posicionInventarioCofres.Length; i++)
-                {
-                    posicionInventarioCofres[i].item = inventarioCofreController.posiciones[i].GetComponent<PosicionController>().item;
-                    posicionInventarioCofres[i].cantidad = inventarioCofreController.posiciones[i].GetComponent<PosicionController>().cantidad;
-                    posicionInventarioCofres[i].sprite = inventarioCofreController.posiciones[i].GetComponent<Image>().sprite;
-                }
+                guardarInventarioArray();
                 
                 inventarioCofreController.gameObject.GetComponent<RectTransform>().localScale = new Vector3(0,1,1);
                 
@@ -124,6 +119,16 @@ public class CofreController : MonoBehaviour
                 
                 abierto = false;
             }
+        }
+    }
+
+    public void guardarInventarioArray()
+    {
+        for (int i = 0; i < posicionInventarioCofres.Length; i++)
+        {
+            posicionInventarioCofres[i].item = inventarioCofreController.posiciones[i].GetComponent<PosicionController>().item;
+            posicionInventarioCofres[i].cantidad = inventarioCofreController.posiciones[i].GetComponent<PosicionController>().cantidad;
+            posicionInventarioCofres[i].sprite = inventarioCofreController.posiciones[i].GetComponent<Image>().sprite;
         }
     }
     
