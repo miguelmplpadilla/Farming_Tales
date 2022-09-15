@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -2507816583152990964, guid: b6ed4d59a2513fd4898708cf2d225c34, type: 3}
+    - target: {fileID: 21027851787109564, guid: 38ae5d0f86a698d4381b00c3ece42e21, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 685085876645742490, guid: 38ae5d0f86a698d4381b00c3ece42e21, type: 3}
       propertyPath: m_Name
       value: Roca

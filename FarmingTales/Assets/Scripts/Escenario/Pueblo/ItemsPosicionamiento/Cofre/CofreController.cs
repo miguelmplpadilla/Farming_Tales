@@ -24,7 +24,7 @@ public class CofreController : MonoBehaviour
     public List<ObjetosAnadirCofre> objetosAnadir = new List<ObjetosAnadirCofre>();
 
     public PosicionInventarioCofre[] posicionInventarioCofres;
-    private InventarioCofreController inventarioCofreController;
+    public InventarioCofreController inventarioCofreController;
     
     private bool abierto = false;
     
@@ -33,7 +33,7 @@ public class CofreController : MonoBehaviour
 
     private GameObject player;
 
-    private InventarioController inventarioController;
+    public InventarioController inventarioController = null;
 
     private Animator animator;
 
@@ -49,10 +49,23 @@ public class CofreController : MonoBehaviour
 
     private void Start()
     {
-        generadorPosicionamientoController =
-            GameObject.Find("GeneradorPosiciones").GetComponent<GeneradorPosicionamientoController>();
-        posicionadorItemController = GameObject.Find("PosicionadorItem").GetComponent<PosicionadorItemController>();
+        try
+        {
+            generadorPosicionamientoController =
+                GameObject.Find("GeneradorPosiciones").GetComponent<GeneradorPosicionamientoController>();
+        }
+        catch (Exception e)
+        {
+        }
         
+        try
+        {
+            posicionadorItemController = GameObject.Find("PosicionadorItem").GetComponent<PosicionadorItemController>();
+        }
+        catch (Exception e)
+        {
+        }
+
         if (!cofreExterior)
         {
             inventarioCofreController = GameObject.Find("InventarioCofre").GetComponent<InventarioCofreController>();
@@ -62,11 +75,14 @@ public class CofreController : MonoBehaviour
             inventarioCofreController = GameObject.Find("InvetarioCofreExterior").GetComponent<InventarioCofreController>();
         }
 
-        posicionInventarioCofres = new PosicionInventarioCofre[inventarioCofreController.posiciones.Length];
-
-        for (int i = 0; i < posicionInventarioCofres.Length; i++)
+        if (posicionInventarioCofres == null)
         {
-            posicionInventarioCofres[i] = new PosicionInventarioCofre();
+            posicionInventarioCofres = new PosicionInventarioCofre[inventarioCofreController.posiciones.Length];
+
+            for (int i = 0; i < posicionInventarioCofres.Length; i++)
+            {
+                posicionInventarioCofres[i] = new PosicionInventarioCofre();
+            }
         }
         
         rectTransformInventario = GameObject.Find("Inventario").GetComponent<RectTransform>();

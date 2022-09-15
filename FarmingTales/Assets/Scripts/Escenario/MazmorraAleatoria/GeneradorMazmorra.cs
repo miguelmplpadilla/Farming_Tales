@@ -7,11 +7,20 @@ using Random = System.Random;
 
 public class GeneradorMazmorra : MonoBehaviour
 {
+    
+    [System.Serializable]
+    public class ObjetoCofre
+    {
+        public string id;
+        public int cantMin;
+        public int cantMax;
+    }
 
     public GameObject salaInicio;
 
     public GameObject[] enemigos;
     public GameObject[] objetosColocacion;
+    public ObjetoCofre[] objectosCofre;
     
     public GameObject salaFinal;
 
@@ -22,7 +31,7 @@ public class GeneradorMazmorra : MonoBehaviour
     public GameObject girar2;
 
     private GameObject grid;
-    
+
     void Start()
     {
         grid = GameObject.Find("Grid");
@@ -73,6 +82,28 @@ public class GeneradorMazmorra : MonoBehaviour
 
             salas.Add(salaInstanciada);
 
+            if (localScale.x < 0)
+            {
+                GameObject escaleras = null;
+
+                try
+                {
+                    escaleras = salaInstanciada.transform.Find("Escaleras").gameObject;
+                }
+                catch (Exception e)
+                {
+                    escaleras = null;
+                }
+
+                if (escaleras != null)
+                {
+                    foreach (Transform child in escaleras.transform)
+                    {
+                        child.localScale = new Vector3(-child.localScale.x, child.localScale.y, 1);
+                    }
+                }
+            }
+
             GameObject padreInstancias = null;
             try
             {
@@ -90,7 +121,6 @@ public class GeneradorMazmorra : MonoBehaviour
                 {
                     int numInstanciar = random.Next(0, 5);
 
-                    Debug.Log(numInstanciar);
                     GameObject instanciado = null;
                     Vector2 posicionInstancia = new Vector2(0,0);
 
@@ -108,6 +138,16 @@ public class GeneradorMazmorra : MonoBehaviour
                         
                         posicionInstancia =
                             new Vector2(child.transform.position.x, child.transform.position.y);
+
+                        if (instanciado.name.Equals("cofre(Clone)"))
+                        {
+                            anadirObjetosCofre(instanciado);
+                        }
+                    }
+
+                    if (localScale.x < 0)
+                    {
+                        instanciado.transform.localScale = new Vector3(-1, 1, 1);
                     }
                     
                     instanciado.transform.position = posicionInstancia;
@@ -191,6 +231,50 @@ public class GeneradorMazmorra : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+
+    public void anadirObjetosCofre(GameObject cofre)
+    {
+        PosicionInventarioCofre[] posicionInventarioCofres = cofre.GetComponent<CofreController>().posicionInventarioCofres;
+
+        InventarioCofreController inventarioCofreController =
+            GameObject.Find("InventarioCofre").GetComponent<InventarioCofreController>();
+        
+        posicionInventarioCofres = new PosicionInventarioCofre[inventarioCofreController.posiciones.Length];
+
+        for (int i = 0; i < posicionInventarioCofres.Length; i++)
+        {
+            posicionInventarioCofres[i] = new PosicionInventarioCofre();
+        }
+        
+        Random random = new Random();
+        int numObjetosCofre = random.Next(1, 5);
+
+        int numAnteriorObjetoCofre = -1;
+        
+        for (int i = 0; i < numObjetosCofre; i++)
+        {
+            random = new Random();
+            int numObjetoCofre = -1;
+            while (true)
+            {
+                numObjetoCofre = random.Next(0, objectosCofre.Length);
+
+                if (numObjetoCofre != numAnteriorObjetoCofre)
+                {
+                    numAnteriorObjetoCofre = numObjetoCofre;
+                    break;
+                }
+            }
+
+            Sprite sprite = GameObject.Find("ToolBar").GetComponent<InventarioController>()
+                .infoObjetos[objectosCofre[numObjetoCofre].id].sprite;
+
+            posicionInventarioCofres[i].item = objectosCofre[numObjetoCofre].id;
+            posicionInventarioCofres[i].cantidad = random.Next(objectosCofre[numObjetoCofre].cantMin,
+                objectosCofre[numObjetoCofre].cantMax);
+            posicionInventarioCofres[i].sprite = sprite;
         }
     }
 }

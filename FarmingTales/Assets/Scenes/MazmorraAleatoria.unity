@@ -244,7 +244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8437111795126902402, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.635401
+      value: 8.635514
       objectReference: {fileID: 0}
     - target: {fileID: 8437111795126902402, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_LocalPosition.y
@@ -415,6 +415,33 @@ MonoBehaviour:
   - {fileID: 7776292744419251545, guid: 748a2a7ca9475af4c980de550ee41440, type: 3}
   objetosColocacion:
   - {fileID: 2081561995856590887, guid: 1ee0fabee7558bc458ded169732d45ff, type: 3}
+  - {fileID: 1206333594969686410, guid: a35d10c1d07dbef41af0631f222e7347, type: 3}
+  - {fileID: 7727413101762947212, guid: e02b7af28b58dab499bc0df3101f8c80, type: 3}
+  objectosCofre:
+  - id: patata
+    cantMin: 10
+    cantMax: 20
+  - id: zanahoria
+    cantMin: 10
+    cantMax: 20
+  - id: hierro
+    cantMin: 30
+    cantMax: 50
+  - id: madera
+    cantMin: 30
+    cantMax: 50
+  - id: roca
+    cantMin: 30
+    cantMax: 50
+  - id: semillaTrigo
+    cantMin: 2
+    cantMax: 5
+  - id: pocionCuracion
+    cantMin: 2
+    cantMax: 5
+  - id: hongo
+    cantMin: 2
+    cantMax: 5
   salaFinal: {fileID: 6918999065727507534, guid: 138a6bb9d7833a84baebba542c6f850c, type: 3}
   salasDisponibles:
   - {fileID: 1019443148081994516, guid: 991f52b401e95254d9054e692f88c7f0, type: 3}
@@ -706,7 +733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.123072326
+      value: 0.12307221
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_SizeDelta.y
@@ -714,7 +741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15.841213
+      value: -15.841237
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.x
@@ -726,7 +753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.123072326
+      value: 0.12307221
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_SizeDelta.y
@@ -734,7 +761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15.841213
+      value: -15.841237
       objectReference: {fileID: 0}
     - target: {fileID: 2384730821656971171, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_Pivot.x
