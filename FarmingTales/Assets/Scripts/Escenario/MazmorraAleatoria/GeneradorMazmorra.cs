@@ -236,17 +236,8 @@ public class GeneradorMazmorra : MonoBehaviour
 
     public void anadirObjetosCofre(GameObject cofre)
     {
-        PosicionInventarioCofre[] posicionInventarioCofres = cofre.GetComponent<CofreController>().posicionInventarioCofres;
-
         InventarioCofreController inventarioCofreController =
             GameObject.Find("InventarioCofre").GetComponent<InventarioCofreController>();
-        
-        posicionInventarioCofres = new PosicionInventarioCofre[inventarioCofreController.posiciones.Length];
-
-        for (int i = 0; i < posicionInventarioCofres.Length; i++)
-        {
-            posicionInventarioCofres[i] = new PosicionInventarioCofre();
-        }
         
         Random random = new Random();
         int numObjetosCofre = random.Next(1, 5);
@@ -270,11 +261,9 @@ public class GeneradorMazmorra : MonoBehaviour
 
             Sprite sprite = GameObject.Find("ToolBar").GetComponent<InventarioController>()
                 .infoObjetos[objectosCofre[numObjetoCofre].id].sprite;
-
-            posicionInventarioCofres[i].item = objectosCofre[numObjetoCofre].id;
-            posicionInventarioCofres[i].cantidad = random.Next(objectosCofre[numObjetoCofre].cantMin,
-                objectosCofre[numObjetoCofre].cantMax);
-            posicionInventarioCofres[i].sprite = sprite;
+            
+            cofre.GetComponent<CofreController>().anadirObjetoInicioCofre(objectosCofre[numObjetoCofre].id,random.Next(objectosCofre[numObjetoCofre].cantMin,
+                objectosCofre[numObjetoCofre].cantMax), sprite);
         }
     }
 }

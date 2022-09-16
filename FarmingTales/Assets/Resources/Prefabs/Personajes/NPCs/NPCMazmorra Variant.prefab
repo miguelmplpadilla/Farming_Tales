@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4971411951729671469
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1575859843577863552, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
+      propertyPath: hablante
+      value: NPCMazmorra
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575859843577863552, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
+      propertyPath: siNoTexto
+      value: Quieres ir a la mazmorra?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575859843577863552, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
+      propertyPath: siNoMetodo
+      value: moverMazmorraAleatoria
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575859843577863552, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
+      propertyPath: frasesDisponibles.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575859843577863552, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
+      propertyPath: frasesDisponibles.Array.data[1]
+      value: Dialogo1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575859843577863552, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
+      propertyPath: frasesDisponibles.Array.data[2]
+      value: Dialogo1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575859843577863556, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
+      propertyPath: m_Name
+      value: NPCMazmorra
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575859843577863565, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575859843577863565, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.623
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575859843577863565, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.139
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575859843577863565, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575859843577863565, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575859843577863565, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575859843577863565, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575859843577863565, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575859843577863565, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575859843577863565, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575859843577863565, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}

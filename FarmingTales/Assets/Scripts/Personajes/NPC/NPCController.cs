@@ -6,8 +6,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = System.Random;
 
-public class NPCController : MonoBehaviour {
+public class NPCController : MonoBehaviour
+{
+    public bool pararTemporal = false;
+    public bool seguir = true;
 
+    public string siNoMetodo;
+    public string siNoTexto;
+    private GameObject selectorSiNo;
+    
     public TextAsset dialogos;
 
     private int numFrase;
@@ -37,6 +44,7 @@ public class NPCController : MonoBehaviour {
 
     void Start()
     {
+        selectorSiNo = GameObject.Find("SelectorSiNo");
         idioma = "Español";
         panel = GameObject.Find("CuadroDialogo");
         objectTexto = GameObject.Find("TextoDialogo");
@@ -85,7 +93,7 @@ public class NPCController : MonoBehaviour {
     }
     
     IEnumerator mostrarFrase() {
-        bool seguir = true;
+        seguir = true;
         for (int i = 0; i < frases.Count; i++) {
             if (seguir == true) {
                 if (frases[i].Equals("execute1"))
@@ -112,6 +120,11 @@ public class NPCController : MonoBehaviour {
                     GameObject.Find("HistoriaController").GetComponent<HistoriaController>()
                         .StartCoroutine("transicionArribaCastillo", 3);
                     seguir = true;
+                } else if (frases[i].Equals("ejecutarSiNo"))
+                {
+                    ejecutarSiNo();
+                    seguir = true;
+                    pararTemporal = true;
                 }
                 else {
                     for (int j = 0; j < frases[i].Length; j++) {
@@ -128,6 +141,15 @@ public class NPCController : MonoBehaviour {
                 }
                 
                 currentFrase = "";
+            }
+
+            while (true)
+            {
+                if (!pararTemporal)
+                {
+                    break;
+                }
+                yield return null;
             }
 
             while (!seguir) {
@@ -273,5 +295,10 @@ public class NPCController : MonoBehaviour {
     public void getFraseEspecifica(int numFraseEspecifica)
     {
         frases = dialogeController.getTextoDialogos(dialogos, hablante, frasesDisponibles[numFraseEspecifica], idioma);
+    }
+
+    public void ejecutarSiNo()
+    {
+        selectorSiNo.GetComponent<SelectorSiNo>().mostrarTexto(siNoTexto, siNoMetodo, gameObject);
     }
 }

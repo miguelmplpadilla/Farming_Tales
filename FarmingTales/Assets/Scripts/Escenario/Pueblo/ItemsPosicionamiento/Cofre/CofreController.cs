@@ -19,6 +19,13 @@ public class CofreController : MonoBehaviour
         public string item = "";
         public int cantidad = 0;
         public Sprite sprite;
+
+        public ObjetosAnadirCofre(string id, int cant, Sprite spr)
+        {
+            item = id;
+            cantidad = cant;
+            sprite = spr;
+        }
     }
 
     public List<ObjetosAnadirCofre> objetosAnadir = new List<ObjetosAnadirCofre>();
@@ -115,6 +122,11 @@ public class CofreController : MonoBehaviour
                 cargarInventario();
             }
         }
+    }
+
+    public void anadirObjetoInicioCofre(string id, int cant, Sprite spr)
+    {
+        objetosAnadir.Add(new ObjetosAnadirCofre(id, cant, spr));
     }
 
     private void Update()
