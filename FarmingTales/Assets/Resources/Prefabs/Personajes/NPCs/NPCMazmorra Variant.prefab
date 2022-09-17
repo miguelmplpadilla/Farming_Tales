@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1575859843577863552, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 3019189405146784975, guid: 34ca1f35739a0814cb491d39492149c3, type: 3}
+    - target: {fileID: 1575859843577863552, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
       propertyPath: hablante
       value: NPCMazmorra
       objectReference: {fileID: 0}
@@ -30,6 +34,10 @@ PrefabInstance:
     - target: {fileID: 1575859843577863552, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
       propertyPath: frasesDisponibles.Array.data[2]
       value: Dialogo1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575859843577863555, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
+      propertyPath: numeroNpc
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1575859843577863556, guid: e644d96f985eaf244b31a1130d8ae4ab, type: 3}
       propertyPath: m_Name

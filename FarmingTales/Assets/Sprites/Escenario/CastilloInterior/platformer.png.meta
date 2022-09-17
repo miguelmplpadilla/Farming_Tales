@@ -119,6 +119,9 @@ TextureImporter:
   - first:
       213: 4950620208251539732
     second: platformer_38
+  - first:
+      213: 7913415207942943109
+    second: platformer_39
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1060,6 +1063,27 @@ TextureImporter:
       bones: []
       spriteID: 41114b299d224b440800000000000000
       internalID: 4950620208251539732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 581fc9d543912dd60800000000000000
+      internalID: 7913415207942943109
       vertices: []
       indices: 
       edges: []

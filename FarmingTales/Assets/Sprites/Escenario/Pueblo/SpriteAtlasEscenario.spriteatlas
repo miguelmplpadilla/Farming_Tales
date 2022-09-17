@@ -49,7 +49,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: f82fe6a5ec461f242b04f2d87dfc87b4, type: 3}
     - {fileID: 2800000, guid: fbcbcb5dcd45d694faeca1ffec93b5d2, type: 3}
     - {fileID: 2800000, guid: 2531bb119e85b7048b6dd57850d95108, type: 3}
-    totalSpriteSurfaceArea: 734336
+    totalSpriteSurfaceArea: 734592
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -6449,6 +6449,7 @@ SpriteAtlas:
   - {fileID: -6863136827431094841, guid: fbcbcb5dcd45d694faeca1ffec93b5d2, type: 3}
   - {fileID: -8491498074914610218, guid: fbcbcb5dcd45d694faeca1ffec93b5d2, type: 3}
   - {fileID: -6647179876577568333, guid: fbcbcb5dcd45d694faeca1ffec93b5d2, type: 3}
+  - {fileID: 7913415207942943109, guid: fbcbcb5dcd45d694faeca1ffec93b5d2, type: 3}
   - {fileID: 4950620208251539732, guid: fbcbcb5dcd45d694faeca1ffec93b5d2, type: 3}
   - {fileID: -5204906903767044436, guid: fbcbcb5dcd45d694faeca1ffec93b5d2, type: 3}
   - {fileID: -8278233765189686434, guid: fbcbcb5dcd45d694faeca1ffec93b5d2, type: 3}
@@ -12857,6 +12858,7 @@ SpriteAtlas:
   - platformer_30
   - platformer_28
   - platformer_29
+  - platformer_39
   - platformer_38
   - platformer_19
   - platformer_18
