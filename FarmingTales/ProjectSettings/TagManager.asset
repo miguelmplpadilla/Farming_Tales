@@ -19,6 +19,9 @@ TagManager:
   - Enemigo
   - HitBoxEnemy
   - Raton
+  - LineaRitmo
+  - LineaFinRitmo
+  - LineaEliminacionFlecha
   layers:
   - Default
   - TransparentFX
