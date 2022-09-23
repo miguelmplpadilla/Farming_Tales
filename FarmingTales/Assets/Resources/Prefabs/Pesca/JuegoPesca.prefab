@@ -262,6 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partituras: {fileID: 4900000, guid: 5da9b1ae0f424f269f06852633b854a2, type: 3}
+  tiempoActual: 0
   spritesFlechas:
   - {fileID: -8323507848453228100, guid: 09e91cc87ae246849829bc2e27ed0b38, type: 3}
   - {fileID: -2866504489607831131, guid: 09e91cc87ae246849829bc2e27ed0b38, type: 3}
@@ -273,10 +274,12 @@ MonoBehaviour:
   - {fileID: 2165735711976898663}
   - {fileID: 2165735710805477137}
   - {fileID: 2165735711490351358}
+  empezarContador: 0
+  numTeclasCorrectas: 0
+  cancionTerminada: 0
   canciones:
   - nombreCancion: Feel Good Inc
     audio: {fileID: 8300000, guid: ff4a4c1dba828b54a9d3a078c14a893b, type: 3}
-    puntuacion: 100
 --- !u!82 &2165735711207599572
 AudioSource:
   m_ObjectHideFlags: 0

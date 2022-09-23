@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = System.Random;
 
 public class PescaController : MonoBehaviour
 {
@@ -28,12 +30,19 @@ public class PescaController : MonoBehaviour
     private GameObject playerPescador;
     private Animator playerPescadorAnimator;
     
+    public int numTeclasCorrectas = 0;
+    
+    private int numBacalaos = 0;
+    private int numSalmon = 0;
+
+    private TextMeshProUGUI textoNumBacalao;
+    private TextMeshProUGUI textoNumSalmon;
+    
     [System.Serializable]
     public class Cancion
     {
         public string nombreCancion;
         public AudioClip audio;
-        public int puntuacion;
     }
 
     private List<GameObject> flechaCreadas = new List<GameObject>();
@@ -48,6 +57,8 @@ public class PescaController : MonoBehaviour
 
     private void Start()
     {
+        textoNumBacalao = GameObject.Find("TextoNumBacalao").GetComponent<TextMeshProUGUI>();
+        textoNumSalmon = GameObject.Find("TextoNumSalmon").GetComponent<TextMeshProUGUI>();
         playerPescador = GameObject.Find("PlayerPescador");
         playerPescadorAnimator = playerPescador.GetComponent<Animator>();
     }
@@ -72,17 +83,9 @@ public class PescaController : MonoBehaviour
                 audioSource.clip = canciones[0].audio;
                 audioSource.Play();
                 StartCoroutine("creadorTeclas");
+                cancionTerminada = false;
                 empezarContador = true;
             }
-        }
-
-        if (audioSource.isPlaying && empezarContador)
-        {
-            cancionTerminada = false;
-        }
-        else
-        {
-            cancionTerminada = true;
         }
 
         /*if (teclasLanzadas)
@@ -119,6 +122,9 @@ public class PescaController : MonoBehaviour
             empezarContador = false;
             tiempoActual = 0;
         }
+
+        textoNumBacalao.text = numBacalaos.ToString();
+        textoNumSalmon.text = numSalmon.ToString();
     }
 
     public void detectPressedKeyOrButton()
@@ -158,13 +164,15 @@ public class PescaController : MonoBehaviour
         List<string> tiempos =
             dialogeController.getTextoDialogos(partituras, canciones[0].nombreCancion, "Cancion", "English");
 
+        GameObject flechaInstanciada = null;
+        
         for (int i = 0; i < teclas.Count; i++)
         {
             while (true)
             {
-                if (tiempoActual == int.Parse(tiempos[i]) - 40)
+                if (tiempoActual >= int.Parse(tiempos[i]) - 40)
                 {
-                    GameObject flechaInstanciada = Instantiate(flecha);
+                    flechaInstanciada = Instantiate(flecha);
 
                     flechaCreadas.Add(flechaInstanciada);
                     
@@ -192,6 +200,52 @@ public class PescaController : MonoBehaviour
             }
             yield return null;
         }
+
+        while (true)
+        {
+            if (audioSource.isPlaying && empezarContador)
+            {
+                cancionTerminada = false;
+            }
+            else
+            {
+                if (flechaInstanciada == null)
+                {
+                    float portenzageAcierto = (numTeclasCorrectas * 100) / teclas.Count;
+
+                    if (portenzageAcierto >= 45)
+                    {
+                        sumarPez();
+                    }
+
+                    Debug.Log("Porcentage de acierto: " + portenzageAcierto);
+                    numTeclasCorrectas = 0;
+                    cancionTerminada = true;
+                    break;
+                }
+            }
+            yield return null;
+        }
         yield return null;
+    }
+
+    public void sumarPez()
+    {
+        Random random = new Random();
+        int numRandom = random.Next(0, 2);
+
+        if (numRandom >= 1)
+        {
+            numBacalaos++;
+        }
+        else
+        {
+            numSalmon++;
+        }
+    }
+
+    public void sumarTeclaCorrecta()
+    {
+        numTeclasCorrectas++;
     }
 }

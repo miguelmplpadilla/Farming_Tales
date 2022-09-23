@@ -67,10 +67,8 @@ public class InventarioController : MonoBehaviour
             cargarInventarioDinero();
         }
 
-        anadirInventario("huevoFecundado", 5);
-        anadirInventario("cofre", 5);
-        anadirInventario("zanahoria", 50);
-        anadirInventario("plantacion", 5);
+        anadirInventario("salmon", 5);
+        anadirInventario("bacalao", 5);
 
         //anadirDinero(10000);
         

@@ -17,6 +17,8 @@ public class FlechaController : MonoBehaviour
 
     private Rigidbody2D rigidbody;
 
+    private PescaController pescaController;
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -24,17 +26,19 @@ public class FlechaController : MonoBehaviour
 
     private void Start()
     {
+        pescaController = GameObject.Find("JuegoPesca").GetComponent<PescaController>();
     }
 
     private void Update()
     {
-        if (tocandoLinea)
+        if (tocandoLinea && !correcto)
         {
             if (Input.GetKeyDown(key))
             {
                 GetComponent<SpriteRenderer>().color = Color.green;
                 transform.localScale = new Vector3(0.45f, 0.45f, 1);
                 //Debug.Log("Pulsacion flecha "+direccion+" correcta");
+                pescaController.sumarTeclaCorrecta();
                 correcto = true;
             }
         }
