@@ -12,6 +12,12 @@ using Random = System.Random;
 public class PescaController : MonoBehaviour
 {
 
+    public bool empezarPescar = true;
+
+    public Sprite[] imagenesPeces;
+
+    private EstrellaController estrellaController;
+
     public TextAsset partituras;
 
     private AudioSource audioSource;
@@ -57,6 +63,7 @@ public class PescaController : MonoBehaviour
 
     private void Start()
     {
+        estrellaController = GameObject.Find("Estrella").GetComponent<EstrellaController>();
         textoNumBacalao = GameObject.Find("TextoNumBacalao").GetComponent<TextMeshProUGUI>();
         textoNumSalmon = GameObject.Find("TextoNumSalmon").GetComponent<TextMeshProUGUI>();
         playerPescador = GameObject.Find("PlayerPescador");
@@ -74,17 +81,21 @@ public class PescaController : MonoBehaviour
             writer.WriteLine(todaPartitura);
             writer.Close();
         }*/
-        
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        if (empezarPescar)
         {
-            if (!empezarContador)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                playerPescadorAnimator.SetBool("lanzar", true);
-                audioSource.clip = canciones[0].audio;
-                audioSource.Play();
-                StartCoroutine("creadorTeclas");
-                cancionTerminada = false;
-                empezarContador = true;
+                if (!empezarContador)
+                {
+                    playerPescadorAnimator.SetBool("lanzar", true);
+                    audioSource.clip = canciones[0].audio;
+                    audioSource.Play();
+                    StartCoroutine("creadorTeclas");
+                    cancionTerminada = false;
+                    empezarContador = true;
+                    empezarPescar = false;
+                }
             }
         }
 
@@ -232,7 +243,7 @@ public class PescaController : MonoBehaviour
     public void sumarPez()
     {
         Random random = new Random();
-        int numRandom = random.Next(0, 2);
+        int numRandom = random.Next(0, imagenesPeces.Length);
 
         if (numRandom >= 1)
         {
@@ -242,6 +253,8 @@ public class PescaController : MonoBehaviour
         {
             numSalmon++;
         }
+        
+        estrellaController.startAnimation(imagenesPeces[numRandom]);
     }
 
     public void sumarTeclaCorrecta()
