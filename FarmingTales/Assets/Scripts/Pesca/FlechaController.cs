@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = System.Random;
 
 public class FlechaController : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class FlechaController : MonoBehaviour
 
     private PescaController pescaController;
 
+    private Animator playerPescadorAnimator;
+
+    public int numRandomAnteriorPose = 0;
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -26,6 +31,7 @@ public class FlechaController : MonoBehaviour
 
     private void Start()
     {
+        playerPescadorAnimator = GameObject.Find("PlayerPescador").GetComponent<Animator>();
         pescaController = GameObject.Find("JuegoPesca").GetComponent<PescaController>();
     }
 
@@ -39,6 +45,19 @@ public class FlechaController : MonoBehaviour
                 transform.localScale = new Vector3(0.45f, 0.45f, 1);
                 //Debug.Log("Pulsacion flecha "+direccion+" correcta");
                 pescaController.sumarTeclaCorrecta();
+                numRandomAnteriorPose = playerPescadorAnimator.GetInteger("pose");
+                while (true)
+                {
+                    Random random = new Random();
+                    int numRandom = random.Next(1, 5);
+                    if (numRandom != numRandomAnteriorPose)
+                    {
+                        Debug.Log("Numero Random: "+numRandom+" Numero Random Anterior: "+numRandomAnteriorPose);
+                        playerPescadorAnimator.SetInteger("pose", numRandom);
+                        break;
+                    }
+                }
+                
                 correcto = true;
             }
         }
