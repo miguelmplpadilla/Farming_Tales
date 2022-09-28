@@ -48,3 +48,6 @@ NPCHistoria2,Dialogo2,Muchas gracias por salvarnos viajero. te estaré eternamen
 NPCAldeanoCastillo1,Dialogo1,Desde que has llegado al pueblo las cosas han empezado a ir mejor,
 NPCMazmorra,Dialogo1,Listo para adentrarte en la mazmorra viajero?,
 NPCMazmorra,Dialogo1,ejecutarSiNo,
+NPCPescador,Dialogo1,Hola viajero te apetece ir de pesca?,
+NPCPescador,Dialogo1,Cuando vuelvas todos los peces se guardaran en el cofre,
+NPCPescador,Dialogo1,ejecutarSiNo,

@@ -42,4 +42,9 @@ public class SelectorSiNo : MonoBehaviour
         SceneManager.LoadScene("MazmorraAleatoria");
     }
     
+    public void moverPesca()
+    {
+        SceneManager.LoadScene("Pesca");
+    }
+    
 }

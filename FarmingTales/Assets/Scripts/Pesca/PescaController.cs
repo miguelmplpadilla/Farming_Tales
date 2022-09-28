@@ -56,6 +56,8 @@ public class PescaController : MonoBehaviour
 
     public List<Cancion> canciones = new List<Cancion>();
 
+    private GameObject espacio;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -63,6 +65,7 @@ public class PescaController : MonoBehaviour
 
     private void Start()
     {
+        espacio = GameObject.Find("PanelTirarCana");
         estrellaController = GameObject.Find("Estrella").GetComponent<EstrellaController>();
         textoNumBacalao = GameObject.Find("TextoNumBacalao").GetComponent<TextMeshProUGUI>();
         textoNumSalmon = GameObject.Find("TextoNumSalmon").GetComponent<TextMeshProUGUI>();
@@ -84,10 +87,12 @@ public class PescaController : MonoBehaviour
 
         if (empezarPescar)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            espacio.transform.localScale = new Vector3(1, 1, 1);
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 if (!empezarContador)
                 {
+                    espacio.transform.localScale = new Vector3(0, 1, 1);
                     playerPescadorAnimator.SetBool("lanzar", true);
                     audioSource.clip = canciones[0].audio;
                     audioSource.Play();
@@ -228,8 +233,11 @@ public class PescaController : MonoBehaviour
                     {
                         sumarPez();
                     }
-
-                    Debug.Log("Porcentage de acierto: " + portenzageAcierto);
+                    else
+                    {
+                        empezarPescar = true;
+                    }
+                    
                     numTeclasCorrectas = 0;
                     cancionTerminada = true;
                     break;
@@ -253,6 +261,9 @@ public class PescaController : MonoBehaviour
         {
             numSalmon++;
         }
+        
+        PlayerPrefs.SetInt("NumBacalao", numBacalaos);
+        PlayerPrefs.SetInt("NumSalmon", numSalmon);
         
         estrellaController.startAnimation(imagenesPeces[numRandom]);
     }
