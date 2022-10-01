@@ -10,6 +10,7 @@ public class PlantacionController : MonoBehaviour
     public class sprite
     {
         public string id;
+        public string fruto;
         public int cantidad;
         public int tiempoCrecer;
         public List<Sprite> sprites;
@@ -31,6 +32,7 @@ public class PlantacionController : MonoBehaviour
     private AudioController audioController;
 
     public string planta = "";
+    public string fruto = "";
     public int posicionPlanta = -1;
 
     private SpriteRenderer spriteRenderer;
@@ -112,6 +114,7 @@ public class PlantacionController : MonoBehaviour
                             planta = spritesTerreno[i].id;
                             cantidad = spritesTerreno[i].cantidad;
                             tiempoPlantacion = spritesTerreno[i].tiempoCrecer;
+                            fruto = spritesTerreno[i].fruto;
                             posicionPlanta = i;
                         }
                     }
@@ -144,13 +147,13 @@ public class PlantacionController : MonoBehaviour
 
             int resto1 = 0;
             
-            if (planta == "semillaTrigo")
+            if (!fruto.Equals(""))
             {
-                resto1 = inventarioController.anadirInventario("trigo",cantidad);
+                resto1 = inventarioController.anadirInventario(fruto,cantidad);
                 
                 if (resto1 == cantidad)
                 {
-                    textoEmergenteController.mostrarTexto("No tienes espacio suficiente para trigo");
+                    textoEmergenteController.mostrarTexto("No tienes espacio suficiente para "+fruto);
                 }
             }
             int resto2 = inventarioController.anadirInventario(planta,cantidad);

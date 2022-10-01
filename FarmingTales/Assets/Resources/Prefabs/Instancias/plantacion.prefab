@@ -268,6 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spritesTerreno:
   - id: patata
+    fruto: 
     cantidad: 3
     tiempoCrecer: 200
     sprites:
@@ -279,6 +280,7 @@ MonoBehaviour:
     - {fileID: 6584160028960799325, guid: ab01a31a63bb6ba4e80e71795468654e, type: 3}
     - {fileID: -751503295021688651, guid: ab01a31a63bb6ba4e80e71795468654e, type: 3}
   - id: zanahoria
+    fruto: 
     cantidad: 3
     tiempoCrecer: 150
     sprites:
@@ -290,6 +292,7 @@ MonoBehaviour:
     - {fileID: 4245766801628300350, guid: 8d1334aa1a3a240408193a2331adedb3, type: 3}
     - {fileID: 3871046891743073433, guid: 8d1334aa1a3a240408193a2331adedb3, type: 3}
   - id: semillaTrigo
+    fruto: trigo
     cantidad: 2
     tiempoCrecer: 250
     sprites:
@@ -300,15 +303,28 @@ MonoBehaviour:
     - {fileID: -8525661536626958248, guid: fd93c16d78023c2468361a8570e5030b, type: 3}
     - {fileID: -7608875025484696918, guid: fd93c16d78023c2468361a8570e5030b, type: 3}
     - {fileID: -2946859105347974252, guid: fd93c16d78023c2468361a8570e5030b, type: 3}
+  - id: semillaTomate
+    fruto: tomate
+    cantidad: 2
+    tiempoCrecer: 150
+    sprites:
+    - {fileID: -1325879699319130544, guid: 9d6a774ce5c148946827b354b4109a4d, type: 3}
+    - {fileID: 2490512866239133447, guid: 9d6a774ce5c148946827b354b4109a4d, type: 3}
+    - {fileID: -5795381619976906601, guid: 9d6a774ce5c148946827b354b4109a4d, type: 3}
+    - {fileID: -1780527807199100112, guid: 9d6a774ce5c148946827b354b4109a4d, type: 3}
+    - {fileID: 8722804393931377399, guid: 9d6a774ce5c148946827b354b4109a4d, type: 3}
+    - {fileID: -5580618815877476728, guid: 9d6a774ce5c148946827b354b4109a4d, type: 3}
+    - {fileID: -5310956932204547599, guid: 9d6a774ce5c148946827b354b4109a4d, type: 3}
   id: 
   planta: 
+  fruto: 
   posicionPlanta: -1
   terrenoSinPlanta: {fileID: 21300000, guid: bcae5d00d38541348a2b89942dbb3ceb, type: 3}
   recoger: 0
   regar: 0
   cantidad: 0
   tiempo: 0
-  tiempoPlantacion: 50
+  tiempoPlantacion: 5
   tiempoActualPlantacion: 0
   contadorTiempoTranscurridoJuegoPlantacion: 0
 --- !u!61 &4204952813936794617

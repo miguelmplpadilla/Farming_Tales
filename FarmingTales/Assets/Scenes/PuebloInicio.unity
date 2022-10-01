@@ -2187,6 +2187,74 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.size
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[20].id
+      value: salmon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[21].id
+      value: bacalao
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[22].id
+      value: tomate
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[23].id
+      value: semillaTomate
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[20].imagen
+      value: 
+      objectReference: {fileID: -5230651234861206391, guid: 261e7c326ebc18b43bb36782a9273b93, type: 3}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[20].precio
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[21].imagen
+      value: 
+      objectReference: {fileID: 4949894420371946604, guid: 261e7c326ebc18b43bb36782a9273b93, type: 3}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[21].precio
+      value: 220
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[22].imagen
+      value: 
+      objectReference: {fileID: 8236432160196758994, guid: 1d1fd5599c40307439cf567f8850d46b, type: 3}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[22].precio
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[23].imagen
+      value: 
+      objectReference: {fileID: 21300000, guid: cdb4d681e938a6b4b9085bff421c5b11, type: 3}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[23].precio
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[20].nombreProducto
+      value: Salmon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[21].nombreProducto
+      value: Bacalao
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[22].nombreProducto
+      value: Tomate
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[23].nombreProducto
+      value: Semilla Tomate
+      objectReference: {fileID: 0}
     - target: {fileID: 243875521, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2197,11 +2265,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.99743235
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.0050836205
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2209,7 +2277,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.041534424
+      value: 0.98301697
+      objectReference: {fileID: 0}
+    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[5].imagen
+      value: 
+      objectReference: {fileID: 21300000, guid: cdb4d681e938a6b4b9085bff421c5b11, type: 3}
+    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[5].nombreProducto
+      value: semillaTomate
+      objectReference: {fileID: 0}
+    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[5].materialesNecesarios.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[5].materialesNecesarios.Array.data[0].nombre
+      value: tomate
+      objectReference: {fileID: 0}
+    - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[5].materialesNecesarios.Array.data[0].cantidad
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2217,11 +2309,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.99743235
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.0050836205
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2229,7 +2321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.041534424
+      value: 0.98301697
       objectReference: {fileID: 0}
     - target: {fileID: 1444948683, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2322,6 +2414,42 @@ PrefabInstance:
     - target: {fileID: 2384730821656971175, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_Name
       value: CanvasPrincipal
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: objetosInventario.Array.size
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: objetosInventario.Array.data[21].item
+      value: tomate
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: objetosInventario.Array.data[22].item
+      value: semillaTomate
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: objetosInventario.Array.data[21].sprite
+      value: 
+      objectReference: {fileID: 8236432160196758994, guid: 1d1fd5599c40307439cf567f8850d46b, type: 3}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: objetosInventario.Array.data[22].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cdb4d681e938a6b4b9085bff421c5b11, type: 3}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: objetosInventario.Array.data[21].tipoItem
+      value: comida
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: objetosInventario.Array.data[22].tipoItem
+      value: construccion
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: objetosInventario.Array.data[21].vidaRecuperar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: objetosInventario.Array.data[22].vidaRecuperar
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
@@ -3655,7 +3783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8437111795126902402, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.746354
+      value: 12.746484
       objectReference: {fileID: 0}
     - target: {fileID: 8437111795126902402, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_LocalPosition.y
