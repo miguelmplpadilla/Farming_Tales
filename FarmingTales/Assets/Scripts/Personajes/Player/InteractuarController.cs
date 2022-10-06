@@ -6,7 +6,7 @@ using UnityEngine;
 public class InteractuarController : MonoBehaviour
 {
 
-    private bool interactuar = false;
+    public bool interactuar = false;
     private GameObject objInteractuado;
     private PlayerController playerController;
     private Rigidbody2D rigidbody;

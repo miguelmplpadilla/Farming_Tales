@@ -95,24 +95,27 @@ public class AttackController : MonoBehaviour
                 }
                 else
                 {
-                    if (!playerController.isAttacking)
+                    if (!transform.Find("Interactuador").GetComponent<InteractuarController>().interactuar)
                     {
-                        int vidaRecuperar = inventarioController.infoObjetos[toolBarController.posicionController.item].vidaRecuperar;
-                        
-                        bool vidaRecuperada = lifePlayerController.sumarVida(vidaRecuperar);
-
-                        if (vidaRecuperada)
+                        if (!playerController.isAttacking)
                         {
-                            animator.SetTrigger("comer");
+                            int vidaRecuperar = inventarioController.infoObjetos[toolBarController.posicionController.item].vidaRecuperar;
+                        
+                            bool vidaRecuperada = lifePlayerController.sumarVida(vidaRecuperar);
 
-                            toolBarController.posicionController.cantidad -= 1;
-
-                            if (toolBarController.posicionController.cantidad <= 0)
+                            if (vidaRecuperada)
                             {
-                                toolBarController.posicionController.item = "";
+                                animator.SetTrigger("comer");
+
+                                toolBarController.posicionController.cantidad -= 1;
+
+                                if (toolBarController.posicionController.cantidad <= 0)
+                                {
+                                    toolBarController.posicionController.item = "";
+                                }
+                                player.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+                                playerController.isAttacking = true;
                             }
-                            player.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
-                            playerController.isAttacking = true;
                         }
                     }
                 }

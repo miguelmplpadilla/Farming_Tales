@@ -315,6 +315,66 @@ MonoBehaviour:
     - {fileID: 8722804393931377399, guid: 9d6a774ce5c148946827b354b4109a4d, type: 3}
     - {fileID: -5580618815877476728, guid: 9d6a774ce5c148946827b354b4109a4d, type: 3}
     - {fileID: -5310956932204547599, guid: 9d6a774ce5c148946827b354b4109a4d, type: 3}
+  - id: fresa
+    fruto: 
+    cantidad: 4
+    tiempoCrecer: 200
+    sprites:
+    - {fileID: 5414825556328966811, guid: 0ed6701796002cf45b2ee9d63459e523, type: 3}
+    - {fileID: 4273668608651448657, guid: 0ed6701796002cf45b2ee9d63459e523, type: 3}
+    - {fileID: -3242655448102261006, guid: 0ed6701796002cf45b2ee9d63459e523, type: 3}
+    - {fileID: 336800687311600814, guid: 0ed6701796002cf45b2ee9d63459e523, type: 3}
+    - {fileID: -610001397880730689, guid: 0ed6701796002cf45b2ee9d63459e523, type: 3}
+    - {fileID: 526253283113002688, guid: 0ed6701796002cf45b2ee9d63459e523, type: 3}
+    - {fileID: -3450849246508158112, guid: 0ed6701796002cf45b2ee9d63459e523, type: 3}
+  - id: hongo
+    fruto: 
+    cantidad: 2
+    tiempoCrecer: 100
+    sprites:
+    - {fileID: -2041809776025021089, guid: a9b51f0a88d6cbf459d7d1289ee6c5ea, type: 3}
+    - {fileID: 6439147393769205727, guid: a9b51f0a88d6cbf459d7d1289ee6c5ea, type: 3}
+    - {fileID: -6520848952041916946, guid: a9b51f0a88d6cbf459d7d1289ee6c5ea, type: 3}
+    - {fileID: 6628833684512362585, guid: a9b51f0a88d6cbf459d7d1289ee6c5ea, type: 3}
+    - {fileID: 2449057859239970356, guid: a9b51f0a88d6cbf459d7d1289ee6c5ea, type: 3}
+    - {fileID: 1791547563901568487, guid: a9b51f0a88d6cbf459d7d1289ee6c5ea, type: 3}
+    - {fileID: -6051590992615933830, guid: a9b51f0a88d6cbf459d7d1289ee6c5ea, type: 3}
+  - id: manzana
+    fruto: 
+    cantidad: 3
+    tiempoCrecer: 300
+    sprites:
+    - {fileID: -3836467173876451665, guid: d1c60ec765ed2654b956c655a7c6ee8e, type: 3}
+    - {fileID: 3176923033105671621, guid: d1c60ec765ed2654b956c655a7c6ee8e, type: 3}
+    - {fileID: 7220741158411881326, guid: d1c60ec765ed2654b956c655a7c6ee8e, type: 3}
+    - {fileID: 4583868058654879355, guid: d1c60ec765ed2654b956c655a7c6ee8e, type: 3}
+    - {fileID: -5359543854037353995, guid: d1c60ec765ed2654b956c655a7c6ee8e, type: 3}
+    - {fileID: 5234321247951875228, guid: d1c60ec765ed2654b956c655a7c6ee8e, type: 3}
+    - {fileID: 5082782458661443477, guid: d1c60ec765ed2654b956c655a7c6ee8e, type: 3}
+  - id: naranja
+    fruto: 
+    cantidad: 3
+    tiempoCrecer: 300
+    sprites:
+    - {fileID: -7224240182022204747, guid: d5fb9d1ad9d248140bb47582f767a3d8, type: 3}
+    - {fileID: 2405896246460301497, guid: d5fb9d1ad9d248140bb47582f767a3d8, type: 3}
+    - {fileID: -4759676924958152636, guid: d5fb9d1ad9d248140bb47582f767a3d8, type: 3}
+    - {fileID: 5661646811945722674, guid: d5fb9d1ad9d248140bb47582f767a3d8, type: 3}
+    - {fileID: -1388206921469556319, guid: d5fb9d1ad9d248140bb47582f767a3d8, type: 3}
+    - {fileID: 8909717085733219971, guid: d5fb9d1ad9d248140bb47582f767a3d8, type: 3}
+    - {fileID: -2484808569745898566, guid: d5fb9d1ad9d248140bb47582f767a3d8, type: 3}
+  - id: rabano
+    fruto: 
+    cantidad: 3
+    tiempoCrecer: 150
+    sprites:
+    - {fileID: 1536374896843696309, guid: a9929dea0fd0edf4092e361a32c22088, type: 3}
+    - {fileID: 3883520521345323510, guid: a9929dea0fd0edf4092e361a32c22088, type: 3}
+    - {fileID: -8353915152360702046, guid: a9929dea0fd0edf4092e361a32c22088, type: 3}
+    - {fileID: 5112519978445544920, guid: a9929dea0fd0edf4092e361a32c22088, type: 3}
+    - {fileID: -8535353006147488978, guid: a9929dea0fd0edf4092e361a32c22088, type: 3}
+    - {fileID: 953108474325904076, guid: a9929dea0fd0edf4092e361a32c22088, type: 3}
+    - {fileID: -6595163370516348871, guid: a9929dea0fd0edf4092e361a32c22088, type: 3}
   id: 
   planta: 
   fruto: 

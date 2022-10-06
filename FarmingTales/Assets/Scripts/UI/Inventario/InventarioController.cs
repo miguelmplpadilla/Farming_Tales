@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class InventarioController : MonoBehaviour
 {
 
+    public string[] objetosAnadirInventarioInicio;
+
     public GameObject[] posiciones = new GameObject[4];
     public GameObject[] posicionesInventario = new GameObject[4];
     private GameObject tienda;
@@ -37,7 +39,7 @@ public class InventarioController : MonoBehaviour
     private void Awake()
     {
         
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
         
         //Cursor.visible = false;
         
@@ -67,9 +69,12 @@ public class InventarioController : MonoBehaviour
             cargarInventarioDinero();
         }
 
-        anadirInventario("semillaTomate", 5);
-
         //anadirDinero(10000);
+
+        for (int i = 0; i < objetosAnadirInventarioInicio.Length; i++)
+        {
+            anadirInventario(objetosAnadirInventarioInicio[i], 5);
+        }
         
         tienda = GameObject.Find("InterfazTienda");
     }

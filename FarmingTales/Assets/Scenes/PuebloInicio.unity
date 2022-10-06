@@ -2189,7 +2189,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: listaProductos.Array.size
-      value: 24
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: listaProductos.Array.data[20].id
@@ -2206,6 +2206,14 @@ PrefabInstance:
     - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: listaProductos.Array.data[23].id
       value: semillaTomate
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[24].id
+      value: fresa
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[25].id
+      value: rabano
       objectReference: {fileID: 0}
     - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: listaProductos.Array.data[20].imagen
@@ -2240,6 +2248,22 @@ PrefabInstance:
       value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[24].imagen
+      value: 
+      objectReference: {fileID: -2714682497457683847, guid: 68d84a8f1a256b049ad659aeaebea9e6, type: 3}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[24].precio
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[25].imagen
+      value: 
+      objectReference: {fileID: 21300000, guid: ca633e083f8ca6044b602ae8700ed69b, type: 3}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[25].precio
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: listaProductos.Array.data[20].nombreProducto
       value: Salmon
       objectReference: {fileID: 0}
@@ -2255,6 +2279,14 @@ PrefabInstance:
       propertyPath: listaProductos.Array.data[23].nombreProducto
       value: Semilla Tomate
       objectReference: {fileID: 0}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[24].nombreProducto
+      value: Fresa
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801045, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: listaProductos.Array.data[25].nombreProducto
+      value: Rabano
+      objectReference: {fileID: 0}
     - target: {fileID: 243875521, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2265,11 +2297,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.99743235
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.005083561
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2277,7 +2309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.98301697
+      value: -0.041534424
       objectReference: {fileID: 0}
     - target: {fileID: 555679566, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: listaProductos.Array.size
@@ -2309,11 +2341,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.99743235
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.005083561
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2321,7 +2353,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.98301697
+      value: -0.041534424
       objectReference: {fileID: 0}
     - target: {fileID: 1444948683, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2417,7 +2449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: objetosInventario.Array.size
-      value: 23
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: objetosInventario.Array.data[21].item
@@ -2428,6 +2460,14 @@ PrefabInstance:
       value: semillaTomate
       objectReference: {fileID: 0}
     - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: objetosInventario.Array.data[23].item
+      value: fresa
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: objetosInventario.Array.data[24].item
+      value: rabano
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: objetosInventario.Array.data[21].sprite
       value: 
       objectReference: {fileID: 8236432160196758994, guid: 1d1fd5599c40307439cf567f8850d46b, type: 3}
@@ -2435,6 +2475,18 @@ PrefabInstance:
       propertyPath: objetosInventario.Array.data[22].sprite
       value: 
       objectReference: {fileID: 21300000, guid: cdb4d681e938a6b4b9085bff421c5b11, type: 3}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: objetosInventario.Array.data[23].sprite
+      value: 
+      objectReference: {fileID: -2714682497457683847, guid: 68d84a8f1a256b049ad659aeaebea9e6, type: 3}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: objetosInventario.Array.data[24].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ca633e083f8ca6044b602ae8700ed69b, type: 3}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: objetosAnadirInventarioInicio.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: objetosInventario.Array.data[21].tipoItem
       value: comida
@@ -2444,12 +2496,40 @@ PrefabInstance:
       value: construccion
       objectReference: {fileID: 0}
     - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: objetosInventario.Array.data[23].tipoItem
+      value: comida
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: objetosInventario.Array.data[24].tipoItem
+      value: comida
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: objetosAnadirInventarioInicio.Array.data[0]
+      value: plantacion
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: objetosAnadirInventarioInicio.Array.data[1]
+      value: rabano
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: objetosAnadirInventarioInicio.Array.data[2]
+      value: naranja
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: objetosInventario.Array.data[21].vidaRecuperar
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: objetosInventario.Array.data[22].vidaRecuperar
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: objetosInventario.Array.data[23].vidaRecuperar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001357079342831229, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: objetosInventario.Array.data[24].vidaRecuperar
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
@@ -3783,7 +3863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8437111795126902402, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.746484
+      value: 12.746471
       objectReference: {fileID: 0}
     - target: {fileID: 8437111795126902402, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_LocalPosition.y
