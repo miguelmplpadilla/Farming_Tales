@@ -306,7 +306,7 @@ MonoBehaviour:
   - id: semillaTomate
     fruto: tomate
     cantidad: 2
-    tiempoCrecer: 150
+    tiempoCrecer: 5
     sprites:
     - {fileID: -1325879699319130544, guid: 9d6a774ce5c148946827b354b4109a4d, type: 3}
     - {fileID: 2490512866239133447, guid: 9d6a774ce5c148946827b354b4109a4d, type: 3}
@@ -318,7 +318,7 @@ MonoBehaviour:
   - id: fresa
     fruto: 
     cantidad: 4
-    tiempoCrecer: 200
+    tiempoCrecer: 5
     sprites:
     - {fileID: 5414825556328966811, guid: 0ed6701796002cf45b2ee9d63459e523, type: 3}
     - {fileID: 4273668608651448657, guid: 0ed6701796002cf45b2ee9d63459e523, type: 3}
@@ -330,7 +330,7 @@ MonoBehaviour:
   - id: hongo
     fruto: 
     cantidad: 2
-    tiempoCrecer: 100
+    tiempoCrecer: 5
     sprites:
     - {fileID: -2041809776025021089, guid: a9b51f0a88d6cbf459d7d1289ee6c5ea, type: 3}
     - {fileID: 6439147393769205727, guid: a9b51f0a88d6cbf459d7d1289ee6c5ea, type: 3}
@@ -342,7 +342,7 @@ MonoBehaviour:
   - id: manzana
     fruto: 
     cantidad: 3
-    tiempoCrecer: 300
+    tiempoCrecer: 5
     sprites:
     - {fileID: -3836467173876451665, guid: d1c60ec765ed2654b956c655a7c6ee8e, type: 3}
     - {fileID: 3176923033105671621, guid: d1c60ec765ed2654b956c655a7c6ee8e, type: 3}
@@ -354,7 +354,7 @@ MonoBehaviour:
   - id: naranja
     fruto: 
     cantidad: 3
-    tiempoCrecer: 300
+    tiempoCrecer: 5
     sprites:
     - {fileID: -7224240182022204747, guid: d5fb9d1ad9d248140bb47582f767a3d8, type: 3}
     - {fileID: 2405896246460301497, guid: d5fb9d1ad9d248140bb47582f767a3d8, type: 3}
@@ -366,7 +366,7 @@ MonoBehaviour:
   - id: rabano
     fruto: 
     cantidad: 3
-    tiempoCrecer: 150
+    tiempoCrecer: 5
     sprites:
     - {fileID: 1536374896843696309, guid: a9929dea0fd0edf4092e361a32c22088, type: 3}
     - {fileID: 3883520521345323510, guid: a9929dea0fd0edf4092e361a32c22088, type: 3}
