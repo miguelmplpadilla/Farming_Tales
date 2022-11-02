@@ -17,6 +17,7 @@ public class InventarioController : MonoBehaviour
     public TextMeshProUGUI oro;
     private GameObject inventario;
     private RectTransform rectTransformInventario;
+    private RectTransform rectTransformArmas;
     private RectTransform rectTransformRaton;
     private PosicionRatonController posicionRatonController;
     private ToolBarController toolBarController;
@@ -54,6 +55,7 @@ public class InventarioController : MonoBehaviour
         oro = GameObject.Find("TextoOro").GetComponent<TextMeshProUGUI>();
         inventario = GameObject.Find("Inventario");
         rectTransformInventario = inventario.GetComponent<RectTransform>();
+        rectTransformArmas = GameObject.Find("Armamento").GetComponent<RectTransform>();
         rectTransformRaton = GameObject.Find("Raton").GetComponent<RectTransform>();
 
         posicionRatonController = GameObject.Find("PosRaton").GetComponent<PosicionRatonController>();
@@ -90,6 +92,7 @@ public class InventarioController : MonoBehaviour
                 
                 rectTransformInventario.localScale = new Vector3(1, 1, 1);
                 rectTransformRaton.localScale = new Vector3(1, 1, 1);
+                rectTransformArmas.localScale = new Vector3(1, 1, 1);
 
                 player.GetComponent<PlayerController>().mov = false;
             }
@@ -111,6 +114,7 @@ public class InventarioController : MonoBehaviour
                 
                 rectTransformInventario.localScale = new Vector3(0, 1, 1);
                 rectTransformRaton.localScale = new Vector3(0, 1, 1);
+                rectTransformArmas.localScale = new Vector3(0, 1, 1);
                 
                 player.GetComponent<PlayerController>().mov = true;
                 
