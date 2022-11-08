@@ -136,6 +136,13 @@ public class Controller : MonoBehaviour
         SceneManager.LoadScene("PuebloInicio");
     }
 
+    public void volverSceneAnterior()
+    {
+        string sceneAnterior = PlayerPrefs.GetString("EscenaAnterior");
+
+        SceneManager.LoadScene(sceneAnterior);
+    }
+
     IEnumerator contadorTiempoJuego()
     {
         while (true)

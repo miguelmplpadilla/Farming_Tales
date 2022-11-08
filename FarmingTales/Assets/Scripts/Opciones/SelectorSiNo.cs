@@ -44,6 +44,7 @@ public class SelectorSiNo : MonoBehaviour
     
     public void moverPesca()
     {
+        PlayerPrefs.SetString("EscenaAnterior", SceneManager.GetActiveScene().name);
         SceneManager.LoadScene("Pesca");
     }
     
