@@ -14,8 +14,13 @@ public class CofrePescadorController : MonoBehaviour
         int numBacalao = PlayerPrefs.GetInt("NumBacalao");
         int numSalmon = PlayerPrefs.GetInt("NumSalmon");
 
+        Debug.Log("Numero Bacalao: "+numBacalao);
+        Debug.Log("Numero Salmon: "+numSalmon);
+
         cofreController.anadirObjetoInicioCofre("bacalao", numBacalao, spriteBacalao);
         cofreController.anadirObjetoInicioCofre("salmon", numSalmon, spriteSalmon);
+
+        cofreController.anadirObjetosCofre();
         
         PlayerPrefs.SetInt("NumBacalao", 0);
         PlayerPrefs.SetInt("NumSalmon", 0);

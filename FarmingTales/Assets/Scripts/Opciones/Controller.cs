@@ -73,24 +73,47 @@ public class Controller : MonoBehaviour
 
     public void pausarDespausar()
     {
-        PlayerController playerController = player.GetComponent<PlayerController>();
+        PlayerController playerController = null;
+        try
+        {
+            playerController = player.GetComponent<PlayerController>();
+        }
+        catch
+        {
+            playerController = null;
+        }
         
         if (!paused)
         {
-            if (playerController.mov)
+            if (playerController != null && playerController.mov)
             {
                 panelPausa.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
                 playerController.mov = false;
                 Time.timeScale = 0;
                 paused = true;
             }
+            else
+            {
+                panelPausa.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+                Time.timeScale = 0;
+                paused = true;
+            }
         }
         else
         {
-            panelPausa.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
-            playerController.mov = true;
-            Time.timeScale = 1;
-            paused = false;
+            if (playerController != null)
+            {
+                panelPausa.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+                playerController.mov = true;
+                Time.timeScale = 1;
+                paused = false;
+            }
+            else
+            {
+                panelPausa.GetComponent<RectTransform>().localScale = new Vector3(0, 1, 1);
+                Time.timeScale = 1;
+                paused = false;
+            }
         }
     }
 
@@ -138,8 +161,9 @@ public class Controller : MonoBehaviour
 
     public void volverSceneAnterior()
     {
+        Time.timeScale = 1;
+        paused = false;
         string sceneAnterior = PlayerPrefs.GetString("EscenaAnterior");
-
         SceneManager.LoadScene(sceneAnterior);
     }
 

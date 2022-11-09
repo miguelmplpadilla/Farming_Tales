@@ -38,8 +38,8 @@ public class PescaController : MonoBehaviour
     
     public int numTeclasCorrectas = 0;
     
-    private int numBacalaos = 0;
-    private int numSalmon = 0;
+    public int numBacalaos = 0;
+    public int numSalmon = 0;
 
     private TextMeshProUGUI textoNumBacalao;
     private TextMeshProUGUI textoNumSalmon;
@@ -264,6 +264,7 @@ public class PescaController : MonoBehaviour
         
         PlayerPrefs.SetInt("NumBacalao", numBacalaos);
         PlayerPrefs.SetInt("NumSalmon", numSalmon);
+        PlayerPrefs.Save();
         
         estrellaController.startAnimation(imagenesPeces[numRandom]);
     }

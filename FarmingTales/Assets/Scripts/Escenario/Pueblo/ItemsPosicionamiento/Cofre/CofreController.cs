@@ -129,6 +129,20 @@ public class CofreController : MonoBehaviour
         objetosAnadir.Add(new ObjetosAnadirCofre(id, cant, spr));
     }
 
+    public void anadirObjetosCofre()
+    {
+        if (objetosAnadir.Count > 0)
+        {
+            posicionInventarioCofres = new PosicionInventarioCofre[objetosAnadir.Count];
+
+            for (int i = 0; i < objetosAnadir.Count; i++)
+            {
+                posicionInventarioCofres[i] = new PosicionInventarioCofre(objetosAnadir[i].item, objetosAnadir[i].cantidad, objetosAnadir[i].sprite);
+            }
+            
+        }
+    }
+
     private void Update()
     {
         if (abierto)
