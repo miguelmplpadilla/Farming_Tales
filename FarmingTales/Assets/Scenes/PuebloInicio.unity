@@ -2198,11 +2198,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.925354
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.1477893
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2210,7 +2210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10.634933
+      value: -19.15106
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2218,11 +2218,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.925354
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.1477893
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2230,7 +2230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10.634933
+      value: -19.15106
       objectReference: {fileID: 0}
     - target: {fileID: 1379549526, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_LocalScale.x
@@ -2863,7 +2863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1385860869462475348, guid: 57a37168a3e8e4a4ca0a4a29300c0cb6, type: 3}
       propertyPath: productosComprar.Array.size
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1385860869462475348, guid: 57a37168a3e8e4a4ca0a4a29300c0cb6, type: 3}
       propertyPath: productosComprar.Array.data[0]
@@ -2892,6 +2892,22 @@ PrefabInstance:
     - target: {fileID: 1385860869462475348, guid: 57a37168a3e8e4a4ca0a4a29300c0cb6, type: 3}
       propertyPath: productosComprar.Array.data[6]
       value: roca
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385860869462475348, guid: 57a37168a3e8e4a4ca0a4a29300c0cb6, type: 3}
+      propertyPath: productosComprar.Array.data[7]
+      value: bacalao
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385860869462475348, guid: 57a37168a3e8e4a4ca0a4a29300c0cb6, type: 3}
+      propertyPath: productosComprar.Array.data[8]
+      value: salmon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385860869462475348, guid: 57a37168a3e8e4a4ca0a4a29300c0cb6, type: 3}
+      propertyPath: productosComprar.Array.data[9]
+      value: tomate
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385860869462475348, guid: 57a37168a3e8e4a4ca0a4a29300c0cb6, type: 3}
+      propertyPath: productosComprar.Array.data[10]
+      value: fresa
       objectReference: {fileID: 0}
     - target: {fileID: 1385860869462475349, guid: 57a37168a3e8e4a4ca0a4a29300c0cb6, type: 3}
       propertyPath: m_RootOrder
@@ -3148,7 +3164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3691444379836044037, guid: d196dfd40c1aa8a4aab57442f205b85e, type: 3}
       propertyPath: productosComprar.Array.size
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3691444379836044037, guid: d196dfd40c1aa8a4aab57442f205b85e, type: 3}
       propertyPath: productosComprar.Array.data[2]
@@ -3173,6 +3189,14 @@ PrefabInstance:
     - target: {fileID: 3691444379836044037, guid: d196dfd40c1aa8a4aab57442f205b85e, type: 3}
       propertyPath: productosComprar.Array.data[7]
       value: huevo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691444379836044037, guid: d196dfd40c1aa8a4aab57442f205b85e, type: 3}
+      propertyPath: productosComprar.Array.data[8]
+      value: semillaTomate
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691444379836044037, guid: d196dfd40c1aa8a4aab57442f205b85e, type: 3}
+      propertyPath: productosComprar.Array.data[9]
+      value: rabano
       objectReference: {fileID: 0}
     - target: {fileID: 3691444379836044056, guid: d196dfd40c1aa8a4aab57442f205b85e, type: 3}
       propertyPath: m_Name
@@ -3705,7 +3729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8437111795126902402, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.747193
+      value: 12.746479
       objectReference: {fileID: 0}
     - target: {fileID: 8437111795126902402, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_LocalPosition.y

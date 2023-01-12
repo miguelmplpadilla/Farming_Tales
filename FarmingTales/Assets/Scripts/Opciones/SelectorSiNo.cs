@@ -39,6 +39,7 @@ public class SelectorSiNo : MonoBehaviour
 
     public void moverMazmorraAleatoria()
     {
+        PlayerPrefs.SetString("EscenaAnterior", SceneManager.GetActiveScene().name);
         SceneManager.LoadScene("MazmorraAleatoria");
     }
     

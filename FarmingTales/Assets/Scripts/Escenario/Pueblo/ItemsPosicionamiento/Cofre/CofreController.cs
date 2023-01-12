@@ -203,15 +203,7 @@ public class CofreController : MonoBehaviour
 
     public void inter()
     {
-        for (int i = 0; i < posicionInventarioCofres.Length; i++)
-        {
-            inventarioCofreController.posiciones[i].GetComponent<PosicionController>().item =
-                posicionInventarioCofres[i].item;
-            inventarioCofreController.posiciones[i].GetComponent<PosicionController>().cantidad =
-                posicionInventarioCofres[i].cantidad;
-            inventarioCofreController.posiciones[i].GetComponent<Image>().sprite =
-                posicionInventarioCofres[i].sprite;
-        }
+        anadirProductosInterfazInventario();
 
         rectTransformInventario.transform.localPosition = posicionInventario;
         rectTransformInventario.localScale = new Vector3(1, 1, 1);
@@ -225,6 +217,19 @@ public class CofreController : MonoBehaviour
         animator.SetTrigger("abrir");
         
         abierto = true;
+    }
+
+    public void anadirProductosInterfazInventario()
+    {
+        for (int i = 0; i < posicionInventarioCofres.Length; i++)
+        {
+            inventarioCofreController.posiciones[i].GetComponent<PosicionController>().item =
+                posicionInventarioCofres[i].item;
+            inventarioCofreController.posiciones[i].GetComponent<PosicionController>().cantidad =
+                posicionInventarioCofres[i].cantidad;
+            inventarioCofreController.posiciones[i].GetComponent<Image>().sprite =
+                posicionInventarioCofres[i].sprite;
+        }
     }
 
     public void mostrarInter()

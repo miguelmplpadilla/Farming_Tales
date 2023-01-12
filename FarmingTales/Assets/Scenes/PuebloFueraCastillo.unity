@@ -2768,7 +2768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.9949164
+      value: 0.9988822
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMin.y
@@ -2780,7 +2780,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454566557, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.319931
+      value: 0.7888794
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2788,7 +2788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.9949164
+      value: 0.9988822
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchorMin.y
@@ -2800,7 +2800,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1205057268, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.319931
+      value: 0.7888794
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379549526, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2297469430493021001, guid: 106f01e689e1dae488693e627ceb0efc, type: 3}
       propertyPath: m_LocalScale.x
@@ -7206,7 +7210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3691444379836044037, guid: d196dfd40c1aa8a4aab57442f205b85e, type: 3}
       propertyPath: productosComprar.Array.size
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3691444379836044037, guid: d196dfd40c1aa8a4aab57442f205b85e, type: 3}
       propertyPath: productosComprar.Array.data[2]
@@ -7231,6 +7235,14 @@ PrefabInstance:
     - target: {fileID: 3691444379836044037, guid: d196dfd40c1aa8a4aab57442f205b85e, type: 3}
       propertyPath: productosComprar.Array.data[7]
       value: huevo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691444379836044037, guid: d196dfd40c1aa8a4aab57442f205b85e, type: 3}
+      propertyPath: productosComprar.Array.data[8]
+      value: semillaTomate
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691444379836044037, guid: d196dfd40c1aa8a4aab57442f205b85e, type: 3}
+      propertyPath: productosComprar.Array.data[9]
+      value: rabano
       objectReference: {fileID: 0}
     - target: {fileID: 3691444379836044056, guid: d196dfd40c1aa8a4aab57442f205b85e, type: 3}
       propertyPath: m_Name
@@ -8437,7 +8449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8437111795126902402, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.760593
+      value: 21.760784
       objectReference: {fileID: 0}
     - target: {fileID: 8437111795126902402, guid: 90899e90290e5ff499ae65322f1e5379, type: 3}
       propertyPath: m_LocalPosition.y
